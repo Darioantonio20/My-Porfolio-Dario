@@ -1,7 +1,22 @@
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Hero from '@/components/sections/Hero';
+import About from '@/components/sections/About';
+import Awards from '@/components/sections/Awards';
+import Projects from '@/components/sections/Team';
+
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 to-black overflow-hidden">
-hola mundo
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Awards />
+        <Projects />
+      </main>
+      <Footer />
+    </>
   );
 }

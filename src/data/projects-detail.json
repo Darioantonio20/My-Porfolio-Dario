@@ -1,0 +1,212 @@
+{
+  "jasai-live": {
+    "id": "jasai-live",
+    "title": "Jasai Live",
+    "subtitle": "Plataforma de Streaming",
+    "description": "Proyecto integrador de sexto cuatrimestre de la escuela UP Chiapa. Una plataforma completa de streaming que permite a los usuarios ver contenido en vivo y bajo demanda.",
+    "longDescription": "Jasai Live es una plataforma de streaming innovadora desarrollada como proyecto integrador. La aplicación permite a los usuarios transmitir y ver contenido en tiempo real, con funcionalidades avanzadas como chat interactivo, sistema de usuarios y gestión de contenido.",
+    "technologies": ["React", "Node.js", "MongoDB", "Socket.io", "Express", "WebRTC"],
+    "features": [
+      "Streaming en tiempo real con baja latencia",
+      "Chat interactivo con emojis y moderación",
+      "Sistema de usuarios con autenticación JWT",
+      "Dashboard administrativo completo",
+      "Gestión de contenido y playlists",
+      "Notificaciones en tiempo real",
+      "Responsive design para móviles"
+    ],
+    "challenges": [
+      "Implementación de WebRTC para streaming de alta calidad",
+      "Optimización de rendimiento para múltiples usuarios simultáneos",
+      "Escalabilidad de la base de datos MongoDB",
+      "Sincronización en tiempo real del chat y contenido",
+      "Gestión de estados complejos en React"
+    ],
+    "solutions": [
+      "Uso de Socket.io para comunicación bidireccional",
+      "Implementación de índices optimizados en MongoDB",
+      "Arquitectura modular y escalable",
+      "Optimización de queries y caching"
+    ],
+    "github": "https://github.com/Darioantonio20/Jasai-Live",
+    "demo": "https://jasai-live-demo.vercel.app",
+    "image": "https://i.pravatar.cc/300?img=8",
+    "category": "Full Stack",
+    "duration": "4 meses",
+    "team": "Equipo de 3 desarrolladores"
+  },
+  "barber-platform": {
+    "id": "barber-platform",
+    "title": "Barber Platform",
+    "subtitle": "Sistema de Gestión para Barberías",
+    "description": "Sistema completo de gestión para barberías que incluye citas, inventario, clientes y reportes financieros.",
+    "longDescription": "Barber Platform es una solución integral para la gestión de barberías modernas. El sistema permite a los propietarios administrar citas, inventario, clientes y generar reportes financieros detallados.",
+    "technologies": ["TypeScript", "Next.js", "Prisma", "PostgreSQL", "Tailwind CSS", "NextAuth"],
+    "features": [
+      "Sistema de citas con calendario interactivo",
+      "Gestión de inventario y productos",
+      "Base de datos de clientes",
+      "Reportes financieros y estadísticas",
+      "Panel de administración",
+      "Notificaciones automáticas",
+      "Sistema de pagos integrado"
+    ],
+    "challenges": [
+      "Diseño de base de datos compleja para múltiples entidades",
+      "Implementación de sistema de citas sin conflictos",
+      "Optimización de consultas para reportes grandes",
+      "Integración de múltiples servicios de pago"
+    ],
+    "solutions": [
+      "Uso de Prisma ORM para gestión eficiente de datos",
+      "Algoritmo de validación de disponibilidad",
+      "Implementación de índices optimizados",
+      "Arquitectura de microservicios para pagos"
+    ],
+    "github": "https://github.com/Darioantonio20/BarberPlatform",
+    "demo": "https://barber-platform-demo.vercel.app",
+    "image": "https://i.pravatar.cc/300?img=11",
+    "category": "Full Stack",
+    "duration": "3 meses",
+    "team": "Desarrollo individual"
+  },
+  "light-center": {
+    "id": "light-center",
+    "title": "Light Center",
+    "subtitle": "Aplicación Móvil de Iluminación",
+    "description": "App móvil para control de iluminación inteligente con interfaz intuitiva y automatización.",
+    "longDescription": "Light Center es una aplicación móvil desarrollada en Flutter que permite a los usuarios controlar sistemas de iluminación inteligente. La app incluye programación automática, control por voz y integración con asistentes virtuales.",
+    "technologies": ["Dart", "Flutter", "Firebase", "Google Cloud", "IoT APIs"],
+    "features": [
+      "Control de iluminación en tiempo real",
+      "Programación automática de luces",
+      "Integración con asistentes de voz",
+      "Modo automático basado en sensores",
+      "Interfaz intuitiva y responsive",
+      "Sincronización en la nube",
+      "Notificaciones push"
+    ],
+    "challenges": [
+      "Integración con múltiples protocolos IoT",
+      "Optimización de batería en dispositivos móviles",
+      "Sincronización en tiempo real entre dispositivos",
+      "Manejo de conexiones inestables"
+    ],
+    "solutions": [
+      "Uso de Firebase para sincronización en tiempo real",
+      "Implementación de cache local inteligente",
+      "Arquitectura offline-first",
+      "Optimización de requests y polling"
+    ],
+    "github": "https://github.com/Darioantonio20/LightCenter",
+    "demo": "https://light-center-demo.vercel.app",
+    "image": "https://i.pravatar.cc/300?img=3",
+    "category": "Mobile Development",
+    "duration": "2 meses",
+    "team": "Desarrollo individual"
+  },
+  "house-by-damo": {
+    "id": "house-by-damo",
+    "title": "House By Damo",
+    "subtitle": "Sistema de Gestión Inmobiliaria",
+    "description": "Sistema completo para gestión de propiedades inmobiliarias con administración de clientes y transacciones.",
+    "longDescription": "House By Damo es una plataforma web desarrollada en Java que permite a las agencias inmobiliarias gestionar propiedades, clientes, visitas y transacciones de manera eficiente.",
+    "technologies": ["Java", "Spring Boot", "MySQL", "Thymeleaf", "Bootstrap", "JPA"],
+    "features": [
+      "Gestión completa de propiedades",
+      "Base de datos de clientes",
+      "Sistema de citas y visitas",
+      "Reportes de ventas y estadísticas",
+      "Panel de administración",
+      "Búsqueda avanzada de propiedades",
+      "Sistema de notificaciones"
+    ],
+    "challenges": [
+      "Diseño de base de datos compleja para el sector inmobiliario",
+      "Implementación de búsquedas avanzadas",
+      "Gestión de archivos y documentos",
+      "Optimización de consultas complejas"
+    ],
+    "solutions": [
+      "Uso de Spring Data JPA para consultas optimizadas",
+      "Implementación de índices específicos",
+      "Sistema de cache para búsquedas frecuentes",
+      "Arquitectura modular y escalable"
+    ],
+    "github": "https://github.com/Darioantonio20/HuoseByDamo",
+    "demo": "https://house-by-damo-demo.vercel.app",
+    "image": "https://i.pravatar.cc/300?img=16",
+    "category": "Backend Development",
+    "duration": "5 meses",
+    "team": "Equipo de 2 desarrolladores"
+  },
+  "app-streaming": {
+    "id": "app-streaming",
+    "title": "App Streaming",
+    "subtitle": "Simulación de Netflix",
+    "description": "Proyecto de simulación de una aplicación de streaming tipo Netflix para la materia de Fundamentos de Redes.",
+    "longDescription": "App Streaming es una simulación de una plataforma de streaming desarrollada para demostrar conceptos de redes y distribución de contenido. Incluye funcionalidades básicas de reproducción, categorización y búsqueda.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
+    "features": [
+      "Reproducción de videos",
+      "Categorización de contenido",
+      "Sistema de búsqueda",
+      "Interfaz similar a Netflix",
+      "Responsive design",
+      "Simulación de streaming"
+    ],
+    "challenges": [
+      "Simulación de streaming de video",
+      "Optimización de carga de contenido",
+      "Diseño de interfaz responsive",
+      "Implementación de búsqueda eficiente"
+    ],
+    "solutions": [
+      "Uso de HTML5 Video API",
+      "Implementación de lazy loading",
+      "CSS Grid y Flexbox para layout",
+      "Algoritmo de búsqueda optimizado"
+    ],
+    "github": "https://github.com/Darioantonio20/AppStreaming",
+    "demo": "https://app-streaming-demo.vercel.app",
+    "image": "https://i.pravatar.cc/300?img=25",
+    "category": "Frontend Development",
+    "duration": "1 mes",
+    "team": "Desarrollo individual"
+  },
+  "portfolio": {
+    "id": "portfolio",
+    "title": "Portfolio Personal",
+    "subtitle": "Sitio Web Profesional",
+    "description": "Portfolio personal desarrollado con tecnologías modernas para mostrar proyectos y habilidades profesionales.",
+    "longDescription": "Este portfolio personal está desarrollado con Next.js 15, TypeScript y Tailwind CSS. Incluye animaciones avanzadas, diseño responsive y una experiencia de usuario moderna y profesional.",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "GSAP", "Three.js"],
+    "features": [
+      "Diseño responsive y moderno",
+      "Animaciones con GSAP",
+      "Componentes interactivos",
+      "Optimización SEO",
+      "Modo oscuro",
+      "Navegación fluida",
+      "Integración con redes sociales"
+    ],
+    "challenges": [
+      "Implementación de animaciones complejas",
+      "Optimización de rendimiento",
+      "Diseño responsive para todos los dispositivos",
+      "Integración de múltiples tecnologías"
+    ],
+    "solutions": [
+      "Uso de GSAP para animaciones optimizadas",
+      "Implementación de lazy loading",
+      "CSS Grid y Flexbox para layout responsive",
+      "Arquitectura de componentes modular"
+    ],
+    "github": "https://github.com/Darioantonio20/My-Porfolio-Dario",
+    "demo": "https://dario-antonio-portfolio.vercel.app",
+    "image": "https://i.pravatar.cc/300?img=60",
+    "category": "Frontend Development",
+    "duration": "2 meses",
+    "team": "Desarrollo individual"
+  }
+} 
