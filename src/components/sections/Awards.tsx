@@ -1,11 +1,53 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import PanZoom from 'react-easy-panzoom';
 import ConstanciaEgreso from '@/assets/img/university/ConstanciadeEgreso.png';
+import ConstanciaTitulacion from '@/assets/img/university/ConstanciaTitulacion.png';
+import ConstanciaToefl from '@/assets/img/university/PuntajeTOEFEL.png';
+import KardexUpHoja1 from '@/assets/img/university/KardexUpHoja1.png';
+import KardexUpHoja2 from '@/assets/img/university/KardexUpHoja2.png';
+import CertificadoCOEPES from '@/assets/img/certifications/CertificadoCOEPES.png';
+import CartaLiberacionEstadia from '@/assets/img/university/CartaLiberacionEstadia.png';
+import CertificadoPreparatoriaHoja1 from '@/assets/img/highschool/CertificadoPreparatoriaHoja1.png';
+import CertificadoPreparatoriaHoja2 from '@/assets/img/highschool/CertificadoPreparatoriaHoja2.png';
+import CertificadoPreparatoriaHoja3 from '@/assets/img/highschool/CertificadoPreparatoriaHoja3.png';
+//Badges
+import BadgeAWSCloudFoundations from '@/assets/img/badges/AWSAcademyCloudFoundations.png';
+import AWSAcademyCloudDeveloping from '@/assets/img/badges/AWSAcademyCloudDeveloping.png';
+import NetworkingBasics from '@/assets/img/badges/NetworkingBasics.png';
+import NetworkSupportandSecurity from '@/assets/img/badges/NetworkSupportandSecurity.png';
+import OperatingSystemsBasics from '@/assets/img/badges/OperatingSystemsBasics.png';
+import AWSAcademyIntroductiontoCloudSemester1 from '@/assets/img/badges/AWSAcademyIntroductiontoCloudSemester1.png';
+import EndpointSecurity from '@/assets/img/badges/EndpointSecurity.png';
+import CertificadodeMarketingDigitalEcommercedeGoogle from '@/assets/img/badges/CertificadodeMarketingDigitalEcommercedeGoogle.png';
+import IntroductiontoCybersecurity from '@/assets/img/badges/IntroductiontoCybersecurity.png';
+import AWSAcademyCloudSecurityFoundations from '@/assets/img/badges/AWSAcademyCloudSecurityFoundations.png';
+import GoogleMarketingDigitaleECommerce from '@/assets/img/badges/GoogleMarketingDigitaleECommerce.png';
+import FundamentosDelMarketingDigitalYComercioElectronico from '@/assets/img/badges/Fundamentosdelmarketingdigitalycomercioelectrónico.png';
+import DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea from '@/assets/img/badges/DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea.png';
+import CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico from '@/assets/img/badges/CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico.png';
+import ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico from '@/assets/img/badges/ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico.png';
+import InteractuarConMedianteElMarketingDigital from '@/assets/img/badges/InteractuarConMedianteElMarketingDigital.png';
 
-const awards = [
+
+
+const awards: Array<{
+  title: string;
+  description: string;
+  image?: StaticImageData;
+  images?: StaticImageData[];
+  type: string;
+  date: string;
+}> = [
+  {
+    title: 'Constancia de Titulo en trámite - UP Chiapas',
+    description: 'Ingeniería en Software, Universidad Politécnica de Chiapas, 2025',
+    image: ConstanciaTitulacion,
+    type: 'Constancia',
+    date: 'Junio 2025',
+  },
   {
     title: 'Constancia de Egreso - UP Chiapas',
     description: 'Ingeniería en Software, Universidad Politécnica de Chiapas, 2025',
@@ -13,19 +55,172 @@ const awards = [
     type: 'Constancia',
     date: 'Mayo 2025',
   },
-  // Más reconocimientos aquí
+  {
+    title: 'Constancia de TOEFL ITP - UP Chiapas',
+    description: 'Score TOEFL ITP - Universidad Politécnica de Chiapas, 2025',
+    image: ConstanciaToefl,
+    type: 'Constancia',
+    date: 'Noviembre 2024',
+  },
+  {
+    title: 'Kárdex Completo - UP Chiapas',
+    description: 'Kárdex universitario completo, Universidad Politécnica de Chiapas, 2025',
+    images: [KardexUpHoja1, KardexUpHoja2],
+    type: 'Kárdex',
+    date: 'Julio 2025',
+  },
+  {
+    title: 'Certificado COEPES',
+    description: 'Certificado de participación en COEPES, 2024',
+    image: CertificadoCOEPES,
+    type: 'Certificado',
+    date: 'Septiembre 2024',
+  },
+  {
+    title: 'Carta de Liberación de Estadia',
+    description: 'Carta de liberación de estadia profesional de la Universidad Politécnica de Chiapas - 2025',
+    image: CartaLiberacionEstadia,
+    type: 'Certificado',
+    date: 'Enero - Abril 2025',
+  },
+  {
+    title: 'Certificado de Preparatoria',
+    description: 'Certificado de Preparatoria, 2024',
+    images: [CertificadoPreparatoriaHoja1, CertificadoPreparatoriaHoja2, CertificadoPreparatoriaHoja3],
+    type: 'Certificado',
+    date: 'Agosto 2017 - Julio 2020',
+  }
+];
+
+const badges: Array<{
+  title: string;
+  url: string;
+  img: string | StaticImageData;
+  platform: string;
+}> = [
+  {
+    title: 'AWS Academy Graduate - AWS Academy Cloud Foundations',
+    url: 'https://www.credly.com/badges/22b9c5b2-50a7-4a23-bd0d-e8bd1561d36a/linked_in_profile',
+    img: BadgeAWSCloudFoundations,
+    platform: 'Credly',
+  },
+  {
+    title: 'AWS Academy Graduate - AWS Academy Cloud Developing',
+    url: 'https://www.credly.com/badges/6c226820-4530-4528-bd8b-5de421532070/linked_in_profile',
+    img: AWSAcademyCloudDeveloping,
+    platform: 'Credly',
+  },
+  {
+    title: 'Networking Basics',
+    url: 'https://www.credly.com/badges/35f93d61-e44e-4977-967d-e2f51a4cbb90/linked_in_profile',
+    img: NetworkingBasics,
+    platform: 'Credly',
+  },
+  {
+    title: 'Network Support and Security',
+    url: 'https://www.credly.com/badges/35ce798f-6caf-4822-8ae1-a027daf866a3/linked_in_profile',
+    img: NetworkSupportandSecurity,
+    platform: 'Credly',
+  },
+  {
+    title: 'Operating Systems Basics',
+    url: 'https://www.credly.com/badges/ad58ab2a-741a-4ac7-9d3c-e1b0c619ffac/linked_in_profile',
+    img: OperatingSystemsBasics,
+    platform: 'Credly',
+  },
+  {
+    title: 'AWS Academy Graduate - AWS Academy Introduction to Cloud Semester 1',
+    url: 'https://www.credly.com/badges/4c1c4aa6-f531-4635-a23a-d0cb112f1e31/linked_in_profile',
+    img: AWSAcademyIntroductiontoCloudSemester1,
+    platform: 'Credly',
+  },
+  {
+    title: 'Endpoint Security',
+    url: 'https://www.credly.com/badges/4a15b2d8-fab1-4820-8ed4-aace1da38b26/linked_in_profile',
+    img: EndpointSecurity,
+    platform: 'Credly',
+  },
+  {
+    title: 'Certificado de Marketing Digital e E-commerce de Google',
+    url: 'https://www.credly.com/badges/83e02fce-50b4-4cef-9638-69a76d9fdffe/linked_in_profile',
+    img: CertificadodeMarketingDigitalEcommercedeGoogle,
+    platform: 'Credly',
+  },
+  {
+    title: 'Introduction to Cybersecurity',
+    url: 'https://www.credly.com/badges/3b93c9ef-08cb-4377-b9c7-c488051dd4d2/linked_in_profile',
+    img: IntroductiontoCybersecurity,
+    platform: 'Credly',
+  },
+  {
+    title: 'AWS Academy Graduate - AWS Academy Cloud Security Foundations',
+    url: 'https://www.credly.com/badges/a62185aa-be22-4483-82db-402ab5336101/linked_in_profile',
+    img: AWSAcademyCloudSecurityFoundations,
+    platform: 'Credly',
+  },
+  // Coursera
+  {
+    title: 'Google Marketing Digital e E-Commerce',
+    url: 'https://www.coursera.org/account/accomplishments/specialization/8CTJHFRMQ6Q8',
+    img: GoogleMarketingDigitaleECommerce,
+    platform: 'Coursera',
+  },
+  {
+    title: 'Fundamentos del marketing digital y comercio electrónico',
+    url: 'https://www.coursera.org/account/accomplishments/verify/XTGLZMU85JHQ',
+    img: FundamentosDelMarketingDigitalYComercioElectronico,
+    platform: 'Coursera',
+  },
+  {
+    title: 'De me gusta a leads: interactúa con las y los clientes en línea',
+    url: 'https://www.coursera.org/account/accomplishments/verify/C8X4MFH5BL5D',
+    img: DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea,
+    platform: 'Coursera',
+  },
+  {
+    title: 'Creatividad en la bandeja de entrada: marketing por correo electrónico',
+    url: 'https://www.coursera.org/account/accomplishments/verify/2VJ7MADLG369',
+    img: CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico,
+    platform: 'Coursera',
+  },
+  {
+    title: 'Consigue la venta: crea, lanza y administra tiendas de comercio electrónico',
+    url: 'https://www.coursera.org/account/accomplishments/verify/6UQWURGK4JJA',
+    img: ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico,
+    platform: 'Coursera',
+  },
+  {
+    title: 'Atraer clientes e interactuar con ellos/as mediante el marketing digital',
+    url: 'https://www.coursera.org/account/accomplishments/verify/2P94NJWCYDAZ',
+    img: InteractuarConMedianteElMarketingDigital,
+    platform: 'Coursera',
+  },
 ];
 
 const Awards = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState<string | null>(null);
+  const [modalImgs, setModalImgs] = useState<string[] | null>(null);
+  const [activeImgIdx, setActiveImgIdx] = useState(0);
   const [modalTitle, setModalTitle] = useState<string | null>(null);
   const [zoom, setZoom] = useState(1);
   const panzoomRef = useRef<unknown>(null);
   const [fade, setFade] = useState(false);
 
-  const openModal = (img: string, title: string) => {
-    setModalImg(img);
+  const openModal = (
+    imgOrImgs: string | StaticImageData | Array<string | StaticImageData>,
+    title: string
+  ) => {
+    if (Array.isArray(imgOrImgs)) {
+      const imgs = imgOrImgs.map(i => typeof i === 'string' ? i : i.src);
+      setModalImgs(imgs);
+      setModalImg(null);
+      setActiveImgIdx(0);
+    } else {
+      setModalImg(typeof imgOrImgs === 'string' ? imgOrImgs : imgOrImgs.src);
+      setModalImgs(null);
+      setActiveImgIdx(0);
+    }
     setModalTitle(title);
     setZoom(1);
     setModalOpen(true);
@@ -36,6 +231,7 @@ const Awards = () => {
     setTimeout(() => {
       setModalOpen(false);
       setModalImg(null);
+      setModalImgs(null);
       setModalTitle(null);
       setZoom(1);
     }, 250);
@@ -82,11 +278,11 @@ const Awards = () => {
             <div
               key={idx}
               className="bg-black/70 border border-emerald-800/40 rounded-xl shadow-lg hover:shadow-emerald-900/40 transition-shadow duration-300 flex flex-col items-center p-6 cursor-pointer group"
-              onClick={() => openModal(award.image.src, award.title)}
+              onClick={() => openModal(award.images ? award.images : (award.image ? award.image : ''), award.title)}
             >
               <div className="w-full h-48 relative mb-4 rounded-lg overflow-hidden border border-emerald-900/40 group-hover:scale-105 transition-transform duration-300">
                 <Image
-                  src={award.image.src}
+                  src={award.images ? (typeof award.images[0] === 'string' ? award.images[0] : award.images[0].src) : (award.image ? (typeof award.image === 'string' ? award.image : award.image.src) : '')}
                   alt={award.title}
                   fill
                   className="object-contain object-center"
@@ -175,35 +371,77 @@ const Awards = () => {
               </button>
             </div>
             {/* Imagen con animación y sombra */}
-            <div className="w-full h-[70vh] max-h-[80vh] overflow-auto flex items-center justify-center bg-black rounded-2xl border border-emerald-900/40 shadow-2xl animate-fade-in-img">
-              <PanZoom
-                ref={panzoomRef}
-                minZoom={0.5}
-                maxZoom={3}
-                zoom={zoom}
-                autoCenter
-                boundaryRatioVertical={1}
-                boundaryRatioHorizontal={1}
-                style={{ width: '100%', height: '100%' }}
-                enableBoundingBox
-                enablePan
-                enableZoom
-                realPinch
-                transition="transform 0.2s"
-              >
-                {modalImg && (
-                  <Image
-                    src={modalImg}
-                    alt={modalTitle!}
-                    width={1200}
-                    height={900}
-                    className="object-contain object-center max-h-[70vh] max-w-full select-none shadow-2xl rounded-xl animate-fade-in-img"
-                    draggable={false}
-                    priority
-                    onDoubleClick={handleDoubleClick}
-                  />
-                )}
-              </PanZoom>
+            <div className="flex w-full gap-6">
+              {/* Imagen principal */}
+              <div className="flex-1 flex items-center justify-center bg-black rounded-2xl border border-emerald-900/40 shadow-2xl animate-fade-in-img min-h-[300px] max-h-[70vh] overflow-hidden relative">
+                <PanZoom
+                  ref={panzoomRef}
+                  minZoom={0.5}
+                  maxZoom={3}
+                  zoom={zoom}
+                  autoCenter
+                  boundaryRatioVertical={1}
+                  boundaryRatioHorizontal={1}
+                  style={{ width: '100%', height: '100%', maxWidth: '100%', maxHeight: '70vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  enableBoundingBox
+                  enablePan
+                  enableZoom
+                  realPinch
+                  transition="transform 0.2s"
+                >
+                  <div className="flex items-center justify-center w-full h-full">
+                    {modalImgs
+                      ? (
+                        <Image
+                          src={modalImgs[activeImgIdx]}
+                          alt={modalTitle! + ' ' + (activeImgIdx + 1)}
+                          width={1200}
+                          height={900}
+                          className="object-contain max-h-[70vh] max-w-full mx-auto my-auto select-none shadow-2xl rounded-xl animate-fade-in-img"
+                          draggable={false}
+                          priority
+                          onDoubleClick={handleDoubleClick}
+                        />
+                      )
+                      : modalImg && (
+                        <Image
+                          src={modalImg}
+                          alt={modalTitle!}
+                          width={1200}
+                          height={900}
+                          className="object-contain max-h-[70vh] max-w-full mx-auto my-auto select-none shadow-2xl rounded-xl animate-fade-in-img"
+                          draggable={false}
+                          priority
+                          onDoubleClick={handleDoubleClick}
+                        />
+                      )}
+                  </div>
+                </PanZoom>
+              </div>
+              {/* Miniaturas a la derecha si hay varias imágenes */}
+              {modalImgs && modalImgs.length > 1 && (
+                <div className="flex flex-col gap-3 ml-4 max-h-[70vh] overflow-y-auto">
+                  {modalImgs.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImgIdx(idx)}
+                      className={`border-2 rounded-lg overflow-hidden focus:outline-none transition-all duration-200 ${activeImgIdx === idx ? 'border-emerald-400 scale-105' : 'border-gray-700 opacity-70 hover:opacity-100'}`}
+                      style={{ width: 80, height: 60 }}
+                      tabIndex={0}
+                      aria-label={`Ver imagen ${idx + 1}`}
+                    >
+                      <Image
+                        src={img}
+                        alt={modalTitle! + ' miniatura ' + (idx + 1)}
+                        width={80}
+                        height={60}
+                        className="object-contain object-center w-full h-full"
+                        draggable={false}
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
             {/* Título con gradiente y sombra */}
             <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent mt-6 text-center drop-shadow-lg animate-fade-in-img">
@@ -212,6 +450,38 @@ const Awards = () => {
           </div>
         </div>
       )}
+
+      <section className="mt-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4">
+            Insignias y <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Certificados Digitales</span>
+          </h2>
+          <p className="text-lg text-cyan-200 max-w-2xl mx-auto">
+            Logros y certificaciones obtenidas en plataformas internacionales.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {badges.map((badge, idx) => (
+            <a
+              key={idx}
+              href={badge.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center bg-black/70 border border-emerald-800/40 rounded-xl shadow-lg hover:shadow-emerald-900/40 transition-shadow duration-300 p-6 cursor-pointer group hover:scale-105"
+            >
+                               <Image
+                 src={badge.img}
+                 alt={badge.title}
+                 width={96}
+                 height={96}
+                 className="w-24 h-24 object-contain mb-4 rounded-lg border-2 border-cyan-400 bg-white"
+               />
+              <h3 className="text-lg font-bold text-emerald-300 mb-2 text-center">{badge.title}</h3>
+              <span className="text-xs text-cyan-400 font-semibold">{badge.platform}</span>
+            </a>
+          ))}
+        </div>
+      </section>
     </section>
   );
 };
