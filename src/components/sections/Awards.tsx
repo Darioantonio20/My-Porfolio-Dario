@@ -25,8 +25,8 @@ import CertificadodeMarketingDigitalEcommercedeGoogle from '@/assets/img/badges/
 import IntroductiontoCybersecurity from '@/assets/img/badges/IntroductiontoCybersecurity.png';
 import AWSAcademyCloudSecurityFoundations from '@/assets/img/badges/AWSAcademyCloudSecurityFoundations.png';
 import GoogleMarketingDigitaleECommerce from '@/assets/img/badges/GoogleMarketingDigitaleECommerce.png';
-import FundamentosDelMarketingDigitalYComercioElectronico from '@/assets/img/badges/Fundamentosdelmarketingdigitalycomercioelectrónico.png';
-import DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea from '@/assets/img/badges/DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea.png';
+import FundamentosDelMarketingDigitalYComercioElectronico from '@/assets/img/badges/Fundamentosdelmarketingdigitalycomercioelectronico.png';
+import DeMeGustaaLeadsInteractuaConLasYLosClientesEnLinea from '@/assets/img/badges/DeMeGustaaLeadsInteractuaConLasYLosClientesEnLinea.png';
 import CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico from '@/assets/img/badges/CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico.png';
 import ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico from '@/assets/img/badges/ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico.png';
 import InteractuarConMedianteElMarketingDigital from '@/assets/img/badges/InteractuarConMedianteElMarketingDigital.png';
@@ -174,7 +174,7 @@ const badges: Array<{
   {
     title: 'De me gusta a leads: interactúa con las y los clientes en línea',
     url: 'https://www.coursera.org/account/accomplishments/verify/C8X4MFH5BL5D',
-    img: DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea,
+    img: DeMeGustaaLeadsInteractuaConLasYLosClientesEnLinea,
     platform: 'Coursera',
   },
   {
