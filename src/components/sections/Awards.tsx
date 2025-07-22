@@ -317,11 +317,11 @@ const Awards = () => {
   return (
     <section id="reconocimientos" className="py-20 bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-32">
-          <h2 className="text-4xl font-bold mb-4">
+        <div className="text-center mb-20 sm:mb-28 md:mb-32 px-2">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 break-words leading-tight">
             Reconocimientos & <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Constancias</span>
           </h2>
-          <p className="text-lg text-cyan-200 max-w-2xl mx-auto">
+          <p className="text-base xs:text-lg sm:text-xl text-cyan-200 max-w-xs xs:max-w-md sm:max-w-2xl mx-auto leading-snug">
             Aquí puedes ver mis logros académicos, profesionales y certificaciones.
           </p>
         </div>
