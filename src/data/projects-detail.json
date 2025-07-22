@@ -1,39 +1,77 @@
 {
-  "jasai-live": {
-    "id": "jasai-live",
-    "title": "Jasai Live",
-    "subtitle": "Plataforma de Streaming",
-    "description": "Proyecto integrador de sexto cuatrimestre de la escuela UP Chiapa. Una plataforma completa de streaming que permite a los usuarios ver contenido en vivo y bajo demanda.",
-    "longDescription": "Jasai Live es una plataforma de streaming innovadora desarrollada como proyecto integrador. La aplicación permite a los usuarios transmitir y ver contenido en tiempo real, con funcionalidades avanzadas como chat interactivo, sistema de usuarios y gestión de contenido.",
-    "technologies": ["React", "Node.js", "MongoDB", "Socket.io", "Express", "WebRTC"],
+  "jardin-del-alma": {
+    "id": "jardin-del-alma",
+    "title": "Jardín Del Alma",
+    "subtitle": "Sitio Web Interactivo para Salón de Eventos",
+    "description": "Página web interactiva y optimizada para mostrar catálogo de precios de paquetes de renta del salón Jardín Del Alma. Experiencia visual atractiva y fácil de usar.",
+    "longDescription": "Jardín Del Alma es una página web desarrollada durante mi estancia profesional en la UP Chiapas (marzo-julio 2023). El proyecto se enfoca en crear una experiencia web interactiva que permite a los usuarios explorar los diversos paquetes de renta que ofrece el salón de eventos de manera visual y atractiva.",
+    "technologies": ["React.js", "CSS Modules", "UI/UX Design", "Scrum", "Desarrollo Frontend", "Optimización de Imágenes"],
     "features": [
-      "Streaming en tiempo real con baja latencia",
-      "Chat interactivo con emojis y moderación",
-      "Sistema de usuarios con autenticación JWT",
-      "Dashboard administrativo completo",
-      "Gestión de contenido y playlists",
-      "Notificaciones en tiempo real",
-      "Responsive design para móviles"
+      "Promoción de paquetes con diseño UI/UX atractivo",
+      "Navegación sencilla entre diferentes secciones",
+      "Diseño moderno y visualmente agradable",
+      "Carga rápida y optimizada",
+      "Accesibilidad para todos los usuarios",
+      "Interacción dinámica y responsiva",
+      "Catálogo de precios interactivo"
     ],
     "challenges": [
-      "Implementación de WebRTC para streaming de alta calidad",
-      "Optimización de rendimiento para múltiples usuarios simultáneos",
-      "Escalabilidad de la base de datos MongoDB",
-      "Sincronización en tiempo real del chat y contenido",
-      "Gestión de estados complejos en React"
+      "Crear una experiencia visual atractiva para mostrar paquetes",
+      "Optimizar la carga de imágenes para mejor rendimiento",
+      "Implementar navegación intuitiva y accesible",
+      "Desarrollar componentes reutilizables en React",
+      "Asegurar compatibilidad cross-browser"
     ],
     "solutions": [
-      "Uso de Socket.io para comunicación bidireccional",
-      "Implementación de índices optimizados en MongoDB",
-      "Arquitectura modular y escalable",
-      "Optimización de queries y caching"
+      "Uso de CSS Modules para estilos modulares y responsivos",
+      "Implementación de carga diferida de imágenes",
+      "Arquitectura de componentes reutilizables en React",
+      "Diseño centrado en la experiencia del usuario",
+      "Optimización de rendimiento web"
     ],
-    "github": "https://github.com/Darioantonio20/Jasai-Live",
-    "demo": "https://jasai-live-demo.vercel.app",
+    "github": "https://github.com/Darioantonio20/JardinDelAlma",
+    "demo": "",
     "image": "https://i.pravatar.cc/300?img=8",
-    "category": "Full Stack",
-    "duration": "4 meses",
-    "team": "Equipo de 3 desarrolladores"
+    "category": "Frontend Development",
+    "duration": "2 meses",
+    "team": "Estancia Profesional UP Chiapas"
+  },
+  "light-center-ios": {
+    "id": "light-center-ios",
+    "title": "Light Center iOS",
+    "subtitle": "Despliegue y Optimización - Aplicación para iOS",
+    "description": "Despliegue y publicación de la aplicación Light Center en la App Store, gestionando todo el proceso de publicación para iOS desarrollada con Flutter.",
+    "longDescription": "Proyecto de despliegue y optimización de la aplicación Light Center para iOS (octubre-noviembre 2023). Me encargué de coordinar todo el proceso de publicación en la App Store, desde la configuración de recursos hasta el lanzamiento exitoso para usuarios de spas y centros de belleza.",
+    "technologies": ["Flutter", "App Store Connect", "TestFlight", "iOS Development", "DevOps", "Testing en iOS"],
+    "features": [
+      "Coordinación del proceso de publicación y despliegue para iOS",
+      "Optimización de recursos y descripciones para la App Store",
+      "Pruebas exhaustivas en dispositivos iOS reales y TestFlight",
+      "Gestión de metadatos, palabras clave y material gráfico",
+      "Verificación de requisitos de cumplimiento y privacidad de Apple",
+      "Lanzamiento exitoso para usuarios de spas y centros de belleza",
+      "Integración de monedero electrónico y optimización de rendimiento"
+    ],
+    "challenges": [
+      "Configuración completa de recursos para la App Store",
+      "Preparación de la app para revisión de Apple",
+      "Gestión de metadatos y palabras clave para posicionamiento",
+      "Cumplimiento de políticas de privacidad y seguridad de Apple",
+      "Optimización de rendimiento para dispositivos iOS"
+    ],
+    "solutions": [
+      "Uso de App Store Connect para gestión completa de publicación",
+      "Implementación de TestFlight para pruebas beta exhaustivas",
+      "Optimización de recursos gráficos y descripciones",
+      "Configuración de metadatos para mejor posicionamiento en App Store",
+      "Verificación de cumplimiento con políticas de Apple"
+    ],
+    "github": "https://github.com/Darioantonio20/LightCenter",
+    "demo": "https://apps.apple.com/mx/app/light-center/id6475054865",
+    "image": "https://i.pravatar.cc/300?img=11",
+    "category": "Mobile Development",
+    "duration": "2 meses",
+    "team": "Desarrollo individual"
   },
   "barber-platform": {
     "id": "barber-platform",

@@ -1,11 +1,11 @@
 "use client";
 
+import Image, { StaticImageData } from "next/image";
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import Image from "next/image";
 
 export interface ChromaItem {
-  image: string;
+  image: string | StaticImageData;
   title: string;
   subtitle: string;
   handle?: string;
@@ -200,19 +200,32 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
               loading="lazy"
             />
           </div>
-          <footer className="relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
-            <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
-            {c.handle && (
-              <span className="text-[0.95rem] opacity-80 text-right">
-                {c.handle}
-              </span>
-            )}
-            <p className="m-0 text-[0.85rem] opacity-85">{c.subtitle}</p>
-            {c.location && (
-              <span className="text-[0.85rem] opacity-85 text-right">
-                {c.location}
-              </span>
-            )}
+          <footer className="relative z-10 p-4 text-white font-sans bg-black/60 backdrop-blur-sm">
+            <div className="space-y-2">
+              <h3 className="m-0 text-[1.1rem] font-bold text-emerald-300 drop-shadow-lg">
+                {c.title}
+              </h3>
+              <p className="m-0 text-[0.9rem] text-cyan-200 font-medium">
+                {c.subtitle}
+              </p>
+              {c.handle && (
+                <div className="flex flex-wrap gap-1 mt-2">
+                  {c.handle.split(' • ').map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-[0.75rem] bg-emerald-700/40 text-emerald-200 rounded-full border border-emerald-600/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {c.location && (
+                <p className="m-0 text-[0.8rem] text-emerald-100 mt-2 font-medium">
+                  {c.location}
+                </p>
+              )}
+            </div>
           </footer>
         </article>
       ))}

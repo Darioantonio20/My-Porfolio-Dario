@@ -31,9 +31,15 @@ const Hero = () => {
             <Button size="lg" className="text-lg px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white border-none">
               Ver Proyectos
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-emerald-400 text-emerald-300 hover:bg-emerald-900/30">
+            <a
+              href="/cv/DarioAntonioGutierrezAlvarezCV.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-lg px-8 py-4 border-emerald-400 text-emerald-300 hover:bg-emerald-900/30 border rounded-lg transition-colors text-center"
+            >
               Descargar CV
-            </Button>
+            </a>
           </div>
 
           {/* Scroll indicator */}

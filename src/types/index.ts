@@ -5,7 +5,8 @@ export interface Project {
   technologies: string[];
   image: string;
   github: string;
-  live: string;
+  live?: string;
+  demo?: string;
   featured: boolean;
 }
 
