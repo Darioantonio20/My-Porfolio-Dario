@@ -4,7 +4,7 @@
     "title": "Jardín Del Alma",
     "subtitle": "Sitio Web Interactivo para Salón de Eventos",
     "description": "Página web interactiva y optimizada para mostrar catálogo de precios de paquetes de renta del salón Jardín Del Alma. Experiencia visual atractiva y fácil de usar.",
-    "longDescription": "Jardín Del Alma es una página web desarrollada durante mi estancia profesional en la UP Chiapas (marzo-julio 2023). El proyecto se enfoca en crear una experiencia web interactiva que permite a los usuarios explorar los diversos paquetes de renta que ofrece el salón de eventos de manera visual y atractiva.",
+    "longDescription": "Jardín Del Alma es una página web desarrollada durante mi estancia profesional 1 en la UP Chiapas (marzo-julio 2023). El proyecto se enfoca en crear una experiencia web interactiva que permite a los usuarios explorar los diversos paquetes de renta que ofrece el salón de eventos de manera visual y atractiva.",
     "technologies": ["React.js", "CSS Modules", "UI/UX Design", "Scrum", "Desarrollo Frontend", "Optimización de Imágenes"],
     "features": [
       "Promoción de paquetes con diseño UI/UX atractivo",
@@ -19,8 +19,7 @@
       "Crear una experiencia visual atractiva para mostrar paquetes",
       "Optimizar la carga de imágenes para mejor rendimiento",
       "Implementar navegación intuitiva y accesible",
-      "Desarrollar componentes reutilizables en React",
-      "Asegurar compatibilidad cross-browser"
+      "Desarrollar componentes reutilizables en React"
     ],
     "solutions": [
       "Uso de CSS Modules para estilos modulares y responsivos",
@@ -29,12 +28,60 @@
       "Diseño centrado en la experiencia del usuario",
       "Optimización de rendimiento web"
     ],
-    "github": "https://github.com/Darioantonio20/JardinDelAlma",
+    "github": "https://github.com/VeroVelas/JardinDelAlma",
     "demo": "",
     "image": "https://i.pravatar.cc/300?img=8",
     "category": "Frontend Development",
     "duration": "2 meses",
-    "team": "Estancia Profesional UP Chiapas"
+    "team": "Estancia Profesional 1 UP Chiapas"
+  },
+  "pase-de-lista": {
+    "id": "pase-de-lista",
+    "title": "Sistema de Pase de Lista Digital",
+    "subtitle": "App Móvil Multiplataforma - UP Chiapas",
+    "description": "App móvil multiplataforma (iOS y Android) desarrollada en Flutter para digitalizar y modernizar el proceso de control de asistencia en instituciones educativas. Utilizada activamente por docentes de la Universidad Politécnica de Chiapas.",
+    "longDescription": "Desarrollé una aplicación móvil multiplataforma utilizando Flutter para digitalizar y modernizar el proceso de control de asistencia en instituciones educativas. La app permite gestionar instituciones, grupos, estudiantes y pases de lista con animaciones fluidas, sincronización local y generación de reportes PDF/CSV. Despliegue en App Store y Play Store.",
+    "technologies": ["Flutter", "Dart", "SQLite", "MVC", "Animaciones", "Responsive Design"],
+    "features": [
+      "Gestión de instituciones educativas",
+      "Registro de múltiples instituciones",
+      "Configuración de turnos (Matutino/Vespertino)",
+      "Eliminación segura con confirmación",
+      "Interfaz intuitiva con animaciones fluidas",
+      "Administración de grupos académicos",
+      "Creación de grupos por grado y sección",
+      "Asignación de materias específicas",
+      "Vinculación con instituciones",
+      "Visualización organizada por institución",
+      "Gestión de estudiantes",
+      "Registro de estudiantes con nombre y matrícula",
+      "Sistema de matrícula único",
+      "Importación masiva desde CSV",
+      "Sistema de pase de lista inteligente",
+      "Selección de fechas con calendario interactivo",
+      "Sincronización instantánea con base de datos local",
+      "Historial completo de asistencias",
+      "Exportación a CSV y PDF",
+      "Compartir archivos vía WhatsApp, email, etc."
+    ],
+    "challenges": [
+      "Diseñar una arquitectura MVC robusta y escalable",
+      "Optimizar la experiencia de usuario en dispositivos móviles",
+      "Integrar animaciones fluidas y transiciones suaves",
+      "Garantizar la compatibilidad multiplataforma (iOS/Android)"
+    ],
+    "solutions": [
+      "Uso de Flutter y Dart para UI/UX multiplataforma",
+      "Base de datos local SQLite para rendimiento y offline",
+      "Servicios y modelos tipados para lógica de negocio",
+      "Despliegue en App Store y Play Store"
+    ],
+    "github": "https://github.com/Darioantonio20/AppMovilPaseDeLista",
+    "demo": "https://apps.apple.com/mx/app/pasedelista/id6737438676",
+    "image": "/_next/static/media/PasedeLista.png", 
+    "category": "Mobile Development",
+    "duration": "nov. 2024 - dic. 2024",
+    "team": "Desarrollo individual"
   },
   "light-center-ios": {
     "id": "light-center-ios",
@@ -42,15 +89,14 @@
     "subtitle": "Despliegue y Optimización - Aplicación para iOS",
     "description": "Despliegue y publicación de la aplicación Light Center en la App Store, gestionando todo el proceso de publicación para iOS desarrollada con Flutter.",
     "longDescription": "Proyecto de despliegue y optimización de la aplicación Light Center para iOS (octubre-noviembre 2023). Me encargué de coordinar todo el proceso de publicación en la App Store, desde la configuración de recursos hasta el lanzamiento exitoso para usuarios de spas y centros de belleza.",
-    "technologies": ["Flutter", "App Store Connect", "TestFlight", "iOS Development", "DevOps", "Testing en iOS"],
+    "technologies": ["Flutter", "Dart", "Xcode", "App Store Connect", "TestFlight", "iOS Development", "DevOps"],
     "features": [
       "Coordinación del proceso de publicación y despliegue para iOS",
       "Optimización de recursos y descripciones para la App Store",
       "Pruebas exhaustivas en dispositivos iOS reales y TestFlight",
       "Gestión de metadatos, palabras clave y material gráfico",
       "Verificación de requisitos de cumplimiento y privacidad de Apple",
-      "Lanzamiento exitoso para usuarios de spas y centros de belleza",
-      "Integración de monedero electrónico y optimización de rendimiento"
+      "Lanzamiento exitoso para usuarios de spas y centros de belleza"
     ],
     "challenges": [
       "Configuración completa de recursos para la App Store",
@@ -62,7 +108,6 @@
     "solutions": [
       "Uso de App Store Connect para gestión completa de publicación",
       "Implementación de TestFlight para pruebas beta exhaustivas",
-      "Optimización de recursos gráficos y descripciones",
       "Configuración de metadatos para mejor posicionamiento en App Store",
       "Verificación de cumplimiento con políticas de Apple"
     ],
@@ -73,178 +118,151 @@
     "duration": "2 meses",
     "team": "Desarrollo individual"
   },
-  "barber-platform": {
-    "id": "barber-platform",
-    "title": "Barber Platform",
-    "subtitle": "Sistema de Gestión para Barberías",
-    "description": "Sistema completo de gestión para barberías que incluye citas, inventario, clientes y reportes financieros.",
-    "longDescription": "Barber Platform es una solución integral para la gestión de barberías modernas. El sistema permite a los propietarios administrar citas, inventario, clientes y generar reportes financieros detallados.",
-    "technologies": ["TypeScript", "Next.js", "Prisma", "PostgreSQL", "Tailwind CSS", "NextAuth"],
+  "prediction-software": {
+    "id": "prediction-software",
+    "title": "Prediction Software",
+    "subtitle": "Rediseño & Modernización Front-end",
+    "description": "Rediseño integral y modernización de la plataforma Prediction Soft, enfocada en experiencia de usuario, responsive design y arquitectura Front-end moderna.",
+    "longDescription": "Prediction Software es una plataforma rediseñada completamente para ofrecer una experiencia de usuario moderna, fluida y atractiva. Lideré el rediseño integral, implementando componentes dinámicos en React.js, estilos personalizados con CSS3 y Bootstrap, e integrando un ChatBot inteligente para soporte al cliente. El proyecto se desarrolló bajo metodología Scrum, con entregas iterativas y enfoque mobile-first.",
+    "technologies": ["React.js", "CSS3", "Bootstrap", "ChatBot", "Scrum", "Responsive Design"],
     "features": [
-      "Sistema de citas con calendario interactivo",
-      "Gestión de inventario y productos",
-      "Base de datos de clientes",
-      "Reportes financieros y estadísticas",
-      "Panel de administración",
-      "Notificaciones automáticas",
-      "Sistema de pagos integrado"
+      "Landing Page Moderna",
+      "Diseño responsive optimizado para todos los dispositivos",
+      "Experiencia de usuario fluida y atractiva",
+      "Navegación intuitiva con animaciones suaves",
+      "ChatBot integrado para soporte al cliente",
+      "Interfaz conversacional amigable",
+      "Respuestas automatizadas e inteligentes",
+      "Cross-browser compatibility"
     ],
     "challenges": [
-      "Diseño de base de datos compleja para múltiples entidades",
-      "Implementación de sistema de citas sin conflictos",
-      "Optimización de consultas para reportes grandes",
-      "Integración de múltiples servicios de pago"
+      "Rediseñar la arquitectura Front-end sin afectar la operación actual",
+      "Optimizar la performance en dispositivos móviles y desktop",
+      "Integrar un ChatBot inteligente sin afectar la experiencia",
+      "Garantizar compatibilidad cross-browser"
     ],
     "solutions": [
-      "Uso de Prisma ORM para gestión eficiente de datos",
-      "Algoritmo de validación de disponibilidad",
-      "Implementación de índices optimizados",
-      "Arquitectura de microservicios para pagos"
+      "Uso de React.js para componentes dinámicos",
+      "Bootstrap y CSS3 para responsive design y animaciones",
+      "Integración de ChatBot con interfaz amigable",
+      "Desarrollo iterativo con Scrum y sprints organizados"
     ],
-    "github": "https://github.com/Darioantonio20/BarberPlatform",
-    "demo": "https://barber-platform-demo.vercel.app",
-    "image": "https://i.pravatar.cc/300?img=11",
-    "category": "Full Stack",
-    "duration": "3 meses",
+    "github": "https://github.com/Darioantonio20/PredictionSoft",
+    "demo": "https://www.predictionsoft.com.mx/",
+    "image": "https://i.pravatar.cc/300?img=13",
+    "category": "Frontend Development",
+    "duration": "ago. 2023 - dic. 2023",
+    "team": "Liderazgo y desarrollo individual"
+  },
+  "coepes-chiapas": {
+    "id": "coepes-chiapas",
+    "title": "Coepes Chiapas",
+    "subtitle": "Plataforma Web para Ofertas Educativas",
+    "description": "Plataforma web centralizada que revoluciona el acceso a información universitaria en Chiapas, conectando estudiantes de preparatoria con oportunidades educativas de manera intuitiva y eficiente.",
+    "longDescription": "Desarrollé una plataforma web integral para la consulta de ofertas educativas universitarias en Chiapas. El sistema permite búsquedas inteligentes, filtros avanzados, generación automática de PDFs y una experiencia de usuario optimizada para estudiantes de preparatoria. El portal centraliza información de múltiples universidades y facilita la comparación y descarga de planes académicos.",
+    "technologies": ["React.js", "Tailwind CSS", "PDF Generation", "Search Engine", "Responsive Design"],
+    "features": [
+      "Motor de búsqueda avanzado por carrera y universidad",
+      "Filtros personalizados por ubicación, costo y modalidad",
+      "Catálogo detallado de licenciaturas",
+      "Criterios de admisión específicos",
+      "Generación automática de PDFs",
+      "Descarga personalizada de planes académicos",
+      "Interfaz optimizada para estudiantes",
+      "Responsive design para móviles y tablets",
+      "Comparativas fáciles entre programas",
+      "Datos actualizados de múltiples universidades"
+    ],
+    "challenges": [
+      "Centralizar información educativa regional actualizada",
+      "Optimizar la experiencia de búsqueda y filtrado",
+      "Generar PDFs personalizados de manera eficiente",
+      "Diseñar una interfaz intuitiva para estudiantes"
+    ],
+    "solutions": [
+      "Implementación de motor de búsqueda personalizado",
+      "Uso de Tailwind CSS para diseño responsive y moderno",
+      "Generación dinámica de PDFs con información seleccionada",
+      "Arquitectura de información clara y centrada en el usuario"
+    ],
+    "github": "",
+    "demo": "https://plataforma.ieppd.chiapas.gob.mx/coepes/react/",
+    "image": "/_next/static/media/WebCoepes.png",
+    "category": "Frontend Development",
+    "duration": "ago. 2024 - dic. 2024",
     "team": "Desarrollo individual"
   },
-  "light-center": {
-    "id": "light-center",
-    "title": "Light Center",
-    "subtitle": "Aplicación Móvil de Iluminación",
-    "description": "App móvil para control de iluminación inteligente con interfaz intuitiva y automatización.",
-    "longDescription": "Light Center es una aplicación móvil desarrollada en Flutter que permite a los usuarios controlar sistemas de iluminación inteligente. La app incluye programación automática, control por voz y integración con asistentes virtuales.",
-    "technologies": ["Dart", "Flutter", "Firebase", "Google Cloud", "IoT APIs"],
+  "dr-nabani": {
+    "id": "dr-nabani",
+    "title": "Aplicación Móvil Dr. Nabani",
+    "subtitle": "Plataforma Integral de Medicina Estética",
+    "description": "App móvil multiplataforma para el Dr. Nabani Matus, con diseño UI/UX en Figma y desarrollo en Flutter/Dart. Plataforma integral para gestión de consultas, historial médico, catálogo de servicios, pagos y chat médico.",
+    "longDescription": "Desarrollé una aplicación móvil multiplataforma con Flutter/Dart para el Dr. Nabani Matus, incluyendo diseño previo en Figma para vistas móviles, web y tablet con enfoque responsive. La app integra orientación médica digital, gestión de citas, catálogo de servicios, chat médico, historial clínico, cuidados post-operatorios, pagos integrados y notificaciones personalizadas. Arquitectura Clean Architecture, integración RESTful y diseño Material Design.",
+    "technologies": ["Flutter", "Dart", "Material Design", "RESTful API", "Stripe", "Figma", "Clean Architecture", "Responsive Design"],
     "features": [
-      "Control de iluminación en tiempo real",
-      "Programación automática de luces",
-      "Integración con asistentes de voz",
-      "Modo automático basado en sensores",
+      "Orientación médica digital con cuestionarios interactivos",
+      "Gestión de citas y seguimiento de procedimientos",
+      "Catálogo de servicios y productos especializados",
+      "Chat médico integrado",
+      "Historial clínico digital",
+      "Guías de cuidados post-operatorios",
+      "Pagos integrados con Stripe",
+      "Notificaciones personalizadas",
       "Interfaz intuitiva y responsive",
-      "Sincronización en la nube",
-      "Notificaciones push"
+      "Animaciones y carruseles interactivos"
     ],
     "challenges": [
-      "Integración con múltiples protocolos IoT",
-      "Optimización de batería en dispositivos móviles",
-      "Sincronización en tiempo real entre dispositivos",
-      "Manejo de conexiones inestables"
+      "Diseñar una experiencia médica confiable y moderna",
+      "Integrar pagos seguros y notificaciones",
+      "Optimizar la gestión de historial clínico y citas",
+      "Desarrollar una arquitectura escalable y mantenible"
     ],
     "solutions": [
-      "Uso de Firebase para sincronización en tiempo real",
-      "Implementación de cache local inteligente",
-      "Arquitectura offline-first",
-      "Optimización de requests y polling"
+      "Diseño UI/UX en Figma para todas las vistas",
+      "Uso de Flutter y Material Design para UI responsive",
+      "Integración de Stripe y notificaciones push",
+      "Clean Architecture y gestión de estados"
     ],
-    "github": "https://github.com/Darioantonio20/LightCenter",
-    "demo": "https://light-center-demo.vercel.app",
-    "image": "https://i.pravatar.cc/300?img=3",
+    "github": "https://github.com/Darioantonio20/FrontendAppMovilDoctorNabani",
+    "demo": "https://www.figma.com/design/9SWLPVHwOIHGTjNBDoVaf1/Untitled?node-id=0-1&p=f&t=9MbB86h2qcunAF56-0",
+    "image": "https://i.pravatar.cc/300?img=22",
     "category": "Mobile Development",
-    "duration": "2 meses",
+    "duration": "dic. 2024 - feb. 2025",
     "team": "Desarrollo individual"
   },
-  "house-by-damo": {
-    "id": "house-by-damo",
-    "title": "House By Damo",
-    "subtitle": "Sistema de Gestión Inmobiliaria",
-    "description": "Sistema completo para gestión de propiedades inmobiliarias con administración de clientes y transacciones.",
-    "longDescription": "House By Damo es una plataforma web desarrollada en Java que permite a las agencias inmobiliarias gestionar propiedades, clientes, visitas y transacciones de manera eficiente.",
-    "technologies": ["Java", "Spring Boot", "MySQL", "Thymeleaf", "Bootstrap", "JPA"],
+  "animenariolist": {
+    "id": "animenariolist",
+    "title": "AnimeNarioList",
+    "subtitle": "Tu guía rápida al mundo del anime",
+    "description": "App web minimalista para buscar, organizar y exportar listas de anime. Interfaz fluida, sin anuncios y con exportación a Excel.",
+    "longDescription": "AnimeNarioList nació de mi obsesión por el anime y la necesidad de mantener todo ordenado como buen developer. Permite buscar animes rápidamente, crear listas personalizadas y exportarlas a Excel para compartirlas. La app está construida con principios de diseño limpio, Atomic Design y un enfoque en rendimiento y mantenibilidad. El código es modular, probado y listo para escalar con futuras features como favoritos, tags o integración con APIs externas.",
+    "technologies": ["React", "TailwindCSS", "Atomic Design", "Excel Export"],
     "features": [
-      "Gestión completa de propiedades",
-      "Base de datos de clientes",
-      "Sistema de citas y visitas",
-      "Reportes de ventas y estadísticas",
-      "Panel de administración",
-      "Búsqueda avanzada de propiedades",
-      "Sistema de notificaciones"
+      "Búsqueda rápida de animes",
+      "Interfaz minimalista y fluida",
+      "Creación de listas personalizadas",
+      "Exportación de listas a Excel",
+      "Compartir listas de anime",
+      "Diseño modular y escalable",
+      "Sin anuncios ni distracciones"
     ],
     "challenges": [
-      "Diseño de base de datos compleja para el sector inmobiliario",
-      "Implementación de búsquedas avanzadas",
-      "Gestión de archivos y documentos",
-      "Optimización de consultas complejas"
+      "Aplicar Atomic Design para máxima mantenibilidad",
+      "Optimizar el rendimiento de búsqueda",
+      "Exportar datos a Excel de forma amigable",
+      "Mantener la UI limpia y responsiva"
     ],
     "solutions": [
-      "Uso de Spring Data JPA para consultas optimizadas",
-      "Implementación de índices específicos",
-      "Sistema de cache para búsquedas frecuentes",
-      "Arquitectura modular y escalable"
+      "Componentes reutilizables y jerárquicos",
+      "TailwindCSS para estilos rápidos y consistentes",
+      "Lógica de exportación a Excel personalizada",
+      "Pruebas y refactorización continua"
     ],
-    "github": "https://github.com/Darioantonio20/HuoseByDamo",
-    "demo": "https://house-by-damo-demo.vercel.app",
-    "image": "https://i.pravatar.cc/300?img=16",
-    "category": "Backend Development",
-    "duration": "5 meses",
-    "team": "Equipo de 2 desarrolladores"
-  },
-  "app-streaming": {
-    "id": "app-streaming",
-    "title": "App Streaming",
-    "subtitle": "Simulación de Netflix",
-    "description": "Proyecto de simulación de una aplicación de streaming tipo Netflix para la materia de Fundamentos de Redes.",
-    "longDescription": "App Streaming es una simulación de una plataforma de streaming desarrollada para demostrar conceptos de redes y distribución de contenido. Incluye funcionalidades básicas de reproducción, categorización y búsqueda.",
-    "technologies": ["HTML", "CSS", "JavaScript", "Node.js", "Express"],
-    "features": [
-      "Reproducción de videos",
-      "Categorización de contenido",
-      "Sistema de búsqueda",
-      "Interfaz similar a Netflix",
-      "Responsive design",
-      "Simulación de streaming"
-    ],
-    "challenges": [
-      "Simulación de streaming de video",
-      "Optimización de carga de contenido",
-      "Diseño de interfaz responsive",
-      "Implementación de búsqueda eficiente"
-    ],
-    "solutions": [
-      "Uso de HTML5 Video API",
-      "Implementación de lazy loading",
-      "CSS Grid y Flexbox para layout",
-      "Algoritmo de búsqueda optimizado"
-    ],
-    "github": "https://github.com/Darioantonio20/AppStreaming",
-    "demo": "https://app-streaming-demo.vercel.app",
-    "image": "https://i.pravatar.cc/300?img=25",
+    "github": "https://github.com/Darioantonio20/AnimeNarioList",
+    "demo": "https://animenariolist.netlify.app/",
+    "image": "https://i.pravatar.cc/300?img=47",
     "category": "Frontend Development",
-    "duration": "1 mes",
-    "team": "Desarrollo individual"
-  },
-  "portfolio": {
-    "id": "portfolio",
-    "title": "Portfolio Personal",
-    "subtitle": "Sitio Web Profesional",
-    "description": "Portfolio personal desarrollado con tecnologías modernas para mostrar proyectos y habilidades profesionales.",
-    "longDescription": "Este portfolio personal está desarrollado con Next.js 15, TypeScript y Tailwind CSS. Incluye animaciones avanzadas, diseño responsive y una experiencia de usuario moderna y profesional.",
-    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "GSAP", "Three.js"],
-    "features": [
-      "Diseño responsive y moderno",
-      "Animaciones con GSAP",
-      "Componentes interactivos",
-      "Optimización SEO",
-      "Modo oscuro",
-      "Navegación fluida",
-      "Integración con redes sociales"
-    ],
-    "challenges": [
-      "Implementación de animaciones complejas",
-      "Optimización de rendimiento",
-      "Diseño responsive para todos los dispositivos",
-      "Integración de múltiples tecnologías"
-    ],
-    "solutions": [
-      "Uso de GSAP para animaciones optimizadas",
-      "Implementación de lazy loading",
-      "CSS Grid y Flexbox para layout responsive",
-      "Arquitectura de componentes modular"
-    ],
-    "github": "https://github.com/Darioantonio20/My-Porfolio-Dario",
-    "demo": "https://dario-antonio-portfolio.vercel.app",
-    "image": "https://i.pravatar.cc/300?img=60",
-    "category": "Frontend Development",
-    "duration": "2 meses",
+    "duration": "jun. 2025 - Actualidad",
     "team": "Desarrollo individual"
   }
 } 
