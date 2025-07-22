@@ -94,9 +94,9 @@ const About = () => {
         </div>
         {/* Hard Skills y Soft Skills */}
         <div className="space-y-6">
-          <h3 className="text-2xl font-bold text-white mb-4">Hard Skills</h3>
+          <h3 className="text-2xl font-bold text-white mb-12 text-center">Hard Skills</h3>
           {/* Skills en 3 columnas */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
             {/* UI/UX */}
             <div>
               <h4 className="text-lg font-semibold text-emerald-300 mb-2 text-center">UI/UX</h4>
@@ -142,7 +142,7 @@ const About = () => {
           </div>
           {/* Soft Skills debajo en una fila */}
           <div className="mt-8">
-            <h4 className="text-lg font-semibold text-cyan-200 mb-2 text-center">Soft Skills</h4>
+            <h4 className="text-2xl font-bold text-white mt-16 mb-8 text-center">Soft Skills</h4>
             <div className="flex flex-wrap justify-center gap-6">
               {softSkills.map((skill, idx) => (
                 <div key={idx} className="flex flex-col items-center">

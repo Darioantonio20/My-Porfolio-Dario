@@ -58,27 +58,6 @@ const Team = () => {
               onCardClick={handleProjectClick}
             />
           </div>
-
-          {/* Información adicional */}
-          <div className="mt-16 text-center">
-            <p className="text-cyan-300 mb-6">
-              ¿Te gustaría colaborar en un proyecto o tienes una idea en mente?
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => window.open('mailto:darioantonio10@hotmail.com', '_blank')}
-                className="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors text-white"
-              >
-                Contactar
-              </button>
-              <button 
-                onClick={() => window.open('https://github.com/Darioantonio20', '_blank')}
-                className="px-8 py-3 border border-emerald-400 text-emerald-300 hover:bg-emerald-900/30 rounded-lg transition-colors"
-              >
-                Ver en GitHub
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 

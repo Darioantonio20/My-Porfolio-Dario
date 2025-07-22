@@ -1,7 +1,5 @@
 'use client';
 
-import Button from '../ui/Button';
-
 const Hero = () => {
   return (
     <section id="inicio" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 via-gray-900 to-cyan-900">
@@ -28,9 +26,9 @@ const Hero = () => {
 
           {/* Botones de acción */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white border-none">
+            <a href="#proyectos" className="inline-block text-lg px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white border-none">
               Ver Proyectos
-            </Button>
+            </a>
             <a
               href="/cv/DarioAntonioGutierrezAlvarezCV.pdf"
               download

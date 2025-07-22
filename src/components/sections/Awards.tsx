@@ -13,25 +13,25 @@ import CartaLiberacionEstadia from '@/assets/img/university/CartaLiberacionEstad
 import CertificadoPreparatoriaHoja1 from '@/assets/img/highschool/CertificadoPreparatoriaHoja1.png';
 import CertificadoPreparatoriaHoja2 from '@/assets/img/highschool/CertificadoPreparatoriaHoja2.png';
 import CertificadoPreparatoriaHoja3 from '@/assets/img/highschool/CertificadoPreparatoriaHoja3.png';
-//Badges
+//Badges AWS
 import BadgeAWSCloudFoundations from '@/assets/img/badges/AWSAcademyCloudFoundations.png';
 import AWSAcademyCloudDeveloping from '@/assets/img/badges/AWSAcademyCloudDeveloping.png';
+import AWSAcademyIntroductiontoCloudSemester1 from '@/assets/img/badges/AWSAcademyIntroductiontoCloudSemester1.png';
+import AWSAcademyCloudSecurityFoundations from '@/assets/img/badges/AWSAcademyCloudSecurityFoundations.png';
+//Badges CISCO
 import NetworkingBasics from '@/assets/img/badges/NetworkingBasics.png';
 import NetworkSupportandSecurity from '@/assets/img/badges/NetworkSupportandSecurity.png';
 import OperatingSystemsBasics from '@/assets/img/badges/OperatingSystemsBasics.png';
-import AWSAcademyIntroductiontoCloudSemester1 from '@/assets/img/badges/AWSAcademyIntroductiontoCloudSemester1.png';
 import EndpointSecurity from '@/assets/img/badges/EndpointSecurity.png';
-import CertificadodeMarketingDigitalEcommercedeGoogle from '@/assets/img/badges/CertificadodeMarketingDigitalEcommercedeGoogle.png';
 import IntroductiontoCybersecurity from '@/assets/img/badges/IntroductiontoCybersecurity.png';
-import AWSAcademyCloudSecurityFoundations from '@/assets/img/badges/AWSAcademyCloudSecurityFoundations.png';
+//Badges Google
+import CertificadodeMarketingDigitalEcommercedeGoogle from '@/assets/img/badges/CertificadodeMarketingDigitalEcommercedeGoogle.png';
 import GoogleMarketingDigitaleECommerce from '@/assets/img/badges/GoogleMarketingDigitaleECommerce.png';
 import FundamentosDelMarketingDigitalYComercioElectronico from '@/assets/img/badges/Fundamentosdelmarketingdigitalycomercioelectronico.png';
-import DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea from '@/assets/img/badges/DeMeGustaaLeadsInteractuaConLasYLosClientesEnLinea.png';
+import DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea from '@/assets/img/badges/DeMeGustaaLeadsInteractuaConLasYLosClientesEnLinea.png';
 import CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico from '@/assets/img/badges/CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico.png';
 import ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico from '@/assets/img/badges/ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico.png';
 import InteractuarConMedianteElMarketingDigital from '@/assets/img/badges/InteractuarConMedianteElMarketingDigital.png';
-
-
 
 const awards: Array<{
   title: string;
@@ -40,6 +40,7 @@ const awards: Array<{
   images?: StaticImageData[];
   type: string;
   date: string;
+  category: string;
 }> = [
   {
     title: 'Constancia de Titulo en trámite - UP Chiapas',
@@ -47,6 +48,7 @@ const awards: Array<{
     image: ConstanciaTitulacion,
     type: 'Constancia',
     date: 'Junio 2025',
+    category: 'Universidad',
   },
   {
     title: 'Constancia de Egreso - UP Chiapas',
@@ -54,6 +56,7 @@ const awards: Array<{
     image: ConstanciaEgreso,
     type: 'Constancia',
     date: 'Mayo 2025',
+    category: 'Universidad',
   },
   {
     title: 'Constancia de TOEFL ITP - UP Chiapas',
@@ -61,6 +64,7 @@ const awards: Array<{
     image: ConstanciaToefl,
     type: 'Constancia',
     date: 'Noviembre 2024',
+    category: 'Universidad',
   },
   {
     title: 'Kárdex Completo - UP Chiapas',
@@ -68,6 +72,7 @@ const awards: Array<{
     images: [KardexUpHoja1, KardexUpHoja2],
     type: 'Kárdex',
     date: 'Julio 2025',
+    category: 'Universidad',
   },
   {
     title: 'Certificado COEPES',
@@ -75,6 +80,7 @@ const awards: Array<{
     image: CertificadoCOEPES,
     type: 'Certificado',
     date: 'Septiembre 2024',
+    category: 'Certificaciones',
   },
   {
     title: 'Carta de Liberación de Estadia',
@@ -82,6 +88,7 @@ const awards: Array<{
     image: CartaLiberacionEstadia,
     type: 'Certificado',
     date: 'Enero - Abril 2025',
+    category: 'Universidad',
   },
   {
     title: 'Certificado de Preparatoria',
@@ -89,6 +96,7 @@ const awards: Array<{
     images: [CertificadoPreparatoriaHoja1, CertificadoPreparatoriaHoja2, CertificadoPreparatoriaHoja3],
     type: 'Certificado',
     date: 'Agosto 2017 - Julio 2020',
+    category: 'Preparatoria',
   }
 ];
 
@@ -98,10 +106,17 @@ const badges: Array<{
   img: string | StaticImageData;
   platform: string;
 }> = [
+  // AWS Academy
   {
     title: 'AWS Academy Graduate - AWS Academy Cloud Foundations',
     url: 'https://www.credly.com/badges/22b9c5b2-50a7-4a23-bd0d-e8bd1561d36a/linked_in_profile',
     img: BadgeAWSCloudFoundations,
+    platform: 'Credly',
+  },
+  {
+    title: 'AWS Academy Graduate - AWS Academy Introduction to Cloud Semester 1',
+    url: 'https://www.credly.com/badges/4c1c4aa6-f531-4635-a23a-d0cb112f1e31/linked_in_profile',
+    img: AWSAcademyIntroductiontoCloudSemester1,
     platform: 'Credly',
   },
   {
@@ -110,6 +125,13 @@ const badges: Array<{
     img: AWSAcademyCloudDeveloping,
     platform: 'Credly',
   },
+  {
+    title: 'AWS Academy Graduate - AWS Academy Cloud Security Foundations',
+    url: 'https://www.credly.com/badges/a62185aa-be22-4483-82db-402ab5336101/linked_in_profile',
+    img: AWSAcademyCloudSecurityFoundations,
+    platform: 'Credly',
+  },
+  // Coursera CISCO
   {
     title: 'Networking Basics',
     url: 'https://www.credly.com/badges/35f93d61-e44e-4977-967d-e2f51a4cbb90/linked_in_profile',
@@ -129,21 +151,9 @@ const badges: Array<{
     platform: 'Credly',
   },
   {
-    title: 'AWS Academy Graduate - AWS Academy Introduction to Cloud Semester 1',
-    url: 'https://www.credly.com/badges/4c1c4aa6-f531-4635-a23a-d0cb112f1e31/linked_in_profile',
-    img: AWSAcademyIntroductiontoCloudSemester1,
-    platform: 'Credly',
-  },
-  {
     title: 'Endpoint Security',
     url: 'https://www.credly.com/badges/4a15b2d8-fab1-4820-8ed4-aace1da38b26/linked_in_profile',
     img: EndpointSecurity,
-    platform: 'Credly',
-  },
-  {
-    title: 'Certificado de Marketing Digital e E-commerce de Google',
-    url: 'https://www.credly.com/badges/83e02fce-50b4-4cef-9638-69a76d9fdffe/linked_in_profile',
-    img: CertificadodeMarketingDigitalEcommercedeGoogle,
     platform: 'Credly',
   },
   {
@@ -152,13 +162,13 @@ const badges: Array<{
     img: IntroductiontoCybersecurity,
     platform: 'Credly',
   },
+  // Coursera Google
   {
-    title: 'AWS Academy Graduate - AWS Academy Cloud Security Foundations',
-    url: 'https://www.credly.com/badges/a62185aa-be22-4483-82db-402ab5336101/linked_in_profile',
-    img: AWSAcademyCloudSecurityFoundations,
+    title: 'Certificado de Marketing Digital e E-commerce de Google',
+    url: 'https://www.credly.com/badges/83e02fce-50b4-4cef-9638-69a76d9fdffe/linked_in_profile',
+    img: CertificadodeMarketingDigitalEcommercedeGoogle,
     platform: 'Credly',
   },
-  // Coursera
   {
     title: 'Google Marketing Digital e E-Commerce',
     url: 'https://www.coursera.org/account/accomplishments/specialization/8CTJHFRMQ6Q8',
@@ -174,7 +184,7 @@ const badges: Array<{
   {
     title: 'De me gusta a leads: interactúa con las y los clientes en línea',
     url: 'https://www.coursera.org/account/accomplishments/verify/C8X4MFH5BL5D',
-    img: DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea,
+    img: DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea,
     platform: 'Coursera',
   },
   {
@@ -206,6 +216,16 @@ const Awards = () => {
   const [zoom, setZoom] = useState(1);
   const panzoomRef = useRef<unknown>(null);
   const [fade, setFade] = useState(false);
+  const [expandedFolders, setExpandedFolders] = useState<string[]>([]);
+
+  // Agrupar awards por categoría
+  const awardsByCategory = awards.reduce((acc, award) => {
+    if (!acc[award.category]) {
+      acc[award.category] = [];
+    }
+    acc[award.category].push(award);
+    return acc;
+  }, {} as Record<string, typeof awards>);
 
   const openModal = (
     imgOrImgs: string | StaticImageData | Array<string | StaticImageData>,
@@ -262,10 +282,42 @@ const Awards = () => {
     }
   };
 
+  const getFolderIcon = (category: string) => {
+    switch (category) {
+      case 'Universidad':
+        return (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          </svg>
+        );
+      case 'Certificaciones':
+        return (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+          </svg>
+        );
+      case 'Preparatoria':
+        return (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        );
+      default:
+        return (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z" />
+          </svg>
+        );
+    }
+  };
+
   return (
     <section id="reconocimientos" className="py-20 bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-32">
           <h2 className="text-4xl font-bold mb-4">
             Reconocimientos & <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Constancias</span>
           </h2>
@@ -273,31 +325,113 @@ const Awards = () => {
             Aquí puedes ver mis logros académicos, profesionales y certificaciones.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {awards.map((award, idx) => (
-            <div
-              key={idx}
-              className="bg-black/70 border border-emerald-800/40 rounded-xl shadow-lg hover:shadow-emerald-900/40 transition-shadow duration-300 flex flex-col items-center p-6 cursor-pointer group"
-              onClick={() => openModal(award.images ? award.images : (award.image ? award.image : ''), award.title)}
-            >
-              <div className="w-full h-48 relative mb-4 rounded-lg overflow-hidden border border-emerald-900/40 group-hover:scale-105 transition-transform duration-300">
-                <Image
-                  src={award.images ? (typeof award.images[0] === 'string' ? award.images[0] : award.images[0].src) : (award.image ? (typeof award.image === 'string' ? award.image : award.image.src) : '')}
-                  alt={award.title}
-                  fill
-                  className="object-contain object-center"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  priority={idx === 0}
-                />
+
+        {/* Sistema de Carpetas */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="flex flex-col items-center gap-10 sm:grid sm:grid-cols-2 sm:gap-12 lg:flex lg:flex-row lg:justify-center lg:gap-32">
+            {Object.entries(awardsByCategory).map(([category, categoryAwards]) => (
+              <div key={category} className="relative flex justify-center items-start">
+                {/* Carpeta 3D y archivos */}
+                <div
+                  className="relative group flex flex-col items-center justify-center"
+                  onMouseEnter={() => setExpandedFolders([category])}
+                  onMouseLeave={() => setExpandedFolders([])}
+                  onFocus={() => setExpandedFolders([category])}
+                  onBlur={() => setExpandedFolders([])}
+                  tabIndex={0}
+                >
+                  <div
+                    className={`file relative w-60 h-40 cursor-pointer origin-bottom [perspective:1500px] z-10 transition-all duration-500 ${expandedFolders.includes(category) ? 'scale-110' : 'hover:scale-105'}`}
+                  >
+                    <div
+                      className={`work-5 bg-blue-600 w-full h-full origin-top rounded-2xl rounded-tl-none transition-all ease duration-500 relative after:absolute after:content-[''] after:bottom-[99%] after:left-0 after:w-20 after:h-4 after:bg-blue-600 after:rounded-t-2xl before:absolute before:content-[''] before:-top-[15px] before:left-[75.5px] before:w-4 before:h-4 before:bg-blue-600 before:[clip-path:polygon(0_35%,0%_100%,50%_100%)] ${expandedFolders.includes(category) ? 'shadow-[0_20px_40px_rgba(0,0,0,.2)]' : 'group-hover:shadow-[0_20px_40px_rgba(0,0,0,.2)]'}`}
+                    ></div>
+                    <div
+                      className={`work-4 absolute inset-1 bg-blue-500 rounded-2xl transition-all ease duration-500 origin-bottom select-none ${expandedFolders.includes(category) ? '[transform:rotateX(-20deg)]' : 'group-hover:[transform:rotateX(-20deg)]'}`}
+                    ></div>
+                    <div
+                      className={`work-3 absolute inset-1 bg-blue-400 rounded-2xl transition-all ease duration-500 origin-bottom ${expandedFolders.includes(category) ? '[transform:rotateX(-30deg)]' : 'group-hover:[transform:rotateX(-30deg)]'}`}
+                    ></div>
+                    <div
+                      className={`work-2 absolute inset-1 bg-blue-300 rounded-2xl transition-all ease duration-500 origin-bottom ${expandedFolders.includes(category) ? '[transform:rotateX(-38deg)]' : 'group-hover:[transform:rotateX(-38deg)]'}`}
+                    ></div>
+                    <div
+                      className={`work-1 absolute bottom-0 bg-gradient-to-t from-blue-500 to-blue-400 w-full h-[156px] rounded-2xl rounded-tr-none after:absolute after:content-[''] after:bottom-[99%] after:right-0 after:w-[146px] after:h-[16px] after:bg-blue-400 after:rounded-t-2xl before:absolute before:content-[''] before:-top-[10px] before:right-[142px] before:size-3 before:bg-blue-400 before:[clip-path:polygon(100%_14%,50%_100%,100%_100%)] transition-all ease duration-500 origin-bottom flex items-end ${expandedFolders.includes(category) ? 'shadow-[inset_0_20px_40px_#3b82f6,_inset_0_-20px_40px_#1d4ed8] [transform:rotateX(-46deg)_translateY(1px)]' : 'group-hover:shadow-[inset_0_20px_40px_#3b82f6,_inset_0_-20px_40px_#1d4ed8] group-hover:[transform:rotateX(-46deg)_translateY(1px)]'}`}
+                    >
+                      {/* Contenido de la carpeta */}
+                      <div className="absolute inset-0 flex items-center justify-center p-4">
+                        <div className="flex items-center space-x-3">
+                          {/* Icono de la carpeta */}
+                          <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                            {getFolderIcon(category)}
+                          </div>
+                          {/* Información */}
+                          <div className="text-center">
+                            <h3 className="text-sm font-semibold text-white drop-shadow-lg">{category}</h3>
+                            <p className="text-xs text-blue-100">{categoryAwards.length}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Etiqueta de la carpeta */}
+                  <p className="text-lg font-semibold text-white mt-4 opacity-80">{category}</p>
+                  {/* Archivos alrededor de la carpeta */}
+                  <div className={`absolute inset-0 -top-16 -left-16 -right-16 -bottom-16 transition-all duration-700 z-50 ${expandedFolders.includes(category) ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                    {categoryAwards.map((award, idx) => {
+                      // Distribuir de 0° (arriba) a 90° (derecha)
+                      const totalItems = categoryAwards.length;
+                      const angle = totalItems === 1 ? 0 : (idx / (totalItems - 1)) * 90; // 0 a 90 grados
+                      const radius = expandedFolders.includes(category) ? 180 : 0;
+                      const x = Math.cos((angle - 90) * Math.PI / 180) * radius;
+                      const y = Math.sin((angle - 90) * Math.PI / 180) * radius;
+                      const scale = expandedFolders.includes(category) ? 1 : 0;
+                      return (
+                        <div
+                          key={idx}
+                          className="absolute bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-3 cursor-pointer group hover:bg-white/20 transition-all duration-700 hover:scale-110 transform"
+                          style={{ 
+                            left: `calc(50% + ${x}px)`,
+                            top: `calc(50% + ${y}px)`,
+                            transform: `translate(-50%, -50%) scale(${scale})`,
+                            opacity: expandedFolders.includes(category) ? 1 : 0,
+                            transitionDelay: expandedFolders.includes(category) ? `${idx * 200}ms` : '0ms',
+                            transitionDuration: expandedFolders.includes(category) ? '0.7s' : '0.4s',
+                            pointerEvents: expandedFolders.includes(category) ? 'auto' : 'none',
+                            zIndex: 50
+                          }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openModal(award.images ? award.images : (award.image ? award.image : ''), award.title);
+                          }}
+                        >
+                          {/* Icono de documento */}
+                          <div className="flex items-center space-x-2 mb-2">
+                            <div className="w-6 h-8 relative rounded border border-white/30 overflow-hidden bg-white shadow-sm">
+                              <Image
+                                src={award.images ? (typeof award.images[0] === 'string' ? award.images[0] : award.images[0].src) : (award.image ? (typeof award.image === 'string' ? award.image : award.image.src) : '')}
+                                alt={award.title}
+                                fill
+                                className="object-contain object-center"
+                                sizes="24px"
+                              />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-xs font-semibold text-white truncate max-w-[80px]">{award.title}</h4>
+                            </div>
+                          </div>
+                          {/* Badge */}
+                          <div className="text-center">
+                            <span className="text-xs bg-blue-500/60 px-1 py-0.5 rounded text-white backdrop-blur-sm">{award.type}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-emerald-300 mb-2 text-center">{award.title}</h3>
-              <p className="text-cyan-200 text-center mb-2">{award.description}</p>
-              <div className="flex items-center gap-2 text-xs text-emerald-400">
-                <span className="bg-emerald-900/60 px-2 py-1 rounded-full">{award.type}</span>
-                <span className="text-cyan-400">{award.date}</span>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -451,8 +585,45 @@ const Awards = () => {
         </div>
       )}
 
+      {/* CSS Animations */}
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes expand-from-center {
+          0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0);
+          }
+          50% {
+            opacity: 0.7;
+            transform: translate(-50%, -50%) scale(0.7);
+          }
+          100% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+        }
+        
+        .expand-from-center {
+          animation: expand-from-center 0.6s ease-out forwards;
+        }
+      `}</style>
+
       <section className="mt-20">
-        <div className="text-center mb-12">
+        <div className="text-center mb-20">
           <h2 className="text-4xl font-bold mb-4">
             Insignias y <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Certificados Digitales</span>
           </h2>
@@ -460,26 +631,101 @@ const Awards = () => {
             Logros y certificaciones obtenidas en plataformas internacionales.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {badges.map((badge, idx) => (
-            <a
-              key={idx}
-              href={badge.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center bg-black/70 border border-emerald-800/40 rounded-xl shadow-lg hover:shadow-emerald-900/40 transition-shadow duration-300 p-6 cursor-pointer group hover:scale-105"
-            >
-                               <Image
-                 src={badge.img}
-                 alt={badge.title}
-                 width={96}
-                 height={96}
-                 className="w-24 h-24 object-contain mb-4 rounded-lg border-2 border-cyan-400 bg-white"
-               />
-              <h3 className="text-lg font-bold text-emerald-300 mb-2 text-center">{badge.title}</h3>
-              <span className="text-xs text-cyan-400 font-semibold">{badge.platform}</span>
-            </a>
-          ))}
+        
+        {/* Skills en 3 columnas como Hard Skills */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* AWS Academy */}
+          <div>
+            <h4 className="text-lg font-semibold text-emerald-300 mb-8 text-center">AWS Academy</h4>
+            <div className="flex flex-wrap justify-center gap-4">
+              {badges.filter(badge => badge.platform === 'Credly' && badge.title.includes('AWS')).map((badge, idx) => (
+                <a
+                  key={idx}
+                  href={badge.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center group"
+                >
+                  <div className="text-4xl mb-1 transition-transform duration-200 group-hover:scale-125 hover:scale-125 cursor-pointer">
+                    <Image
+                      src={badge.img}
+                      alt={badge.title}
+                      width={160}
+                      height={160}
+                      className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
+                      quality={95}
+                      priority={idx < 4}
+                    />
+                  </div>
+                  <span className="text-sm text-emerald-100 text-center leading-tight max-w-[140px]">
+                    {badge.title.split(' - ')[1] || badge.title.split(' ').slice(-2).join(' ')}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* CISCO Networking */}
+          <div>
+            <h4 className="text-lg font-semibold text-cyan-300 mb-8 text-center">CISCO Networking</h4>
+            <div className="flex flex-wrap justify-center gap-4">
+              {badges.filter(badge => badge.platform === 'Credly' && !badge.title.includes('AWS') && !badge.title.includes('Google')).map((badge, idx) => (
+                <a
+                  key={idx}
+                  href={badge.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center group"
+                >
+                  <div className="text-4xl mb-1 transition-transform duration-200 group-hover:scale-125 hover:scale-125 cursor-pointer">
+                    <Image
+                      src={badge.img}
+                      alt={badge.title}
+                      width={160}
+                      height={160}
+                      className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
+                      quality={95}
+                      priority={idx < 4}
+                    />
+                  </div>
+                  <span className="text-sm text-cyan-100 text-center leading-tight max-w-[140px]">
+                    {badge.title}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Google Marketing */}
+          <div>
+            <h4 className="text-lg font-semibold text-emerald-400 mb-8 text-center">Google Marketing</h4>
+            <div className="flex flex-wrap justify-center gap-4">
+              {badges.filter(badge => badge.title.includes('Google') || badge.title.includes('Marketing') || badge.title.includes('marketing')).map((badge, idx) => (
+                <a
+                  key={idx}
+                  href={badge.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center group"
+                >
+                  <div className="text-4xl mb-1 transition-transform duration-200 group-hover:scale-125 hover:scale-125 cursor-pointer">
+                    <Image
+                      src={badge.img}
+                      alt={badge.title}
+                      width={160}
+                      height={160}
+                      className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
+                      quality={95}
+                      priority={idx < 4}
+                    />
+                  </div>
+                  <span className="text-sm text-emerald-100 text-center leading-tight max-w-[140px]">
+                    {badge.title}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </section>
