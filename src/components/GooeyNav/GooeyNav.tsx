@@ -336,7 +336,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
                   href={item.href}
                   onClick={(e) => handleClick(e, index)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
-                  className="outline-none py-[0.3em] px-[1.1em] inline-block text-base sm:text-lg"
+                  className="outline-none py-[0.3em] px-[1.1em] inline-block text-sm sm:text-base md:text-lg"
                   style={{ minHeight: 0, height: '3rem', display: 'flex', alignItems: 'center' }}
                 >
                   {item.label}

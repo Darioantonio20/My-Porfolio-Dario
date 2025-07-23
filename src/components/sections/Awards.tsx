@@ -327,10 +327,10 @@ const Awards = () => {
         </div>
 
         {/* Sistema de Carpetas */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <div className="flex flex-col items-center gap-10 sm:grid sm:grid-cols-2 sm:gap-12 lg:flex lg:flex-row lg:justify-center lg:gap-32">
+        <div className="w-full max-w-full sm:max-w-6xl mx-auto mb-10 px-1 sm:px-0">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:flex lg:flex-row items-center gap-4 xs:gap-6 sm:gap-10 md:gap-12 lg:gap-32 justify-center">
             {Object.entries(awardsByCategory).map(([category, categoryAwards]) => (
-              <div key={category} className="relative flex justify-center items-start">
+              <div key={category} className="relative flex justify-center items-start mt-8 mb-8 lg:mt-0 lg:mb-0">
                 {/* Carpeta 3D y archivos */}
                 <div
                   className="relative group flex flex-col items-center justify-center"
@@ -341,10 +341,10 @@ const Awards = () => {
                   tabIndex={0}
                 >
                   <div
-                    className={`file relative w-60 h-40 cursor-pointer origin-bottom [perspective:1500px] z-10 transition-all duration-500 ${expandedFolders.includes(category) ? 'scale-110' : 'hover:scale-105'}`}
+                    className={`file relative w-28 h-20 xs:w-36 xs:h-24 sm:w-48 sm:h-32 md:w-60 md:h-40 cursor-pointer origin-bottom [perspective:1500px] z-10 transition-all duration-500 ${expandedFolders.includes(category) ? 'scale-110' : 'hover:scale-105'}`}
                   >
                     <div
-                      className={`work-5 bg-gradient-to-br from-amber-500 to-amber-700 w-full h-full origin-top rounded-2xl rounded-tl-none transition-all ease duration-500 relative border-2 border-amber-600 after:absolute after:content-[''] after:bottom-[99%] after:left-0 after:w-20 after:h-4 after:bg-amber-600 after:rounded-t-2xl before:absolute before:content-[''] before:-top-[15px] before:left-[75.5px] before:w-4 before:h-4 before:bg-amber-600 before:[clip-path:polygon(0_35%,0%_100%,50%_100%)] ${expandedFolders.includes(category) ? 'shadow-[0_20px_40px_rgba(202,138,4,0.25)]' : 'group-hover:shadow-[0_20px_40px_rgba(202,138,4,0.25)]'}`}
+                      className={`work-5 bg-gradient-to-br from-amber-500 to-amber-700 w-full h-full origin-top rounded-2xl rounded-tl-none transition-all ease duration-500 relative border-2 border-amber-600 after:absolute after:content-[''] after:bottom-[99%] after:left-0 after:w-12 xs:after:w-20 after:h-3 xs:after:h-4 after:bg-amber-600 after:rounded-t-2xl before:absolute before:content-[''] before:-top-[10px] xs:before:-top-[15px] before:left-[40px] xs:before:left-[75.5px] before:w-3 xs:before:w-4 before:h-3 xs:before:h-4 before:bg-amber-600 before:[clip-path:polygon(0_35%,0%_100%,50%_100%)] ${expandedFolders.includes(category) ? 'shadow-[0_20px_40px_rgba(202,138,4,0.25)]' : 'group-hover:shadow-[0_20px_40px_rgba(202,138,4,0.25)]'}`}
                     ></div>
                     <div
                       className={`work-4 absolute inset-1 bg-amber-500 rounded-2xl transition-all ease duration-500 origin-bottom select-none border-2 border-amber-600 ${expandedFolders.includes(category) ? '[transform:rotateX(-20deg)]' : 'group-hover:[transform:rotateX(-20deg)]'}`}
@@ -356,28 +356,28 @@ const Awards = () => {
                       className={`work-2 absolute inset-1 bg-amber-300 rounded-2xl transition-all ease duration-500 origin-bottom border-2 border-amber-600 ${expandedFolders.includes(category) ? '[transform:rotateX(-38deg)]' : 'group-hover:[transform:rotateX(-38deg)]'}`}
                     ></div>
                     <div
-                      className={`work-1 absolute bottom-0 bg-gradient-to-t from-amber-700 to-amber-500 w-full h-[156px] rounded-2xl rounded-tr-none after:absolute after:content-[''] after:bottom-[99%] after:right-0 after:w-[146px] after:h-[16px] after:bg-amber-500 after:rounded-t-2xl before:absolute before:content-[''] before:-top-[10px] before:right-[142px] before:size-3 before:bg-amber-600 before:[clip-path:polygon(100%_14%,50%_100%,100%_100%)] transition-all ease duration-500 origin-bottom flex items-end border-2 border-amber-600 ${expandedFolders.includes(category) ? 'shadow-[inset_0_20px_40px_#d97706,_inset_0_-20px_40px_#b45309] [transform:rotateX(-46deg)_translateY(1px)]' : 'group-hover:shadow-[inset_0_20px_40px_#d97706,_inset_0_-20px_40px_#b45309] group-hover:[transform:rotateX(-46deg)_translateY(1px)]'}`}
+                      className={`work-1 absolute bottom-0 bg-gradient-to-t from-amber-700 to-amber-500 w-full h-[70px] xs:h-[100px] sm:h-[156px] rounded-2xl rounded-tr-none after:absolute after:content-[''] after:bottom-[99%] after:right-0 after:w-[60px] xs:after:w-[146px] after:h-[10px] xs:after:h-[16px] after:bg-amber-500 after:rounded-t-2xl before:absolute before:content-[''] before:-top-[5px] xs:before:-top-[10px] before:right-[40px] xs:before:right-[142px] before:size-2 xs:before:size-3 before:bg-amber-600 before:[clip-path:polygon(100%_14%,50%_100%,100%_100%)] transition-all ease duration-500 origin-bottom flex items-end border-2 border-amber-600 ${expandedFolders.includes(category) ? 'shadow-[inset_0_20px_40px_#d97706,_inset_0_-20px_40px_#b45309] [transform:rotateX(-46deg)_translateY(1px)]' : 'group-hover:shadow-[inset_0_20px_40px_#d97706,_inset_0_-20px_40px_#b45309] group-hover:[transform:rotateX(-46deg)_translateY(1px)]'}`}
                     >
                       {/* Contenido de la carpeta */}
-                      <div className="absolute inset-0 flex items-center justify-center p-4">
-                        <div className="flex items-center space-x-3">
+                      <div className="absolute inset-0 flex items-center justify-center p-2 xs:p-4">
+                        <div className="flex items-center space-x-2 xs:space-x-3">
                           {/* Icono de la carpeta */}
-                          <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                          <div className="w-6 h-6 xs:w-8 xs:h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
                             {getFolderIcon(category)}
                           </div>
                           {/* Información */}
                           <div className="text-center">
-                            <h3 className="text-sm font-semibold text-white drop-shadow-lg">{category}</h3>
-                            <p className="text-xs text-blue-100">{categoryAwards.length}</p>
+                            <h3 className="text-[11px] xs:text-xs sm:text-sm font-semibold text-white drop-shadow-lg">{category}</h3>
+                            <p className="text-[9px] xs:text-[10px] sm:text-xs text-blue-100">{categoryAwards.length}</p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   {/* Etiqueta de la carpeta */}
-                  <p className="text-lg font-semibold text-white mt-4 opacity-80">{category}</p>
+                  <p className="text-base xs:text-lg font-semibold text-white mt-2 xs:mt-4 opacity-80">{category}</p>
                   {/* Archivos alrededor de la carpeta */}
-                  <div className={`absolute inset-0 -top-16 -left-16 -right-16 -bottom-16 transition-all duration-700 z-50 ${expandedFolders.includes(category) ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                  <div className={`absolute inset-0 -top-10 xs:-top-16 -left-10 xs:-left-16 -right-10 xs:-right-16 -bottom-10 xs:-bottom-16 transition-all duration-700 z-50 ${expandedFolders.includes(category) ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                     {categoryAwards.map((award, idx) => {
                       // Distribuir de 0° (arriba) a 90° (derecha)
                       const totalItems = categoryAwards.length;
