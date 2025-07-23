@@ -43,60 +43,60 @@ const awards: Array<{
   category: string;
 }> = [
   {
-    title: 'Constancia de Titulo en trámite - UP Chiapas',
-    description: 'Ingeniería en Software, Universidad Politécnica de Chiapas, 2025',
+    title: 'Certificate of Title in Progress - UP Chiapas',
+    description: 'Software Engineering, University Politécnica de Chiapas, 2025',
     image: ConstanciaTitulacion,
-    type: 'Constancia',
-    date: 'Junio 2025',
-    category: 'Universidad',
+    type: 'Certificate',
+    date: 'June 2025',
+    category: 'University',
   },
   {
-    title: 'Constancia de Egreso - UP Chiapas',
-    description: 'Ingeniería en Software, Universidad Politécnica de Chiapas, 2025',
+    title: 'Certificate of Graduation - UP Chiapas',
+    description: 'Software Engineering, University Politécnica de Chiapas, 2025',
     image: ConstanciaEgreso,
-    type: 'Constancia',
-    date: 'Mayo 2025',
-    category: 'Universidad',
+    type: 'Certificate',
+    date: 'May 2025',
+    category: 'University',
   },
   {
-    title: 'Constancia de TOEFL ITP - UP Chiapas',
-    description: 'Score TOEFL ITP - Universidad Politécnica de Chiapas, 2025',
+    title: 'Certificate of TOEFL ITP - UP Chiapas',
+    description: 'TOEFL ITP Score - University Politécnica de Chiapas, 2025',
     image: ConstanciaToefl,
-    type: 'Constancia',
-    date: 'Noviembre 2024',
-    category: 'Universidad',
+    type: 'Certificate',
+    date: 'November 2024',
+    category: 'University',
   },
   {
-    title: 'Kárdex Completo - UP Chiapas',
-    description: 'Kárdex universitario completo, Universidad Politécnica de Chiapas, 2025',
+    title: 'Complete Transcript - UP Chiapas',
+    description: 'Complete university transcript, University Politécnica de Chiapas, 2025',
     images: [KardexUpHoja1, KardexUpHoja2],
-    type: 'Kárdex',
-    date: 'Julio 2025',
-    category: 'Universidad',
+    type: 'Transcript',
+    date: 'July 2025',
+    category: 'University',
   },
   {
-    title: 'Certificado COEPES',
-    description: 'Certificado de participación en COEPES, 2024',
+    title: 'COEPES Certificate',
+    description: 'Certificate of participation in COEPES, 2024',
     image: CertificadoCOEPES,
-    type: 'Certificado',
-    date: 'Septiembre 2024',
-    category: 'Certificaciones',
+    type: 'Certificate',
+    date: 'September 2024',
+    category: 'Certifications',
   },
   {
-    title: 'Carta de Liberación de Estadia',
-    description: 'Carta de liberación de estadia profesional de la Universidad Politécnica de Chiapas - 2025',
+    title: 'Letter of Release of Internship',
+    description: 'Letter of release of professional internship from the University Politécnica de Chiapas - 2025',
     image: CartaLiberacionEstadia,
-    type: 'Certificado',
-    date: 'Enero - Abril 2025',
-    category: 'Universidad',
+    type: 'Certificate',
+    date: 'January - April 2025',
+    category: 'University',
   },
   {
-    title: 'Certificado de Preparatoria',
-    description: 'Certificado de Preparatoria, 2024',
+    title: 'High School Diploma',
+    description: 'High School Diploma, 2024',
     images: [CertificadoPreparatoriaHoja1, CertificadoPreparatoriaHoja2, CertificadoPreparatoriaHoja3],
-    type: 'Certificado',
-    date: 'Agosto 2017 - Julio 2020',
-    category: 'Preparatoria',
+    type: 'Diploma',
+    date: 'August 2017 - July 2020',
+    category: 'High School',
   }
 ];
 
@@ -281,10 +281,10 @@ const Awards = () => {
       handleZoomReset();
     }
   };
-
+  
   const getFolderIcon = (category: string) => {
     switch (category) {
-      case 'Universidad':
+      case 'University':
         return (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
