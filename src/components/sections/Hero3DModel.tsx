@@ -20,10 +20,10 @@ const Hero3DModel = () => {
             {/* Texto con efecto de typing */}
             <div className="overflow-hidden">
               <span className="hidden sm:inline-block animate-typing whitespace-nowrap">
-                Arrastra para rotar
+                Drag to rotate
               </span>
               <span className="sm:hidden animate-typing whitespace-nowrap">
-                Toca y mueve
+                Tap and move
               </span>
             </div>
             
