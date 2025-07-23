@@ -31,8 +31,8 @@ const Footer = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      text: 'darioantonio10@hotmail.com',
-      link: 'mailto:darioantonio10@hotmail.com'
+      text: 'dariobatman18@gmail.com',
+      link: 'mailto:dariobatman18@gmail.com'
     },
     {
       icon: (
@@ -98,7 +98,7 @@ const Footer = () => {
                 Darío Antonio Gutiérrez Álvarez
               </h3>
               <p className="text-emerald-200 text-xs leading-relaxed">
-                Ingeniero en software
+                Software Engineer
               </p>
             </div>
 
@@ -127,7 +127,7 @@ const Footer = () => {
           <div className="space-y-3">
             <div className="text-center">
               <h4 className="text-base font-bold text-emerald-300 mb-1">
-                Contacto
+                Contact
               </h4>
              
             </div>

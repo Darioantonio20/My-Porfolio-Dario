@@ -40,7 +40,7 @@ const Hero = () => {
 
             {/* Descripción */}
             <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-white font-bold max-w-xs xs:max-w-md sm:max-w-2xl mx-auto lg:mx-0 drop-shadow-[0_12px_48px_rgba(0,0,0,1)] blur-[0.6px] mb-8">
-              Ingeniero en Software
+              Software Engineer
             </p>
 
             {/* Botones de acción */}
@@ -58,7 +58,7 @@ const Hero = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
                   </svg>
                 </span>
-                Descargar CV
+                Download CV
                 {/* Glow pulse effect */}
                 <span className="absolute inset-0 rounded-xl pointer-events-none animate-cv-glow"></span>
               </a>

@@ -35,15 +35,15 @@ const Team = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
-              Mis{' '}
+              My{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Proyectos
+                Projects
               </span>
             </h2>
             <p className="text-lg text-cyan-200 max-w-2xl mx-auto">
-              Aquí puedes ver algunos de los proyectos en los que he trabajado. 
-              Cada uno representa un desafío único y una oportunidad de aprendizaje. 
-              Haz clic en cualquier proyecto para ver más detalles.
+              Here you can see some of the projects I have worked on. 
+              Each one represents a unique challenge and a learning opportunity. 
+              Click on any project to see more details.
             </p>
           </div>
 

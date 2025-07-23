@@ -69,26 +69,26 @@ const About = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-12">
           <div className="flex-1 space-y-4">
             <h2 className="text-4xl font-bold text-white">
-              Sobre{' '}
+              About{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Mí
+                Me
               </span>
             </h2>
             <p className="text-lg text-cyan-200 leading-relaxed">
-              Soy un desarrollador Full-Stack Jr. apasionado por la tecnología y la innovación. Me especializo en crear experiencias de usuario excepcionales utilizando las últimas tecnologías web y mobile.
+              I am a passionate Junior Full-Stack Developer focused on technology and innovation. I specialize in creating exceptional user experiences using the latest web and mobile technologies.
             </p>
             <p className="text-lg text-cyan-200 leading-relaxed">
-              Con experiencia en React, Next.js, Node.js, Python y Flutter, me encanta trabajar en proyectos desafiantes que me permitan crecer profesionalmente y aportar valor a los usuarios finales.
+              With experience in React, Next.js, Node.js, Python, and Flutter, I love working on challenging projects that allow me to grow professionally and deliver value to end users.
             </p>
           </div>
           <div className="flex flex-row md:flex-col items-center justify-center gap-8 md:gap-4 min-w-[200px]">
             <div className="text-center">
               <div className="text-3xl font-bold text-emerald-400">4</div>
-              <div className="text-cyan-200">Años de Experiencia</div>
+              <div className="text-cyan-200">Years of Experience</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-cyan-400">15+</div>
-              <div className="text-cyan-200">Proyectos Completados</div>
+              <div className="text-cyan-200">Projects Completed</div>
             </div>
           </div>
         </div>

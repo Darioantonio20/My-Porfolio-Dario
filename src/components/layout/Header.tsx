@@ -4,9 +4,9 @@ import GooeyNav from '@/components/GooeyNav/GooeyNav';
 
 const Header = () => {
   const navItems = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#sobre-mi', label: 'Sobre Mí' },
-    { href: '#proyectos', label: 'Proyectos' },
+    { href: '#inicio', label: 'Home' },
+    { href: '#sobre-mi', label: 'About Me' },
+    { href: '#proyectos', label: 'Projects' },
   ];
 
   return (
