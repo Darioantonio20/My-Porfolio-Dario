@@ -59,7 +59,7 @@ src/
 1. **Clonar el repositorio**
    ```bash
    git clone <tu-repositorio>
-   cd My-Porfolio-Dario
+   cd My-Portfolio-Dario
    ```
 
 2. **Instalar dependencias**
