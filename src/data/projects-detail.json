@@ -264,5 +264,52 @@
     "category": "Frontend Development",
     "duration": "Jun. 2025 - Present",
     "team": "Individual Development"
+  },
+  "my-portfolio-dario": {
+    "id": "my-portfolio-dario",
+    "title": "My Portfolio - Dario",
+    "subtitle": "Modern Personal Portfolio Website",
+    "description": "A modern, responsive, and accessible personal portfolio built with Next.js, TypeScript, Tailwind CSS, and React. Features modular components, CI/CD with Netlify, and SEO optimization.",
+    "longDescription": "My Portfolio - Dario is a personal website designed to showcase my skills, projects, and achievements as a Front-end Developer. The site is built using Next.js for server-side rendering and static site generation, TypeScript for type safety, and Tailwind CSS for rapid UI development. It features a modular and scalable architecture, reusable components, and a clean, professional design. The project is deployed with CI/CD on Netlify, ensuring fast and reliable updates. SEO best practices and accessibility standards are implemented throughout the site.",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React",
+      "Netlify CI/CD",
+      "SEO",
+      "Modular Components",
+      "Responsive Design"
+    ],
+    "features": [
+      "Modern and responsive UI",
+      "Server-side rendering and static site generation",
+      "Reusable and modular components",
+      "Continuous deployment with Netlify CI/CD",
+      "SEO optimization for better discoverability",
+      "Accessible design following best practices",
+      "Project gallery and detailed project modals",
+      "Downloadable CV",
+      "Contact section"
+    ],
+    "challenges": [
+      "Designing a visually appealing and consistent UI",
+      "Ensuring accessibility and responsiveness across devices",
+      "Implementing CI/CD for seamless deployment",
+      "Optimizing for SEO and performance"
+    ],
+    "solutions": [
+      "Used Tailwind CSS for rapid and consistent styling",
+      "Leveraged Next.js features for SSR and SSG",
+      "Configured Netlify for automated deployments",
+      "Applied semantic HTML and accessibility best practices",
+      "Implemented modular architecture for scalability"
+    ],
+    "github": "https://github.com/Darioantonio20/My-Porfolio-Dario",
+    "demo": "",
+    "image": "/_next/static/media/ImgPorfolioDario.png",
+    "category": "Frontend Development",
+    "duration": "2025 - Present",
+    "team": "Individual Development"
   }
 } 

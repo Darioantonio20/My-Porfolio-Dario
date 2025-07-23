@@ -6,8 +6,19 @@ import PasedeLista from '@/assets/img/proyects/PasedeLista.png';
 import WebCoepes from '@/assets/img/proyects/WebCoepes.png';
 import DrNabani from '@/assets/img/proyects/DrNabani.png';
 import imgAnimenarioList from '@/assets/img/proyects/imgAnimenarioList.png';
+import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
+  {
+    image: ImgPorfolioDario, 
+    title: "My Portfolio - Darío",
+    subtitle: "Modern Personal Portfolio Website",
+    handle: "Next.js • TypeScript • Tailwind CSS • React • Modular Components • Netlify CI/CD • SEO",
+    location: "2025 - Present",
+    borderColor: "#22d3ee",
+    gradient: "linear-gradient(135deg,#22d3ee,#000)",
+    url: "/proyectos/my-portfolio-dario",
+  },
   {
     image: imgAnimenarioList,
     title: "AnimeNarioList",

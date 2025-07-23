@@ -80,8 +80,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
         <div className="p-6 space-y-8">
           {/* Project Image */}
           <div className="h-48 bg-gradient-to-br from-emerald-900/20 to-cyan-900/20 rounded-xl border border-emerald-800/50 flex items-center justify-center">
-            <div className="text-6xl font-bold text-cyan-400">
-              {project.title.split(' ')[0]}
+            <div className="text-3xl sm:text-5xl font-bold text-cyan-400 text-center px-2 truncate">
+              {project.title}
             </div>
           </div>
 
