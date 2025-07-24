@@ -54,11 +54,11 @@ const backendSkills = [
 ];
 
 const softSkills = [
-  { name: 'Metodología Ágil', icon: <BsPeopleFill className="text-emerald-300" /> },
+  { name: 'Agile Methodology', icon: <BsPeopleFill className="text-emerald-300" /> },
   { name: 'Scrum', icon: <BsPeopleFill className="text-cyan-300" /> },
-  { name: 'Comunicación en equipo', icon: <BsPeopleFill className="text-blue-300" /> },
-  { name: 'Colaboración', icon: <BsPeopleFill className="text-emerald-400" /> },
-  { name: 'Resolución de problemas', icon: <BsPeopleFill className="text-cyan-400" /> },
+  { name: 'Team Communication', icon: <BsPeopleFill className="text-blue-300" /> },
+  { name: 'Collaboration', icon: <BsPeopleFill className="text-emerald-400" /> },
+  { name: 'Problem Solving', icon: <BsPeopleFill className="text-cyan-400" /> },
 ];
 
 const About = () => {
