@@ -75,7 +75,7 @@ const About = () => {
               </span>
             </h2>
             <p className="text-lg text-cyan-200 leading-relaxed">
-              I am a passionate Junior Full-Stack Developer focused on technology and innovation. I specialize in creating exceptional user experiences using the latest web and mobile technologies.
+              I am a passionate Full-Stack Developer focused on technology and innovation. I specialize in creating exceptional user experiences using the latest web and mobile technologies.
             </p>
             <p className="text-lg text-cyan-200 leading-relaxed">
               With experience in React, Next.js, Node.js, Python, and Flutter, I love working on challenging projects that allow me to grow professionally and deliver value to end users.
@@ -85,10 +85,6 @@ const About = () => {
             <div className="text-center">
               <div className="text-3xl font-bold text-emerald-400">4</div>
               <div className="text-cyan-200">Years of Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-cyan-400">15+</div>
-              <div className="text-cyan-200">Projects Completed</div>
             </div>
           </div>
         </div>
