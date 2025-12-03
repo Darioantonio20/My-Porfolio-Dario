@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import PanZoom from 'react-easy-panzoom';
+import CedulaProfesional from '@/assets/img/certifications/CedulaProfesional.png';
 import ConstanciaEgreso from '@/assets/img/university/ConstanciadeEgreso.png';
 import ConstanciaTitulacion from '@/assets/img/university/ConstanciaTitulacion.png';
 import ConstanciaToefl from '@/assets/img/university/PuntajeTOEFEL.png';
@@ -97,7 +98,15 @@ const awards: Array<{
     type: 'Diploma',
     date: 'August 2017 - July 2020',
     category: 'High School',
-  }
+  },
+  {
+    title: 'Professional Certificate',
+    description: 'Professional Certificate, 2025',
+    image: CedulaProfesional,
+    type: 'Certificate',
+    date: 'November 2025',
+    category: 'Certifications',
+  },
 ];
 
 const badges: Array<{
