@@ -1,14 +1,14 @@
 import {
-  FaReact, FaNodeJs, FaGitAlt, FaBootstrap, FaPython, FaApple,
+  FaReact, FaNodeJs, FaGitAlt, FaBootstrap, FaPython,
   FaJava, FaGithub, FaAndroid, FaMousePointer, FaCogs, FaPhp,
-  FaDocker, FaAws, FaMicrosoft, FaDatabase
+  FaDocker, FaAws
 } from 'react-icons/fa';
 import {
   SiNextdotjs, SiTypescript, SiTailwindcss, SiFigma, SiExpress,
   SiFlutter, SiNetlify, SiHtml5, SiCss3, SiJavascript, SiDart,
   SiFlask, SiMongodb, SiPostman, SiXcode, SiMaterialdesign,
   SiLaravel, SiMysql, SiSqlite, SiVercel, SiAndroidstudio,
-  SiGooglecloud, SiJira, SiTrello, SiCodeigniter, SiBitbucket,
+  SiGooglecloud, SiJira, SiTrello, SiBitbucket,
   SiRailway
 } from 'react-icons/si';
 import { MdDevices } from 'react-icons/md';

@@ -127,12 +127,11 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👨‍💻 Autor
 
-**Dario Antonio** - Desarrollador Front-end
+**Dario Antonio** - Desarrollador Full-Stack
 
-- 📧 Email: tu-email@ejemplo.com
-- 🌐 Portfolio: [tu-portfolio.com](https://tu-portfolio.com)
-- 💼 LinkedIn: [linkedin.com/in/tu-perfil](https://linkedin.com/in/tu-perfil)
-- 🐙 GitHub: [github.com/tu-usuario](https://github.com/tu-usuario)
+- 🌐 Portfolio: [https://porfolio-dario-antonio.netlify.app/](https://porfolio-dario-antonio.netlify.app/)
+- 💼 LinkedIn: [https://www.linkedin.com/in/dario-antonio/](https://www.linkedin.com/in/dario-antonio/)
+- 🐙 GitHub: [github.com/Darioantonio20](https://github.com/Darioantonio20)
 
 ---
 
