@@ -1,4 +1,55 @@
 {
+  "ez-ticket": {
+    "id": "ez-ticket",
+    "title": "EZ Tickets",
+    "subtitle": "Ticketing platform for live events and venue operations",
+    "description": "Freelance ticketing platform focused on highlighted events, zone-based ticket purchase, QR passes, and an administrative suite for artists, venues, events, users, and legal content.",
+    "longDescription": "EZ Tickets is my most recent freelance work and brings together the public and operational sides of a ticketing product in a single experience. On the customer side, the platform presents featured events, detailed venue information, prohibited items, seat or area-based purchase flows, timed reservations, order summaries, and downloadable ticket passes with QR validation. On the operations side, the system includes an administration suite to manage artists, venues, events, users, branding assets, legal modules, and technical zone configuration with capacity controls.",
+    "technologies": [
+      "Product UI/UX",
+      "Responsive Interface",
+      "Admin Dashboard",
+      "Seat Selection Flow",
+      "QR Ticketing",
+      "Information Architecture"
+    ],
+    "features": [
+      "Featured-event landing experience with a strong promotional hero",
+      "Event detail views with venue rules, schedules, and embedded location data",
+      "Zone-based and seat-based purchase flow with order summary and countdown",
+      "Downloadable ticket passes with QR code for validation",
+      "Administrative dashboard for artists, venues, events, users, and legal content",
+      "Technical configuration of zones, capacities, and venue structure"
+    ],
+    "challenges": [
+      "Balancing a sales-focused public flow with a clean back-office administration experience",
+      "Keeping ticket selection clear while availability, pricing, and countdown logic stay visible",
+      "Structuring venue and artist management so operational users can edit data quickly",
+      "Presenting tickets in a mobile-friendly format that remains readable and scannable"
+    ],
+    "solutions": [
+      "Separated the product into customer-facing and administrative journeys with tailored UI patterns",
+      "Used contextual purchase summaries and visual hierarchy to keep price and availability visible",
+      "Organized admin modules around operational entities like artists, venues, events, and validations",
+      "Designed a compact digital pass layout with QR emphasis for fast access and validation"
+    ],
+    "github": "",
+    "demo": "",
+    "image": "/projects/ez-ticket/user-landing.png",
+    "gallery": [
+      "/projects/ez-ticket/user-landing.png",
+      "/projects/ez-ticket/user-venue.png",
+      "/projects/ez-ticket/user-seat-purchase.png",
+      "/projects/ez-ticket/user-tickets.png",
+      "/projects/ez-ticket/user-ticket-pass.png",
+      "/projects/ez-ticket/admin-dashboard.png",
+      "/projects/ez-ticket/admin-artist-editor.png",
+      "/projects/ez-ticket/admin-venue-zones.png"
+    ],
+    "category": "Freelance Product Development",
+    "duration": "Mar. 2026 - Present",
+    "team": "Freelance Development"
+  },
   "jardin-del-alma": {
     "id": "jardin-del-alma",
     "title": "Jardín Del Alma",

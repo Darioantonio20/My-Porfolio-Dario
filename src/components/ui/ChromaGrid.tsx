@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 export interface ChromaItem {
@@ -13,6 +13,7 @@ export interface ChromaItem {
   borderColor?: string;
   gradient?: string;
   url?: string;
+  badge?: string;
 }
 
 export interface ChromaGridProps {
@@ -38,6 +39,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 }) => {
   const rootRef = useRef<HTMLDivElement>(null);
   const fadeRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<Array<HTMLElement | null>>([]);
   const setX = useRef<SetterFn | null>(null);
   const setY = useRef<SetterFn | null>(null);
   const pos = useRef({ x: 0, y: 0 });
@@ -106,13 +108,40 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
   useEffect(() => {
     const el = rootRef.current;
     if (!el) return;
+
     setX.current = gsap.quickSetter(el, "--x", "px") as SetterFn;
     setY.current = gsap.quickSetter(el, "--y", "px") as SetterFn;
+
     const { width, height } = el.getBoundingClientRect();
     pos.current = { x: width / 2, y: height / 2 };
     setX.current(pos.current.x);
     setY.current(pos.current.y);
   }, []);
+
+  useEffect(() => {
+    const cards = cardsRef.current.filter((card): card is HTMLElement => Boolean(card));
+    if (!cards.length) return;
+
+    gsap.fromTo(
+      cards,
+      {
+        autoAlpha: 0,
+        y: 42,
+        scale: 0.96,
+        rotateX: -10,
+      },
+      {
+        autoAlpha: 1,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: "power3.out",
+        clearProps: "transform",
+      }
+    );
+  }, [data.length]);
 
   const moveTo = (x: number, y: number) => {
     gsap.to(pos.current, {
@@ -129,8 +158,11 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
   };
 
   const handleMove = (e: React.PointerEvent) => {
-    const r = rootRef.current!.getBoundingClientRect();
-    moveTo(e.clientX - r.left, e.clientY - r.top);
+    const root = rootRef.current;
+    if (!root) return;
+
+    const bounds = root.getBoundingClientRect();
+    moveTo(e.clientX - bounds.left, e.clientY - bounds.top);
     gsap.to(fadeRef.current, { opacity: 0, duration: 0.25, overwrite: true });
   };
 
@@ -146,15 +178,43 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     if (onCardClick && url) {
       onCardClick(url);
     } else if (url) {
-      window.open(url, '_blank', 'noopener,noreferrer');
+      window.open(url, "_blank", "noopener,noreferrer");
     }
   };
 
   const handleCardMove: React.MouseEventHandler<HTMLElement> = (e) => {
-    const c = e.currentTarget as HTMLElement;
-    const rect = c.getBoundingClientRect();
-    c.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-    c.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotateY = (x / rect.width - 0.5) * 12;
+    const rotateX = (y / rect.height - 0.5) * -12;
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+
+    gsap.to(card, {
+      rotateX,
+      rotateY,
+      y: -10,
+      duration: 0.35,
+      ease: "power2.out",
+      overwrite: true,
+      transformPerspective: 1400,
+    });
+  };
+
+  const handleCardLeave: React.MouseEventHandler<HTMLElement> = (e) => {
+    const card = e.currentTarget;
+
+    gsap.to(card, {
+      rotateX: 0,
+      rotateY: 0,
+      y: 0,
+      duration: 0.55,
+      ease: "power3.out",
+      overwrite: true,
+    });
   };
 
   return (
@@ -163,7 +223,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
         ref={rootRef}
         onPointerMove={handleMove}
         onPointerLeave={handleLeave}
-        className={`relative w-full h-full flex flex-wrap justify-center items-start gap-3 ${className}`}
+        className={`relative flex h-full w-full flex-wrap items-start justify-center gap-4 ${className}`}
         style={
           {
             "--r": `${radius}px`,
@@ -172,73 +232,117 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
           } as React.CSSProperties
         }
       >
-        {data.map((c, i) => (
+        {data.map((card, index) => (
           <article
-            key={i}
+            key={index}
+            ref={(element) => {
+              cardsRef.current[index] = element;
+            }}
             onMouseMove={handleCardMove}
-            onClick={() => handleCardClick(c.url)}
-            className="group relative flex flex-col w-[300px] h-[400px] rounded-[20px] overflow-hidden border-2 border-transparent transition-colors duration-300 cursor-pointer"
+            onMouseLeave={handleCardLeave}
+            onClick={() => handleCardClick(card.url)}
+            className="group relative flex h-[430px] w-[308px] cursor-pointer flex-col overflow-hidden rounded-[26px] border border-white/10 bg-black/35 shadow-[0_22px_55px_rgba(0,0,0,0.32)] transition-[border-color,box-shadow,transform] duration-500 hover:border-white/20 hover:shadow-[0_30px_90px_rgba(0,0,0,0.45)]"
             style={
               {
-                "--card-border": c.borderColor || "transparent",
-                background: c.gradient,
-                "--spotlight-color": "rgba(255,255,255,0.3)",
+                "--card-border": card.borderColor || "transparent",
+                "--spotlight-color": "rgba(255,255,255,0.28)",
+                background: card.gradient,
+                transformStyle: "preserve-3d",
               } as React.CSSProperties
             }
           >
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),transparent_28%,rgba(2,6,23,0.75))]" />
             <div
-              className="absolute inset-0 pointer-events-none transition-opacity duration-500 z-20 opacity-0 group-hover:opacity-100"
+              className="absolute inset-x-5 top-0 h-24 -translate-y-1/2 rounded-full blur-3xl opacity-80"
+              style={{
+                background: card.borderColor
+                  ? `${card.borderColor}55`
+                  : "rgba(255,255,255,0.08)",
+              }}
+            />
+
+            {card.badge && (
+              <span className="absolute left-4 top-4 z-20 rounded-full border border-white/15 bg-black/55 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.34em] text-amber-300 backdrop-blur-md">
+                {card.badge}
+              </span>
+            )}
+
+            <div
+              className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               style={{
                 background:
                   "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
               }}
             />
-            <div className="relative z-10 flex-shrink-0 p-[10px] box-border h-[180px]">
+
+            <div className="relative z-10 box-border h-[195px] flex-shrink-0 p-[12px]">
               <Image
-                src={c.image}
-                alt={c.title}
+                src={card.image}
+                alt={card.title}
                 width={280}
                 height={160}
-                className="w-full h-full object-cover rounded-[10px] cursor-zoom-in"
+                className="h-full w-full rounded-[16px] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 loading="lazy"
-                onClick={e => {
-                  e.stopPropagation();
-                  setSelectedCard(c);
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setSelectedCard(card);
                   setModalOpen(true);
                 }}
               />
             </div>
-            <footer className="relative z-10 p-4 text-white font-sans bg-black/60 backdrop-blur-sm flex-1 flex flex-col justify-between min-h-[120px] max-h-[200px] overflow-hidden">
-              <div className="space-y-2 overflow-hidden">
-                <h3 className="m-0 text-[1.1rem] font-bold text-emerald-300 drop-shadow-lg truncate" title={c.title}>
-                  {c.title}
+
+            <footer className="relative z-10 flex min-h-[180px] flex-1 flex-col justify-between overflow-hidden bg-black/55 p-5 text-white backdrop-blur-md">
+              <div className="space-y-3 overflow-hidden">
+                <h3
+                  className="m-0 truncate text-[1.18rem] font-bold text-white drop-shadow-lg"
+                  title={card.title}
+                >
+                  {card.title}
                 </h3>
-                <p className="m-0 text-[0.9rem] text-cyan-200 font-medium line-clamp-2 overflow-hidden">
-                  {c.subtitle}
+                <p className="m-0 overflow-hidden text-[0.92rem] font-medium leading-6 text-white/72 line-clamp-2">
+                  {card.subtitle}
                 </p>
-                {c.handle && (
-                  <div className="flex flex-wrap gap-1 mt-2">
-                    {c.handle.split(' • ').map((tech, index) => (
+
+                {card.handle && (
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {card.handle.split(" • ").map((tech, techIndex) => (
                       <span
-                        key={index}
-                        className="px-2 py-1 text-[0.75rem] bg-emerald-700/40 text-emerald-200 rounded-full border border-emerald-600/30 truncate"
+                        key={techIndex}
+                        className="truncate rounded-full border border-white/10 bg-white/6 px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.2em] text-white/68"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
                 )}
-                {c.location && (
-                  <p className="m-0 text-[0.8rem] text-emerald-100 mt-2 font-medium truncate" title={c.location}>
-                    {c.location}
+
+                {card.location && (
+                  <p
+                    className="m-0 mt-2 truncate text-[0.78rem] font-medium uppercase tracking-[0.28em] text-white/42"
+                    title={card.location}
+                  >
+                    {card.location}
                   </p>
                 )}
+              </div>
+
+              <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+                <span className="text-[0.68rem] uppercase tracking-[0.36em] text-white/38">
+                  Case Study
+                </span>
+                <span className="inline-flex items-center gap-2 text-[0.8rem] font-semibold text-white transition-transform duration-300 group-hover:translate-x-1">
+                  Ver detalle
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
               </div>
             </footer>
           </article>
         ))}
+
         <div
-          className="absolute inset-0 pointer-events-none z-30"
+          className="pointer-events-none absolute inset-0 z-30"
           style={{
             backdropFilter: "grayscale(1) brightness(0.78)",
             WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
@@ -249,9 +353,10 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
               "radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 15%,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.22)45%,rgba(0,0,0,0.35)60%,rgba(0,0,0,0.50)75%,rgba(0,0,0,0.68)88%,white 100%)",
           }}
         />
+
         <div
           ref={fadeRef}
-          className="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40"
+          className="pointer-events-none absolute inset-0 z-40 transition-opacity duration-[250ms]"
           style={{
             backdropFilter: "grayscale(1) brightness(0.78)",
             WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
@@ -264,46 +369,56 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
           }}
         />
       </div>
-      {/* Modal para mostrar la card completa */}
+
       {modalOpen && selectedCard && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setModalOpen(false)} />
-          <div className="relative bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950 rounded-2xl border border-emerald-800/50 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-emerald-900/30 p-6 flex flex-col items-center">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            onClick={() => setModalOpen(false)}
+          />
+          <div className="relative flex max-h-[90vh] w-full max-w-4xl flex-col items-center overflow-y-auto rounded-[28px] border border-white/10 bg-[linear-gradient(135deg,rgba(6,17,14,0.96),rgba(2,7,8,0.98))] p-6 shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
             <button
               onClick={() => setModalOpen(false)}
-              className="absolute top-4 right-4 p-1 z-10"
+              className="absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-white/6 p-2 text-white/70 transition-colors hover:text-white"
+              aria-label="Cerrar vista previa"
             >
-              <svg className="w-7 h-7" fill="none" stroke="#ef4444" viewBox="0 0 24 24">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="w-full flex justify-center items-center mb-4">
+
+            <div className="mb-4 flex w-full justify-center">
               <Image
                 src={selectedCard.image}
                 alt={selectedCard.title}
-                className="max-w-full max-h-[60vh] object-contain rounded-xl"
-                width={0}
-                height={0}
+                className="max-h-[65vh] w-auto max-w-full rounded-2xl object-contain"
+                width={1600}
+                height={900}
                 sizes="100vw"
-                style={{ height: 'auto', width: 'auto', maxWidth: '100%', maxHeight: '60vh' }}
+                style={{ maxWidth: "100%", maxHeight: "65vh", height: "auto" }}
               />
             </div>
-            <h2 className="text-2xl font-bold text-emerald-300 mb-2 text-center">{selectedCard.title}</h2>
-            <p className="text-cyan-200 mb-2 text-center">{selectedCard.subtitle}</p>
+
+            <h2 className="text-center text-2xl font-bold text-white">{selectedCard.title}</h2>
+            <p className="mt-2 text-center text-white/68">{selectedCard.subtitle}</p>
+
             {selectedCard.handle && (
-              <div className="flex flex-wrap gap-1 mb-2 justify-center">
-                {selectedCard.handle.split(' • ').map((tech, index) => (
+              <div className="mt-4 flex flex-wrap justify-center gap-2">
+                {selectedCard.handle.split(" • ").map((tech, techIndex) => (
                   <span
-                    key={index}
-                    className="px-2 py-1 text-[0.85rem] bg-emerald-700/40 text-emerald-200 rounded-full border border-emerald-600/30"
+                    key={techIndex}
+                    className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-[0.72rem] uppercase tracking-[0.24em] text-white/68"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
             )}
+
             {selectedCard.location && (
-              <p className="text-[0.9rem] text-emerald-100 mb-2 text-center">{selectedCard.location}</p>
+              <p className="mt-4 text-center text-[0.8rem] uppercase tracking-[0.28em] text-white/42">
+                {selectedCard.location}
+              </p>
             )}
           </div>
         </div>
@@ -312,4 +427,4 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
   );
 };
 
-export default ChromaGrid; 
+export default ChromaGrid;

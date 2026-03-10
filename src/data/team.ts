@@ -10,6 +10,17 @@ import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
   {
+    image: "/projects/ez-ticket/user-landing.png",
+    title: "EZ Tickets",
+    subtitle: "Ticketing Platform & Admin Suite",
+    handle: "Ticketing • Admin Dashboard • Seat Selection • QR Passes • Responsive UX",
+    location: "mar. 2026 - actualidad",
+    borderColor: "#f97316",
+    gradient: "linear-gradient(145deg,rgba(249,115,22,0.85),rgba(10,10,10,0.96) 58%,rgba(2,6,23,0.96))",
+    url: "/proyectos/ez-ticket",
+    badge: "Reciente",
+  },
+  {
     image: ImgPorfolioDario, 
     title: "My Portfolio - Darío",
     subtitle: "Modern Personal Portfolio Website",

@@ -30,24 +30,26 @@ const Team = () => {
 
   return (
     <>
-      <section id="proyectos" className="py-20 bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
+      <section id="proyectos" className="relative overflow-hidden py-20 text-white bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(34,197,94,0.15),transparent_22%),radial-gradient(circle_at_88%_10%,rgba(249,115,22,0.12),transparent_24%),radial-gradient(circle_at_50%_100%,rgba(34,211,238,0.12),transparent_28%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/6 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-cyan-200/85 backdrop-blur-sm">
+              Selected Work
+            </span>
+            <h2 className="mt-5 text-4xl font-bold mb-4">
               My{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Projects
               </span>
             </h2>
-            <p className="text-lg text-cyan-200 max-w-2xl mx-auto">
-              Here you can see some of the projects I have worked on. 
-              Each one represents a unique challenge and a learning opportunity. 
-              Click on any project to see more details.
+            <p className="text-lg max-w-3xl mx-auto leading-8 text-cyan-100/78">
+              Incluí mi trabajo freelance más reciente y reforcé la experiencia de cada case study con
+              mejores transiciones, galería visual y una presentación más clara del contexto del producto.
+              Haz click en cualquier proyecto para ver el detalle.
             </p>
           </div>
 
-          {/* ChromaGrid Container */}
           <div className="relative min-h-[600px] w-full">
             <ChromaGrid 
               items={projects}
@@ -61,7 +63,6 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Project Modal */}
       <ProjectModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
