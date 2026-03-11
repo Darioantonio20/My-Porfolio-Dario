@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import Image, { StaticImageData } from 'next/image';
-import PanZoom from 'react-easy-panzoom';
 import CedulaProfesional from '@/assets/img/certifications/CedulaProfesional.png';
 import ConstanciaEgreso from '@/assets/img/university/ConstanciadeEgreso.png';
 import ConstanciaTitulacion from '@/assets/img/university/ConstanciaTitulacion.png';
@@ -33,6 +33,15 @@ import DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea from '@/assets/img/b
 import CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico from '@/assets/img/badges/CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico.png';
 import ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico from '@/assets/img/badges/ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico.png';
 import InteractuarConMedianteElMarketingDigital from '@/assets/img/badges/InteractuarConMedianteElMarketingDigital.png';
+
+const PanZoom = dynamic(() => import('react-easy-panzoom'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-full min-h-[300px] w-full items-center justify-center text-sm text-cyan-200/70">
+      Loading document...
+    </div>
+  ),
+});
 
 const awards: Array<{
   title: string;
@@ -173,7 +182,7 @@ const badges: Array<{
   },
   // Coursera Google
   {
-    title: 'Certificado de Marketing Digital e E-commerce de Google',
+    title: 'Google Digital Marketing & E-commerce Certificate',
     url: 'https://www.credly.com/badges/83e02fce-50b4-4cef-9638-69a76d9fdffe/linked_in_profile',
     img: CertificadodeMarketingDigitalEcommercedeGoogle,
     platform: 'Credly',
@@ -185,36 +194,45 @@ const badges: Array<{
     platform: 'Coursera',
   },
   {
-    title: 'Fundamentos del marketing digital y comercio electrónico',
+    title: 'Foundations of Digital Marketing and E-commerce',
     url: 'https://www.coursera.org/account/accomplishments/verify/XTGLZMU85JHQ',
     img: FundamentosDelMarketingDigitalYComercioElectronico,
     platform: 'Coursera',
   },
   {
-    title: 'De me gusta a leads: interactúa con las y los clientes en línea',
+    title: 'From Likes to Leads: Interact with Customers Online',
     url: 'https://www.coursera.org/account/accomplishments/verify/C8X4MFH5BL5D',
     img: DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea,
     platform: 'Coursera',
   },
   {
-    title: 'Creatividad en la bandeja de entrada: marketing por correo electrónico',
+    title: 'Creativity in the Inbox: Email Marketing',
     url: 'https://www.coursera.org/account/accomplishments/verify/2VJ7MADLG369',
     img: CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico,
     platform: 'Coursera',
   },
   {
-    title: 'Consigue la venta: crea, lanza y administra tiendas de comercio electrónico',
+    title: 'Make the Sale: Create, Launch, and Manage E-commerce Stores',
     url: 'https://www.coursera.org/account/accomplishments/verify/6UQWURGK4JJA',
     img: ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico,
     platform: 'Coursera',
   },
   {
-    title: 'Atraer clientes e interactuar con ellos/as mediante el marketing digital',
+    title: 'Attract and Engage Customers with Digital Marketing',
     url: 'https://www.coursera.org/account/accomplishments/verify/2P94NJWCYDAZ',
     img: InteractuarConMedianteElMarketingDigital,
     platform: 'Coursera',
   },
 ];
+
+const awardsByCategory = awards.reduce((acc, award) => {
+  if (!acc[award.category]) {
+    acc[award.category] = [];
+  }
+
+  acc[award.category].push(award);
+  return acc;
+}, {} as Record<string, typeof awards>);
 
 const Awards = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -226,15 +244,6 @@ const Awards = () => {
   const panzoomRef = useRef<unknown>(null);
   const [fade, setFade] = useState(false);
   const [expandedFolders, setExpandedFolders] = useState<string[]>([]);
-
-  // Agrupar awards por categoría
-  const awardsByCategory = awards.reduce((acc, award) => {
-    if (!acc[award.category]) {
-      acc[award.category] = [];
-    }
-    acc[award.category].push(award);
-    return acc;
-  }, {} as Record<string, typeof awards>);
 
   const openModal = (
     imgOrImgs: string | StaticImageData | Array<string | StaticImageData>,
@@ -324,7 +333,7 @@ const Awards = () => {
   };
 
   return (
-    <section id="reconocimientos" className="py-20 bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950 text-white">
+    <section id="awards" className="py-20 bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 sm:mb-28 md:mb-32 px-2">
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 break-words leading-tight">
@@ -461,8 +470,8 @@ const Awards = () => {
             <button
               onClick={closeModal}
               className="absolute top-6 right-6 p-3 rounded-full bg-black/60 hover:bg-emerald-800/80 border border-emerald-900 text-cyan-200 hover:text-white shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 scale-100 hover:scale-110 active:scale-95"
-              aria-label="Cerrar"
-              title="Cerrar"
+              aria-label="Close"
+              title="Close"
             >
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -474,8 +483,8 @@ const Awards = () => {
               <button
                 onClick={handleZoomOut}
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-black/40 hover:bg-emerald-800/80 border-2 border-emerald-700 text-emerald-200 hover:text-white shadow-lg backdrop-blur-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 transform hover:scale-110 active:scale-95"
-                aria-label="Alejar"
-                title="Alejar (-)"
+              aria-label="Zoom out"
+              title="Zoom out (-)"
               >
                 {/* Lupa con - */}
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -488,8 +497,8 @@ const Awards = () => {
               <button
                 onClick={handleZoomReset}
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-black/40 hover:bg-cyan-800/80 border-2 border-cyan-700 text-cyan-200 hover:text-white shadow-lg backdrop-blur-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 transform hover:rotate-90 active:scale-95"
-                aria-label="Resetear zoom"
-                title="Restablecer zoom"
+                aria-label="Reset zoom"
+                title="Reset zoom"
               >
                 {/* Icono de reload */}
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -501,8 +510,8 @@ const Awards = () => {
               <button
                 onClick={handleZoomIn}
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-black/40 hover:bg-emerald-800/80 border-2 border-emerald-700 text-emerald-200 hover:text-white shadow-lg backdrop-blur-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 transform hover:scale-110 active:scale-95"
-                aria-label="Acercar"
-                title="Acercar (+)"
+                aria-label="Zoom in"
+                title="Zoom in (+)"
               >
                 {/* Lupa con + */}
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -571,7 +580,7 @@ const Awards = () => {
                       className={`border-2 rounded-lg overflow-hidden focus:outline-none transition-all duration-200 ${activeImgIdx === idx ? 'border-emerald-400 scale-105' : 'border-gray-700 opacity-70 hover:opacity-100'}`}
                       style={{ width: 80, height: 60 }}
                       tabIndex={0}
-                      aria-label={`Ver imagen ${idx + 1}`}
+                      aria-label={`View image ${idx + 1}`}
                     >
                       <Image
                         src={img}
@@ -663,7 +672,6 @@ const Awards = () => {
                       height={160}
                       className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
                       quality={95}
-                      priority={idx < 4}
                     />
                   </div>
                   <span className="text-sm text-emerald-100 text-center leading-tight max-w-[140px]">
@@ -694,7 +702,6 @@ const Awards = () => {
                       height={160}
                       className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
                       quality={95}
-                      priority={idx < 4}
                     />
                   </div>
                   <span className="text-sm text-cyan-100 text-center leading-tight max-w-[140px]">
@@ -725,7 +732,6 @@ const Awards = () => {
                       height={160}
                       className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
                       quality={95}
-                      priority={idx < 4}
                     />
                   </div>
                   <span className="text-sm text-emerald-100 text-center leading-tight max-w-[140px]">

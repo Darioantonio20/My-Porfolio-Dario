@@ -331,7 +331,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                   Case Study
                 </span>
                 <span className="inline-flex items-center gap-2 text-[0.8rem] font-semibold text-white transition-transform duration-300 group-hover:translate-x-1">
-                  Ver detalle
+                  View Details
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 5l7 7-7 7" />
                   </svg>
@@ -380,7 +380,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
             <button
               onClick={() => setModalOpen(false)}
               className="absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-white/6 p-2 text-white/70 transition-colors hover:text-white"
-              aria-label="Cerrar vista previa"
+              aria-label="Close preview"
             >
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M6 18L18 6M6 6l12 12" />

@@ -6,12 +6,11 @@
     "description": "Freelance ticketing platform focused on highlighted events, zone-based ticket purchase, QR passes, and an administrative suite for artists, venues, events, users, and legal content.",
     "longDescription": "EZ Tickets is my most recent freelance work and brings together the public and operational sides of a ticketing product in a single experience. On the customer side, the platform presents featured events, detailed venue information, prohibited items, seat or area-based purchase flows, timed reservations, order summaries, and downloadable ticket passes with QR validation. On the operations side, the system includes an administration suite to manage artists, venues, events, users, branding assets, legal modules, and technical zone configuration with capacity controls.",
     "technologies": [
-      "Product UI/UX",
-      "Responsive Interface",
-      "Admin Dashboard",
-      "Seat Selection Flow",
-      "QR Ticketing",
-      "Information Architecture"
+      "Laravel 10",
+      "Livewire v3",
+      "Tailwind CSS v3",
+      "MySQL",
+      "MercadoPago SDK"
     ],
     "features": [
       "Featured-event landing experience with a strong promotional hero",
@@ -46,9 +45,60 @@
       "/projects/ez-ticket/admin-artist-editor.png",
       "/projects/ez-ticket/admin-venue-zones.png"
     ],
-    "category": "Freelance Product Development",
+    "category": "Freelance Build",
     "duration": "Mar. 2026 - Present",
     "team": "Freelance Development"
+  },
+  "lavafy": {
+    "id": "lavafy",
+    "title": "Lavafy",
+    "subtitle": "Full-stack platform for at-home car wash operations",
+    "description": "Freelance service marketplace built for neighborhood-based car wash logistics, combining bookings, dispatch, payments, service evidence, surveys, and multi-role operations in a single product.",
+    "longDescription": "Lavafy is a role-based service platform designed to coordinate residential car wash operations from booking to validation. The product brings together customer scheduling, washer job offers, manager supervision, and administrator controls inside a modern Laravel monolith with reactive Livewire interfaces. Clients can register vehicles and addresses, reserve services by package, pay online, track appointment status, and rate the experience. Washers receive nearby offers, manage availability, upload before-and-after evidence, and review earnings. Managers handle field-team onboarding and supervision, while administrators manage service catalogs, dynamic pricing, neighborhoods, commissions, banking data, and operating reports.",
+    "technologies": [
+      "Laravel 10",
+      "Livewire v3",
+      "Tailwind CSS v3",
+      "MySQL",
+      "MercadoPago SDK",
+      "Capacitor v8"
+    ],
+    "features": [
+      "Customer dashboard for vehicles, addresses, bookings, live status tracking, and satisfaction surveys",
+      "Washer marketplace with nearby service offers, acceptance flows, execution states, and earnings visibility",
+      "Before-and-after evidence uploads to validate service completion and quality control",
+      "Manager workspace for onboarding, editing, and supervising washer teams by operating zone",
+      "Admin suite for car types, services, neighborhoods, payments, settings, commissions, and reports",
+      "Dynamic pricing logic based on the exact combination of vehicle type and selected service package"
+    ],
+    "challenges": [
+      "Designing a single product that serves customers, field operators, supervisors, and administrators without fragmenting the experience",
+      "Keeping appointment logistics, availability, and payment states clear across reactive Livewire flows",
+      "Supporting operational integrity with audit-friendly records instead of destructive status handling",
+      "Building a mobile-first interface that still feels efficient for dashboard-heavy back-office tasks"
+    ],
+    "solutions": [
+      "Structured the platform around four explicit roles with dedicated dashboards and tailored workflows",
+      "Used Livewire-driven interactions to deliver a SPA-like experience for bookings, filtering, and modal flows without a separate frontend app",
+      "Modeled service pricing through pivot relationships and global scopes to preserve data integrity and operational clarity",
+      "Combined marketplace, scheduling, evidence review, and reporting into a modular Laravel architecture that remains maintainable as the business grows"
+    ],
+    "github": "",
+    "demo": "",
+    "image": "/projects/lavafy/admin-dashboard.png",
+    "gallery": [
+      "/projects/lavafy/admin-dashboard.png",
+      "/projects/lavafy/client-services.png",
+      "/projects/lavafy/client-booking.png",
+      "/projects/lavafy/washer-dashboard.png",
+      "/projects/lavafy/auth-login.png",
+      "/projects/lavafy/admin-car-types.png",
+      "/projects/lavafy/admin-settings.png",
+      "/projects/lavafy/admin-reports.png"
+    ],
+    "category": "Freelance Build",
+    "duration": "2026",
+    "team": "Solo Development"
   },
   "jardin-del-alma": {
     "id": "jardin-del-alma",
