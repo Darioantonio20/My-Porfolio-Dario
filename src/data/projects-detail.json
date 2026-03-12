@@ -50,6 +50,57 @@
     "duration": "2026",
     "team": "Solo Freelance Development"
   },
+  "marka-360": {
+    "id": "marka-360",
+    "title": "Marka 360",
+    "subtitle": "Full-stack corporate platform and custom CMS for digital services",
+    "description": "Custom corporate website and CMS built for a digital services agency to present services, publish portfolio and blog content, and capture leads through contact and quotation workflows.",
+    "longDescription": "Marka 360 is a full-stack corporate platform created to help a digital advertising agency showcase its services, portfolio, and content strategy while centralizing lead management in a secure back-office. The project combines a public-facing marketing site with a custom CMS where administrators manage service catalogs, nested microservices, blog posts, galleries, homepage differentiators, legal documentation, and inbound requests. Instead of building a static brochure site, the goal was to deliver a maintainable business platform that supports conversion, content updates, and internal operations from a single Laravel codebase.",
+    "technologies": [
+      "PHP 8.1",
+      "Laravel 10",
+      "Livewire v3",
+      "Tailwind CSS 3.4",
+      "Flowbite",
+      "Vite",
+      "MySQL / MariaDB"
+    ],
+    "features": [
+      "Dynamic catalog module for services and nested microservices rendered directly on the public website",
+      "Lead capture workflows for contact messages and quote requests delivered to the admin panel in real time",
+      "Portfolio and gallery management for publishing visual case studies and grouped media assets",
+      "Blog CMS with SEO-friendly slug routing and editorial publishing support",
+      "Landing-page configuration for differentiators, solutions, and core homepage sections",
+      "Authenticated admin dashboard with internal user management and role-protected middleware"
+    ],
+    "challenges": [
+      "Combining a conversion-focused public website and a practical internal CMS without fragmenting the product architecture",
+      "Keeping content management intuitive for administrators while preserving a clean, scalable data model",
+      "Structuring services, microservices, galleries, blog, and lead capture into maintainable independent modules",
+      "Balancing brand presentation, responsiveness, and performance across both public and back-office interfaces"
+    ],
+    "solutions": [
+      "Organized the platform around modular Laravel domains so each business area could evolve without turning the codebase rigid",
+      "Used Livewire to deliver reactive admin workflows and dynamic content editing without introducing unnecessary API complexity",
+      "Protected the dashboard with authentication and role-based middleware to keep operational access controlled and secure",
+      "Used Tailwind CSS, Flowbite, and Vite to create a consistent visual system and fast asset pipeline for both experiences"
+    ],
+    "github": "",
+    "demo": "https://www.marka360.com.mx/",
+    "image": "/projects/marka-360/public-homepage.png",
+    "gallery": [
+      "/projects/marka-360/public-homepage.png",
+      "/projects/marka-360/public-services.png",
+      "/projects/marka-360/admin-dashboard.png",
+      "/projects/marka-360/admin-services.png",
+      "/projects/marka-360/admin-microservices.png",
+      "/projects/marka-360/admin-legal-documents.png",
+      "/projects/marka-360/admin-differentiators.png"
+    ],
+    "category": "Freelance CMS Platform",
+    "duration": "2026",
+    "team": "Solo Freelance Development"
+  },
   "ez-ticket": {
     "id": "ez-ticket",
     "title": "EZ Tickets",

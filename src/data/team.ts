@@ -21,6 +21,17 @@ export const projects: ChromaItem[] = [
     badge: "Recent",
   },
   {
+    image: "/projects/marka-360/public-homepage.png",
+    title: "Marka 360",
+    subtitle: "Corporate Website & Custom CMS Platform",
+    handle: "Laravel 10 • Livewire v3 • Tailwind CSS • MySQL • Custom CMS",
+    location: "Freelance Build • 2026",
+    borderColor: "#38bdf8",
+    gradient: "linear-gradient(145deg,rgba(56,189,248,0.9),rgba(15,23,42,0.95) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/marka-360",
+    badge: "Freelance",
+  },
+  {
     image: "/projects/ez-ticket/user-landing.png",
     title: "EZ Tickets",
     subtitle: "Ticketing Platform & Admin Suite",
