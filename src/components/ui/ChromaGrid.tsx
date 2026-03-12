@@ -232,134 +232,159 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
           } as React.CSSProperties
         }
       >
-        {data.map((card, index) => (
-          <article
-            key={index}
-            ref={(element) => {
-              cardsRef.current[index] = element;
-            }}
-            onMouseMove={handleCardMove}
-            onMouseLeave={handleCardLeave}
-            onClick={() => handleCardClick(card.url)}
-            className="group relative flex h-[430px] w-[308px] cursor-pointer flex-col overflow-hidden rounded-[26px] border border-white/10 bg-black/35 shadow-[0_22px_55px_rgba(0,0,0,0.32)] transition-[border-color,box-shadow,transform] duration-500 hover:border-white/20 hover:shadow-[0_30px_90px_rgba(0,0,0,0.45)]"
-            style={
-              {
-                "--card-border": card.borderColor || "transparent",
-                "--spotlight-color": "rgba(255,255,255,0.28)",
-                background: card.gradient,
-                transformStyle: "preserve-3d",
-              } as React.CSSProperties
-            }
-          >
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),transparent_28%,rgba(2,6,23,0.75))]" />
-            <div
-              className="absolute inset-x-5 top-0 h-24 -translate-y-1/2 rounded-full blur-3xl opacity-80"
-              style={{
-                background: card.borderColor
-                  ? `${card.borderColor}55`
-                  : "rgba(255,255,255,0.08)",
+        {data.map((card, index) => {
+          const techStack = card.handle ? card.handle.split(" • ") : [];
+          const visibleTech = techStack.slice(0, 3);
+          const hiddenTechCount = Math.max(techStack.length - visibleTech.length, 0);
+
+          return (
+            <article
+              key={index}
+              ref={(element) => {
+                cardsRef.current[index] = element;
               }}
-            />
-
-            {card.badge && (
-              <span className="absolute left-4 top-4 z-20 rounded-full border border-white/15 bg-black/55 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.34em] text-amber-300 backdrop-blur-md">
-                {card.badge}
-              </span>
-            )}
-
-            <div
-              className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-              style={{
-                background:
-                  "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
+              onMouseMove={handleCardMove}
+              onMouseLeave={handleCardLeave}
+              onClick={() => handleCardClick(card.url)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handleCardClick(card.url);
+                }
               }}
-            />
-
-            <div className="relative z-10 box-border h-[195px] flex-shrink-0 p-[12px]">
-              <button
-                type="button"
-                className="group/image relative block h-full w-full overflow-hidden rounded-[16px]"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setSelectedCard(card);
-                  setModalOpen(true);
+              tabIndex={0}
+              className="group relative flex h-[452px] w-[308px] cursor-pointer flex-col overflow-hidden rounded-[28px] border border-white/12 bg-black/35 shadow-[0_24px_60px_rgba(0,0,0,0.34)] transition-[border-color,box-shadow,transform] duration-500 hover:border-white/25 hover:shadow-[0_34px_95px_rgba(0,0,0,0.48)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+              style={
+                {
+                  "--card-border": card.borderColor || "transparent",
+                  "--spotlight-color": "rgba(255,255,255,0.28)",
+                  background: card.gradient,
+                  transformStyle: "preserve-3d",
+                } as React.CSSProperties
+              }
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),transparent_30%,rgba(2,6,23,0.78))]" />
+              <div
+                className="absolute inset-x-5 top-0 h-24 -translate-y-1/2 rounded-full blur-3xl opacity-85"
+                style={{
+                  background: card.borderColor
+                    ? `${card.borderColor}66`
+                    : "rgba(255,255,255,0.08)",
                 }}
-                aria-label={`Preview image for ${card.title}`}
-              >
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  width={280}
-                  height={160}
-                  className="h-full w-full rounded-[16px] object-cover transition-transform duration-700 group-hover:scale-[1.04] group-hover/image:scale-[1.06]"
-                  loading="lazy"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-90 transition-opacity duration-300 group-hover/image:opacity-100" />
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/55 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition-transform duration-300 group-hover/image:scale-105">
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.8}
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      />
-                      <circle cx="12" cy="12" r="3" strokeWidth={1.8} />
-                    </svg>
-                  </span>
-                </div>
-              </button>
-            </div>
+              />
 
-            <footer className="relative z-10 flex min-h-[180px] flex-1 flex-col justify-between overflow-hidden bg-black/55 p-5 text-white backdrop-blur-md">
-              <div className="space-y-3 overflow-hidden">
-                <h3
-                  className="m-0 truncate text-[1.18rem] font-bold text-white drop-shadow-lg"
-                  title={card.title}
+              {card.badge && (
+                <span className="absolute left-4 top-4 z-20 rounded-full border border-amber-300/20 bg-black/65 px-3.5 py-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.34em] text-amber-300 backdrop-blur-md">
+                  {card.badge}
+                </span>
+              )}
+
+              <div
+                className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                style={{
+                  background:
+                    "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
+                }}
+              />
+
+              <div className="relative z-10 box-border h-[196px] flex-shrink-0 p-[12px]">
+                <button
+                  type="button"
+                  className="group/image relative block h-full w-full cursor-zoom-in overflow-hidden rounded-[16px] border border-cyan-300/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setSelectedCard(card);
+                    setModalOpen(true);
+                  }}
+                  aria-label={`Preview image for ${card.title}`}
                 >
-                  {card.title}
-                </h3>
-                <p className="m-0 overflow-hidden text-[0.92rem] font-medium leading-6 text-white/72 line-clamp-2">
-                  {card.subtitle}
-                </p>
-
-                {card.handle && (
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {card.handle.split(" • ").map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="truncate rounded-full border border-white/10 bg-white/6 px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.2em] text-white/68"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    width={280}
+                    height={160}
+                    className="h-full w-full rounded-[16px] object-cover transition-transform duration-700 group-hover:scale-[1.04] group-hover/image:scale-[1.07]"
+                    loading="lazy"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/72 via-black/20 to-transparent opacity-90 transition-opacity duration-300 group-hover/image:opacity-100" />
+                  <div className="pointer-events-none absolute bottom-3 right-3 flex items-center justify-center">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition-transform duration-300 group-hover/image:scale-105">
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.8}
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                        <circle cx="12" cy="12" r="3" strokeWidth={1.8} />
+                      </svg>
+                      Preview
+                    </span>
                   </div>
-                )}
+                </button>
+              </div>
 
-                {card.location && (
-                  <p
-                    className="m-0 mt-2 truncate text-[0.78rem] font-medium uppercase tracking-[0.28em] text-white/42"
-                    title={card.location}
+              <footer className="relative z-10 flex min-h-[190px] flex-1 flex-col justify-between overflow-hidden bg-black/58 px-5 pb-5 pt-4 text-white backdrop-blur-md">
+                <div className="space-y-3 overflow-hidden">
+                  <h3
+                    className="m-0 text-[1.65rem] font-extrabold leading-[1.12] tracking-tight text-white drop-shadow-lg line-clamp-2"
+                    title={card.title}
                   >
-                    {card.location}
+                    {card.title}
+                  </h3>
+                  <p className="m-0 overflow-hidden text-[0.94rem] font-medium leading-6 text-white/74 line-clamp-3">
+                    {card.subtitle}
                   </p>
-                )}
-              </div>
 
-              <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
-                <span className="text-[0.68rem] uppercase tracking-[0.36em] text-white/38">
-                  Case Study
-                </span>
-                <span className="inline-flex items-center gap-2 text-[0.8rem] font-semibold text-white transition-transform duration-300 group-hover:translate-x-1">
-                  View Details
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </div>
-            </footer>
-          </article>
-        ))}
+                  {!!visibleTech.length && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {visibleTech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="truncate rounded-full border border-white/12 bg-white/7 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-white/75"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {hiddenTechCount > 0 && (
+                        <span className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-cyan-200">
+                          +{hiddenTechCount} more
+                        </span>
+                      )}
+                    </div>
+                  )}
+
+                  {card.location && (
+                    <p
+                      className="m-0 inline-flex max-w-full items-center gap-2 truncate text-[0.75rem] font-medium uppercase tracking-[0.24em] text-white/48"
+                      title={card.location}
+                    >
+                      <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-300/80" />
+                      {card.location}
+                    </p>
+                  )}
+                </div>
+
+                <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+                  <span className="text-[0.66rem] uppercase tracking-[0.34em] text-white/38">
+                    Case Study
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handleCardClick(card.url)}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/8 px-3 py-1.5 text-[0.76rem] font-semibold text-white transition-all duration-300 hover:border-white/35 hover:bg-white/14 hover:translate-x-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80"
+                    aria-label={`Open details for ${card.title}`}
+                  >
+                    Open Details
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </footer>
+            </article>
+          );
+        })}
 
         <div
           className="pointer-events-none absolute inset-0 z-30"
