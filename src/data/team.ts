@@ -10,6 +10,17 @@ import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
   {
+    image: "/projects/voldo/main-dashboard.png",
+    title: "Voldo",
+    subtitle: "ERP & Dealer Management System for Heavy Equipment Operations",
+    handle: "Laravel 10 • Livewire v3 • Tailwind CSS 3 • MySQL • ERP / DMS",
+    location: "Freelance Build • 2026",
+    borderColor: "#ef4444",
+    gradient: "linear-gradient(145deg,rgba(239,68,68,0.92),rgba(8,15,38,0.95) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/voldo",
+    badge: "Recent",
+  },
+  {
     image: "/projects/ez-ticket/user-landing.png",
     title: "EZ Tickets",
     subtitle: "Ticketing Platform & Admin Suite",
@@ -17,7 +28,7 @@ export const projects: ChromaItem[] = [
     location: "Mar. 2026 - Present",
     borderColor: "#f97316",
     gradient: "linear-gradient(145deg,rgba(249,115,22,0.85),rgba(10,10,10,0.96) 58%,rgba(2,6,23,0.96))",
-    url: "/proyectos/ez-ticket",
+    url: "/projects/ez-ticket",
     badge: "Recent",
   },
   {
@@ -28,7 +39,7 @@ export const projects: ChromaItem[] = [
     location: "Client • Washer • Manager • Admin",
     borderColor: "#ef4444",
     gradient: "linear-gradient(145deg,rgba(239,68,68,0.9),rgba(249,115,22,0.72) 40%,rgba(10,10,10,0.98))",
-    url: "/proyectos/lavafy",
+    url: "/projects/lavafy",
     badge: "Freelance",
   },
   {
@@ -39,7 +50,7 @@ export const projects: ChromaItem[] = [
     location: "2025 - Present",
     borderColor: "#22d3ee",
     gradient: "linear-gradient(135deg,#22d3ee,#000)",
-    url: "/proyectos/my-portfolio-dario",
+    url: "/projects/my-portfolio-dario",
   },
   {
     image: imgAnimenarioList,
@@ -49,7 +60,7 @@ export const projects: ChromaItem[] = [
     location: "Jun. 2025 - Present",
     borderColor: "#F59E0B",
     gradient: "linear-gradient(135deg,#F59E0B,#000)",
-    url: "/proyectos/animenariolist",
+    url: "/projects/animenariolist",
   },
   {
     image: DrNabani,
@@ -59,7 +70,7 @@ export const projects: ChromaItem[] = [
     location: "Dec. 2024 - Feb. 2025",
     borderColor: "#0EA5E9",
     gradient: "linear-gradient(135deg,#0EA5E9,#000)",
-    url: "/proyectos/dr-nabani",
+    url: "/projects/dr-nabani",
   },
   {
     image: WebCoepes,
@@ -69,7 +80,7 @@ export const projects: ChromaItem[] = [
     location: "Aug. 2024 - Dec. 2024",
     borderColor: "#6366F1",
     gradient: "linear-gradient(135deg,#6366F1,#000)",
-    url: "/proyectos/coepes-chiapas",
+    url: "/projects/coepes-chiapas",
   },
   {
     image: PasedeLista,
@@ -79,7 +90,7 @@ export const projects: ChromaItem[] = [
     location: "Nov. 2024 - Dec. 2024",
     borderColor: "#06B6D4",
     gradient: "linear-gradient(135deg,#06B6D4,#000)",
-    url: "/proyectos/pase-de-lista",
+    url: "/projects/pase-de-lista",
   },
   {
     image: LightCenter,
@@ -89,7 +100,7 @@ export const projects: ChromaItem[] = [
     location: "iOS Deployment - App Store",
     borderColor: "#8A2BE2",
     gradient: "linear-gradient(135deg,#8A2BE2,#000)",
-    url: "/proyectos/light-center-ios",
+    url: "/projects/light-center-ios",
   },
   {
     image: imgPredictionSoft,
@@ -99,7 +110,7 @@ export const projects: ChromaItem[] = [
     location: "Aug. 2023 - Dec. 2023",
     borderColor: "#0EA5E9",
     gradient: "linear-gradient(135deg,#0EA5E9,#000)",
-    url: "/proyectos/prediction-software",
+    url: "/projects/prediction-software",
   },
   {
     image: JardinDelAlma,
@@ -109,6 +120,6 @@ export const projects: ChromaItem[] = [
     location: "Professional Internship UP Chiapas",
     borderColor: "#EC4899",
     gradient: "linear-gradient(145deg,#EC4899,#000)",
-    url: "/proyectos/jardin-del-alma",
+    url: "/projects/jardin-del-alma",
   },
 ]; 

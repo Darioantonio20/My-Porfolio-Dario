@@ -276,19 +276,39 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
             />
 
             <div className="relative z-10 box-border h-[195px] flex-shrink-0 p-[12px]">
-              <Image
-                src={card.image}
-                alt={card.title}
-                width={280}
-                height={160}
-                className="h-full w-full rounded-[16px] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                loading="lazy"
+              <button
+                type="button"
+                className="group/image relative block h-full w-full overflow-hidden rounded-[16px]"
                 onClick={(event) => {
                   event.stopPropagation();
                   setSelectedCard(card);
                   setModalOpen(true);
                 }}
-              />
+                aria-label={`Preview image for ${card.title}`}
+              >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  width={280}
+                  height={160}
+                  className="h-full w-full rounded-[16px] object-cover transition-transform duration-700 group-hover:scale-[1.04] group-hover/image:scale-[1.06]"
+                  loading="lazy"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-90 transition-opacity duration-300 group-hover/image:opacity-100" />
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/55 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition-transform duration-300 group-hover/image:scale-105">
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.8}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                      <circle cx="12" cy="12" r="3" strokeWidth={1.8} />
+                    </svg>
+                  </span>
+                </div>
+              </button>
             </div>
 
             <footer className="relative z-10 flex min-h-[180px] flex-1 flex-col justify-between overflow-hidden bg-black/55 p-5 text-white backdrop-blur-md">

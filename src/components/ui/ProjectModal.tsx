@@ -46,7 +46,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
   const project = projectId ? projectDetails[projectId] : null;
 
   const projectCard = useMemo(
-    () => projects.find((item) => item.url === `/proyectos/${projectId}`),
+    () => projects.find((item) => item.url === `/projects/${projectId}`),
     [projectId]
   );
 

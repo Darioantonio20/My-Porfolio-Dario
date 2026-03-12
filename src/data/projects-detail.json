@@ -1,4 +1,55 @@
 {
+  "voldo": {
+    "id": "voldo",
+    "title": "Voldo",
+    "subtitle": "ERP and dealer management platform for heavy equipment operations",
+    "description": "Freelance ERP and DMS platform built to centralize inventory, acquisitions, workshops, rentals, sales, finance, HR, and operational reporting for a company focused on heavy vehicles and machinery.",
+    "longDescription": "Voldo is a business operations platform designed for companies that buy, condition, rent, sell, and maintain heavy equipment such as tractors and medium-duty trucks. The system connects inventory intake, dynamic inspection checklists, workshop execution, spare-parts control, rental and sales workflows, financial operations, HR records, and management dashboards in one Laravel-based product. Its value is not only in storing data, but in modeling the real operational lifecycle of each unit and turning it into trackable processes, role-based permissions, and automated business documents.",
+    "technologies": [
+      "PHP 8.1+",
+      "Laravel 10",
+      "Livewire v3",
+      "Tailwind CSS 3",
+      "Flowbite",
+      "Vite",
+      "MySQL / MariaDB",
+      "DOMPDF",
+      "Laravel Excel"
+    ],
+    "features": [
+      "Inventory and product catalog management for heavy vehicles, tractors, and equipment with attributes, images, warranties, and intake data",
+      "Acquisition workflows for supplier control, cost tracking, and merchandise registration before commercial availability",
+      "Maintenance module with work orders, service reports, dynamic checklists, conditioning flows, and spare-parts inventory",
+      "Sales, CRM, post-sales, and rental workflows that connect leads, quotations, follow-up, contracts, deposits, and after-sales support",
+      "Finance and invoicing tooling for income, expenses, payment methods, vouchers, tax data, and CFDI-related processes",
+      "Role-based access for eight operational profiles across administration, HR, maintenance, acquisitions, finance, rentals, spare parts, and sales"
+    ],
+    "challenges": [
+      "Translating workshop, commercial, and financial processes into a single system without oversimplifying business rules",
+      "Keeping multiple departments synchronized while each role only sees the actions and approvals relevant to its responsibilities",
+      "Managing the full lifecycle of a unit from acquisition and inspection to maintenance, sale or rental, and post-sales operations",
+      "Automating operational outputs such as work orders, inspection reports, vouchers, and exports without fragmenting the data model"
+    ],
+    "solutions": [
+      "Built the platform as a modular ERP/DMS architecture with tightly connected workflows instead of isolated admin panels",
+      "Used Livewire-driven interfaces and Laravel domain logic to keep complex operations reactive without requiring a separate frontend application",
+      "Modeled permissions around real operational roles, making approvals, accountability, and delegation clearer across departments",
+      "Integrated PDF and Excel generation directly into the workflow so documents and reports are produced from the same source of truth"
+    ],
+    "github": "",
+    "demo": "https://voldo.softwaregc.com/",
+    "image": "/projects/voldo/main-dashboard.png",
+    "gallery": [
+      "/projects/voldo/login-screen.png",
+      "/projects/voldo/main-dashboard.png",
+      "/projects/voldo/post-sales-workflow.png",
+      "/projects/voldo/user-accounts-rbac.png",
+      "/projects/voldo/finance-deposits.png"
+    ],
+    "category": "Freelance ERP Platform",
+    "duration": "2026",
+    "team": "Solo Freelance Development"
+  },
   "ez-ticket": {
     "id": "ez-ticket",
     "title": "EZ Tickets",
@@ -33,7 +84,7 @@
       "Designed a compact digital pass layout with QR emphasis for fast access and validation"
     ],
     "github": "",
-    "demo": "",
+    "demo": "https://eztickets.mx/",
     "image": "/projects/ez-ticket/user-landing.png",
     "gallery": [
       "/projects/ez-ticket/user-landing.png",
@@ -84,7 +135,7 @@
       "Combined marketplace, scheduling, evidence review, and reporting into a modular Laravel architecture that remains maintainable as the business grows"
     ],
     "github": "",
-    "demo": "",
+    "demo": "https://lavafy.com.mx/",
     "image": "/projects/lavafy/admin-dashboard.png",
     "gallery": [
       "/projects/lavafy/admin-dashboard.png",

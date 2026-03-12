@@ -10,15 +10,12 @@ const Team = () => {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
 
   const handleProjectClick = (url: string) => {
-    // Extraer el ID del proyecto de la URL
-    const projectId = url.replace('/proyectos/', '');
+    const projectId = url.replace('/projects/', '');
     
-    // Verificar si es un proyecto válido
     if (projectId && projectId !== '#') {
       setSelectedProjectId(projectId);
       setIsModalOpen(true);
     } else if (url.startsWith('http')) {
-      // Si es un enlace externo, abrir en nueva pestaña
       window.open(url, '_blank', 'noopener,noreferrer');
     }
   };
@@ -30,7 +27,7 @@ const Team = () => {
 
   return (
     <>
-      <section id="proyectos" className="relative overflow-hidden py-20 text-white bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950">
+      <section id="projects" className="relative overflow-hidden py-20 text-white bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(34,197,94,0.15),transparent_22%),radial-gradient(circle_at_88%_10%,rgba(249,115,22,0.12),transparent_24%),radial-gradient(circle_at_50%_100%,rgba(34,211,238,0.12),transparent_28%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -44,9 +41,8 @@ const Team = () => {
               </span>
             </h2>
             <p className="text-lg max-w-3xl mx-auto leading-8 text-cyan-100/78">
-              Incluí mi trabajo freelance más reciente y reforcé la experiencia de cada case study con
-              mejores transiciones, galería visual y una presentación más clara del contexto del producto.
-              Haz click en cualquier proyecto para ver el detalle.
+              A curated selection of freelance and personal products across ERP workflows,
+              internal tooling, marketplaces, and customer-facing experiences.
             </p>
           </div>
 
