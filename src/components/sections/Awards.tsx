@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image, { StaticImageData } from 'next/image';
 import CedulaProfesional from '@/assets/img/certifications/CedulaProfesional.png';
@@ -118,110 +118,235 @@ const awards: Array<{
   },
 ];
 
+type BadgeProvider = 'AWS' | 'Cisco' | 'Google';
+type BadgeTrack = 'Cloud' | 'Cybersecurity' | 'Marketing';
+type BadgePlatform = 'Credly' | 'Coursera';
+type BadgeFilter = 'All' | BadgeProvider;
+
+const badgeProviders: BadgeFilter[] = ['All', 'AWS', 'Cisco', 'Google'];
+
+const providerStyles: Record<BadgeProvider, string> = {
+  AWS: 'border-amber-300/30 bg-amber-400/12 text-amber-200',
+  Cisco: 'border-cyan-300/30 bg-cyan-400/12 text-cyan-200',
+  Google: 'border-emerald-300/30 bg-emerald-400/12 text-emerald-200',
+};
+
+const trackStyles: Record<BadgeTrack, string> = {
+  Cloud: 'text-sky-200',
+  Cybersecurity: 'text-violet-200',
+  Marketing: 'text-emerald-200',
+};
+
 const badges: Array<{
+  id: string;
   title: string;
   url: string;
   img: string | StaticImageData;
-  platform: string;
+  platform: BadgePlatform;
+  provider: BadgeProvider;
+  issuedLabel: string;
+  issuedOrder: number;
+  track: BadgeTrack;
+  skills: string[];
+  featured?: boolean;
 }> = [
-  // AWS Academy
   {
-    title: 'AWS Academy Graduate - AWS Academy Cloud Foundations',
+    id: 'aws-cloud-foundations',
+    title: 'AWS Academy Cloud Foundations',
     url: 'https://www.credly.com/badges/22b9c5b2-50a7-4a23-bd0d-e8bd1561d36a/linked_in_profile',
     img: BadgeAWSCloudFoundations,
     platform: 'Credly',
+    provider: 'AWS',
+    issuedLabel: '2024',
+    issuedOrder: 202404,
+    track: 'Cloud',
+    skills: ['AWS', 'Cloud Basics', 'Infrastructure'],
   },
   {
-    title: 'AWS Academy Graduate - AWS Academy Introduction to Cloud Semester 1',
+    id: 'aws-intro-cloud-s1',
+    title: 'AWS Academy Introduction to Cloud (Semester 1)',
     url: 'https://www.credly.com/badges/4c1c4aa6-f531-4635-a23a-d0cb112f1e31/linked_in_profile',
     img: AWSAcademyIntroductiontoCloudSemester1,
     platform: 'Credly',
+    provider: 'AWS',
+    issuedLabel: '2024',
+    issuedOrder: 202406,
+    track: 'Cloud',
+    skills: ['AWS', 'Cloud Concepts', 'Cloud Services'],
+    featured: true,
   },
   {
-    title: 'AWS Academy Graduate - AWS Academy Cloud Developing',
+    id: 'aws-cloud-developing',
+    title: 'AWS Academy Cloud Developing',
     url: 'https://www.credly.com/badges/6c226820-4530-4528-bd8b-5de421532070/linked_in_profile',
     img: AWSAcademyCloudDeveloping,
     platform: 'Credly',
+    provider: 'AWS',
+    issuedLabel: '2025',
+    issuedOrder: 202502,
+    track: 'Cloud',
+    skills: ['AWS', 'Cloud Development', 'Application Design'],
+    featured: true,
   },
   {
-    title: 'AWS Academy Graduate - AWS Academy Cloud Security Foundations',
+    id: 'aws-cloud-security-foundations',
+    title: 'AWS Academy Cloud Security Foundations',
     url: 'https://www.credly.com/badges/a62185aa-be22-4483-82db-402ab5336101/linked_in_profile',
     img: AWSAcademyCloudSecurityFoundations,
     platform: 'Credly',
+    provider: 'AWS',
+    issuedLabel: '2025',
+    issuedOrder: 202503,
+    track: 'Cybersecurity',
+    skills: ['AWS Security', 'Cloud Security', 'Risk Management'],
+    featured: true,
   },
-  // Coursera CISCO
   {
+    id: 'cisco-networking-basics',
     title: 'Networking Basics',
     url: 'https://www.credly.com/badges/35f93d61-e44e-4977-967d-e2f51a4cbb90/linked_in_profile',
     img: NetworkingBasics,
     platform: 'Credly',
+    provider: 'Cisco',
+    issuedLabel: '2024',
+    issuedOrder: 202405,
+    track: 'Cybersecurity',
+    skills: ['Networking', 'OSI Model', 'Network Fundamentals'],
   },
   {
+    id: 'cisco-network-support-security',
     title: 'Network Support and Security',
     url: 'https://www.credly.com/badges/35ce798f-6caf-4822-8ae1-a027daf866a3/linked_in_profile',
     img: NetworkSupportandSecurity,
     platform: 'Credly',
+    provider: 'Cisco',
+    issuedLabel: '2024',
+    issuedOrder: 202407,
+    track: 'Cybersecurity',
+    skills: ['Network Security', 'IT Support', 'Troubleshooting'],
+    featured: true,
   },
   {
+    id: 'cisco-os-basics',
     title: 'Operating Systems Basics',
     url: 'https://www.credly.com/badges/ad58ab2a-741a-4ac7-9d3c-e1b0c619ffac/linked_in_profile',
     img: OperatingSystemsBasics,
     platform: 'Credly',
+    provider: 'Cisco',
+    issuedLabel: '2024',
+    issuedOrder: 202408,
+    track: 'Cybersecurity',
+    skills: ['Operating Systems', 'System Administration', 'Core IT'],
   },
   {
+    id: 'cisco-endpoint-security',
     title: 'Endpoint Security',
     url: 'https://www.credly.com/badges/4a15b2d8-fab1-4820-8ed4-aace1da38b26/linked_in_profile',
     img: EndpointSecurity,
     platform: 'Credly',
+    provider: 'Cisco',
+    issuedLabel: '2024',
+    issuedOrder: 202409,
+    track: 'Cybersecurity',
+    skills: ['Endpoint Protection', 'Device Security', 'Threat Prevention'],
   },
   {
+    id: 'cisco-intro-cybersecurity',
     title: 'Introduction to Cybersecurity',
     url: 'https://www.credly.com/badges/3b93c9ef-08cb-4377-b9c7-c488051dd4d2/linked_in_profile',
     img: IntroductiontoCybersecurity,
     platform: 'Credly',
+    provider: 'Cisco',
+    issuedLabel: '2024',
+    issuedOrder: 202410,
+    track: 'Cybersecurity',
+    skills: ['Cybersecurity', 'Threat Landscape', 'Security Foundations'],
+    featured: true,
   },
-  // Coursera Google
   {
+    id: 'google-dm-ecommerce-cert',
     title: 'Google Digital Marketing & E-commerce Certificate',
     url: 'https://www.credly.com/badges/83e02fce-50b4-4cef-9638-69a76d9fdffe/linked_in_profile',
     img: CertificadodeMarketingDigitalEcommercedeGoogle,
     platform: 'Credly',
+    provider: 'Google',
+    issuedLabel: '2025',
+    issuedOrder: 202501,
+    track: 'Marketing',
+    skills: ['Digital Marketing', 'E-commerce', 'Analytics'],
+    featured: true,
   },
   {
+    id: 'google-marketing-specialization',
     title: 'Google Marketing Digital e E-Commerce',
     url: 'https://www.coursera.org/account/accomplishments/specialization/8CTJHFRMQ6Q8',
     img: GoogleMarketingDigitaleECommerce,
     platform: 'Coursera',
+    provider: 'Google',
+    issuedLabel: '2025',
+    issuedOrder: 202502,
+    track: 'Marketing',
+    skills: ['Marketing Strategy', 'Content', 'Campaign Planning'],
   },
   {
+    id: 'google-foundations-dm-ecommerce',
     title: 'Foundations of Digital Marketing and E-commerce',
     url: 'https://www.coursera.org/account/accomplishments/verify/XTGLZMU85JHQ',
     img: FundamentosDelMarketingDigitalYComercioElectronico,
     platform: 'Coursera',
+    provider: 'Google',
+    issuedLabel: '2025',
+    issuedOrder: 202503,
+    track: 'Marketing',
+    skills: ['Digital Fundamentals', 'E-commerce Basics', 'Market Research'],
   },
   {
+    id: 'google-from-likes-to-leads',
     title: 'From Likes to Leads: Interact with Customers Online',
     url: 'https://www.coursera.org/account/accomplishments/verify/C8X4MFH5BL5D',
     img: DeMeGustaaLeadsInteractúaConLasYLosClientesEnLínea,
     platform: 'Coursera',
+    provider: 'Google',
+    issuedLabel: '2025',
+    issuedOrder: 202504,
+    track: 'Marketing',
+    skills: ['Lead Generation', 'Social Media', 'Customer Engagement'],
   },
   {
+    id: 'google-creativity-inbox',
     title: 'Creativity in the Inbox: Email Marketing',
     url: 'https://www.coursera.org/account/accomplishments/verify/2VJ7MADLG369',
     img: CreatividadEnLaBandejaDeEntradaMarketingPorCorreoElectronico,
     platform: 'Coursera',
+    provider: 'Google',
+    issuedLabel: '2025',
+    issuedOrder: 202505,
+    track: 'Marketing',
+    skills: ['Email Marketing', 'Automation', 'Retention'],
   },
   {
+    id: 'google-make-the-sale',
     title: 'Make the Sale: Create, Launch, and Manage E-commerce Stores',
     url: 'https://www.coursera.org/account/accomplishments/verify/6UQWURGK4JJA',
     img: ConsigueLaVentaCreaLanzaYAdministraTiendasDeComercioElectronico,
     platform: 'Coursera',
+    provider: 'Google',
+    issuedLabel: '2025',
+    issuedOrder: 202506,
+    track: 'Marketing',
+    skills: ['Store Operations', 'Conversion', 'E-commerce Management'],
   },
   {
+    id: 'google-attract-engage-customers',
     title: 'Attract and Engage Customers with Digital Marketing',
     url: 'https://www.coursera.org/account/accomplishments/verify/2P94NJWCYDAZ',
     img: InteractuarConMedianteElMarketingDigital,
     platform: 'Coursera',
+    provider: 'Google',
+    issuedLabel: '2025',
+    issuedOrder: 202507,
+    track: 'Marketing',
+    skills: ['Customer Acquisition', 'Engagement', 'Marketing Funnels'],
   },
 ];
 
@@ -234,6 +359,32 @@ const awardsByCategory = awards.reduce((acc, award) => {
   return acc;
 }, {} as Record<string, typeof awards>);
 
+const AnimatedCounter = ({ value }: { value: number }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const duration = 650;
+    const startValue = count;
+    const startTime = performance.now();
+    let frameId = 0;
+
+    const animate = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const nextValue = Math.round(startValue + (value - startValue) * progress);
+      setCount(nextValue);
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(animate);
+      }
+    };
+
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, [value]);
+
+  return <span>{count}</span>;
+};
+
 const Awards = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState<string | null>(null);
@@ -244,6 +395,41 @@ const Awards = () => {
   const panzoomRef = useRef<unknown>(null);
   const [fade, setFade] = useState(false);
   const [expandedFolders, setExpandedFolders] = useState<string[]>([]);
+  const [badgeFilter, setBadgeFilter] = useState<BadgeFilter>('All');
+  const [badgeSearch, setBadgeSearch] = useState('');
+
+  const badgeHighlights = useMemo(
+    () => badges.filter((badge) => badge.featured).slice(0, 4),
+    []
+  );
+
+  const badgeStats = useMemo(
+    () => ({
+      total: badges.length,
+      cloud: badges.filter((badge) => badge.track === 'Cloud').length,
+      cybersecurity: badges.filter((badge) => badge.track === 'Cybersecurity').length,
+      marketing: badges.filter((badge) => badge.track === 'Marketing').length,
+    }),
+    []
+  );
+
+  const filteredBadges = useMemo(() => {
+    const searchValue = badgeSearch.trim().toLowerCase();
+    let nextBadges = badges.filter((badge) => {
+      const providerMatch = badgeFilter === 'All' || badge.provider === badgeFilter;
+      const searchMatch =
+        searchValue === '' ||
+        `${badge.title} ${badge.provider} ${badge.track} ${badge.skills.join(' ')}`
+          .toLowerCase()
+          .includes(searchValue);
+
+      return providerMatch && searchMatch;
+    });
+
+    nextBadges = [...nextBadges].sort((a, b) => b.issuedOrder - a.issuedOrder);
+
+    return nextBadges;
+  }, [badgeFilter, badgeSearch]);
 
   const openModal = (
     imgOrImgs: string | StaticImageData | Array<string | StaticImageData>,
@@ -630,6 +816,17 @@ const Awards = () => {
             transform: translate(-50%, -50%) scale(1);
           }
         }
+
+        @keyframes badge-in {
+          from {
+            opacity: 0;
+            transform: translateY(16px) scale(0.98);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
         
         .animate-fade-in-up {
           animation: fade-in-up 0.6s ease-out forwards;
@@ -638,110 +835,159 @@ const Awards = () => {
         .expand-from-center {
           animation: expand-from-center 0.6s ease-out forwards;
         }
+
+        .animate-badge-in {
+          animation: badge-in 0.48s ease-out both;
+        }
       `}</style>
 
-      <section className="mt-20">
-        <div className="text-center mb-20">
+      <section className="mt-24">
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
             Badges & <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Digital Certificates</span>
           </h2>
-          <p className="text-lg text-cyan-200 max-w-2xl mx-auto">
-            Achievements and certifications obtained on international platforms.
+          <p className="text-lg text-cyan-200 max-w-3xl mx-auto leading-8">
+            Verified credentials from AWS Academy, Cisco Networking, and Google programs.
+            Explore key highlights first, then browse the full library with filters and search.
           </p>
         </div>
-        
-        {/* Skills en 3 columnas como Hard Skills */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* AWS Academy */}
-          <div>
-            <h4 className="text-lg font-semibold text-emerald-300 mb-8 text-center">AWS Academy</h4>
-            <div className="flex flex-wrap justify-center gap-4">
-              {badges.filter(badge => badge.platform === 'Credly' && badge.title.includes('AWS')).map((badge, idx) => (
-                <a
-                  key={idx}
-                  href={badge.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center group"
-                >
-                  <div className="text-4xl mb-1 transition-transform duration-200 group-hover:scale-125 hover:scale-125 cursor-pointer">
-                    <Image
-                      src={badge.img}
-                      alt={badge.title}
-                      width={160}
-                      height={160}
-                      className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
-                      quality={95}
-                    />
-                  </div>
-                  <span className="text-sm text-emerald-100 text-center leading-tight max-w-[140px]">
-                    {badge.title.split(' - ')[1] || badge.title.split(' ').slice(-2).join(' ')}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
 
-          {/* CISCO Networking */}
-          <div>
-            <h4 className="text-lg font-semibold text-cyan-300 mb-8 text-center">CISCO Networking</h4>
-            <div className="flex flex-wrap justify-center gap-4">
-              {badges.filter(badge => badge.platform === 'Credly' && !badge.title.includes('AWS') && !badge.title.includes('Google')).map((badge, idx) => (
-                <a
-                  key={idx}
-                  href={badge.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center group"
-                >
-                  <div className="text-4xl mb-1 transition-transform duration-200 group-hover:scale-125 hover:scale-125 cursor-pointer">
-                    <Image
-                      src={badge.img}
-                      alt={badge.title}
-                      width={160}
-                      height={160}
-                      className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
-                      quality={95}
-                    />
-                  </div>
-                  <span className="text-sm text-cyan-100 text-center leading-tight max-w-[140px]">
-                    {badge.title}
-                  </span>
-                </a>
-              ))}
-            </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-md">
+            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-white/45">Total Badges</p>
+            <p className="mt-3 text-3xl font-extrabold text-white">
+              <AnimatedCounter value={badgeStats.total} />
+            </p>
           </div>
-
-          {/* Google Marketing */}
-          <div>
-            <h4 className="text-lg font-semibold text-emerald-400 mb-8 text-center">Google Marketing</h4>
-            <div className="flex flex-wrap justify-center gap-4">
-              {badges.filter(badge => badge.title.includes('Google') || badge.title.includes('Marketing') || badge.title.includes('marketing')).map((badge, idx) => (
-                <a
-                  key={idx}
-                  href={badge.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center group"
-                >
-                  <div className="text-4xl mb-1 transition-transform duration-200 group-hover:scale-125 hover:scale-125 cursor-pointer">
-                    <Image
-                      src={badge.img}
-                      alt={badge.title}
-                      width={160}
-                      height={160}
-                      className="w-16 h-16 object-contain rounded-lg border border-cyan-400 bg-white"
-                      quality={95}
-                    />
-                  </div>
-                  <span className="text-sm text-emerald-100 text-center leading-tight max-w-[140px]">
-                    {badge.title}
-                  </span>
-                </a>
-              ))}
-            </div>
+          <div className="rounded-2xl border border-sky-300/20 bg-sky-400/[0.08] p-5 backdrop-blur-md">
+            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-sky-100/80">Cloud</p>
+            <p className="mt-3 text-3xl font-extrabold text-sky-100">
+              <AnimatedCounter value={badgeStats.cloud} />
+            </p>
+          </div>
+          <div className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.08] p-5 backdrop-blur-md">
+            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-violet-100/80">Cybersecurity</p>
+            <p className="mt-3 text-3xl font-extrabold text-violet-100">
+              <AnimatedCounter value={badgeStats.cybersecurity} />
+            </p>
+          </div>
+          <div className="rounded-2xl border border-emerald-300/20 bg-emerald-400/[0.08] p-5 backdrop-blur-md">
+            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-emerald-100/80">Marketing</p>
+            <p className="mt-3 text-3xl font-extrabold text-emerald-100">
+              <AnimatedCounter value={badgeStats.marketing} />
+            </p>
           </div>
         </div>
+
+        <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="relative w-full lg:max-w-md">
+              <svg className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white/35" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m1.35-4.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                value={badgeSearch}
+                onChange={(event) => setBadgeSearch(event.target.value)}
+                placeholder="Search by title, provider, track, or skill..."
+                className="w-full rounded-xl border border-white/12 bg-black/30 py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-cyan-300/40"
+              />
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {badgeProviders.map((provider) => (
+                <button
+                  key={provider}
+                  type="button"
+                  onClick={() => setBadgeFilter(provider)}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-200 ${
+                    badgeFilter === provider
+                      ? 'border-cyan-300/40 bg-cyan-400/16 text-cyan-100'
+                      : 'border-white/14 bg-white/6 text-white/65 hover:border-white/28 hover:text-white/90'
+                  }`}
+                >
+                  {provider}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-5 flex items-center justify-between text-xs text-white/55">
+            <span>{filteredBadges.length} badge{filteredBadges.length === 1 ? '' : 's'} found</span>
+            <span className="uppercase tracking-[0.22em] text-white/35">Credential Library</span>
+          </div>
+        </div>
+
+        {filteredBadges.length > 0 ? (
+        <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-items-center mx-auto max-w-[1300px]">
+            {filteredBadges.map((badge, index) => (
+              <article
+                key={badge.id}
+                className="animate-badge-in group relative overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(165deg,rgba(10,16,20,0.94),rgba(5,10,14,0.98))] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/22 hover:shadow-[0_18px_45px_rgba(0,0,0,0.35)] max-w-[260px] w-full"
+                style={{ animationDelay: `${index * 45}ms` }}
+              >
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_85%_8%,rgba(34,211,238,0.14),transparent_48%)]" />
+                <div className="relative z-10 flex items-start justify-between">
+                  <span className={`rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] ${providerStyles[badge.provider]}`}>
+                    {badge.provider}
+                  </span>
+                  <span className="rounded-full border border-white/14 bg-white/8 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-white/70">
+                    {badge.platform}
+                  </span>
+                </div>
+
+                <div className="relative z-10 mt-3 rounded-lg border border-white/12 bg-black/35 p-2.5">
+                  <Image
+                    src={badge.img}
+                    alt={badge.title}
+                    width={180}
+                    height={180}
+                    className="mx-auto h-20 w-20 object-contain"
+                  />
+                </div>
+
+                <div className="relative z-10 mt-3">
+                  <h4 className="text-[0.78rem] font-semibold leading-5 text-white line-clamp-2">{badge.title}</h4>
+                  <p className={`mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${trackStyles[badge.track]}`}>
+                    {badge.track}
+                  </p>
+                  <p className="mt-1 text-[0.6rem] uppercase tracking-[0.16em] text-white/42">
+                    Issued {badge.issuedLabel}
+                  </p>
+                </div>
+
+                <div className="relative z-10 mt-3 flex flex-wrap gap-1">
+                  {badge.skills.slice(0, 2).map((skill) => (
+                    <span key={skill} className="rounded-full border border-white/12 bg-white/7 px-2 py-0.5 text-[0.56rem] font-semibold uppercase tracking-[0.12em] text-white/72">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="relative z-10 mt-3">
+                  <a
+                    href={badge.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-cyan-300/24 bg-cyan-400/12 px-2.5 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-cyan-100 transition-all duration-200 hover:border-cyan-200/38 hover:bg-cyan-400/20"
+                  >
+                    Verify Credential
+                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7m0 0v7m0-7L10 14" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5v14h14" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
+            <p className="text-sm uppercase tracking-[0.25em] text-white/45">No Results</p>
+            <p className="mt-2 text-white/70">
+              Try another search term or switch provider filters.
+            </p>
+          </div>
+        )}
       </section>
     </section>
   );
