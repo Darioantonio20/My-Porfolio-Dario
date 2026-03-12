@@ -103,8 +103,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
         { autoAlpha: 1, y: 0, scale: 1, duration: 0.48, ease: 'power3.out' }
       );
 
+      // Scope to panelRef so it never scans the whole DOM
       gsap.fromTo(
-        '[data-modal-reveal]',
+        panelRef.current!.querySelectorAll('[data-modal-reveal]'),
         { autoAlpha: 0, y: 18 },
         {
           autoAlpha: 1,
@@ -126,9 +127,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
     gsap.fromTo(
       imageStageRef.current,
       { autoAlpha: 0, scale: 0.99 },
-      { autoAlpha: 1, scale: 1, duration: 0.34, ease: 'power2.out' }
+      { autoAlpha: 1, scale: 1, duration: 0.28, ease: 'power2.out' }
     );
-  }, [isOpen, selectedImageIndex, projectId]);
+  // Only animate on open/project change, not on thumbnail click (avoids flash)
+  }, [isOpen, projectId]);
 
   if (!isOpen || !projectId || !project) return null;
 
@@ -154,6 +156,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
         <div
           ref={panelRef}
           className="relative z-10 w-full max-w-7xl overflow-hidden rounded-[30px] border border-white/10 bg-[#04100d]/95 shadow-[0_40px_120px_rgba(0,0,0,0.55)]"
+          style={{ willChange: 'transform' }}
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_16%,rgba(34,197,94,0.14),transparent_24%),radial-gradient(circle_at_86%_12%,rgba(249,115,22,0.18),transparent_26%),linear-gradient(135deg,rgba(5,16,13,0.98),rgba(2,8,7,0.99))]" />
 

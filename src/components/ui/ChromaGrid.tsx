@@ -1,8 +1,58 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+
+// ── Spinner + fade-in image for each card ──────────────────────────────────
+const CardImage = ({ src, alt }: { src: string | StaticImageData; alt: string }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="relative h-full w-full overflow-hidden rounded-[16px]">
+      {/* Spinner — visible until image loads */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300"
+        style={{ opacity: loaded ? 0 : 1, pointerEvents: 'none' }}
+      >
+        <svg
+          className="h-8 w-8 animate-spin text-emerald-400/80"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <circle
+            className="opacity-20"
+            cx="12" cy="12" r="10"
+            stroke="currentColor"
+            strokeWidth="3"
+          />
+          <path
+            className="opacity-90"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+          />
+        </svg>
+      </div>
+
+      {/* Actual image — fades + scales in once ready */}
+      <Image
+        src={src}
+        alt={alt}
+        width={280}
+        height={160}
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        className="h-full w-full rounded-[16px] object-cover transition-transform duration-700 group-hover:scale-[1.04] group-hover/image:scale-[1.07]"
+        style={{
+          opacity: loaded ? 1 : 0,
+          transform: loaded ? 'scale(1)' : 'scale(1.04)',
+          transition: 'opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1)',
+        }}
+      />
+    </div>
+  );
+};
 
 export interface ChromaItem {
   image: string | StaticImageData;
@@ -43,6 +93,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
   const setX = useRef<SetterFn | null>(null);
   const setY = useRef<SetterFn | null>(null);
   const pos = useRef({ x: 0, y: 0 });
+  const rafPending = useRef(false);
+  const pendingMove = useRef<{ x: number; y: number } | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState<ChromaItem | null>(null);
 
@@ -157,22 +209,34 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     });
   };
 
-  const handleMove = (e: React.PointerEvent) => {
+  const handleMove = useCallback((e: React.PointerEvent) => {
     const root = rootRef.current;
     if (!root) return;
 
     const bounds = root.getBoundingClientRect();
-    moveTo(e.clientX - bounds.left, e.clientY - bounds.top);
-    gsap.to(fadeRef.current, { opacity: 0, duration: 0.25, overwrite: true });
-  };
+    pendingMove.current = { x: e.clientX - bounds.left, y: e.clientY - bounds.top };
 
-  const handleLeave = () => {
+    if (rafPending.current) return;
+    rafPending.current = true;
+
+    requestAnimationFrame(() => {
+      rafPending.current = false;
+      if (!pendingMove.current) return;
+      moveTo(pendingMove.current.x, pendingMove.current.y);
+      pendingMove.current = null;
+      gsap.to(fadeRef.current, { opacity: 0, duration: 0.25, overwrite: true });
+    });
+  }, [moveTo]);
+
+  const handleLeave = useCallback(() => {
+    rafPending.current = false;
+    pendingMove.current = null;
     gsap.to(fadeRef.current, {
       opacity: 1,
       duration: fadeOut,
       overwrite: true,
     });
-  };
+  }, [fadeOut]);
 
   const handleCardClick = (url?: string) => {
     if (onCardClick && url) {
@@ -182,27 +246,38 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     }
   };
 
-  const handleCardMove: React.MouseEventHandler<HTMLElement> = (e) => {
+  const cardRafMap = useRef<Map<HTMLElement, boolean>>(new Map());
+
+  const handleCardMove: React.MouseEventHandler<HTMLElement> = useCallback((e) => {
     const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const rotateY = (x / rect.width - 0.5) * 12;
-    const rotateX = (y / rect.height - 0.5) * -12;
+    if (cardRafMap.current.get(card)) return;
+    cardRafMap.current.set(card, true);
 
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
+    const clientX = e.clientX;
+    const clientY = e.clientY;
 
-    gsap.to(card, {
-      rotateX,
-      rotateY,
-      y: -10,
-      duration: 0.35,
-      ease: "power2.out",
-      overwrite: true,
-      transformPerspective: 1400,
+    requestAnimationFrame(() => {
+      cardRafMap.current.set(card, false);
+      const rect = card.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+      const rotateY = (x / rect.width - 0.5) * 12;
+      const rotateX = (y / rect.height - 0.5) * -12;
+
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+
+      gsap.to(card, {
+        rotateX,
+        rotateY,
+        y: -10,
+        duration: 0.35,
+        ease: "power2.out",
+        overwrite: true,
+        transformPerspective: 1400,
+      });
     });
-  };
+  }, []);
 
   const handleCardLeave: React.MouseEventHandler<HTMLElement> = (e) => {
     const card = e.currentTarget;
@@ -260,6 +335,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                   "--spotlight-color": "rgba(255,255,255,0.28)",
                   background: card.gradient,
                   transformStyle: "preserve-3d",
+                  willChange: "transform",
                 } as React.CSSProperties
               }
             >
@@ -298,14 +374,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                   }}
                   aria-label={`Preview image for ${card.title}`}
                 >
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    width={280}
-                    height={160}
-                    className="h-full w-full rounded-[16px] object-cover transition-transform duration-700 group-hover:scale-[1.04] group-hover/image:scale-[1.07]"
-                    loading="lazy"
-                  />
+                  <CardImage src={card.image} alt={card.title} />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/72 via-black/20 to-transparent opacity-90 transition-opacity duration-300 group-hover/image:opacity-100" />
                   <div className="pointer-events-none absolute bottom-3 right-3 flex items-center justify-center">
                     <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition-transform duration-300 group-hover/image:scale-105">

@@ -364,7 +364,7 @@ const AnimatedCounter = ({ value }: { value: number }) => {
 
   useEffect(() => {
     const duration = 650;
-    const startValue = count;
+    const startValue = 0;
     const startTime = performance.now();
     let frameId = 0;
 
@@ -380,6 +380,7 @@ const AnimatedCounter = ({ value }: { value: number }) => {
 
     frameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameId);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return <span>{count}</span>;

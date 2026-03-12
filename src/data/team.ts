@@ -10,7 +10,7 @@ import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
   {
-    image: "/projects/voldo/main-dashboard.png",
+    image: "/projects/voldo/login-screen.png",
     title: "Voldo",
     subtitle: "ERP & Dealer Management System for Heavy Equipment Operations",
     handle: "Laravel 10 • Livewire v3 • Tailwind CSS 3 • MySQL • ERP / DMS",

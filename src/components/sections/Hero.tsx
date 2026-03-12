@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 h-full min-h-[400px] w-full">
         <LetterGlitch
           glitchColors={['#2b4539', '#61dca3', '#61b3dc']}
-          glitchSpeed={50}
+          glitchSpeed={80}
           centerVignette={false}
           outerVignette={true}
           smooth={true}
