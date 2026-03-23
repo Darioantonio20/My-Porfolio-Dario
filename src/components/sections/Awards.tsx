@@ -46,8 +46,8 @@ const PanZoom = dynamic(() => import('react-easy-panzoom'), {
 const awards: Array<{
   title: string;
   description: string;
-  image?: StaticImageData;
-  images?: StaticImageData[];
+  image?: StaticImageData | string;
+  images?: Array<StaticImageData | string>;
   type: string;
   date: string;
   category: string;
@@ -66,6 +66,14 @@ const awards: Array<{
     image: ConstanciaEgreso,
     type: 'Certificate',
     date: 'May 2025',
+    category: 'University',
+  },
+  {
+    title: 'University Degree - UP Chiapas',
+    description: 'Software Engineering Degree, University Politécnica de Chiapas',
+    image: '/university/TituloUniversitario.pdf',
+    type: 'Degree',
+    date: 'August 2025',
     category: 'University',
   },
   {
@@ -612,14 +620,21 @@ const Awards = () => {
                         >
                           {/* Icono de documento */}
                           <div className="flex items-center space-x-2 mb-2">
-                            <div className="w-6 h-8 relative rounded border border-white/30 overflow-hidden bg-white shadow-sm">
-                              <Image
-                                src={award.images ? (typeof award.images[0] === 'string' ? award.images[0] : award.images[0].src) : (award.image ? (typeof award.image === 'string' ? award.image : award.image.src) : '')}
-                                alt={award.title}
-                                fill
-                                className="object-contain object-center"
-                                sizes="24px"
-                              />
+                            <div className="w-6 h-8 relative rounded border border-white/30 overflow-hidden bg-white shadow-sm flex items-center justify-center">
+                              {(() => {
+                                const imgSrc = award.images ? (typeof award.images[0] === 'string' ? award.images[0] : award.images[0].src) : (award.image ? (typeof award.image === 'string' ? award.image : award.image.src) : '');
+                                return imgSrc.endsWith('.pdf') ? (
+                                  <div className="w-full h-full bg-slate-100 flex items-center justify-center text-red-600 font-bold text-[8px]">PDF</div>
+                                ) : (
+                                  <Image
+                                    src={imgSrc}
+                                    alt={award.title}
+                                    fill
+                                    className="object-contain object-center"
+                                    sizes="24px"
+                                  />
+                                );
+                              })()}
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="text-xs font-semibold text-white truncate max-w-[80px]">{award.title}</h4>
@@ -656,7 +671,7 @@ const Awards = () => {
             {/* Botón de cierre */}
             <button
               onClick={closeModal}
-              className="absolute top-6 right-6 p-3 rounded-full bg-black/60 hover:bg-emerald-800/80 border border-emerald-900 text-cyan-200 hover:text-white shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 scale-100 hover:scale-110 active:scale-95"
+              className="absolute -top-4 -right-4 md:top-6 md:right-6 p-3 rounded-full bg-black/80 hover:bg-emerald-800/80 border border-emerald-900 text-cyan-200 hover:text-white shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 scale-100 hover:scale-110 active:scale-95 z-50 backdrop-blur-md"
               aria-label="Close"
               title="Close"
             >
@@ -665,7 +680,8 @@ const Awards = () => {
               </svg>
             </button>
             {/* Botones de zoom */}
-            <div className="flex gap-4 mb-6 mt-2">
+            {!(modalImgs ? modalImgs[activeImgIdx]?.endsWith('.pdf') : modalImg?.endsWith('.pdf')) && (
+              <div className="flex gap-4 mb-6 mt-2">
               {/* Zoom Out */}
               <button
                 onClick={handleZoomOut}
@@ -708,29 +724,36 @@ const Awards = () => {
                   <line x1="8" y1="11" x2="14" y2="11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </button>
-            </div>
+              </div>
+            )}
             {/* Imagen con animación y sombra */}
-            <div className="flex w-full gap-6">
+            <div className={`flex w-full gap-6 ${!(modalImgs ? modalImgs[activeImgIdx]?.endsWith('.pdf') : modalImg?.endsWith('.pdf')) ? '' : 'mt-8'}`}>
               {/* Imagen principal */}
               <div className="flex-1 flex items-center justify-center bg-black rounded-2xl border border-emerald-900/40 shadow-2xl animate-fade-in-img min-h-[300px] max-h-[70vh] overflow-hidden relative">
-                <PanZoom
-                  ref={panzoomRef}
-                  minZoom={0.5}
-                  maxZoom={3}
-                  zoom={zoom}
-                  autoCenter
-                  boundaryRatioVertical={1}
-                  boundaryRatioHorizontal={1}
-                  style={{ width: '100%', height: '100%', maxWidth: '100%', maxHeight: '70vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                  enableBoundingBox
-                  enablePan
-                  enableZoom
-                  realPinch
-                  transition="transform 0.2s"
-                >
-                  <div className="flex items-center justify-center w-full h-full">
-                    {modalImgs
-                      ? (
+                {(modalImgs ? modalImgs[activeImgIdx]?.endsWith('.pdf') : modalImg?.endsWith('.pdf')) ? (
+                  <iframe 
+                    src={modalImgs ? modalImgs[activeImgIdx] : modalImg!} 
+                    title={modalTitle || "PDF Document"}
+                    className="w-[95%] sm:w-full h-[60vh] sm:h-[65vh] rounded-xl border-0 bg-white shadow-inner animate-fade-in-img" 
+                  />
+                ) : (
+                  <PanZoom
+                    ref={panzoomRef}
+                    minZoom={0.5}
+                    maxZoom={3}
+                    zoom={zoom}
+                    autoCenter
+                    boundaryRatioVertical={1}
+                    boundaryRatioHorizontal={1}
+                    style={{ width: '100%', height: '100%', maxWidth: '100%', maxHeight: '70vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    enableBoundingBox
+                    enablePan
+                    enableZoom
+                    realPinch
+                    transition="transform 0.2s"
+                  >
+                    <div className="flex items-center justify-center w-full h-full">
+                      {modalImgs ? (
                         <Image
                           src={modalImgs[activeImgIdx]}
                           alt={modalTitle! + ' ' + (activeImgIdx + 1)}
@@ -741,8 +764,7 @@ const Awards = () => {
                           priority
                           onDoubleClick={handleDoubleClick}
                         />
-                      )
-                      : modalImg && (
+                      ) : modalImg && (
                         <Image
                           src={modalImg}
                           alt={modalTitle!}
@@ -754,8 +776,9 @@ const Awards = () => {
                           onDoubleClick={handleDoubleClick}
                         />
                       )}
-                  </div>
-                </PanZoom>
+                    </div>
+                  </PanZoom>
+                )}
               </div>
               {/* Miniaturas a la derecha si hay varias imágenes */}
               {modalImgs && modalImgs.length > 1 && (
