@@ -1,4 +1,54 @@
 {
+  "medica-ms": {
+    "id": "medica-ms",
+    "title": "Medica|MS",
+    "subtitle": "Landing page for medical distribution",
+    "description": "Comprehensive redesign and development of a corporate landing page for a leading medical distributor.",
+    "longDescription": "Comprehensive redesign and development of the landing page for Comercializadora Médica MS, a leading company in Chiapas specializing in the distribution of specialized medications and integrated health services. The goal was to transform their digital presence into a platform reflecting institutional trust and modernity. The project was developed as a high-speed freelance engagement, delivering a polished and professional final product in just 4 days, meeting luxury design standards and technical robustness.",
+    "technologies": [
+      "Laravel 11",
+      "PHP 8.2+",
+      "Livewire 3 + Volt",
+      "Tailwind CSS v4",
+      "Swiper.js",
+      "Vite",
+      "FontAwesome 6",
+      "SEO Optimization"
+    ],
+    "features": [
+      "UI/UX Premium: 'Dark Premium' aesthetics with mesh gradients and grain textures",
+      "High-speed Performance: Asset optimization for sub-1s loading times",
+      "Mobile-First Design: Full visual hierarchy adaptation for mobile devices",
+      "Infinite Provider Carousels: Smooth display of 45+ strategic laboratory partners",
+      "Reveal Animations: Controlled entry effects for enhanced engagement",
+      "Modular Architecture: Clean maintenance via Blade and Livewire components"
+    ],
+    "challenges": [
+      "Visual Balance: Balancing luxury aesthetics with medical sector professionalism",
+      "Content Density: Managing 45+ partner logos without visual clutter",
+      "Aggressive Deadline: Full design, development, and optimization in 4 days"
+    ],
+    "solutions": [
+      "Linear Swiper.js transitions for fluid partner network visualization",
+      "Strategic Reveal effects for improved content consumption",
+      "Modular Blade/Livewire structure for scalable maintenance"
+    ],
+    "github": "",
+    "demo": "https://medicams.com.mx/",
+    "image": "/projects/medicams/LandingPage1.png",
+    "gallery": [
+      "/projects/medicams/LandingPage1.png",
+      "/projects/medicams/LandingPage2.png",
+      "/projects/medicams/LandingPage3.png",
+      "/projects/medicams/LandingPage4.png",
+      "/projects/medicams/LandingPage5.png",
+      "/projects/medicams/LandingPage6.png",
+      "/projects/medicams/LandingPage7.png"
+    ],
+    "category": "Corporate / Healthcare",
+    "duration": "Apr. 2026",
+    "team": "Solo Freelance Development"
+  },
   "voldo": {
     "id": "voldo",
     "title": "Voldo",

@@ -10,6 +10,17 @@ import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
   {
+    image: "/projects/medicams/LandingPage1.png",
+    title: "Medica|MS",
+    subtitle: "Landing Page for medical distribution",
+    handle: "Laravel 11 • Livewire 3 • Tailwind CSS v4 • Swiper.js • Vite",
+    location: "Freelance Build • April 2026",
+    borderColor: "#10b981",
+    gradient: "linear-gradient(145deg,rgba(16,185,129,0.92),rgba(8,15,38,0.95) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/medica-ms",
+    badge: "New",
+  },
+  {
     image: "/projects/voldo/login-screen.png",
     title: "Voldo",
     subtitle: "ERP & Dealer Management System for Heavy Equipment Operations",
