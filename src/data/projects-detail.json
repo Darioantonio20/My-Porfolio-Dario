@@ -49,6 +49,59 @@
     "duration": "Apr. 2026",
     "team": "Solo Freelance Development"
   },
+  "hostinggc": {
+    "id": "hostinggc",
+    "title": "HostingGC",
+    "subtitle": "Modern Web Hosting Landing Page & Platform Redesign",
+    "description": "A high-performance, modern redesign of a web hosting platform using Laravel 12 and Tailwind CSS 4.0, featuring cutting-edge animations with GSAP and AOS.",
+    "longDescription": "HostingGC is a comprehensive redesign and modernization of a web hosting and domain registration platform. Built on the latest Laravel 12 framework and PHP 8.2+, the project focuses on an ultra-modern aesthetic using Tailwind CSS 4.0 and advanced animations powered by GSAP. The goal was to transform the user experience into a sleek, high-tech interface that reflects the reliability and speed of hosting services.",
+    "technologies": [
+      "Laravel 12",
+      "PHP 8.2+",
+      "SQLite",
+      "Tailwind CSS 4.0",
+      "Sass (SCSS)",
+      "Blade Templates",
+      "Bootstrap 5",
+      "GSAP",
+      "AOS",
+      "Swiper & Slick Slider",
+      "FontAwesome 6",
+      "Vite"
+    ],
+    "features": [
+      "Modern High-Tech UI/UX with Tailwind CSS 4.0",
+      "High-performance animations using GSAP (GreenSock)",
+      "Dynamic scroll reveal effects with AOS",
+      "Responsive design with Bootstrap 5 compatibility",
+      "Modular architecture using Laravel Blade components",
+      "Lightning-fast asset compilation via Vite",
+      "Optimized SQLite database backend",
+      "Interactive pricing plans and service carousels"
+    ],
+    "challenges": [
+      "Implementing the latest Tailwind CSS 4.0 and Laravel 12 features in a production-ready environment",
+      "Creating smooth, complex animations with GSAP that remain performant across all devices",
+      "Balancing luxury high-tech aesthetics with the functional requirements of a hosting platform",
+      "Ensuring seamless responsive behavior for complex technical data tables and pricing plans"
+    ],
+    "solutions": [
+      "Leveraged the cutting-edge capabilities of Laravel 12 and Vite for an optimized development and production workflow",
+      "Used GSAP for granular control over micro-animations and page transitions",
+      "Applied custom SCSS structures alongside Tailwind for advanced design tokens",
+      "Modularized the UI into reusable Blade components for better maintainability and scalability"
+    ],
+    "github": "",
+    "demo": "https://hostinggc.com/",
+    "image": "/projects/hostinggc/landingpage.png",
+    "gallery": [
+      "/projects/hostinggc/landingpage.png",
+      "/projects/hostinggc/landingpage2.png"
+    ],
+    "category": "Tech / Hosting Services",
+    "duration": "2026",
+    "team": "Individual Lead Redesign"
+  },
   "imchissa": {
     "id": "imchissa",
     "title": "IMCHISSA",

@@ -32,6 +32,17 @@ export const projects: ChromaItem[] = [
     badge: "New",
   },
   {
+    image: "/projects/hostinggc/landingpage.png",
+    title: "HostingGC",
+    subtitle: "Web Hosting Platform Redesign",
+    handle: "Laravel 12 • Tailwind CSS 4.0 • GSAP • AOS • Vite",
+    location: "Redesign Build • 2026",
+    borderColor: "#8b5cf6",
+    gradient: "linear-gradient(145deg,rgba(139,92,246,0.92),rgba(8,15,38,0.95) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/hostinggc",
+    badge: "New",
+  },
+  {
     image: "/projects/imchissa/landing.png",
     title: "IMCHISSA",
     subtitle: "Full-Stack Industrial CMS & Dynamic Catalog",
