@@ -49,6 +49,112 @@
     "duration": "Apr. 2026",
     "team": "Solo Freelance Development"
   },
+  "imchissa": {
+    "id": "imchissa",
+    "title": "IMCHISSA",
+    "subtitle": "Full-Stack Industrial CMS & Dynamic Catalog",
+    "description": "Comprehensive industrial platform with a custom-built CMS, dynamic product catalog, and real-time content management for industrial equipment distribution.",
+    "longDescription": "IMCHISSA is a robust industrial platform designed to manage and showcase heavy equipment and machinery. The project features a custom-built Content Management System (CMS) that allows non-technical users to control every aspect of the site. From real-time landing page construction to structured technical specification management, the platform bridges the gap between complex industrial catalogs and intuitive digital management.",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Tailwind CSS",
+      "CKEditor",
+      "Google reCAPTCHA",
+      "Lazy Loading",
+      "Custom CMS Architecture"
+    ],
+    "features": [
+      "Custom Administrative Panel (/admin) for full site control",
+      "Dynamic Catalog Management with structured technical specs",
+      "Real-time Landing Page construction via CMSContentService",
+      "Integrated CKEditor for rich-text section management",
+      "Multi-gallery system per product with drag-and-drop logic",
+      "SEO-optimized with Google PageSpeed focuses (Lazy Loading)",
+      "Global site settings for contact, social, and brand identity",
+      "Advanced Security with Google reCAPTCHA and RBAC (Role-Based Access Control)"
+    ],
+    "challenges": [
+      "Designing a CMS that balances total flexibility with structural data integrity",
+      "Optimizing a high-density image catalog for fast load times and SEO performance",
+      "Translating industrial technical specifications into an elegant, user-friendly UI",
+      "Securing the administrative back-office against unauthorized access and spam"
+    ],
+    "solutions": [
+      "Implemented a service-based architecture (CmsContentService) to decouple data from presentation",
+      "Integrated advanced Lazy Loading and image optimization strategies to achieve high performance scores",
+      "Developed a structured data model for product specs that renders dynamically across different categories",
+      "Enforced strict RBAC and reCAPTCHA protection across all public and private entry points"
+    ],
+    "github": "",
+    "demo": "https://imchissa.com/",
+    "image": "/projects/imchissa/landing.png",
+    "gallery": [
+      "/projects/imchissa/landing.png",
+      "/projects/imchissa/landing2.png",
+      "/projects/imchissa/landing3.png",
+      "/projects/imchissa/landing4.png",
+      "/projects/imchissa/panelAdmin.png",
+      "/projects/imchissa/panelAdmin2.png",
+      "/projects/imchissa/panelAdmin3.png"
+    ],
+    "category": "Industrial / Full-Stack CMS",
+    "duration": "2026",
+    "team": "Lead Full-Stack Developer"
+  },
+  "meraki-pmc": {
+    "id": "meraki-pmc",
+    "title": "Meraki PMC",
+    "subtitle": "Bio Digital Premium - Interactive Digital Card",
+    "description": "Modern digital card (Bio Digital Premium) for Meraki Seguros, featuring glassmorphism, advanced animations, and hybrid responsive design for enhanced professional promotion.",
+    "longDescription": "The /pmc (Bio Digital Premium) digital card is a modern software piece designed for Meraki Seguros. It utilizes a robust tech stack and cutting-edge design techniques to provide a premium promotional experience. The project focuses on a 'Bio Digital Premium' concept, integrating dynamic content, trending animations, and a mobile-first UX that simulates a native app experience while maintaining a sophisticated desktop presence with glassmorphism effects.",
+    "technologies": [
+      "Laravel 7.x",
+      "PHP 7.4",
+      "Tailwind CSS",
+      "Glassmorphism",
+      "Animate.css",
+      "AOS",
+      "Marquee CSS",
+      "Slick Slider",
+      "FontAwesome",
+      "jQuery",
+      "Google Calendar Integration"
+    ],
+    "features": [
+      "UI/UX Premium with Glassmorphism (Backdrop Blur)",
+      "Responsive Hybrid Design (Mobile/Desktop optimization)",
+      "Dynamic WhatsApp Integration with structured messaging",
+      "Google Calendar Integration for direct scheduling",
+      "High-performance Infinite Logo Marquee",
+      "Native Lightbox for image viewing",
+      "Mobile-First UX with bottom navigation bar"
+    ],
+    "challenges": [
+      "Creating a 'native app' feel within a web-based digital card",
+      "Implementing high-performance animations (Marquee/AOS) without compromising load times",
+      "Achieving a consistent glassmorphism aesthetic across different devices",
+      "Integrating complex dynamic forms with structured WhatsApp output"
+    ],
+    "solutions": [
+      "Utilized hybrid design patterns to adapt layout between decorative desktop and functional mobile views",
+      "Applied hardware-accelerated CSS animations (will-change: transform) for smooth transitions",
+      "Leveraged Tailwind CSS and custom backdrop-filter properties for the premium glass effect",
+      "Developed custom JS logic to bridge the gap between form data and structured messaging APIs"
+    ],
+    "github": "",
+    "demo": "https://merakiseguros.com.mx/pmc",
+    "image": "/projects/meraki-pmc/merakipmc1.png",
+    "gallery": [
+      "/projects/meraki-pmc/merakipmc1.png",
+      "/projects/meraki-pmc/merakipmc2.png",
+      "/projects/meraki-pmc/merakipmc3.png"
+    ],
+    "category": "Digital Marketing / Insurance",
+    "duration": "2026",
+    "team": "Solo Development & UI/UX Design"
+  },
   "voldo": {
     "id": "voldo",
     "title": "Voldo",
@@ -87,7 +193,7 @@
       "Integrated PDF and Excel generation directly into the workflow so documents and reports are produced from the same source of truth"
     ],
     "github": "",
-    "demo": "https://voldo.softwaregc.com/",
+    "demo": "https://sistemavoldo.com/",
     "image": "/projects/voldo/main-dashboard.png",
     "gallery": [
       "/projects/voldo/login-screen.png",
