@@ -723,5 +723,53 @@
     "category": "Frontend Development",
     "duration": "2025 - Present",
     "team": "Individual Development"
+  },
+  "tacos-pau": {
+    "id": "tacos-pau",
+    "title": "Tacos Pau",
+    "subtitle": "Authentic Chiapanecan Cuisine & Distribution Platform",
+    "description": "A corporate and promotional landing page for a traditional Chiapanecan food business, featuring their history, products, and a distribution network system.",
+    "longDescription": "Tacos Pau is a digital platform designed to showcase the rich culinary tradition of Tuxtla Gutiérrez, Chiapas. Since 2005, Tacos Pau has evolved from a local favorite to a business seeking global reach. The project involved creating a high-performance landing page that highlights their mission of providing nutritional and healthy food, while also serving as a portal for potential distributors and event catering services. It features their iconic stews like Cochito and Tinga, and provides a clear business opportunity for those looking to join their distribution network.",
+    "technologies": [
+      "Laravel",
+      "Tailwind CSS",
+      "PHP 8.x",
+      "Vite",
+      "SEO Optimization",
+      "Responsive Design",
+      "HACCP Standards Presentation"
+    ],
+    "features": [
+      "Corporate History & Legacy Presentation",
+      "Traditional Chiapanecan Stews Catalog (Cochito, Tinga, etc.)",
+      "Distributor Recruitment & Business Opportunity Portal",
+      "Event Catering Service Integration",
+      "Quality Standards Showcase (HACCP & BPM)",
+      "Bilingual Ready Architecture",
+      "Responsive Design for local Tuxtla & international users"
+    ],
+    "challenges": [
+      "Translating traditional culinary passion into a modern digital interface",
+      "Organizing diverse content from history to business distribution opportunities",
+      "Optimizing high-quality food imagery for fast performance",
+      "Building a trust-based brand identity that reflects 20+ years of tradition"
+    ],
+    "solutions": [
+      "Clean and minimalist design that lets food photography take center stage",
+      "Structured content sections for easy navigation between 'Our Story' and 'Business Opportunities'",
+      "Implementation of SEO best practices for local visibility in Chiapas",
+      "Responsive layout ensuring the brand looks premium on any device"
+    ],
+    "github": "",
+    "demo": "https://guisospau.com/",
+    "image": "/projects/tacos-pau/guisospau.png",
+    "gallery": [
+      "/projects/tacos-pau/guisospau.png",
+      "/projects/tacos-pau/guisospau2.png",
+      "/projects/tacos-pau/guisospau3.png"
+    ],
+    "category": "Corporate / Food & Beverage",
+    "duration": "2024",
+    "team": "Solo Freelance Development"
   }
 } 

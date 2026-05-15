@@ -10,6 +10,17 @@ import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
   {
+    image: "/projects/tacos-pau/guisospau.png",
+    title: "Tacos Pau",
+    subtitle: "Authentic Chiapanecan Cuisine & Distribution Platform",
+    handle: "Laravel • Tailwind CSS • PHP 8.x • Vite • SEO Optimization",
+    location: "Freelance Build • 2024",
+    borderColor: "#ea580c",
+    gradient: "linear-gradient(145deg,rgba(234,88,12,0.92),rgba(8,15,38,0.95) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/tacos-pau",
+    badge: "New",
+  },
+  {
     image: "/projects/medicams/LandingPage1.png",
     title: "Medica|MS",
     subtitle: "Landing Page for medical distribution",
