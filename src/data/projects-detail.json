@@ -771,5 +771,130 @@
     "category": "Corporate / Food & Beverage",
     "duration": "2024",
     "team": "Solo Freelance Development"
+  },
+  "hino-chiapas": {
+    "id": "hino-chiapas",
+    "title": "Hino Chiapas",
+    "subtitle": "Official Dealership Web Platform & Lead Generator",
+    "description": "A premium, high-performance web catalog and lead generation platform for the Hino dealership in Chiapas, built with Laravel.",
+    "longDescription": "Hino Chiapas is a comprehensive, production-ready dealership platform designed to showcase the complete line of Hino trucks and buses (Series 300, 300 Híbrido, 500, and 500 Autobuses). The platform integrates a dynamic truck catalog, technical specifications display, custom administrative panel, and a multi-channel lead acquisition system via customized quote forms and direct WhatsApp routing. Built on Laravel and optimized for search engine visibility (SEO), the site provides a premium UX with custom layouts, smooth entry animations, and a responsive structure.",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Bootstrap 5",
+      "SCSS",
+      "Slick Slider",
+      "SEO Optimization",
+      "NiceSelect",
+      "Google Maps API"
+    ],
+    "features": [
+      "Interactive Truck Catalog grouped by Series (300, 500, Híbrido, Autobuses)",
+      "Custom Admin Panel for managing truck specifications, sliders, and leads",
+      "Dynamic Quote Generator with multi-field validation and automatic email routing",
+      "Direct WhatsApp API integration with custom pre-filled message structures",
+      "Highly optimized responsive menu sidebar for mobile accessibility",
+      "Performance and SEO optimization with fast page loading times"
+    ],
+    "challenges": [
+      "Displaying dense technical specification tables in a readable, mobile-friendly format",
+      "Enabling flexible dealership customization while retaining a unified codebase",
+      "Optimizing high-quality truck imagery to achieve sub-second load times"
+    ],
+    "solutions": [
+      "Developed a responsive CSS/SCSS layout utilizing responsive tables and custom font sizes",
+      "Created a modular view architecture where regional variables (.env) dynamically swap locations, contact details, and branch configurations",
+      "Implemented WebP image optimization and lazy loading to minimize page weight"
+    ],
+    "github": "",
+    "demo": "https://hinochiapas.com/",
+    "image": "/projects/hino-chiapas/detail.png",
+    "gallery": [
+      "/projects/hino-chiapas/detail.png",
+      "/projects/hino-chiapas/menu.png"
+    ],
+    "category": "Dealership / Automotive",
+    "duration": "2026",
+    "team": "Lead Full-Stack Developer"
+  },
+  "hino-tabasco": {
+    "id": "hino-tabasco",
+    "title": "Hino Tabasco",
+    "subtitle": "Official Dealership Web Platform & Marketing Platform",
+    "description": "A localized web catalog and marketing platform replicating the premium Hino experience for the Tabasco dealership branch.",
+    "longDescription": "Hino Tabasco is a localized replica of the Hino dealership platform, customized specifically for the Tabasco market. Re-using the robust Laravel codebase, it features tailored marketing banners, localized regional contact details, and targeted promotional sliders (such as Toyota Financial Services financing campaigns). The application leverages a unified database model and dynamic environment variables, enabling rapid deployment and branding customization for the dealership's sales initiatives.",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Bootstrap 5",
+      "SCSS",
+      "Slick Slider",
+      "SEO Optimization",
+      "NiceSelect"
+    ],
+    "features": [
+      "Tailored regional promotion sliders and marketing campaigns",
+      "Dynamic truck catalog with comprehensive specifications",
+      "Custom lead capturing forms and automated email routing",
+      "WhatsApp routing optimized for Tabasco sales team",
+      "Fully responsive design with layout cache-busting optimization"
+    ],
+    "challenges": [
+      "Enabling regional content updates (such as specific local financing rates) without creating code drift",
+      "Handling browser image caching issues during frequent banner updates"
+    ],
+    "solutions": [
+      "Implemented environment-driven content configurations that swap branch details and promo links seamlessly",
+      "Introduced asset cache-busters in Blade templates to ensure instant browser updates for new marketing flyers"
+    ],
+    "github": "",
+    "demo": "https://hinotabasco.com.mx/",
+    "image": "/projects/hino-tabasco/home.png",
+    "gallery": [
+      "/projects/hino-tabasco/home.png"
+    ],
+    "category": "Dealership / Automotive",
+    "duration": "2026",
+    "team": "Lead Full-Stack Developer"
+  },
+  "hino-oaxaca": {
+    "id": "hino-oaxaca",
+    "title": "Hino Oaxaca",
+    "subtitle": "Official Dealership Web Platform (Regional Replication)",
+    "description": "A localized web platform replicating the unified Hino catalog system for the Oaxaca dealership region.",
+    "longDescription": "Hino Oaxaca represents the third deployment of the unified Hino catalog system. Replicating the core Laravel architecture, this deployment focuses on localized operations in Santa Cruz Xoxocotlán, Oaxaca. The platform features regional map integrations via Leaflet/Google Maps, customized branch coordinates, and dedicated regional communication channels. This implementation demonstrates the power of code reusability and templating to quickly roll out dealership sites across different states.",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Bootstrap 5",
+      "SCSS",
+      "Slick Slider",
+      "Leaflet Maps API",
+      "SEO Optimization"
+    ],
+    "features": [
+      "Interactive Oaxaca contact map integration with custom pin overlays",
+      "Localized email routing and regional phone configurations",
+      "Dynamic quote form and product catalog identical to sister sites",
+      "Fully responsive design optimizing mobile dealership browsing"
+    ],
+    "challenges": [
+      "Rapidly setting up a third regional instance with minimal overhead while ensuring independent domain routing"
+    ],
+    "solutions": [
+      "Configured domain-based routing logic and environment variables to serve the Oaxaca regional branch out of the unified catalog codebase, linking to localized databases and contact endpoints"
+    ],
+    "github": "",
+    "demo": "https://hinoaxaca.com/",
+    "image": "/projects/hino-oaxaca/contacto.png",
+    "gallery": [
+      "/projects/hino-oaxaca/contacto.png"
+    ],
+    "category": "Dealership / Automotive",
+    "duration": "2026",
+    "team": "Lead Full-Stack Developer"
   }
 } 
