@@ -1052,5 +1052,59 @@
     "category": "Corporate / E-Commerce",
     "duration": "2026",
     "team": "Freelance Full-Stack Development"
+  },
+  "tuxventas": {
+    "id": "tuxventas",
+    "title": "TuxVentas",
+    "subtitle": "Mobile-First Local Classifieds & Marketplace",
+    "description": "Sophisticated classifieds marketplace platform optimized for mobile compilation via Capacitor, with real-time chats, user reputation, QR codes, and a robust admin moderation system.",
+    "longDescription": "TuxVentas is a modern classifieds marketplace platform designed to facilitate local buying and selling (specifically tailored for the Chiapas region). The platform is engineered with a mobile-first philosophy, wrapped in Capacitor to compile native Android and iOS applications from web assets. The backend operates as a hybrid architecture: it serves a web-based public marketplace (listings, dynamic categories, question-answer blocks) while exposing a secure RESTful API documented using Swagger/L5-Swagger for mobile devices, protected by Laravel Sanctum. The platform features an interactive conversation engine where buyers and sellers can chat in real-time, negotiate prices, close transactions, and leave ratings that feed into a user reputation score. Listing images support multi-upload with drag-and-drop cover designations. For fraud and safety, the platform integrates a comprehensive administrative moderation panel that compiles system stats, tracks flagged listings in an abuse alert queue, and grants moderators the power to approve/block listings, suspend fraudulent users, or audit private chats involved in transaction disputes.",
+    "technologies": [
+      "Laravel 10",
+      "PHP 8.1+",
+      "Capacitor (Android/iOS)",
+      "Livewire v3",
+      "MySQL",
+      "Tailwind CSS 3",
+      "Flowbite",
+      "Anime.js",
+      "Swagger / L5-Swagger",
+      "Laravel Sanctum",
+      "Vite"
+    ],
+    "features": [
+      "Capacitor Wrapper: Mobile-ready codebase compilable to native Android and iOS packages",
+      "Sanctum API Gateway: Secure REST API endpoints for mobile devices with token-based authentication",
+      "L5-Swagger Docs: Fully documented API sandbox allowing interactive endpoint testing from the browser",
+      "Real-Time Chat: Dynamic messaging engine between buyers and sellers, supporting offer negotiations and status closures",
+      "Reputation & Reviews: Post-transaction rating system that updates seller reputation metrics",
+      "Image Management: Multi-upload support for listing images with dynamic cover selector and storage cleanup",
+      "Listing QR Codes: Automated QR generation for quick scanning and listing sharing on physical media",
+      "Moderation Dashboard: Real-time overview of active listings, pending reviews, and user reports",
+      "Flagged Alerts Queue: Admin ticketing system to assign, review, and resolve reported listings and user abuse",
+      "Chat Audit Tool: Administrative override to audit private dispute conversations for moderation integrity"
+    ],
+    "challenges": [
+      "Ensuring API parity between the web-based Blade/Livewire screens and the mobile Capacitor application client",
+      "Designing a real-time negotiation chat that remains lightweight and responsive on low-bandwidth mobile networks",
+      "Building a trust-based ecosystem to prevent fraud and spam listings without introducing high registration friction",
+      "Structuring a clean image optimization pipeline for user-uploaded phone photos (high MB sizes)"
+    ],
+    "solutions": [
+      "Developed a robust Sanctum API layer representing all user and transaction actions with unified validation structures",
+      "Leveraged Livewire v3 reactive lifecycle events for instant chat updates on the web client, matching mobile REST polling",
+      "Designed a dual moderation flow combining automated flag thresholds (alerts queue) with manual administrative auditing tools",
+      "Implemented server-side image resizing and format conversion routines to optimize storage and speed up thumbnail loading"
+    ],
+    "github": "",
+    "demo": "https://tuxventas.com.mx/",
+    "image": "/projects/tuxventas/home.png",
+    "gallery": [
+      "/projects/tuxventas/home.png"
+    ],
+    "category": "Marketplace / Mobile",
+    "duration": "2026",
+    "team": "Full-Stack Development"
   }
 }
+
