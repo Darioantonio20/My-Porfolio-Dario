@@ -10,6 +10,28 @@ import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
   {
+    image: "/projects/jugamex/home.png",
+    title: "Jugamex",
+    subtitle: "Online Lottery & Sports Betting Platform",
+    handle: "Laravel • PHP 8.x • Tailwind CSS • Bootstrap 5 • PayPal SDK • ApexCharts",
+    location: "Freelance Build • 2026",
+    borderColor: "#00f2fe",
+    gradient: "linear-gradient(145deg,rgba(0,242,254,0.92),rgba(8,15,38,0.95) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/jugamex",
+    badge: "New",
+  },
+  {
+    image: "/projects/bedima/home.png",
+    title: "Bedima",
+    subtitle: "SaaS Spa & Wellness Management System",
+    handle: "Laravel 10 • Livewire v3 • Tailwind CSS • Flowbite • MercadoPago SDK • PDF Invoicing",
+    location: "Front-End Lead & Integration • 2026",
+    borderColor: "#C9A84C",
+    gradient: "linear-gradient(145deg,rgba(201,168,76,0.92),rgba(8,15,38,0.95) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/bedima",
+    badge: "New",
+  },
+  {
     image: "/projects/hino-chiapas/detail.png",
     title: "Hino Chiapas",
     subtitle: "Official Dealership Web Platform & Lead Generator",

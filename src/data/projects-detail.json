@@ -896,5 +896,109 @@
     "category": "Dealership / Automotive",
     "duration": "2026",
     "team": "Lead Full-Stack Developer"
+  },
+  "jugamex": {
+    "id": "jugamex",
+    "title": "Jugamex",
+    "subtitle": "Online Lottery & Sports Betting Platform",
+    "description": "Full-stack online lottery and sports betting platform with secure digital wallets, real-time game management, and PayPal payment integration for the Mexican market.",
+    "longDescription": "Jugamex is a comprehensive online lottery and sports betting platform designed for the Mexican market. The system enables users to purchase lottery tickets (lotéricos), place bets on live sports matches, and manage digital wallets for deposits and withdrawals — all through a secure, responsive web interface. The platform features a full administrative back-office for managing games, matches, users, countries with custom currencies, and financial operations. Built on Laravel with a Sass/Bootstrap 5/Tailwind CSS hybrid frontend, the application integrates PayPal REST APIs for payment processing, supports role-based access control across player, manager, and administrator roles, and implements a complete KYC verification flow using official Mexican ID (INE) documents.",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Tailwind CSS 3",
+      "Bootstrap 5",
+      "Sass (SCSS)",
+      "PayPal REST SDK",
+      "ApexCharts",
+      "jQuery",
+      "Select2",
+      "Vite",
+      "Blade Templates"
+    ],
+    "features": [
+      "Multi-Role System: Player, Manager (Gerente), and Administrator roles with RBAC middleware",
+      "Digital Wallet Engine: Recharges, transfers between users, and withdrawal requests with admin approval queues",
+      "PayPal Integration: Full order-create/capture flow for deposits and webhook listeners for async payment events",
+      "Lottery (Lotérico) Module: Admin-configurable games with ticket purchasing, automated PDF ticket generation, and draw management",
+      "Sports Betting Module: Match creation, live odds configuration, user bet placement, and result settlement",
+      "KYC Verification: INE (Mexican ID) upload flow with admin review, token-based email verification for new accounts",
+      "Multi-Currency Support: Country-specific currency configuration managed from the admin panel",
+      "Admin Dashboard: Player statistics, movement logs, withdrawal management with status tracking, and terms/privacy editors",
+      "Password Recovery Flow: Secure email-based reset with tokenized links"
+    ],
+    "challenges": [
+      "Securing financial transaction integrity across concurrent wallet operations (deposits, transfers, withdrawals)",
+      "Migrating the payment gateway from Mercado Pago to PayPal without disrupting active user balances",
+      "Implementing a reliable KYC verification pipeline with INE document review and approval workflows",
+      "Building a responsive and high-performance frontend using a hybrid Bootstrap 5 + Tailwind CSS + SCSS architecture"
+    ],
+    "solutions": [
+      "Implemented double-entry audit logging for all wallet events with admin-visible movement tracking",
+      "Built PayPal REST API integration with order capture hooks and dedicated webhook endpoint for async event handling",
+      "Developed a token-based email verification system coupled with admin INE review queues for KYC compliance",
+      "Modularized the frontend using Laravel Blade components with Vite-compiled Sass and Tailwind utility layers for consistent styling"
+    ],
+    "github": "",
+    "demo": "https://jugamex.com/",
+    "image": "/projects/jugamex/home.png",
+    "gallery": [
+      "/projects/jugamex/home.png"
+    ],
+    "category": "Betting / Fintech",
+    "duration": "2026",
+    "team": "Freelance Full-Stack Development"
+  },
+  "bedima": {
+    "id": "bedima",
+    "title": "Bedima",
+    "subtitle": "SaaS Spa & Wellness Management System",
+    "description": "Multi-tenant SaaS platform for spas, aesthetic clinics, and wellness centers featuring appointment scheduling, inventory management, subscription billing, and PDF invoicing.",
+    "longDescription": "Bedima is a SaaS management platform purpose-built for spas, aesthetic clinics, and wellness centers across Mexico. The system provides a complete operational backbone: interactive appointment calendars, customer profiles with medical restriction tracking, service and product catalogs with inventory adjustment logs, promotion and package builders, and financial reporting with PDF export. The platform implements a four-role permission hierarchy (SuperAdmin, Spa Administrator, Receptionist/Staff, and Professional) with granular permission gates across all modules. Subscription management is handled via MercadoPago integration with webhook-driven payment state synchronization. As the front-end lead, I was responsible for crafting the entire user interface using Tailwind CSS, Flowbite components, and Livewire v3 for reactive interactivity — delivering a premium, elegant experience aligned with the Bedima brand identity (gold-accented dark theme with Cormorant Garamond headings and Outfit body text).",
+    "technologies": [
+      "Laravel 10",
+      "PHP 8.1+",
+      "Livewire v3",
+      "MySQL",
+      "Tailwind CSS 3",
+      "Flowbite",
+      "MercadoPago SDK",
+      "DomPDF",
+      "Vite",
+      "Blade Templates"
+    ],
+    "features": [
+      "4-Role Permission System: SuperAdmin (platform-wide), Spa Admin, Receptionist/Staff, and Wellness Professional — each with granular permission gates",
+      "Interactive Appointment Scheduler: Calendar view with service-professional assignment, customer linking, and consent PDF generation",
+      "Customer Management: Full profiles with medical restriction tracking, appointment history, and loyalty metrics",
+      "Service & Product Catalog: Categories, pricing, status toggles, and supplier management with inventory adjustment logs",
+      "Promotions & Packages: Configurable discount bundles and service packages with receipt PDF generation",
+      "Subscription Billing: MercadoPago-powered plan checkout with webhook-driven status syncing and expiration handling",
+      "Financial Reporting: Revenue dashboards, exportable reports (PDF/Excel), and payment receipt generation",
+      "SuperAdmin Console: Global spa management, user administration, subscription oversight, and system log viewer",
+      "Elegant Brand UI: Custom gold-accent dark theme, Cormorant Garamond headings, Outfit body font, and smooth Tailwind animations"
+    ],
+    "challenges": [
+      "Designing a clean, intuitive frontend for dense data tables across multiple permission-gated views",
+      "Making real-time scheduling reactive without full page reloads across complex calendar interactions",
+      "Implementing subscription lifecycle management with reliable MercadoPago webhook state synchronization",
+      "Balancing premium aesthetic requirements (gold/dark luxury theme) with practical data-heavy interface needs"
+    ],
+    "solutions": [
+      "Built a component-driven architecture using Livewire v3 for reactive updates without SPA complexity",
+      "Crafted responsive layouts using Flowbite components extended with custom Tailwind utility classes and design tokens",
+      "Implemented robust background webhook handlers with idempotency guards for payment state syncing",
+      "Developed a comprehensive Tailwind config with custom color palettes (bedima gold, beauty neutrals) and animation keyframes for consistent brand expression"
+    ],
+    "github": "",
+    "demo": "https://bedima.com.mx/",
+    "image": "/projects/bedima/home.png",
+    "gallery": [
+      "/projects/bedima/home.png"
+    ],
+    "category": "SaaS / Beauty & Wellness",
+    "duration": "2026",
+    "team": "Front-End Lead & Integration"
   }
-} 
+}
