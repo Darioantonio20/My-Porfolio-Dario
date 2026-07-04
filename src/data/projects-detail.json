@@ -1000,5 +1000,57 @@
     "category": "SaaS / Beauty & Wellness",
     "duration": "2026",
     "team": "Front-End Lead & Integration"
+  },
+  "global-ezens": {
+    "id": "global-ezens",
+    "title": "Global Ezens",
+    "subtitle": "Corporate Website & Product Catalog CMS",
+    "description": "Full-featured corporate website and CMS for a Mexican premium cleaning products company, featuring a dynamic product catalog, distributor network, blog engine, and administrative back-office.",
+    "longDescription": "Global Ezens is the corporate digital presence for Ezens, a Mexican manufacturer and distributor of premium industrial and household cleaning products. The platform serves as both a public-facing showcase and an internal content management system. The public site features a dynamic hero carousel, an organized product catalog with 18+ premium items across categories (Industrial 5L/20L, Home, Automotive), a distributor network directory with highlighted recommended partners, a categorized blog engine with image galleries, a contact module with email notifications, and full terms & conditions management. The admin back-office — built entirely with Livewire v3 reactive components — allows administrators to manage every aspect of the site: banners, about-us content, services, products (CRUD with image uploads and slug generation), distributor listings (with ordering, descriptions, and recommended badges), blog posts with categories and images, contact information details, and gallery entries. The frontend leverages Tailwind CSS with Flowbite components and AOS scroll animations to deliver a clean, professional corporate aesthetic with the Ezens brand palette (deep blue, vibrant green, and sky-blue accents).",
+    "technologies": [
+      "Laravel 10",
+      "PHP 8.1+",
+      "Livewire v3",
+      "MySQL",
+      "Tailwind CSS 3",
+      "Flowbite",
+      "AOS (Animate on Scroll)",
+      "Vite",
+      "Blade Templates",
+      "Laravel Mail"
+    ],
+    "features": [
+      "Dynamic Hero Carousel: Admin-managed banner slides with title, subtitle, CTA buttons, and image uploads (up to 7 active slides)",
+      "Product Catalog CMS: Full CRUD for 18+ premium cleaning products with categories, pricing, slug-based URLs, stock tracking, and image management",
+      "Distributor Network: Admin-managed partner directory with descriptions, bullet highlights, recommended badges, and custom ordering",
+      "Blog Engine: Categorized blog system with rich-text content, image galleries, publication dates, and individual post views",
+      "Contact Module: Multi-type contact details management (phone, email, social, address) with automated email notifications via Laravel Mail",
+      "Services Section: Dynamic services management with descriptions and image galleries via Livewire reactive forms",
+      "Gallery Management: Admin-managed photo gallery with upload, editing, and organized display",
+      "About Us CMS: Editable company information sections with rich content and image support",
+      "Role-Based Admin Panel: Secured admin dashboard with role middleware (admin-only access) and user management",
+      "AOS Scroll Animations: Smooth reveal effects throughout the public site for enhanced user engagement"
+    ],
+    "challenges": [
+      "Building a fully dynamic CMS where every section of the public site is admin-editable without code changes",
+      "Managing a diverse product catalog with mixed image sources (local assets, public storage) across different upload eras",
+      "Creating a cohesive brand experience across the entire site with consistent blue/green corporate palette",
+      "Implementing a responsive admin interface with real-time Livewire components for non-technical staff"
+    ],
+    "solutions": [
+      "Architected a section-based routing system where a single dashboard view dynamically renders different partials based on section IDs",
+      "Built a smart image resolver (Producto::resolveImageUrl) that gracefully handles legacy local assets, storage paths, and CDN URLs",
+      "Developed a comprehensive Tailwind config with custom brand colors (ezens-azul, ezens-verde, teal scale) for consistent design tokens",
+      "Leveraged 22+ Livewire admin components for reactive CRUD operations with inline validation and real-time feedback"
+    ],
+    "github": "",
+    "demo": "https://ezens.com.mx/",
+    "image": "/projects/global-ezens/home.png",
+    "gallery": [
+      "/projects/global-ezens/home.png"
+    ],
+    "category": "Corporate / E-Commerce",
+    "duration": "2026",
+    "team": "Freelance Full-Stack Development"
   }
 }

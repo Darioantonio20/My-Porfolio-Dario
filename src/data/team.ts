@@ -10,6 +10,17 @@ import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
   {
+    image: "/projects/global-ezens/home.png",
+    title: "Global Ezens",
+    subtitle: "Corporate Website & Product Catalog CMS",
+    handle: "Laravel 10 • Livewire v3 • Tailwind CSS • Flowbite • AOS • Vite",
+    location: "Freelance Build • 2026",
+    borderColor: "#2501bd",
+    gradient: "linear-gradient(145deg,rgba(37,1,189,0.92),rgba(4,157,29,0.55) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/global-ezens",
+    badge: "New",
+  },
+  {
     image: "/projects/jugamex/home.png",
     title: "Jugamex",
     subtitle: "Online Lottery & Sports Betting Platform",
