@@ -1,3 +1,6 @@
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 import {
   FaReact, FaNodeJs, FaGitAlt, FaBootstrap, FaPython,
   FaJava, FaGithub, FaAndroid, FaMousePointer, FaCogs, FaPhp,
@@ -247,6 +250,8 @@ const SkillSection = ({ title, skills, accent, labelColor }: SkillSectionProps) 
 // —— Main Component ——
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,48 +260,46 @@ const About = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-16">
           <div className="flex-1 space-y-4">
             <h2 className="text-4xl font-bold text-white">
-              About{' '}
+              {t('about.title')}{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Me
+                {t('about.me')}
               </span>
             </h2>
             <p className="text-lg text-cyan-200 leading-relaxed">
-              I am a passionate Full-Stack Developer focused on technology and innovation.
-              I specialize in creating exceptional user experiences using the latest web and mobile technologies.
+              {t('about.desc1')}
             </p>
             <p className="text-lg text-cyan-200 leading-relaxed">
-              With experience in React, Next.js, Node.js, Python, Flutter, Laravel and cloud platforms,
-              I love working on challenging projects that allow me to grow professionally and deliver value to end users.
+              {t('about.desc2')}
             </p>
           </div>
           <div className="flex flex-row md:flex-col items-center justify-center gap-8 md:gap-4 min-w-[200px]">
             <div className="text-center">
               <div className="text-3xl font-bold text-emerald-400">4+</div>
-              <div className="text-cyan-200">Years of Experience</div>
+              <div className="text-cyan-200">{t('about.experience')}</div>
             </div>
           </div>
         </div>
 
         {/* ── HARD SKILLS ── */}
         <div className="space-y-8">
-          <h3 className="text-2xl font-bold text-white text-center">Hard Skills</h3>
+          <h3 className="text-2xl font-bold text-white text-center">{t('about.hardSkills')}</h3>
 
           {/* Row 1: Backend · Databases · Frontend */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <SkillSection
-              title="⚙️ Backend"
+              title={t('about.categories.backend')}
               skills={backendSkills}
               accent="text-orange-300"
               labelColor="text-orange-100"
             />
             <SkillSection
-              title="🗄️ Databases"
+              title={t('about.categories.databases')}
               skills={databaseSkills}
               accent="text-sky-300"
               labelColor="text-sky-100"
             />
             <SkillSection
-              title="🖥️ Frontend"
+              title={t('about.categories.frontend')}
               skills={frontendSkills}
               accent="text-cyan-300"
               labelColor="text-cyan-100"
@@ -306,13 +309,13 @@ const About = () => {
           {/* Row 2: Dev Tools · Deployment & CI/CD */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SkillSection
-              title="🛠️ Mobile & Web Dev Tools"
+              title={t('about.categories.devTools')}
               skills={devToolsSkills}
               accent="text-emerald-300"
               labelColor="text-emerald-100"
             />
             <SkillSection
-              title="🚀 Deployment & CI/CD"
+              title={t('about.categories.deployment')}
               skills={deploymentSkills}
               accent="text-violet-300"
               labelColor="text-violet-100"
@@ -322,13 +325,13 @@ const About = () => {
           {/* Row 3: UI/UX · Cloud & AI */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SkillSection
-              title="🎨 UI / UX"
+              title={t('about.categories.uiux')}
               skills={uiuxSkills}
               accent="text-pink-300"
               labelColor="text-pink-100"
             />
             <SkillSection
-              title="☁️ Cloud & AI"
+              title={t('about.categories.cloudAi')}
               skills={cloudAiSkills}
               accent="text-purple-300"
               labelColor="text-purple-100"
@@ -338,7 +341,7 @@ const About = () => {
           {/* Row 4: Productivity & Methodologies (full width) */}
           <div>
             <SkillSection
-              title="📋 Productivity & Methodologies"
+              title={t('about.categories.productivity')}
               skills={productivitySkills}
               accent="text-yellow-300"
               labelColor="text-yellow-100"
@@ -348,14 +351,14 @@ const About = () => {
 
         {/* ── SOFT SKILLS ── */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Soft Skills</h3>
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">{t('about.softSkills')}</h3>
           <div className="flex flex-wrap justify-center gap-8">
             {softSkills.map((skill, idx) => (
               <div key={idx} className="flex flex-col items-center gap-1 group">
                 <div className="text-3xl transition-transform duration-200 hover:scale-125 cursor-pointer">
                   {skill.icon}
                 </div>
-                <span className="text-xs text-cyan-100 text-center">{skill.name}</span>
+                <span className="text-xs text-cyan-100 text-center">{t(`about.softSkillsList.${skill.name}`)}</span>
               </div>
             ))}
           </div>

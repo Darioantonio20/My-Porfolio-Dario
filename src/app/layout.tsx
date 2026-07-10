@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import ScrollToTop from '@/components/ui/ScrollToTop';
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,10 +11,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
-        {children}
-        <ScrollToTop />
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
+        <LanguageProvider>
+          {children}
+          <ScrollToTop />
+        </LanguageProvider>
       </body>
     </html>
   );

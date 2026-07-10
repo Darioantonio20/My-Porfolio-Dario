@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 import dynamic from 'next/dynamic';
 import Image, { StaticImageData } from 'next/image';
 import CedulaProfesional from '@/assets/img/certifications/CedulaProfesional.png';
@@ -417,6 +418,7 @@ const CarouselLane = ({
   const [showRightBtn, setShowRightBtn] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
+  const { language, t } = useLanguage();
 
   const checkScroll = () => {
     if (containerRef.current) {
@@ -501,7 +503,11 @@ const CarouselLane = ({
           </h3>
           <span className="text-xs bg-white/10 px-2 py-0.5 rounded-full text-white/60">
             {providerBadges.length}{' '}
-            {providerBadges.length === 1 ? 'credential' : 'credentials'}
+            {language === 'es'
+              ? 'credenciales'
+              : providerBadges.length === 1
+              ? 'credential'
+              : 'credentials'}
           </span>
         </div>
       </div>
@@ -576,10 +582,10 @@ const CarouselLane = ({
                   trackStyles[badge.track]
                 }`}
               >
-                {badge.track}
+                {t(`badges.${badge.track.toLowerCase()}`)}
               </p>
               <p className="mt-1 text-[0.6rem] uppercase tracking-[0.16em] text-white/42">
-                Issued {badge.issuedLabel}
+                {language === 'es' ? `Emitido en ${badge.issuedLabel}` : `Issued ${badge.issuedLabel}`}
               </p>
             </div>
 
@@ -601,7 +607,7 @@ const CarouselLane = ({
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-cyan-300/24 bg-cyan-400/12 px-2.5 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-cyan-100 transition-all duration-200 hover:border-cyan-200/38 hover:bg-cyan-400/20"
               >
-                Verify Credential
+                {t('badges.verify')}
                 <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7m0 0v7m0-7L10 14" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5v14h14" />
@@ -628,6 +634,33 @@ const Awards = () => {
   const [badgeFilter, setBadgeFilter] = useState<BadgeFilter>('All');
   const [badgeSearch, setBadgeSearch] = useState('');
   const [viewMode, setViewMode] = useState<'carousel' | 'grid'>('carousel');
+  const { language, t } = useLanguage();
+
+  const translatedCategoryName = (category: string) => {
+    if (language === 'es') {
+      if (category === 'University') return 'Universidad';
+      if (category === 'High School') return 'Preparatoria';
+      if (category === 'Certifications') return 'Certificaciones';
+    } else {
+      if (category === 'University') return 'University';
+      if (category === 'High School') return 'High School';
+      if (category === 'Certifications') return 'Certifications';
+    }
+    return category;
+  };
+
+  const translatedAwardsByCategory = useMemo(() => {
+    const nextGroup: Record<string, typeof awards> = {};
+    Object.entries(awardsByCategory).forEach(([category, list]) => {
+      const transCatName = translatedCategoryName(category);
+      nextGroup[transCatName] = list.map((award) => ({
+        ...award,
+        title: t(`awards.${award.title}`) || award.title,
+        type: t(`awards.${award.type.toLowerCase()}`) || award.type,
+      }));
+    });
+    return nextGroup;
+  }, [language, t]);
 
   const badgeHighlights = useMemo(
     () => badges.filter((badge) => badge.featured).slice(0, 4),
@@ -734,6 +767,7 @@ const Awards = () => {
   const getFolderIcon = (category: string) => {
     switch (category) {
       case 'University':
+      case 'Universidad':
         return (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -741,12 +775,14 @@ const Awards = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
           </svg>
         );
+      case 'Certifications':
       case 'Certificaciones':
         return (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
           </svg>
         );
+      case 'High School':
       case 'Preparatoria':
         return (
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -768,17 +804,17 @@ const Awards = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 sm:mb-28 md:mb-32 px-2">
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 break-words leading-tight">
-            Awards & <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Certificates</span>
+            {t('awards.title')} <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">{t('awards.certificates')}</span>
           </h2>
           <p className="text-base xs:text-lg sm:text-xl text-cyan-200 max-w-xs xs:max-w-md sm:max-w-2xl mx-auto leading-snug">
-            Here you can see my academic, professional achievements and certifications.
+            {t('awards.subtitle')}
           </p>
         </div>
 
         {/* Sistema de Carpetas */}
         <div className="w-full max-w-full sm:max-w-6xl mx-auto mb-10 px-1 sm:px-0">
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:flex lg:flex-row items-center gap-4 xs:gap-6 sm:gap-10 md:gap-12 lg:gap-32 justify-center">
-            {Object.entries(awardsByCategory).map(([category, categoryAwards]) => (
+            {Object.entries(translatedAwardsByCategory).map(([category, categoryAwards]) => (
               <div key={category} className="relative flex justify-center items-start mt-8 mb-8 lg:mt-0 lg:mb-0">
                 {/* Carpeta 3D y archivos */}
                 <div
@@ -1112,35 +1148,34 @@ const Awards = () => {
       <section className="mt-24">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
-            Badges & <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Digital Certificates</span>
+            {t('badges.title')} <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">{t('badges.certificates')}</span>
           </h2>
           <p className="text-lg text-cyan-200 max-w-3xl mx-auto leading-8">
-            Verified credentials from AWS Academy, Cisco Networking, and Google programs.
-            Explore key highlights first, then browse the full library with filters and search.
+            {t('badges.subtitle')}
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-md">
-            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-white/45">Total Badges</p>
+            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-white/45">{t('badges.total')}</p>
             <p className="mt-3 text-3xl font-extrabold text-white">
               <AnimatedCounter value={badgeStats.total} />
             </p>
           </div>
           <div className="rounded-2xl border border-sky-300/20 bg-sky-400/[0.08] p-5 backdrop-blur-md">
-            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-sky-100/80">Cloud</p>
+            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-sky-100/80">{t('badges.cloud')}</p>
             <p className="mt-3 text-3xl font-extrabold text-sky-100">
               <AnimatedCounter value={badgeStats.cloud} />
             </p>
           </div>
           <div className="rounded-2xl border border-violet-300/20 bg-violet-400/[0.08] p-5 backdrop-blur-md">
-            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-violet-100/80">Cybersecurity</p>
+            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-violet-100/80">{t('badges.cybersecurity')}</p>
             <p className="mt-3 text-3xl font-extrabold text-violet-100">
               <AnimatedCounter value={badgeStats.cybersecurity} />
             </p>
           </div>
           <div className="rounded-2xl border border-emerald-300/20 bg-emerald-400/[0.08] p-5 backdrop-blur-md">
-            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-emerald-100/80">Marketing</p>
+            <p className="text-[0.72rem] uppercase tracking-[0.28em] text-emerald-100/80">{t('badges.marketing')}</p>
             <p className="mt-3 text-3xl font-extrabold text-emerald-100">
               <AnimatedCounter value={badgeStats.marketing} />
             </p>
@@ -1156,7 +1191,7 @@ const Awards = () => {
               <input
                 value={badgeSearch}
                 onChange={(event) => setBadgeSearch(event.target.value)}
-                placeholder="Search by title, provider, track, or skill..."
+                placeholder={t('badges.searchPlaceholder')}
                 className="w-full rounded-xl border border-white/12 bg-black/30 py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-cyan-300/40"
               />
             </div>
@@ -1191,7 +1226,7 @@ const Awards = () => {
                       : 'text-white/50 hover:text-white/80 border border-transparent'
                   }`}
                 >
-                  Carrusel
+                  {t('badges.carousel')}
                 </button>
                 <button
                   type="button"
@@ -1202,15 +1237,15 @@ const Awards = () => {
                       : 'text-white/50 hover:text-white/80 border border-transparent'
                   }`}
                 >
-                  Grid
+                  {t('badges.grid')}
                 </button>
               </div>
             </div>
           </div>
 
           <div className="mt-5 flex items-center justify-between text-xs text-white/55">
-            <span>{filteredBadges.length} badge{filteredBadges.length === 1 ? '' : 's'} found</span>
-            <span className="uppercase tracking-[0.22em] text-white/35">Credential Library</span>
+            <span>{filteredBadges.length} {filteredBadges.length === 1 ? t('badges.found') : t('badges.foundPlural')}</span>
+            <span className="uppercase tracking-[0.22em] text-white/35">{t('badges.library')}</span>
           </div>
         </div>
 
@@ -1259,10 +1294,10 @@ const Awards = () => {
                   <div className="relative z-10 mt-3">
                     <h4 className="text-[0.78rem] font-semibold leading-5 text-white line-clamp-2">{badge.title}</h4>
                     <p className={`mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${trackStyles[badge.track]}`}>
-                      {badge.track}
+                      {t(`badges.${badge.track.toLowerCase()}`)}
                     </p>
                     <p className="mt-1 text-[0.6rem] uppercase tracking-[0.16em] text-white/42">
-                      Issued {badge.issuedLabel}
+                      {language === 'es' ? `Emitido en ${badge.issuedLabel}` : `Issued ${badge.issuedLabel}`}
                     </p>
                   </div>
 
@@ -1281,7 +1316,7 @@ const Awards = () => {
                       rel="noopener noreferrer"
                       className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-cyan-300/24 bg-cyan-400/12 px-2.5 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-cyan-100 transition-all duration-200 hover:border-cyan-200/38 hover:bg-cyan-400/20"
                     >
-                      Verify Credential
+                      {t('badges.verify')}
                       <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7m0 0v7m0-7L10 14" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5v14h14" />
@@ -1294,9 +1329,9 @@ const Awards = () => {
           )
         ) : (
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
-            <p className="text-sm uppercase tracking-[0.25em] text-white/45">No Results</p>
+            <p className="text-sm uppercase tracking-[0.25em] text-white/45">{t('badges.noResults')}</p>
             <p className="mt-2 text-white/70">
-              Try another search term or switch provider filters.
+              {t('badges.tryAnother')}
             </p>
           </div>
         )}

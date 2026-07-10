@@ -58,8 +58,10 @@ export interface ChromaItem {
   image: string | StaticImageData;
   title: string;
   subtitle: string;
+  subtitleEs?: string;
   handle?: string;
   location?: string;
+  locationEs?: string;
   borderColor?: string;
   gradient?: string;
   url?: string;

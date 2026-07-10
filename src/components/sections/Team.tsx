@@ -1,13 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import ChromaGrid from '../ui/ChromaGrid';
 import ProjectModal from '../ui/ProjectModal';
 import { projects } from '@/data/team';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Team = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const { language, t } = useLanguage();
 
   const handleProjectClick = (url: string) => {
     const projectId = url.replace('/projects/', '');
@@ -25,6 +27,14 @@ const Team = () => {
     setSelectedProjectId(null);
   };
 
+  const translatedProjects = useMemo(() => {
+    return projects.map((project) => ({
+      ...project,
+      subtitle: language === 'es' && (project as any).subtitleEs ? (project as any).subtitleEs : project.subtitle,
+      location: language === 'es' && (project as any).locationEs ? (project as any).locationEs : project.location,
+    }));
+  }, [language]);
+
   return (
     <>
       <section id="projects" className="relative overflow-hidden py-20 text-white bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950">
@@ -32,23 +42,22 @@ const Team = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-flex items-center rounded-full border border-white/10 bg-white/6 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-cyan-200/85 backdrop-blur-sm">
-              Selected Work
+              {t('projects.badge')}
             </span>
             <h2 className="mt-5 text-4xl font-bold mb-4">
-              My{' '}
+              {t('projects.title')}{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-                Projects
+                {t('projects.projects')}
               </span>
             </h2>
             <p className="text-lg max-w-3xl mx-auto leading-8 text-cyan-100/78">
-              A curated selection of freelance and personal products across ERP workflows,
-              internal tooling, marketplaces, and customer-facing experiences.
+              {t('projects.subtitle')}
             </p>
           </div>
 
           <div className="relative min-h-[600px] w-full">
             <ChromaGrid 
-              items={projects}
+              items={translatedProjects}
               className="w-full h-full"
               radius={350}
               damping={0.4}

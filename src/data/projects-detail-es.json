@@ -1,0 +1,1061 @@
+{
+  "medica-ms": {
+    "subtitle": "Landing page para distribución médica",
+    "description": "Rediseño completo y desarrollo de una landing page corporativa para una distribuidora médica líder.",
+    "longDescription": "Rediseño y desarrollo completo de la landing page para Comercializadora Médica MS, empresa líder en Chiapas especializada en la distribución de medicamentos especializados y servicios integrales de salud. El objetivo fue transformar su presencia digital en una plataforma que refleje confianza institucional y modernidad. El proyecto se desarrolló de forma independiente a gran velocidad, entregando un producto final pulido y profesional en solo 4 días, cumpliendo con estándares de diseño premium y solidez técnica.",
+    "features": [
+      "UI/UX Premium: Estética 'Dark Premium' con gradientes de malla y texturas de grano",
+      "Rendimiento de Alta Velocidad: Optimización de recursos para tiempos de carga inferiores a 1s",
+      "Diseño Mobile-First: Adaptación completa de la jerarquía visual para dispositivos móviles",
+      "Carruseles de Proveedores Infinitos: Visualización fluida de más de 45 socios laboratorios estratégicos",
+      "Animaciones de Entrada: Efectos de entrada controlados para mejorar el engagement",
+      "Arquitectura Modular: Mantenimiento limpio a través de componentes Blade y Livewire"
+    ],
+    "challenges": [
+      "Balance Visual: Equilibrar la estética premium con el profesionalismo del sector médico",
+      "Densidad de Contenido: Gestionar más de 45 logotipos de socios sin saturación visual",
+      "Plazo Agresivo: Diseño completo, desarrollo y optimización en 4 días"
+    ],
+    "solutions": [
+      "Transiciones lineales con Swiper.js para una visualización fluida de la red de socios",
+      "Efectos de revelación estratégicos para un mejor consumo del contenido",
+      "Estructura modular Blade/Livewire para un mantenimiento escalable"
+    ],
+    "category": "Corporativo / Salud",
+    "team": "Desarrollo Freelance Individual",
+    "id": "medica-ms",
+    "title": "Medica|MS",
+    "technologies": [
+      "Laravel 11",
+      "PHP 8.2+",
+      "Livewire 3 + Volt",
+      "Tailwind CSS v4",
+      "Swiper.js",
+      "Vite",
+      "FontAwesome 6",
+      "SEO Optimization"
+    ],
+    "github": "",
+    "demo": "https://medicams.com.mx/",
+    "image": "/projects/medicams/LandingPage1.png",
+    "gallery": [
+      "/projects/medicams/LandingPage1.png",
+      "/projects/medicams/LandingPage2.png",
+      "/projects/medicams/LandingPage3.png",
+      "/projects/medicams/LandingPage4.png",
+      "/projects/medicams/LandingPage5.png",
+      "/projects/medicams/LandingPage6.png",
+      "/projects/medicams/LandingPage7.png"
+    ],
+    "duration": "Apr. 2026"
+  },
+  "hostinggc": {
+    "subtitle": "Rediseño de Plataforma y Landing Page de Hosting Web",
+    "description": "Un rediseño moderno y de alto rendimiento de una plataforma de hosting web utilizando Laravel 12 y Tailwind CSS 4.0, con animaciones avanzadas con GSAP y AOS.",
+    "longDescription": "HostingGC es un rediseño y modernización integral de una plataforma de hosting web y registro de dominios. Construido sobre el framework Laravel 12 y PHP 8.2+, el proyecto se enfoca en una estética ultra moderna utilizando Tailwind CSS 4.0 y animaciones avanzadas impulsadas por GSAP. El objetivo fue transformar la experiencia del usuario en una interfaz elegante y de alta tecnología que refleje la confiabilidad y velocidad de los servicios de hosting.",
+    "features": [
+      "UI/UX de Alta Tecnología Moderna con Tailwind CSS 4.0",
+      "Animaciones de alto rendimiento con GSAP (GreenSock)",
+      "Efectos dinámicos de revelación al hacer scroll con AOS",
+      "Diseño responsivo compatible con Bootstrap 5",
+      "Arquitectura modular con componentes Blade de Laravel",
+      "Compilación de recursos ultrarrápida a través de Vite",
+      "Base de datos optimizada en SQLite",
+      "Tablas de precios interactivas y carruseles de servicios"
+    ],
+    "challenges": [
+      "Implementar las últimas características de Tailwind CSS 4.0 y Laravel 12 en producción",
+      "Crear animaciones complejas y fluidas con GSAP manteniendo el rendimiento en todos los dispositivos",
+      "Equilibrar la estética de alta tecnología con los requerimientos funcionales de una plataforma de hosting",
+      "Garantizar un comportamiento responsivo para tablas de datos técnicos complejos y planes de precios"
+    ],
+    "solutions": [
+      "Aprovechamiento de las capacidades de Laravel 12 y Vite para un flujo de trabajo optimizado",
+      "Uso de GSAP para control granular sobre micro-animaciones y transiciones de página",
+      "Aplicación de estructuras SCSS personalizadas junto con Tailwind para tokens de diseño avanzados",
+      "Modularización de la interfaz en componentes Blade reutilizables para mejor mantenibilidad"
+    ],
+    "category": "Tecnología / Servicios de Hosting",
+    "team": "Rediseño Individual Líder",
+    "id": "hostinggc",
+    "title": "HostingGC",
+    "technologies": [
+      "Laravel 12",
+      "PHP 8.2+",
+      "SQLite",
+      "Tailwind CSS 4.0",
+      "Sass (SCSS)",
+      "Blade Templates",
+      "Bootstrap 5",
+      "GSAP",
+      "AOS",
+      "Swiper & Slick Slider",
+      "FontAwesome 6",
+      "Vite"
+    ],
+    "github": "",
+    "demo": "https://hostinggc.com/",
+    "image": "/projects/hostinggc/landingpage.png",
+    "gallery": [
+      "/projects/hostinggc/landingpage.png",
+      "/projects/hostinggc/landingpage2.png"
+    ],
+    "duration": "2026"
+  },
+  "imchissa": {
+    "subtitle": "CMS Industrial Full-Stack y Catálogo Dinámico",
+    "description": "Plataforma industrial integral con un CMS a medida, catálogo dinámico de productos y gestión de contenido en tiempo real para distribución de equipos industriales.",
+    "longDescription": "IMCHISSA es una plataforma industrial robusta diseñada para gestionar y exhibir maquinaria y equipos pesados. El proyecto cuenta con un Sistema de Gestión de Contenidos (CMS) personalizado que permite a usuarios no técnicos controlar todos los aspectos del sitio. Desde la construcción en tiempo real de la página de inicio hasta la gestión estructurada de especificaciones técnicas.",
+    "features": [
+      "Panel Administrativo personalizado (/admin) para control total del sitio",
+      "Gestión de Catálogo Dinámico con especificaciones técnicas estructuradas",
+      "Construcción en tiempo real de la página de inicio a través de CmsContentService",
+      "CKEditor integrado para gestión de secciones de texto enriquecido",
+      "Sistema de galería múltiple por producto con lógica de arrastrar y soltar",
+      "Optimización SEO con enfoques en Google PageSpeed (Carga diferida)",
+      "Configuraciones globales del sitio para contacto, redes sociales e identidad de marca",
+      "Seguridad Avanzada con Google reCAPTCHA y Control de Acceso Basado en Roles (RBAC)"
+    ],
+    "challenges": [
+      "Diseñar un CMS que equilibre la flexibilidad total con la integridad de los datos estructurados",
+      "Optimizar un catálogo de imágenes de alta densidad para tiempos de carga rápidos y rendimiento SEO",
+      "Traducir especificaciones técnicas industriales complejas en una interfaz de usuario elegante y fácil de usar",
+      "Proteger el panel de administración contra accesos no autorizados y spam"
+    ],
+    "solutions": [
+      "Implementación de una arquitectura basada en servicios (CmsContentService) para desacoplar los datos de la presentación",
+      "Integración de estrategias avanzadas de carga diferida y optimización de imágenes",
+      "Desarrollo de un modelo de datos estructurado para especificaciones de productos que se renderiza dinámicamente",
+      "Aplicación de protección estricta con RBAC y reCAPTCHA en todos los puntos de entrada"
+    ],
+    "category": "Industrial / CMS Full-Stack",
+    "team": "Desarrollador Full-Stack Líder",
+    "id": "imchissa",
+    "title": "IMCHISSA",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Tailwind CSS",
+      "CKEditor",
+      "Google reCAPTCHA",
+      "Lazy Loading",
+      "Custom CMS Architecture"
+    ],
+    "github": "",
+    "demo": "https://imchissa.com/",
+    "image": "/projects/imchissa/landing.png",
+    "gallery": [
+      "/projects/imchissa/landing.png",
+      "/projects/imchissa/landing2.png",
+      "/projects/imchissa/landing3.png",
+      "/projects/imchissa/landing4.png",
+      "/projects/imchissa/panelAdmin.png",
+      "/projects/imchissa/panelAdmin2.png",
+      "/projects/imchissa/panelAdmin3.png"
+    ],
+    "duration": "2026"
+  },
+  "meraki-pmc": {
+    "subtitle": "Bio Digital Premium - Tarjeta Digital Interactiva",
+    "description": "Tarjeta digital moderna (Bio Digital Premium) para Meraki Seguros, con glassmorphism, animaciones avanzadas y diseño responsivo híbrido.",
+    "longDescription": "La tarjeta digital /pmc (Bio Digital Premium) es una pieza de software moderna diseñada para Meraki Seguros. Utiliza un stack tecnológico robusto y técnicas de diseño de vanguardia para proporcionar una experiencia promocional premium. El proyecto se centra en el concepto de 'Bio Digital Premium', integrando contenido dinámico, animaciones en tendencia y una UX móvil que simula una aplicación nativa manteniendo una presencia de escritorio sofisticada con efectos de glassmorphism.",
+    "features": [
+      "UI/UX Premium con Glassmorphism (Desenfoque de fondo)",
+      "Diseño Híbrido Responsivo (Optimización móvil/escritorio)",
+      "Integración dinámica con WhatsApp con mensajería estructurada",
+      "Integración con Google Calendar para agendamiento directo",
+      "Marquesina infinita de logotipos de alto rendimiento",
+      "Lightbox nativo para visualización de imágenes",
+      "UX Mobile-First con barra de navegación inferior"
+    ],
+    "challenges": [
+      "Crear una sensación de 'app nativa' dentro de una tarjeta digital basada en web",
+      "Implementar animaciones de alto rendimiento sin comprometer los tiempos de carga",
+      "Lograr una estética consistente de glassmorphism en diferentes dispositivos",
+      "Integrar formularios dinámicos complejos con salida estructurada a WhatsApp"
+    ],
+    "solutions": [
+      "Uso de patrones de diseño híbridos para adaptar la distribución entre vistas de escritorio y móviles",
+      "Aplicación de animaciones CSS aceleradas por hardware para transiciones suaves",
+      "Aprovechamiento de Tailwind CSS y propiedades de filtro de fondo personalizadas",
+      "Desarrollo de lógica JS personalizada para conectar los datos del formulario con las API de mensajería"
+    ],
+    "category": "Marketing Digital / Seguros",
+    "team": "Desarrollo Individual y Diseño UI/UX",
+    "id": "meraki-pmc",
+    "title": "Meraki PMC",
+    "technologies": [
+      "Laravel 7.x",
+      "PHP 7.4",
+      "Tailwind CSS",
+      "Glassmorphism",
+      "Animate.css",
+      "AOS",
+      "Marquee CSS",
+      "Slick Slider",
+      "FontAwesome",
+      "jQuery",
+      "Google Calendar Integration"
+    ],
+    "github": "",
+    "demo": "https://merakiseguros.com.mx/pmc",
+    "image": "/projects/meraki-pmc/merakipmc1.png",
+    "gallery": [
+      "/projects/meraki-pmc/merakipmc1.png",
+      "/projects/meraki-pmc/merakipmc2.png",
+      "/projects/meraki-pmc/merakipmc3.png"
+    ],
+    "duration": "2026"
+  },
+  "voldo": {
+    "subtitle": "ERP y plataforma de gestión de concesionarios para maquinaria pesada",
+    "description": "Plataforma ERP y DMS construida para centralizar inventario, adquisiciones, talleres, rentas, ventas, finanzas, recursos humanos y reportes operativos para una empresa de maquinaria pesada.",
+    "longDescription": "Voldo es una plataforma de operaciones empresariales diseñada para empresas que compran, reacondicionan, rentan, venden y mantienen equipos pesados como tractores y camiones. El sistema conecta el control de proveedores, listas de verificación de inspección dinámica, ejecución de talleres, control de repuestos, contratos de renta y ventas, operaciones financieras, registros de recursos humanos y paneles de administración en un solo producto basado en Laravel.",
+    "features": [
+      "Gestión de inventario y catálogo de productos para vehículos pesados, tractores y equipos con atributos, imágenes y garantías",
+      "Flujos de trabajo de adquisición para control de proveedores, seguimiento de costos y registro de mercancías",
+      "Módulo de mantenimiento con órdenes de trabajo, informes de servicio, listas de verificación dinámicas e inventario de repuestos",
+      "Flujos de trabajo de ventas, CRM, postventa y rentas que conectan leads, cotizaciones, contratos y depósitos",
+      "Herramientas de finanzas y facturación para ingresos, gastos, métodos de pago, comprobantes e integración CFDI",
+      "Acceso basado en roles para ocho perfiles operativos en administración, RRHH, mantenimiento, adquisiciones, finanzas, rentas y ventas"
+    ],
+    "challenges": [
+      "Traducir procesos de taller, comerciales y financieros en un solo sistema sin simplificar en exceso las reglas de negocio",
+      "Mantener múltiples departamentos sincronizados asegurando que cada rol solo vea las acciones pertinentes",
+      "Gestionar el ciclo de vida completo de una unidad desde la adquisición hasta la venta o renta y soporte postventa",
+      "Automatizar salidas operativas como órdenes de trabajo, contratos y facturas sin fragmentar el modelo de datos"
+    ],
+    "solutions": [
+      "Construcción de una arquitectura modular ERP/DMS con flujos de trabajo estrechamente conectados",
+      "Uso de interfaces basadas en Livewire y lógica de dominio de Laravel para mantener reactivas las operaciones complejas",
+      "Modelado de permisos en torno a roles operativos reales, aclarando las aprobaciones y delegaciones",
+      "Integración de generación de PDF y Excel directamente en el flujo de trabajo desde la misma fuente de verdad"
+    ],
+    "category": "Plataforma ERP Freelance",
+    "team": "Desarrollo Freelance Individual",
+    "id": "voldo",
+    "title": "Voldo",
+    "technologies": [
+      "PHP 8.1+",
+      "Laravel 10",
+      "Livewire v3",
+      "Tailwind CSS 3",
+      "Flowbite",
+      "Vite",
+      "MySQL / MariaDB",
+      "DOMPDF",
+      "Laravel Excel"
+    ],
+    "github": "",
+    "demo": "https://sistemavoldo.com/",
+    "image": "/projects/voldo/main-dashboard.png",
+    "gallery": [
+      "/projects/voldo/login-screen.png",
+      "/projects/voldo/main-dashboard.png",
+      "/projects/voldo/post-sales-workflow.png",
+      "/projects/voldo/user-accounts-rbac.png",
+      "/projects/voldo/finance-deposits.png"
+    ],
+    "duration": "2026"
+  },
+  "marka-360": {
+    "subtitle": "Plataforma corporativa full-stack y CMS personalizado para servicios digitales",
+    "description": "Sitio web corporativo y CMS a medida construido para una agencia de servicios digitales para presentar servicios, publicar portafolio y blog, y capturar leads a través de cotizaciones.",
+    "longDescription": "Marka 360 es una plataforma corporativa full-stack creada para ayudar a una agencia de publicidad digital a mostrar sus servicios, portafolio y estrategia de contenido, centralizando la gestión de clientes potenciales en un panel administrativo seguro.",
+    "features": [
+      "Módulo de catálogo dinámico para servicios y microservicios renderizados directamente en el sitio público",
+      "Captura de clientes potenciales para mensajes de contacto y solicitudes de cotización entregadas al panel en tiempo real",
+      "Gestión de portafolio y galería para publicar estudios de casos visuales y activos agrupados",
+      "CMS de Blog con enrutamiento amigable para SEO y soporte de publicación editorial",
+      "Configuración de página de inicio para diferenciadores, soluciones y secciones principales",
+      "Panel de administración autenticado con gestión de usuarios internos y middleware protegido por roles"
+    ],
+    "challenges": [
+      "Combinar un sitio web público enfocado en la conversión y un CMS interno práctico sin fragmentar la arquitectura",
+      "Mantener la gestión de contenidos intuitiva para los administradores preservando un modelo de datos escalable",
+      "Estructurar servicios, microservicios, galerías, blog y captura de leads en módulos independientes",
+      "Equilibrar la presentación de marca, adaptabilidad y rendimiento en interfaces públicas y administrativas"
+    ],
+    "solutions": [
+      "Organización de la plataforma en torno a dominios modulares de Laravel para un crecimiento flexible del código",
+      "Uso de Livewire para ofrecer flujos de trabajo administrativos reactivos sin complejidad de API adicional",
+      "Protección del panel de control con autenticación y middleware para control de acceso seguro",
+      "Uso de Tailwind CSS, Flowbite y Vite para crear un sistema visual consistente y rápido"
+    ],
+    "category": "Plataforma CMS Freelance",
+    "team": "Desarrollo Freelance Individual",
+    "id": "marka-360",
+    "title": "Marka 360",
+    "technologies": [
+      "PHP 8.1",
+      "Laravel 10",
+      "Livewire v3",
+      "Tailwind CSS 3.4",
+      "Flowbite",
+      "Vite",
+      "MySQL / MariaDB"
+    ],
+    "github": "",
+    "demo": "https://www.marka360.com.mx/",
+    "image": "/projects/marka-360/public-homepage.png",
+    "gallery": [
+      "/projects/marka-360/public-homepage.png",
+      "/projects/marka-360/public-services.png",
+      "/projects/marka-360/admin-dashboard.png",
+      "/projects/marka-360/admin-services.png",
+      "/projects/marka-360/admin-microservices.png",
+      "/projects/marka-360/admin-legal-documents.png",
+      "/projects/marka-360/admin-differentiators.png"
+    ],
+    "duration": "2026"
+  },
+  "ez-ticket": {
+    "subtitle": "Plataforma de venta de boletos para eventos en vivo y operaciones de recintos",
+    "description": "Plataforma de venta de boletos enfocada en eventos destacados, compra de boletos por zonas, pases QR y una suite administrativa para artistas, recintos, eventos y usuarios.",
+    "longDescription": "EZ Tickets es mi trabajo independiente más reciente y reúne los lados público y operativo de un producto de venta de entradas en una sola experiencia. En el lado del cliente, la plataforma presenta eventos destacados, información detallada del recinto, reglas, flujos de compra basados en asientos o áreas, reservas temporales y pases descargables con validación QR.",
+    "features": [
+      "Experiencia de inicio para eventos destacados con un fuerte encabezado promocional",
+      "Vistas detalladas de eventos con reglas del recinto, horarios y ubicación integrada",
+      "Flujo de compra por zona y asiento con resumen de orden y cuenta regresiva",
+      "Pases de entrada descargables con código QR para validación rápida",
+      "Panel administrativo para artistas, recintos, eventos, usuarios y contenido legal",
+      "Configuración técnica de zonas, capacidades y estructura física de recintos"
+    ],
+    "challenges": [
+      "Equilibrar un flujo público enfocado en ventas con una administración de panel limpia",
+      "Mantener clara la selección de boletos mientras la disponibilidad, precios y tiempo de reserva siguen visibles",
+      "Estructurar la gestión de recintos y artistas para que los usuarios operativos editen datos rápidamente",
+      "Presentar los pases en un formato móvil legible y fácil de escanear en las puertas"
+    ],
+    "solutions": [
+      "Separación del producto en recorridos de cliente y administrativo con interfaces adaptadas",
+      "Uso de resúmenes de compra contextuales y jerarquía visual para mantener precios visibles",
+      "Organización de módulos administrativos en torno a entidades operativas claras",
+      "Diseño de un pase digital compacto con énfasis en el código QR para acceso y validación rápidos"
+    ],
+    "category": "Plataforma de Tickets Freelance",
+    "team": "Desarrollo Freelance Individual",
+    "id": "ez-ticket",
+    "title": "EZ Tickets",
+    "technologies": [
+      "Laravel 10",
+      "Livewire v3",
+      "Tailwind CSS v3",
+      "MySQL",
+      "MercadoPago SDK"
+    ],
+    "github": "",
+    "demo": "https://eztickets.mx/",
+    "image": "/projects/ez-ticket/user-landing.png",
+    "gallery": [
+      "/projects/ez-ticket/user-landing.png",
+      "/projects/ez-ticket/user-venue.png",
+      "/projects/ez-ticket/user-seat-purchase.png",
+      "/projects/ez-ticket/user-tickets.png",
+      "/projects/ez-ticket/user-ticket-pass.png",
+      "/projects/ez-ticket/admin-dashboard.png",
+      "/projects/ez-ticket/admin-artist-editor.png",
+      "/projects/ez-ticket/admin-venue-zones.png"
+    ],
+    "duration": "Mar. 2026 - Present"
+  },
+  "lavafy": {
+    "subtitle": "Marketplace de lavado de autos con control de acceso basado en roles",
+    "description": "Marketplace para servicios de lavado de autos a domicilio que conecta clientes, lavadores y administradores con flujos de trabajo especializados y pasarela de pago.",
+    "longDescription": "Lavafy es un marketplace móvil y web que conecta a clientes con lavadores de autos locales. Desarrollada con Laravel y Capacitor, la plataforma cuenta con tres paneles de control optimizados para clientes, lavadores y administradores, permitiendo la asignación de tareas en tiempo real y transacciones seguras.",
+    "features": [
+      "Roles de usuario especializados para clientes, lavadores de autos, gerentes y súper administradores",
+      "Asignación de servicios basada en geolocalización y notificaciones instantáneas",
+      "Flujo de pago integrado de forma segura con MercadoPago SDK",
+      "Aplicación móvil híbrida empaquetada mediante Capacitor para Android y iOS",
+      "Panel de control administrativo con analíticas de ingresos y mapa de servicios en tiempo real",
+      "Sistema de calificación y reseñas para control de calidad del servicio"
+    ],
+    "challenges": [
+      "Sincronizar la disponibilidad en tiempo real de los lavadores con las solicitudes de los clientes",
+      "Garantizar transacciones de pago seguras y reembolsos automáticos en caso de cancelaciones",
+      "Crear una experiencia de usuario responsiva y nativa en dispositivos móviles desde una base web",
+      "Proteger las rutas de administración y datos sensibles mediante middleware robusto"
+    ],
+    "solutions": [
+      "Desarrollo de un algoritmo de geolocalización en base de datos para emparejamiento eficiente",
+      "Integración robusta de webhooks de MercadoPago para conciliar estados de pago en segundo plano",
+      "Optimización de estilos con Tailwind CSS y componentes responsivos para empaquetado móvil",
+      "Implementación de políticas estrictas de control de acceso y registro de acciones administrativas"
+    ],
+    "category": "Marketplace / App Móvil",
+    "team": "Desarrollo Freelance Individual",
+    "id": "lavafy",
+    "title": "Lavafy",
+    "technologies": [
+      "Laravel 10",
+      "Livewire v3",
+      "Tailwind CSS v3",
+      "MySQL",
+      "MercadoPago SDK",
+      "Capacitor v8"
+    ],
+    "github": "",
+    "demo": "https://lavafy.com.mx/",
+    "image": "/projects/lavafy/admin-dashboard.png",
+    "gallery": [
+      "/projects/lavafy/admin-dashboard.png",
+      "/projects/lavafy/client-services.png",
+      "/projects/lavafy/client-booking.png",
+      "/projects/lavafy/washer-dashboard.png",
+      "/projects/lavafy/auth-login.png",
+      "/projects/lavafy/admin-car-types.png",
+      "/projects/lavafy/admin-settings.png",
+      "/projects/lavafy/admin-reports.png"
+    ],
+    "duration": "2026"
+  },
+  "jardin-del-alma": {
+    "subtitle": "Sitio Web Interactivo",
+    "description": "Sitio web interactivo y catálogo de productos para un vivero local, enfocado en la divulgación de plantas y diseño de jardines.",
+    "longDescription": "Jardín del Alma fue desarrollado como proyecto de estancia profesional para la Universidad Politécnica de Chiapas. Consiste en una plataforma interactiva que permite a los usuarios explorar plantas recomendadas para diferentes climas, técnicas de cuidado y servicios de diseño de paisajes, facilitando la presencia en línea del vivero.",
+    "features": [
+      "Catálogo interactivo de plantas clasificado por categorías y requisitos de luz/agua",
+      "Módulo de diseño de paisajes interactivo con recomendaciones personalizadas",
+      "Diseño de interfaz de usuario enfocado en la naturaleza con animaciones sutiles",
+      "Panel administrativo simple para la actualización del catálogo de plantas"
+    ],
+    "challenges": [
+      "Estructurar un catálogo de plantas detallado que resulte intuitivo para jardineros principiantes",
+      "Implementar animaciones interactivas ligeras que no afecten el rendimiento del navegador",
+      "Asegurar la adaptabilidad total de los menús visuales en pantallas móviles"
+    ],
+    "solutions": [
+      "Diseño de filtros simplificados basados en iconos y lenguaje no técnico",
+      "Uso de animaciones CSS nativas y transiciones optimizadas de React",
+      "Implementación de componentes flexibles mediante CSS Modules y layouts adaptables"
+    ],
+    "category": "Interactivo / Educación",
+    "team": "Práctica Profesional UP Chiapas",
+    "id": "jardin-del-alma",
+    "title": "Jardín Del Alma",
+    "technologies": [
+      "React.js",
+      "CSS Modules",
+      "UI/UX Design",
+      "Scrum",
+      "Frontend Development",
+      "Image Optimization"
+    ],
+    "github": "https://github.com/VeroVelas/JardinDelAlma",
+    "demo": "",
+    "image": "https://i.pravatar.cc/300?img=8",
+    "duration": "2 months"
+  },
+  "pase-de-lista": {
+    "subtitle": "Aplicación Móvil Multiplataforma para Control de Asistencia",
+    "description": "Aplicación móvil multiplataforma desarrollada en Flutter para registrar asistencia mediante escaneo de códigos y almacenamiento local en SQLite.",
+    "longDescription": "Aplicación diseñada para automatizar el control de asistencia estudiantil o de personal. Permite a los instructores o administradores escanear códigos de identificación, almacenar los registros localmente sin depender de internet y exportar reportes detallados, reduciendo los tiempos de pase de lista tradicionales.",
+    "features": [
+      "Escaneo rápido de códigos QR y códigos de barras mediante cámara móvil",
+      "Base de datos interna SQLite para operación completa fuera de línea (offline)",
+      "Generación automática de reportes de asistencia en formato Excel y CSV",
+      "Animaciones fluidas y transiciones optimizadas para dispositivos de gama baja",
+      "Búsqueda y filtrado de asistencia por fechas, grupos y materias"
+    ],
+    "challenges": [
+      "Asegurar un rendimiento rápido del lector de cámara en dispositivos móviles antiguos",
+      "Sincronizar y estructurar los datos locales de manera que no ocurra pérdida de registros",
+      "Exportar archivos complejos a formatos legibles de Excel directamente desde el almacenamiento del teléfono"
+    ],
+    "solutions": [
+      "Uso de paquetes de cámara optimizados con procesamiento en segundo plano en Flutter",
+      "Estructuración de base de datos local con llaves foráneas y respaldos automáticos",
+      "Implementación de librerías de escritura de archivos binarios directamente en Dart"
+    ],
+    "category": "App Móvil / Productividad",
+    "team": "Desarrollo Individual",
+    "id": "pase-de-lista",
+    "title": "Digital Attendance System",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "SQLite",
+      "MVC",
+      "Animations",
+      "Responsive Design"
+    ],
+    "github": "https://github.com/Darioantonio20/AppMovilPaseDeLista",
+    "demo": "https://apps.apple.com/mx/app/pasedelista/id6737438676",
+    "image": "/_next/static/media/PasedeLista.png",
+    "duration": "Nov. 2024 - Dec. 2024"
+  },
+  "light-center-ios": {
+    "subtitle": "Despliegue y Optimización en App Store",
+    "description": "Proceso de optimización de assets, configuración de perfiles de aprovisionamiento y despliegue exitoso en la App Store mediante TestFlight.",
+    "longDescription": "Consultoría y desarrollo técnico enfocado en la fase final de lanzamiento para la aplicación móvil Light Center en dispositivos iOS. Se optimizaron las dependencias del proyecto, configuraron las credenciales de Apple Developer Account, gestionaron los certificados y se lideró la distribución interna y pública mediante TestFlight.",
+    "features": [
+      "Configuración completa de perfiles de aprovisionamiento y certificados de Xcode",
+      "Distribución y pruebas beta automatizadas mediante TestFlight",
+      "Optimización de rendimiento de CocoaPods y compatibilidad de arquitecturas iOS",
+      "Ajustes de interfaz de usuario específicos para pantallas con notch y Dynamic Island"
+    ],
+    "challenges": [
+      "Resolver conflictos de dependencias nativas en la compilación de iOS",
+      "Cumplir con las estrictas directrices de revisión de Apple App Store",
+      "Optimizar los tamaños de las imágenes y assets para reducir el peso final de descarga"
+    ],
+    "solutions": [
+      "Depuración de dependencias de CocoaPods y actualización de scripts de compilación de Xcode",
+      "Implementación de políticas de privacidad requeridas y metadatos de soporte",
+      "Compresión y empaquetado de assets gráficos utilizando herramientas nativas de optimización"
+    ],
+    "category": "iOS / Despliegue de Apps",
+    "team": "Líder de Despliegue iOS",
+    "id": "light-center-ios",
+    "title": "Light Center iOS",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Xcode",
+      "App Store Connect",
+      "TestFlight",
+      "iOS Development",
+      "DevOps"
+    ],
+    "github": "https://github.com/Darioantonio20/LightCenter",
+    "demo": "https://apps.apple.com/mx/app/light-center/id6475054865",
+    "image": "https://i.pravatar.cc/300?img=11",
+    "duration": "2 months"
+  },
+  "prediction-software": {
+    "subtitle": "Rediseño y Modernización Web",
+    "description": "Modernización de interfaz de usuario y adición de chatbot para software industrial de análisis de predicción.",
+    "longDescription": "Proyecto enfocado en rediseñar y renovar la interfaz de usuario de un software especializado en análisis de predicción para sistemas industriales. Se migró la estructura visual a Bootstrap moderno, agregando un chatbot interactivo para soporte al usuario y facilitando la visualización de datos complejos.",
+    "features": [
+      "Rediseño visual moderno utilizando Bootstrap y CSS3",
+      "Chatbot integrado para asistencia en línea y consultas rápidas",
+      "Gráficos interactivos de tendencias predictivas mediante librerías web",
+      "Estructura responsiva adaptada para monitores de plantas industriales"
+    ],
+    "challenges": [
+      "Modernizar la apariencia del sistema sin alterar la disposición de datos críticos para los operadores",
+      "Desarrollar un chatbot interactivo que responda de forma consistente a preguntas frecuentes de soporte",
+      "Garantizar la compatibilidad con navegadores antiguos utilizados en terminales industriales"
+    ],
+    "solutions": [
+      "Aplicación de hojas de estilo Bootstrap personalizadas con esquemas de colores de alto contraste",
+      "Implementación de lógica de chatbot ligera en JavaScript nativo",
+      "Pruebas de compatibilidad y uso de polyfills para navegadores heredados"
+    ],
+    "category": "Modernización / Web Industrial",
+    "team": "Desarrollador de Rediseño",
+    "id": "prediction-software",
+    "title": "Prediction Software",
+    "technologies": [
+      "React.js",
+      "CSS3",
+      "Bootstrap",
+      "ChatBot",
+      "Scrum",
+      "Responsive Design"
+    ],
+    "github": "https://github.com/Darioantonio20/PredictionSoft",
+    "demo": "https://www.predictionsoft.com.mx/",
+    "image": "https://i.pravatar.cc/300?img=13",
+    "duration": "Aug. 2023 - Dec. 2023"
+  },
+  "coepes-chiapas": {
+    "subtitle": "Plataforma Web de Educación Superior",
+    "description": "Desarrollo de plataforma web educativa con gestor de descargas de documentos oficiales, buscador y sistema de administración institucional.",
+    "longDescription": "Desarrollo de la plataforma oficial de la Comisión Estatal para la Planeación de la Educación Superior (COEPES) en Chiapas. Permite a las universidades e instituciones acceder a documentos oficiales, convocatorias, planes de estudio y generar reportes digitales, centralizando la información en un entorno web intuitivo.",
+    "features": [
+      "Buscador avanzado de documentos y planes de estudio universitarios",
+      "Generación dinámica de documentos oficiales y constancias en PDF",
+      "Panel administrativo para la publicación de convocatorias y decretos estatales",
+      "Estructura responsiva premium adaptada para uso en oficinas gubernamentales y móviles",
+      "Módulos informativos interactivos para los miembros de la comisión"
+    ],
+    "challenges": [
+      "Indexar gran cantidad de documentos oficiales para búsquedas rápidas",
+      "Generar archivos PDF estructurados y firmados digitalmente de forma rápida",
+      "Garantizar un panel de administración simple para usuarios no técnicos"
+    ],
+    "solutions": [
+      "Implementación de filtros de búsqueda combinados en React",
+      "Uso de librerías PDF en frontend y backend para generación directa de archivos",
+      "Diseño de formularios dinámicos guiados paso a paso para la subida de contenido"
+    ],
+    "category": "Educación / Web Gubernamental",
+    "team": "Desarrollador Frontend Principal",
+    "id": "coepes-chiapas",
+    "title": "Coepes Chiapas",
+    "technologies": [
+      "React.js",
+      "Tailwind CSS",
+      "PDF Generation",
+      "Search Engine",
+      "Responsive Design"
+    ],
+    "github": "",
+    "demo": "https://plataforma.ieppd.chiapas.gob.mx/coepes/react/",
+    "image": "/_next/static/media/WebCoepes.png",
+    "duration": "Aug. 2024 - Dec. 2024"
+  },
+  "dr-nabani": {
+    "subtitle": "Plataforma de Medicina Estética",
+    "description": "Aplicación móvil y sitio web para Dr. Nabani, integrando catálogo de tratamientos, agenda de citas y conexión con API RESTful.",
+    "longDescription": "Plataforma digital integral para la clínica de medicina estética Dr. Nabani. Incluye el desarrollo de una aplicación móvil en Flutter que permite a los pacientes consultar tratamientos disponibles, agendar citas médicas, recibir notificaciones y visualizar promociones exclusivas mediante conexión a un servidor API.",
+    "features": [
+      "Catálogo interactivo de tratamientos estéticos con imágenes de antes/después",
+      "Sistema de agendamiento de citas integrado con calendarios de la clínica",
+      "Conexión con servicios API RESTful para gestión de perfiles de usuario",
+      "Notificaciones push automáticas para recordatorios de citas",
+      "Diseño de UI minimalista y elegante siguiendo lineamientos de marca premium"
+    ],
+    "challenges": [
+      "Sincronizar los horarios de citas de la app con la agenda interna del médico en tiempo real",
+      "Garantizar la protección de datos personales y de salud de los pacientes en la app",
+      "Lograr transiciones animadas fluidas en Flutter para simular una experiencia de lujo"
+    ],
+    "solutions": [
+      "Implementación de lógica de verificación de horarios disponibles mediante peticiones optimizadas a la API",
+      "Uso de encriptación de datos sensibles y cumplimiento de políticas de seguridad",
+      "Desarrollo de animaciones personalizadas y micro-interacciones de alta calidad en Dart"
+    ],
+    "category": "Salud / App Móvil",
+    "team": "Desarrollador de Aplicación Móvil",
+    "id": "dr-nabani",
+    "title": "Dr. Nabani Mobile App",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Material Design",
+      "RESTful API",
+      "Stripe",
+      "Figma",
+      "Clean Architecture",
+      "Responsive Design"
+    ],
+    "github": "https://github.com/Darioantonio20/FrontendAppMovilDoctorNabani",
+    "demo": "https://www.figma.com/design/9SWLPVHwOIHGTjNBDoVaf1/Untitled?node-id=0-1&p=f&t=9MbB86h2qcunAF56-0",
+    "image": "https://i.pravatar.cc/300?img=22",
+    "duration": "Dec. 2024 - Feb. 2025"
+  },
+  "animenariolist": {
+    "subtitle": "Guía Temática de Anime y Manga",
+    "description": "Catálogo web minimalista de anime y manga desarrollado bajo la metodología de Diseño Atómico con exportación a formatos Excel.",
+    "longDescription": "AnimeNarioList es una aplicación web personal que sirve como guía minimalista de anime. Construida bajo los principios del Diseño Atómico en React, permite la visualización organizada de listas de anime por temporadas, filtros rápidos por género, barra de búsqueda en tiempo real y exportación de listas de usuario directamente a archivos Excel para control personal offline.",
+    "features": [
+      "Diseño visual de interfaz minimalista basado en tarjetas y modo oscuro",
+      "Componentes construidos bajo la estructura de Diseño Atómico",
+      "Exportación completa de datos a hojas de cálculo de Excel en tiempo real",
+      "Búsqueda instantánea en cliente con filtros acumulativos por género y estado"
+    ],
+    "challenges": [
+      "Mantener un diseño extremadamente limpio e interactivo sin sobrecargar la pantalla",
+      "Exportar datos estructurados a formato Excel nativo sin depender de un servidor",
+      "Asegurar una velocidad de filtrado instantánea con cientos de registros cargados"
+    ],
+    "solutions": [
+      "Uso de Tailwind CSS para control de diseño y transiciones fluidas",
+      "Integración de librerías JS especializadas en hojas de cálculo directamente en el navegador",
+      "Uso de React useMemo para optimizar los filtros acumulativos de búsqueda"
+    ],
+    "category": "Entretenimiento / Web App",
+    "team": "Desarrollador y Creador",
+    "id": "animenariolist",
+    "title": "AnimeNarioList",
+    "technologies": [
+      "React",
+      "TailwindCSS",
+      "Atomic Design",
+      "Excel Export"
+    ],
+    "github": "https://github.com/Darioantonio20/AnimeNarioList",
+    "demo": "https://animenariolist.netlify.app/",
+    "image": "https://i.pravatar.cc/300?img=47",
+    "duration": "Jun. 2025 - Present"
+  },
+  "my-portfolio-dario": {
+    "subtitle": "Sitio Web de Portafolio Personal Moderno",
+    "description": "Portafolio web responsivo y de alto impacto visual para exhibir proyectos de desarrollo, tecnologías dominadas y certificados.",
+    "longDescription": "Desarrollo de este portafolio personal utilizando Next.js y Tailwind CSS. Integra un diseño moderno con gradientes de color dinámicos, un sistema interactivo en 3D para carpetas de certificados y carruseles inteligentes de insignias con autoplay y controles integrados, enfocado en el rendimiento y optimización SEO.",
+    "features": [
+      "Desarrollo responsivo premium con animaciones modernas de scroll y hover",
+      "Sistema 3D interactivo de carpetas para visualización de certificados",
+      "Biblioteca inteligente de credenciales (badges) con filtros interactivos",
+      "Carrusel con autoplay inteligente de badges con pausa al interactuar",
+      "Switch de traducción de idiomas (inglés/español) integrado globalmente",
+      "Tiempos de carga optimizados y mejores prácticas de SEO"
+    ],
+    "challenges": [
+      "Crear componentes visualmente impactantes sin comprometer la velocidad de carga de la landing page",
+      "Implementar animaciones complejas (como el sistema 3D de carpetas) que funcionen perfectamente en móvil y escritorio",
+      "Optimizar los assets gráficos (imágenes de certificados y badges) para un rendimiento web ideal"
+    ],
+    "solutions": [
+      "Implementación de componentes con carga diferida (dynamic imports) en Next.js",
+      "Uso de animaciones CSS nativas y React hooks para interacción táctil responsiva",
+      "Compresión y formateo de todas las imágenes a formatos WebP optimizados"
+    ],
+    "category": "Personal / Portafolio",
+    "team": "Proyecto Individual",
+    "id": "my-portfolio-dario",
+    "title": "My Portfolio - Dario",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React",
+      "Netlify CI/CD",
+      "SEO",
+      "Modular Components",
+      "Responsive Design"
+    ],
+    "github": "https://github.com/Darioantonio20/My-Porfolio-Dario",
+    "demo": "",
+    "image": "/_next/static/media/ImgPorfolioDario.png",
+    "duration": "2025 - Present"
+  },
+  "tacos-pau": {
+    "subtitle": "Plataforma de Comida Típica y Distribución",
+    "description": "Página web responsiva para un negocio de tacos tradicional en Chiapas, que incluye catálogo de guisados, contacto directo y optimización SEO local.",
+    "longDescription": "Desarrollo del sitio web oficial para Tacos Pau, una marca local de comida tradicional en Chiapas. La plataforma permite a los usuarios consultar el menú diario, guisados para eventos, solicitar presupuestos y contactar directamente a través de flujos en WhatsApp, optimizada para búsquedas locales en Google.",
+    "features": [
+      "Catálogo visual de guisados y comidas clasificado por categorías",
+      "Contacto directo a WhatsApp con plantillas de mensajes personalizadas",
+      "Optimización SEO local para buscadores",
+      "Diseño responsivo cálido y representativo de la marca gastronómica"
+    ],
+    "challenges": [
+      "Lograr que el menú diario cargue rápidamente incluso con conexiones móviles lentas",
+      "Garantizar que el diseño visual refleje la sazón tradicional y atraiga clientes locales",
+      "Implementar un flujo de cotización simple y amigable para el público general"
+    ],
+    "solutions": [
+      "Optimización agresiva de imágenes gastronómicas a formato WebP ligero",
+      "Uso de Tailwind CSS para crear una paleta de colores cálidos y tipografía atractiva",
+      "Integración de enlaces de contacto directo de un solo toque estructurados"
+    ],
+    "category": "Gastronomía / Web Informativa",
+    "team": "Desarrollador Freelance Individual",
+    "id": "tacos-pau",
+    "title": "Tacos Pau",
+    "technologies": [
+      "Laravel",
+      "Tailwind CSS",
+      "PHP 8.x",
+      "Vite",
+      "SEO Optimization",
+      "Responsive Design",
+      "HACCP Standards Presentation"
+    ],
+    "github": "",
+    "demo": "https://guisospau.com/",
+    "image": "/projects/tacos-pau/guisospau.png",
+    "gallery": [
+      "/projects/tacos-pau/guisospau.png",
+      "/projects/tacos-pau/guisospau2.png",
+      "/projects/tacos-pau/guisospau3.png"
+    ],
+    "duration": "2024"
+  },
+  "hino-chiapas": {
+    "subtitle": "Plataforma Web Oficial de Concesionario y Captura de Clientes Potenciales",
+    "description": "Sitio web para el concesionario oficial de camiones Hino en Chiapas, que integra catálogo de unidades, cotizaciones y SEO.",
+    "longDescription": "Desarrollo de la plataforma web regional para el concesionario Hino Chiapas. Centraliza la información oficial de la gama de camiones de carga ligera, mediana y pesada, sistemas híbridos y autobuses, proporcionando un canal digital para capturar leads mediante formularios de cotización y contacto directo con asesores.",
+    "features": [
+      "Catálogo estructurado de camiones con especificaciones técnicas y fichas de descarga",
+      "Formularios dinámicos de cotización de unidades y citas de servicio",
+      "Optimización de imágenes en formato WebP para sub-1s en velocidad de carga",
+      "Optimización SEO para posicionamiento local de camiones industriales en el sureste"
+    ],
+    "challenges": [
+      "Organizar especificaciones de carga complejas de forma que resulten comprensibles para transportistas",
+      "Asegurar la consistencia de marca requerida por los estándares nacionales de Hino México",
+      "Optimizar la densidad de imágenes de alta resolución de camiones para un alto rendimiento web"
+    ],
+    "solutions": [
+      "Creación de tablas comparativas interactivas y fichas de especificaciones limpias",
+      "Diseño siguiendo el manual de identidad de marca de Hino con Bootstrap responsivo",
+      "Compresión automatizada y lazy-loading en todos los sliders de unidades"
+    ],
+    "category": "Automotriz / Comercial",
+    "team": "Desarrollador Freelance Individual",
+    "id": "hino-chiapas",
+    "title": "Hino Chiapas",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Bootstrap 5",
+      "SCSS",
+      "Slick Slider",
+      "SEO Optimization",
+      "NiceSelect",
+      "Google Maps API"
+    ],
+    "github": "",
+    "demo": "https://hinochiapas.com/",
+    "image": "/projects/hino-chiapas/detail.png",
+    "gallery": [
+      "/projects/hino-chiapas/detail.png",
+      "/projects/hino-chiapas/menu.png"
+    ],
+    "duration": "2026"
+  },
+  "hino-tabasco": {
+    "subtitle": "Plataforma Web de Concesionario Oficial y Campañas de Marketing",
+    "description": "Sitio web para el concesionario oficial de camiones Hino en Tabasco, enfocado en promociones, inventario y optimización de ventas.",
+    "longDescription": "Desarrollo de la plataforma web regional para Hino Tabasco. Diseñado para centralizar la promoción de unidades de camiones en la región de Tabasco, integrando formularios de captura de leads calificados y optimización para campañas de marketing en buscadores.",
+    "features": [
+      "Exhibición de inventario de camiones con filtros por serie (300, 500, 700)",
+      "Formularios de contacto integrados directamente con asesores regionales",
+      "Módulo de promociones temporales administrable",
+      "Velocidad de carga optimizada para campañas publicitarias (Google Ads)"
+    ],
+    "challenges": [
+      "Reducir las tasas de rebote en campañas de publicidad mediante una carga ultrarrápida",
+      "Mantener un diseño familiar pero adaptado a la plaza específica de Villahermosa y alrededores",
+      "Integrar llamadas a la acción claras y accesibles en pantallas de teléfonos móviles"
+    ],
+    "solutions": [
+      "Optimización de scripts de carga y empaquetado de assets para mejorar Core Web Vitals",
+      "Replicación estructurada del backend de Hino Chiapas con adaptaciones locales de base de datos",
+      "Uso de botones flotantes de llamada y WhatsApp persistentes pero no intrusivos"
+    ],
+    "category": "Automotriz / Comercial",
+    "team": "Desarrollador Freelance Individual",
+    "id": "hino-tabasco",
+    "title": "Hino Tabasco",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Bootstrap 5",
+      "SCSS",
+      "Slick Slider",
+      "SEO Optimization",
+      "NiceSelect"
+    ],
+    "github": "",
+    "demo": "https://hinotabasco.com.mx/",
+    "image": "/projects/hino-tabasco/home.png",
+    "gallery": [
+      "/projects/hino-tabasco/home.png"
+    ],
+    "duration": "2026"
+  },
+  "hino-oaxaca": {
+    "subtitle": "Plataforma Web de Concesionario Oficial (Replicación Regional)",
+    "description": "Sitio web regional para el concesionario oficial de camiones Hino en Oaxaca, que incluye geolocalización de sucursales y catálogo.",
+    "longDescription": "Replicación y adaptación del ecosistema web para Hino Oaxaca. Centraliza el catálogo comercial de camiones y autobuses, con integraciones de mapas para la ubicación de sucursales en el estado y flujos de contacto orientados al mercado oaxaqueño.",
+    "features": [
+      "Catálogo completo de unidades de transporte de carga y pasajeros Hino",
+      "Integración de mapas interactivos para ubicación de sucursales en Oaxaca",
+      "Sistema de cotización estructurado de repuestos y servicios de mantenimiento",
+      "SEO optimizado localmente para el mercado del estado de Oaxaca"
+    ],
+    "challenges": [
+      "Sincronizar la base de datos de unidades Hino asegurando independencia administrativa por región",
+      "Implementar mapas de ubicación interactivos ligeros que no afecten el rendimiento del sitio móvil"
+    ],
+    "solutions": [
+      "Uso de base de datos MySQL estructurada con configuración de variables de entorno",
+      "Integración optimizada de la API de mapas con marcadores personalizados para Hino"
+    ],
+    "category": "Automotriz / Comercial",
+    "team": "Desarrollador Freelance Individual",
+    "id": "hino-oaxaca",
+    "title": "Hino Oaxaca",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Bootstrap 5",
+      "SCSS",
+      "Slick Slider",
+      "Leaflet Maps API",
+      "SEO Optimization"
+    ],
+    "github": "",
+    "demo": "https://hinoaxaca.com/",
+    "image": "/projects/hino-oaxaca/contacto.png",
+    "gallery": [
+      "/projects/hino-oaxaca/contacto.png"
+    ],
+    "duration": "2026"
+  },
+  "jugamex": {
+    "subtitle": "Plataforma de Lotería y Apuestas Deportivas en Línea",
+    "description": "Plataforma digital para la venta de billetes de lotería, rifas y pronósticos deportivos en línea con pasarela de pagos y gráficos.",
+    "longDescription": "Jugamex es un sistema de juegos de azar desarrollado para centralizar la venta de billetes de lotería y sorteos deportivos. Integra flujos de compra reactivos, pasarelas de pago seguro y gráficos interactivos para estadísticas del comportamiento de apuestas y premios entregados.",
+    "features": [
+      "Compra y selección de números para rifas mediante cuadrícula interactiva",
+      "Flujo de transacciones y pagos seguro con PayPal SDK e integraciones locales",
+      "Gráficos interactivos de analíticas de premios mediante ApexCharts",
+      "Panel administrativo completo para creación de sorteos, control de usuarios y pasarela financiera"
+    ],
+    "challenges": [
+      "Garantizar la actualización en tiempo real de números de boleto seleccionados para evitar duplicaciones",
+      "Implementar una pasarela de pago segura y robusta que registre transacciones sin fallas en base de datos",
+      "Diseñar un panel administrativo que permita configurar sorteos complejos con reglas variables de premios"
+    ],
+    "solutions": [
+      "Uso de transacciones con bloqueo de registros en MySQL y peticiones optimizadas",
+      "Integración del SDK oficial de pagos en segundo plano con validación de webhooks",
+      "Desarrollo de flujos de control de base de datos flexibles con Laravel Eloquent"
+    ],
+    "category": "Entretenimiento / FinTech",
+    "team": "Desarrollador Freelance Individual",
+    "id": "jugamex",
+    "title": "Jugamex",
+    "technologies": [
+      "Laravel",
+      "PHP 8.x",
+      "MySQL",
+      "Tailwind CSS 3",
+      "Bootstrap 5",
+      "Sass (SCSS)",
+      "PayPal REST SDK",
+      "ApexCharts",
+      "jQuery",
+      "Select2",
+      "Vite",
+      "Blade Templates"
+    ],
+    "github": "",
+    "demo": "https://jugamex.com/",
+    "image": "/projects/jugamex/home.png",
+    "gallery": [
+      "/projects/jugamex/home.png"
+    ],
+    "duration": "2026"
+  },
+  "bedima": {
+    "subtitle": "Sistema SaaS de Gestión de Spas y Centros de Bienestar",
+    "description": "Plataforma SaaS para la gestión administrativa de Spas, incluyendo agenda de citas, compras de productos, pagos en línea y facturación.",
+    "longDescription": "Bedima es un sistema SaaS diseñado para digitalizar la operación diaria de centros de bienestar y spas. Permite la reserva de salas y terapeutas, control de inventario de insumos, compras de tratamientos, pagos en línea mediante MercadoPago e impresión de recibos de facturación en formato PDF.",
+    "features": [
+      "Agenda interactiva de citas médicas y de cabina para terapeutas",
+      "Venta y control de stock de productos y tratamientos de belleza",
+      "Pasarela de pago móvil y web integrada de forma segura con MercadoPago SDK",
+      "Generación automatizada de recibos y facturas en PDF",
+      "Panel administrativo para franquicias o sucursales múltiples"
+    ],
+    "challenges": [
+      "Gestionar de forma interactiva la agenda evitando cruces entre salas de spa, terapeutas y equipos disponibles",
+      "Integrar el flujo de compras con actualizaciones de inventario en tiempo real sin retrasos"
+    ],
+    "solutions": [
+      "Modelado de relaciones complejas en Laravel MySQL para validación de disponibilidad en un solo query",
+      "Lógica en Livewire para actualizar stock y carrito de forma reactiva y rápida"
+    ],
+    "category": "SaaS / Gestión de Negocios",
+    "team": "Líder de Integración y Frontend",
+    "id": "bedima",
+    "title": "Bedima",
+    "technologies": [
+      "Laravel 10",
+      "PHP 8.1+",
+      "Livewire v3",
+      "MySQL",
+      "Tailwind CSS 3",
+      "Flowbite",
+      "MercadoPago SDK",
+      "DomPDF",
+      "Vite",
+      "Blade Templates"
+    ],
+    "github": "",
+    "demo": "https://bedima.com.mx/",
+    "image": "/projects/bedima/home.png",
+    "gallery": [
+      "/projects/bedima/home.png"
+    ],
+    "duration": "2026"
+  },
+  "global-ezens": {
+    "subtitle": "Sitio Web Corporativo y CMS de Catálogo de Productos",
+    "description": "Sitio corporativo y administrador CMS para Global Ezens, que permite gestionar catálogo de productos, banners e información institucional.",
+    "longDescription": "Desarrollo de la plataforma corporativa y CMS para Global Ezens, una empresa de distribución comercial. Incluye el diseño de una interfaz moderna y limpia, desarrollo de catálogo de productos en tiempo real, gestión de blogs y panel de administración seguro para actualizar el contenido público sin tocar el código.",
+    "features": [
+      "Catálogo completo de productos organizado por categorías y marcas",
+      "Panel administrativo (CMS) intuitivo para editar secciones y subir banners en tiempo real",
+      "Efectos visuales modernos con AOS y componentes de Flowbite",
+      "Estructura responsiva móvil y de escritorio con tiempos de carga optimizados"
+    ],
+    "challenges": [
+      "Diseñar un panel administrativo fácil de usar para personal sin conocimientos de desarrollo",
+      "Mantener un rendimiento óptimo de carga con sliders e imágenes de productos pesados"
+    ],
+    "solutions": [
+      "Desarrollo del panel administrativo utilizando formularios simples y carga directa de imágenes con optimización en backend",
+      "Compresión automática y empaquetado de assets vía Vite y lazy-loading"
+    ],
+    "category": "Corporativo / CMS Comercial",
+    "team": "Desarrollador Freelance Individual",
+    "id": "global-ezens",
+    "title": "Global Ezens",
+    "technologies": [
+      "Laravel 10",
+      "PHP 8.1+",
+      "Livewire v3",
+      "MySQL",
+      "Tailwind CSS 3",
+      "Flowbite",
+      "AOS (Animate on Scroll)",
+      "Vite",
+      "Blade Templates",
+      "Laravel Mail"
+    ],
+    "github": "",
+    "demo": "https://ezens.com.mx/",
+    "image": "/projects/global-ezens/home.png",
+    "gallery": [
+      "/projects/global-ezens/home.png"
+    ],
+    "duration": "2026"
+  },
+  "tuxventas": {
+    "subtitle": "Marketplace Local y Clasificados Mobile-First",
+    "description": "Plataforma de anuncios clasificados y marketplace local mobile-first con generación de códigos QR y documentación Swagger.",
+    "longDescription": "TuxVentas es una plataforma web mobile-first diseñada para el comercio local y anuncios clasificados. Permite a los usuarios publicar productos, chatear con vendedores, generar códigos QR para verificar transacciones de entrega presencial de forma segura, con una base de datos MySQL y API documentada.",
+    "features": [
+      "Flujo de publicación de clasificados rápido y adaptado para móviles (mobile-first)",
+      "Generación y escaneo de códigos QR para verificación segura de entrega de productos",
+      "Chat interno reactivo para comunicación entre compradores y vendedores",
+      "Documentación completa de API mediante Swagger para integraciones futuras",
+      "Empaquetado móvil híbrido listo utilizando Capacitor"
+    ],
+    "challenges": [
+      "Asegurar una experiencia fluida al subir múltiples imágenes de productos desde dispositivos móviles",
+      "Implementar un flujo de validación de transacciones físicas seguro y sin dependencias de internet lentas en la entrega"
+    ],
+    "solutions": [
+      "Procesamiento y compresión de imágenes directamente en backend con colas de procesamiento de Laravel",
+      "Lógica de verificación mediante coincidencia rápida de hashes de códigos QR generados dinámicamente"
+    ],
+    "category": "Marketplace / Clasificados",
+    "team": "Desarrollador Full-Stack Principal",
+    "id": "tuxventas",
+    "title": "TuxVentas",
+    "technologies": [
+      "Laravel 10",
+      "PHP 8.1+",
+      "Capacitor (Android/iOS)",
+      "Livewire v3",
+      "MySQL",
+      "Tailwind CSS 3",
+      "Flowbite",
+      "Anime.js",
+      "Swagger / L5-Swagger",
+      "Laravel Sanctum",
+      "Vite"
+    ],
+    "github": "",
+    "demo": "https://tuxventas.com.mx/",
+    "image": "/projects/tuxventas/home.png",
+    "gallery": [
+      "/projects/tuxventas/home.png"
+    ],
+    "duration": "2026"
+  }
+}

@@ -4,7 +4,9 @@ import Image, { StaticImageData } from 'next/image';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import projectsData from '@/data/projects-detail.json';
+import projectsDataEs from '@/data/projects-detail-es.json';
 import { projects } from '@/data/team';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -33,8 +35,6 @@ interface ProjectDetail {
 
 type GalleryImage = string | StaticImageData;
 
-const projectDetails = projectsData as Record<string, ProjectDetail>;
-
 const imageKey = (image: GalleryImage) => (typeof image === 'string' ? image : image.src);
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId }) => {
@@ -42,12 +42,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const imageStageRef = useRef<HTMLDivElement>(null);
+  const { language, t } = useLanguage();
+
+  const projectDetails = useMemo(() => {
+    return (language === 'es' ? projectsDataEs : projectsData) as Record<string, ProjectDetail>;
+  }, [language]);
 
   const project = projectId ? projectDetails[projectId] : null;
 
   const projectCard = useMemo(
     () => projects.find((item) => item.url === `/projects/${projectId}`),
-    [projectId]
+    [projectId, projects]
   );
 
   const gallery = useMemo(() => {
@@ -211,14 +216,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
                         />
                       ) : (
                         <div className="flex h-full min-h-[320px] items-center justify-center text-white/45">
-                          No preview available
+                          {language === 'es' ? 'Vista previa no disponible' : 'No preview available'}
                         </div>
                       )}
 
                       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),transparent_30%,rgba(0,0,0,0.55))]" />
 
                       <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/12 bg-black/45 px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.28em] text-white/72 backdrop-blur-md">
-                        <span>Preview</span>
+                        <span>{language === 'es' ? 'Vista previa' : 'Preview'}</span>
                         <span className="text-white/38">{showGallery ? `${selectedImageIndex + 1}/${gallery.length}` : '1/1'}</span>
                       </div>
 
@@ -253,7 +258,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
                           onClick={() => setIsPreviewOpen(true)}
                           className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/12 px-4 py-2 text-sm font-semibold text-emerald-100 backdrop-blur-md transition-all duration-300 hover:border-emerald-300/40 hover:bg-emerald-400/18 hover:text-white"
                         >
-                          View Larger
+                          {language === 'es' ? 'Ver en grande' : 'View Larger'}
                           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 3h6m0 0v6m0-6L10 14M9 21H3m0 0v-6m0 6l11-11" />
                           </svg>
@@ -295,7 +300,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
 
                   <div className="grid gap-4 lg:grid-cols-2">
                     <section className="rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm lg:col-span-2" data-modal-reveal>
-                      <h3 className="text-lg font-semibold text-white">Key Features</h3>
+                      <h3 className="text-lg font-semibold text-white">{t('projects.modal.features')}</h3>
                       <ul className="mt-4 grid gap-3 md:grid-cols-2">
                         {project.features.map((feature, index) => (
                           <li key={index} className="flex items-start gap-3 text-white/72">
@@ -309,7 +314,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
                     </section>
 
                     <section className="rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm" data-modal-reveal>
-                      <h3 className="text-lg font-semibold text-white">Challenges</h3>
+                      <h3 className="text-lg font-semibold text-white">{t('projects.modal.challenges')}</h3>
                       <ul className="mt-4 space-y-3">
                         {project.challenges.map((challenge, index) => (
                           <li key={index} className="flex items-start gap-3 text-white/72">
@@ -323,7 +328,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
                     </section>
 
                     <section className="rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm" data-modal-reveal>
-                      <h3 className="text-lg font-semibold text-white">Solutions</h3>
+                      <h3 className="text-lg font-semibold text-white">{t('projects.modal.solutions')}</h3>
                       <ul className="mt-4 space-y-3">
                         {project.solutions.map((solution, index) => (
                           <li key={index} className="flex items-start gap-3 text-white/72">
@@ -341,7 +346,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
                 <aside className="space-y-4 xl:sticky xl:top-6 xl:self-start" data-modal-reveal>
                   <div className="rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-cyan-300/78">
-                      Overview
+                      {language === 'es' ? 'Resumen' : 'Overview'}
                     </p>
                     <p className="mt-4 leading-7 text-white/78">
                       {project.description}
@@ -350,22 +355,28 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
 
                   <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
                     <div className="rounded-[22px] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                      <p className="text-[0.66rem] uppercase tracking-[0.28em] text-white/38">Category</p>
+                      <p className="text-[0.66rem] uppercase tracking-[0.28em] text-white/38">
+                        {language === 'es' ? 'Categoría' : 'Category'}
+                      </p>
                       <p className="mt-2 text-sm font-semibold leading-6 text-white/88">{project.category}</p>
                     </div>
                     <div className="rounded-[22px] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                      <p className="text-[0.66rem] uppercase tracking-[0.28em] text-white/38">Duration</p>
+                      <p className="text-[0.66rem] uppercase tracking-[0.28em] text-white/38">
+                        {t('projects.modal.duration')}
+                      </p>
                       <p className="mt-2 text-sm font-semibold leading-6 text-white/88">{project.duration}</p>
                     </div>
                     <div className="rounded-[22px] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                      <p className="text-[0.66rem] uppercase tracking-[0.28em] text-white/38">Team</p>
+                      <p className="text-[0.66rem] uppercase tracking-[0.28em] text-white/38">
+                        {t('projects.modal.team')}
+                      </p>
                       <p className="mt-2 text-sm font-semibold leading-6 text-white/88">{project.team}</p>
                     </div>
                   </div>
 
                   <div className="rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-cyan-300/78">
-                      Focus Areas
+                      {language === 'es' ? 'Áreas de Enfoque' : 'Focus Areas'}
                     </p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {project.technologies.map((tech, index) => (
@@ -381,7 +392,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
 
                   <div className="rounded-[24px] border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                     <p className="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-cyan-300/78">
-                      Context
+                      {language === 'es' ? 'Contexto' : 'Context'}
                     </p>
                     <p className="mt-4 leading-7 text-white/74">
                       {project.longDescription}
@@ -400,7 +411,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
                           <svg className="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                           </svg>
-                          View on GitHub
+                          {t('projects.modal.github')}
                         </a>
                       )}
                       {project.demo && project.demo.trim() !== '' && (
@@ -413,7 +424,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
                           <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
-                          View Demo
+                          {t('projects.modal.demo')}
                         </a>
                       )}
                     </div>
@@ -434,7 +445,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, projectId 
               <div className="mb-4 flex items-center justify-between gap-4">
                 <div>
                   <p className="text-[0.68rem] uppercase tracking-[0.3em] text-white/42">
-                    Large Preview
+                    {language === 'es' ? 'Vista previa ampliada' : 'Large Preview'}
                   </p>
                   <h3 className="mt-1 text-xl font-semibold text-white">
                     {project.title}

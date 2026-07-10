@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { useLanguage } from '@/context/LanguageContext';
 
 const LetterGlitch = dynamic(() => import('@/components/Backgrounds/LetterGlitch/LetterGlitch'), {
   loading: () => <div className="h-full w-full bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.12),transparent_35%),linear-gradient(180deg,#020617,#000)]" />,
@@ -11,6 +12,8 @@ const Hero3DModel = dynamic(() => import('./Hero3DModel'), {
 });
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden py-8 sm:py-12 md:py-20">
       <div className="absolute inset-0 z-0 h-full min-h-[400px] w-full">
@@ -41,7 +44,7 @@ const Hero = () => {
             </div>
 
             <p className="mx-auto mb-8 max-w-xs text-base font-bold text-white drop-shadow-[0_12px_48px_rgba(0,0,0,1)] blur-[0.6px] xs:max-w-md xs:text-lg sm:max-w-2xl sm:text-xl md:text-2xl lg:mx-0">
-              Software Engineer
+              {t('hero.role')}
             </p>
 
             <div className="mx-auto flex w-full max-w-xs flex-col justify-center gap-4 xs:max-w-md sm:max-w-2xl sm:flex-row lg:mx-0 lg:justify-center">
@@ -58,7 +61,7 @@ const Hero = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
                   </svg>
                 </span>
-                Download CV
+                {t('hero.downloadCv')}
                 <span className="pointer-events-none absolute inset-0 rounded-xl animate-cv-glow" />
               </a>
             </div>

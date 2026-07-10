@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Spline = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
@@ -18,6 +19,7 @@ type IdleWindow = Window & {
 };
 
 const Hero3DModel = () => {
+  const { language } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const [shouldLoadSpline, setShouldLoadSpline] = useState(false);
 
@@ -80,8 +82,10 @@ const Hero3DModel = () => {
               </svg>
               <div className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400" />
             </div>
-            <span className="overflow-hidden whitespace-nowrap">
-              {shouldLoadSpline ? 'Drag to rotate' : 'Loading scene'}
+             <span className="overflow-hidden whitespace-nowrap">
+              {shouldLoadSpline 
+                ? (language === 'es' ? 'Arrastra para rotar' : 'Drag to rotate') 
+                : (language === 'es' ? 'Cargando escena' : 'Loading scene')}
             </span>
           </span>
         </div>
@@ -99,7 +103,7 @@ const Hero3DModel = () => {
               <div className="flex flex-col items-center gap-4 text-center text-white/70">
                 <div className="h-14 w-14 rounded-full border border-emerald-400/30 border-t-emerald-300 animate-spin" />
                 <p className="text-sm uppercase tracking-[0.28em] text-emerald-200/70">
-                  Preparing interactive scene
+                  {language === 'es' ? 'Preparando escena interactiva' : 'Preparing interactive scene'}
                 </p>
               </div>
             </div>

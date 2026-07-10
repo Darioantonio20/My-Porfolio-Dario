@@ -1,6 +1,9 @@
 'use client';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 const Footer = () => {
+  const { t } = useLanguage();
   const links = [
     {
       label: 'GitHub',
@@ -31,7 +34,7 @@ const Footer = () => {
             Darío Antonio Gutiérrez Álvarez
           </p>
           <p className="mt-1 text-xs text-white/45">
-            Software Engineer
+            {t('hero.role')}
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-white/50">
             <a
