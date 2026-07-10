@@ -394,6 +394,227 @@ const AnimatedCounter = ({ value }: { value: number }) => {
   return <span>{count}</span>;
 };
 
+type BadgeType = (typeof badges)[number];
+
+const CarouselLane = ({
+  title,
+  providerBadges,
+  providerStyles,
+  trackStyles,
+  openModal,
+}: {
+  title: string;
+  providerBadges: BadgeType[];
+  providerStyles: Record<BadgeProvider, string>;
+  trackStyles: Record<BadgeTrack, string>;
+  openModal: (
+    imgOrImgs: string | StaticImageData | Array<string | StaticImageData>,
+    title: string
+  ) => void;
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [showLeftBtn, setShowLeftBtn] = useState(false);
+  const [showRightBtn, setShowRightBtn] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  const checkScroll = () => {
+    if (containerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+      setShowLeftBtn(scrollLeft > 10);
+      setShowRightBtn(scrollLeft < scrollWidth - clientWidth - 10);
+      setIsOverflowing(scrollWidth > clientWidth);
+    }
+  };
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (el) {
+      el.addEventListener('scroll', checkScroll);
+      checkScroll();
+      window.addEventListener('resize', checkScroll);
+    }
+    return () => {
+      if (el) el.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [providerBadges]);
+
+  useEffect(() => {
+    if (providerBadges.length <= 1 || isPaused) return;
+
+    const interval = setInterval(() => {
+      const container = containerRef.current;
+      if (container) {
+        const { scrollLeft, scrollWidth, clientWidth } = container;
+        if (scrollLeft + clientWidth >= scrollWidth - 15) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          const cardEl = container.firstElementChild as HTMLElement;
+          const cardWidth = cardEl ? cardEl.offsetWidth + 16 : 276;
+          container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [providerBadges, isPaused]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (containerRef.current) {
+      const { clientWidth } = containerRef.current;
+      const scrollAmount = clientWidth * 0.75;
+      containerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  if (providerBadges.length === 0) return null;
+
+  return (
+    <div
+      className="mt-8 relative group/lane"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
+    >
+      <div className="flex items-center justify-between mb-4 px-2">
+        <div className="flex items-center gap-2">
+          <span
+            className={`h-2.5 w-2.5 rounded-full ${
+              title === 'AWS'
+                ? 'bg-amber-400'
+                : title === 'Cisco'
+                ? 'bg-cyan-400'
+                : 'bg-emerald-400'
+            } animate-pulse`}
+          />
+          <h3 className="text-lg font-bold tracking-wide text-white">
+            {title === 'AWS'
+              ? 'AWS Academy'
+              : title === 'Cisco'
+              ? 'Cisco Networking'
+              : 'Google Career Programs'}
+          </h3>
+          <span className="text-xs bg-white/10 px-2 py-0.5 rounded-full text-white/60">
+            {providerBadges.length}{' '}
+            {providerBadges.length === 1 ? 'credential' : 'credentials'}
+          </span>
+        </div>
+      </div>
+
+      {showLeftBtn && (
+        <button
+          onClick={() => scroll('left')}
+          className="absolute left-2 top-[55%] -translate-y-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-black/75 hover:bg-cyan-800/80 border border-white/20 hover:border-cyan-400 text-white shadow-lg backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/lane:opacity-100 pointer-events-auto"
+          aria-label="Scroll Left"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+      )}
+
+      {showRightBtn && (
+        <button
+          onClick={() => scroll('right')}
+          className="absolute right-2 top-[55%] -translate-y-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-black/75 hover:bg-cyan-800/80 border border-white/20 hover:border-cyan-400 text-white shadow-lg backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/lane:opacity-100 pointer-events-auto"
+          aria-label="Scroll Right"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      )}
+
+      <div
+        ref={containerRef}
+        className={`flex flex-row overflow-x-auto gap-4 py-2 pb-4 px-2 snap-x snap-mandatory scroll-smooth no-scrollbar ${
+          isOverflowing ? 'justify-start' : 'lg:justify-center'
+        }`}
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
+        {providerBadges.map((badge, index) => (
+          <article
+            key={badge.id}
+            className="snap-start shrink-0 animate-badge-in group relative overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(165deg,rgba(10,16,20,0.94),rgba(5,10,14,0.98))] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/22 hover:shadow-[0_18px_45px_rgba(0,0,0,0.35)] w-[240px] xs:w-[260px]"
+            style={{ animationDelay: `${index * 45}ms` }}
+          >
+            <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_85%_8%,rgba(34,211,238,0.14),transparent_48%)]" />
+            <div className="relative z-10 flex items-start justify-between">
+              <span
+                className={`rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] ${
+                  providerStyles[badge.provider]
+                }`}
+              >
+                {badge.provider}
+              </span>
+              <span className="rounded-full border border-white/14 bg-white/8 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-white/70">
+                {badge.platform}
+              </span>
+            </div>
+
+            <div className="relative z-10 mt-3 rounded-lg border border-white/12 bg-black/35 p-2.5">
+              <Image
+                src={badge.img}
+                alt={badge.title}
+                width={180}
+                height={180}
+                className="mx-auto h-20 w-20 object-contain"
+              />
+            </div>
+
+            <div className="relative z-10 mt-3">
+              <h4 className="text-[0.78rem] font-semibold leading-5 text-white line-clamp-2 h-10">
+                {badge.title}
+              </h4>
+              <p
+                className={`mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${
+                  trackStyles[badge.track]
+                }`}
+              >
+                {badge.track}
+              </p>
+              <p className="mt-1 text-[0.6rem] uppercase tracking-[0.16em] text-white/42">
+                Issued {badge.issuedLabel}
+              </p>
+            </div>
+
+            <div className="relative z-10 mt-3 flex flex-wrap gap-1">
+              {badge.skills.slice(0, 2).map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-white/12 bg-white/7 px-2 py-0.5 text-[0.56rem] font-semibold uppercase tracking-[0.12em] text-white/72"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            <div className="relative z-10 mt-3">
+              <a
+                href={badge.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-cyan-300/24 bg-cyan-400/12 px-2.5 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-cyan-100 transition-all duration-200 hover:border-cyan-200/38 hover:bg-cyan-400/20"
+              >
+                Verify Credential
+                <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7m0 0v7m0-7L10 14" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5v14h14" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Awards = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState<string | null>(null);
@@ -406,6 +627,7 @@ const Awards = () => {
   const [expandedFolders, setExpandedFolders] = useState<string[]>([]);
   const [badgeFilter, setBadgeFilter] = useState<BadgeFilter>('All');
   const [badgeSearch, setBadgeSearch] = useState('');
+  const [viewMode, setViewMode] = useState<'carousel' | 'grid'>('carousel');
 
   const badgeHighlights = useMemo(
     () => badges.filter((badge) => badge.featured).slice(0, 4),
@@ -439,6 +661,20 @@ const Awards = () => {
 
     return nextBadges;
   }, [badgeFilter, badgeSearch]);
+
+  const badgesByProvider = useMemo(() => {
+    const groups: Record<BadgeProvider, typeof badges> = {
+      AWS: [],
+      Cisco: [],
+      Google: [],
+    };
+    filteredBadges.forEach((badge) => {
+      if (groups[badge.provider]) {
+        groups[badge.provider].push(badge);
+      }
+    });
+    return groups;
+  }, [filteredBadges]);
 
   const openModal = (
     imgOrImgs: string | StaticImageData | Array<string | StaticImageData>,
@@ -863,6 +1099,14 @@ const Awards = () => {
         .animate-badge-in {
           animation: badge-in 0.48s ease-out both;
         }
+
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
       `}</style>
 
       <section className="mt-24">
@@ -917,21 +1161,50 @@ const Awards = () => {
               />
             </div>
 
-            <div className="flex flex-wrap gap-2">
-              {badgeProviders.map((provider) => (
+            <div className="flex flex-wrap gap-2 items-center w-full lg:w-auto">
+              <div className="flex flex-wrap gap-2">
+                {badgeProviders.map((provider) => (
+                  <button
+                    key={provider}
+                    type="button"
+                    onClick={() => setBadgeFilter(provider)}
+                    className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-200 ${
+                      badgeFilter === provider
+                        ? 'border-cyan-300/40 bg-cyan-400/16 text-cyan-100'
+                        : 'border-white/14 bg-white/6 text-white/65 hover:border-white/28 hover:text-white/90'
+                    }`}
+                  >
+                    {provider}
+                  </button>
+                ))}
+              </div>
+
+              <div className="h-6 w-px bg-white/10 mx-2 hidden sm:block" />
+
+              <div className="flex rounded-full border border-white/14 bg-black/40 p-0.5 ml-auto sm:ml-0">
                 <button
-                  key={provider}
                   type="button"
-                  onClick={() => setBadgeFilter(provider)}
-                  className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-200 ${
-                    badgeFilter === provider
-                      ? 'border-cyan-300/40 bg-cyan-400/16 text-cyan-100'
-                      : 'border-white/14 bg-white/6 text-white/65 hover:border-white/28 hover:text-white/90'
+                  onClick={() => setViewMode('carousel')}
+                  className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                    viewMode === 'carousel'
+                      ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-500/30'
+                      : 'text-white/50 hover:text-white/80 border border-transparent'
                   }`}
                 >
-                  {provider}
+                  Carrusel
                 </button>
-              ))}
+                <button
+                  type="button"
+                  onClick={() => setViewMode('grid')}
+                  className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+                    viewMode === 'grid'
+                      ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-500/30'
+                      : 'text-white/50 hover:text-white/80 border border-transparent'
+                  }`}
+                >
+                  Grid
+                </button>
+              </div>
             </div>
           </div>
 
@@ -942,68 +1215,83 @@ const Awards = () => {
         </div>
 
         {filteredBadges.length > 0 ? (
-        <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-items-center mx-auto max-w-[1300px]">
-            {filteredBadges.map((badge, index) => (
-              <article
-                key={badge.id}
-                className="animate-badge-in group relative overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(165deg,rgba(10,16,20,0.94),rgba(5,10,14,0.98))] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/22 hover:shadow-[0_18px_45px_rgba(0,0,0,0.35)] max-w-[260px] w-full"
-                style={{ animationDelay: `${index * 45}ms` }}
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_85%_8%,rgba(34,211,238,0.14),transparent_48%)]" />
-                <div className="relative z-10 flex items-start justify-between">
-                  <span className={`rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] ${providerStyles[badge.provider]}`}>
-                    {badge.provider}
-                  </span>
-                  <span className="rounded-full border border-white/14 bg-white/8 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-white/70">
-                    {badge.platform}
-                  </span>
-                </div>
-
-                <div className="relative z-10 mt-3 rounded-lg border border-white/12 bg-black/35 p-2.5">
-                  <Image
-                    src={badge.img}
-                    alt={badge.title}
-                    width={180}
-                    height={180}
-                    className="mx-auto h-20 w-20 object-contain"
-                  />
-                </div>
-
-                <div className="relative z-10 mt-3">
-                  <h4 className="text-[0.78rem] font-semibold leading-5 text-white line-clamp-2">{badge.title}</h4>
-                  <p className={`mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${trackStyles[badge.track]}`}>
-                    {badge.track}
-                  </p>
-                  <p className="mt-1 text-[0.6rem] uppercase tracking-[0.16em] text-white/42">
-                    Issued {badge.issuedLabel}
-                  </p>
-                </div>
-
-                <div className="relative z-10 mt-3 flex flex-wrap gap-1">
-                  {badge.skills.slice(0, 2).map((skill) => (
-                    <span key={skill} className="rounded-full border border-white/12 bg-white/7 px-2 py-0.5 text-[0.56rem] font-semibold uppercase tracking-[0.12em] text-white/72">
-                      {skill}
+          viewMode === 'carousel' ? (
+            <div className="mt-4 space-y-2">
+              {(Object.keys(badgesByProvider) as BadgeProvider[]).map((providerKey) => (
+                <CarouselLane
+                  key={providerKey}
+                  title={providerKey}
+                  providerBadges={badgesByProvider[providerKey]}
+                  providerStyles={providerStyles}
+                  trackStyles={trackStyles}
+                  openModal={openModal}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-items-center mx-auto max-w-[1300px]">
+              {filteredBadges.map((badge, index) => (
+                <article
+                  key={badge.id}
+                  className="animate-badge-in group relative overflow-hidden rounded-xl border border-white/10 bg-[linear-gradient(165deg,rgba(10,16,20,0.94),rgba(5,10,14,0.98))] p-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/22 hover:shadow-[0_18px_45px_rgba(0,0,0,0.35)] max-w-[260px] w-full"
+                  style={{ animationDelay: `${index * 45}ms` }}
+                >
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_85%_8%,rgba(34,211,238,0.14),transparent_48%)]" />
+                  <div className="relative z-10 flex items-start justify-between">
+                    <span className={`rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] ${providerStyles[badge.provider]}`}>
+                      {badge.provider}
                     </span>
-                  ))}
-                </div>
+                    <span className="rounded-full border border-white/14 bg-white/8 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-white/70">
+                      {badge.platform}
+                    </span>
+                  </div>
 
-                <div className="relative z-10 mt-3">
-                  <a
-                    href={badge.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-cyan-300/24 bg-cyan-400/12 px-2.5 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-cyan-100 transition-all duration-200 hover:border-cyan-200/38 hover:bg-cyan-400/20"
-                  >
-                    Verify Credential
-                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7m0 0v7m0-7L10 14" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5v14h14" />
-                    </svg>
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
+                  <div className="relative z-10 mt-3 rounded-lg border border-white/12 bg-black/35 p-2.5">
+                    <Image
+                      src={badge.img}
+                      alt={badge.title}
+                      width={180}
+                      height={180}
+                      className="mx-auto h-20 w-20 object-contain"
+                    />
+                  </div>
+
+                  <div className="relative z-10 mt-3">
+                    <h4 className="text-[0.78rem] font-semibold leading-5 text-white line-clamp-2">{badge.title}</h4>
+                    <p className={`mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${trackStyles[badge.track]}`}>
+                      {badge.track}
+                    </p>
+                    <p className="mt-1 text-[0.6rem] uppercase tracking-[0.16em] text-white/42">
+                      Issued {badge.issuedLabel}
+                    </p>
+                  </div>
+
+                  <div className="relative z-10 mt-3 flex flex-wrap gap-1">
+                    {badge.skills.slice(0, 2).map((skill) => (
+                      <span key={skill} className="rounded-full border border-white/12 bg-white/7 px-2 py-0.5 text-[0.56rem] font-semibold uppercase tracking-[0.12em] text-white/72">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="relative z-10 mt-3">
+                    <a
+                      href={badge.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg border border-cyan-300/24 bg-cyan-400/12 px-2.5 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-cyan-100 transition-all duration-200 hover:border-cyan-200/38 hover:bg-cyan-400/20"
+                    >
+                      Verify Credential
+                      <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3h7m0 0v7m0-7L10 14" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5v14h14" />
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )
         ) : (
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
             <p className="text-sm uppercase tracking-[0.25em] text-white/45">No Results</p>
