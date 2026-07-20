@@ -417,7 +417,14 @@
     "subtitle": "Interactive Website for Event Hall",
     "description": "Interactive and optimized page to display price catalog of rental packages for Jardín Del Alma event hall. Attractive visual experience and easy to use.",
     "longDescription": "Jardín Del Alma is a web page developed during my professional stay 1 at UP Chiapas (March-July 2023). The project focuses on creating an interactive web experience that allows users to explore the various rental packages offered by the event hall in a visual and attractive way.",
-    "technologies": ["React.js", "CSS Modules", "UI/UX Design", "Scrum", "Frontend Development", "Image Optimization"],
+    "technologies": [
+      "React.js",
+      "CSS Modules",
+      "UI/UX Design",
+      "Scrum",
+      "Frontend Development",
+      "Image Optimization"
+    ],
     "features": [
       "Promotion of packages with attractive UI/UX design",
       "Simple navigation between different sections",
@@ -453,7 +460,14 @@
     "subtitle": "Multi-platform Mobile App - UP Chiapas",
     "description": "Mobile multi-platform (iOS and Android) app developed in Flutter to digitize and modernize the attendance control process in educational institutions. Actively used by teachers at the University of Chiapas.",
     "longDescription": "I developed a multi-platform mobile app using Flutter to digitize and modernize the attendance control process in educational institutions. The app allows managing institutions, groups, students, and attendance passes with fluid animations, local synchronization, and PDF/CSV report generation. Deployment on App Store and Play Store.",
-    "technologies": ["Flutter", "Dart", "SQLite", "MVC", "Animations", "Responsive Design"],
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "SQLite",
+      "MVC",
+      "Animations",
+      "Responsive Design"
+    ],
     "features": [
       "Management of educational institutions",
       "Registration of multiple institutions",
@@ -501,7 +515,15 @@
     "subtitle": "Deployment and Optimization - iOS Application",
     "description": "Deployment and publication of the Light Center app on the App Store, managing the entire publication process for iOS developed with Flutter.",
     "longDescription": "Project of deployment and optimization of the Light Center app for iOS (October-November 2023). I was responsible for coordinating the entire publication process on the App Store, from resource configuration to successful launch for spa and beauty centers users.",
-    "technologies": ["Flutter", "Dart", "Xcode", "App Store Connect", "TestFlight", "iOS Development", "DevOps"],
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Xcode",
+      "App Store Connect",
+      "TestFlight",
+      "iOS Development",
+      "DevOps"
+    ],
     "features": [
       "Coordination of the publication and deployment process for iOS",
       "Optimization of resources and descriptions for the App Store",
@@ -536,7 +558,14 @@
     "subtitle": "Redesign & Modernization Front-end",
     "description": "Complete redesign and modernization of the Prediction Soft platform, focusing on user experience, responsive design, and modern Front-end architecture.",
     "longDescription": "Prediction Software is a completely redesigned platform to offer a modern, fluid, and attractive user experience. I led the complete redesign, implementing dynamic components in React.js, custom styles with CSS3 and Bootstrap, and integrating an intelligent ChatBot for customer support. The project was developed under Scrum methodology, with iterative deliveries and a mobile-first approach.",
-    "technologies": ["React.js", "CSS3", "Bootstrap", "ChatBot", "Scrum", "Responsive Design"],
+    "technologies": [
+      "React.js",
+      "CSS3",
+      "Bootstrap",
+      "ChatBot",
+      "Scrum",
+      "Responsive Design"
+    ],
     "features": [
       "Modern Landing Page",
       "Responsive design optimized for all devices",
@@ -572,7 +601,13 @@
     "subtitle": "Web Platform for Educational Offers",
     "description": "Centralized web platform that revolutionizes access to university information in Chiapas, connecting high school students with educational opportunities in an intuitive and efficient way.",
     "longDescription": "I developed a comprehensive web platform for the consultation of university offers in Chiapas. The system allows intelligent searches, advanced filters, automatic PDF generation, and an optimized user experience for high school students. The portal centralizes information from multiple universities and facilitates comparison and download of academic plans.",
-    "technologies": ["React.js", "Tailwind CSS", "PDF Generation", "Search Engine", "Responsive Design"],
+    "technologies": [
+      "React.js",
+      "Tailwind CSS",
+      "PDF Generation",
+      "Search Engine",
+      "Responsive Design"
+    ],
     "features": [
       "Advanced search engine by career and university",
       "Customized filters by location, cost, and modality",
@@ -610,7 +645,16 @@
     "subtitle": "Comprehensive Esthetic Medicine Platform",
     "description": "Multi-platform mobile app for Dr. Nabani Matus, with UI/UX design in Figma and development in Flutter/Dart. Comprehensive platform for consultation management, medical history, service catalog, payments, and medical chat.",
     "longDescription": "I developed a multi-platform mobile app with Flutter/Dart for Dr. Nabani Matus, including pre-design in Figma for mobile, web, and tablet views with responsive focus. The app integrates digital medical orientation, appointment management, service catalog, medical chat, medical history, post-operative care, integrated payments, and personalized notifications. Clean Architecture, RESTful integration, and Material Design.",
-    "technologies": ["Flutter", "Dart", "Material Design", "RESTful API", "Stripe", "Figma", "Clean Architecture", "Responsive Design"],
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Material Design",
+      "RESTful API",
+      "Stripe",
+      "Figma",
+      "Clean Architecture",
+      "Responsive Design"
+    ],
     "features": [
       "Digital medical orientation with interactive questionnaires",
       "Appointment management and procedure tracking",
@@ -648,7 +692,12 @@
     "subtitle": "Your quick guide to the world of anime",
     "description": "Minimalist web app to search, organize, and export anime lists. Fluid interface, no ads, and export to Excel.",
     "longDescription": "AnimeNarioList was born from my obsession with anime and the need to keep everything organized as a good developer. It allows you to quickly search for animes, create personalized lists, and export them to Excel to share. The app is built with clean design principles, Atomic Design, and an emphasis on performance and maintainability. The code is modular, tested, and ready to scale with future features like favorites, tags, or integration with external APIs.",
-    "technologies": ["React", "TailwindCSS", "Atomic Design", "Excel Export"],
+    "technologies": [
+      "React",
+      "TailwindCSS",
+      "Atomic Design",
+      "Excel Export"
+    ],
     "features": [
       "Quick anime search",
       "Minimalist and fluid interface",
@@ -672,10 +721,16 @@
     ],
     "github": "https://github.com/Darioantonio20/AnimeNarioList",
     "demo": "https://animenariolist.netlify.app/",
-    "image": "https://i.pravatar.cc/300?img=47",
+    "image": "/projects/animenariolist/screenshot1.png",
     "category": "Frontend Development",
     "duration": "Jun. 2025 - Present",
-    "team": "Individual Development"
+    "team": "Individual Development",
+    "gallery": [
+      "/projects/animenariolist/screenshot1.png",
+      "/projects/animenariolist/screenshot2.png",
+      "/projects/animenariolist/screenshot3.png",
+      "/projects/animenariolist/screenshot4.png"
+    ]
   },
   "my-portfolio-dario": {
     "id": "my-portfolio-dario",
@@ -942,9 +997,11 @@
     ],
     "github": "",
     "demo": "https://jugamex.com/",
-    "image": "/projects/jugamex/home.png",
+    "image": "/projects/jugamex/screenshot1.png",
     "gallery": [
-      "/projects/jugamex/home.png"
+      "/projects/jugamex/screenshot1.png",
+      "/projects/jugamex/screenshot2.png",
+      "/projects/jugamex/screenshot3.png"
     ],
     "category": "Betting / Fintech",
     "duration": "2026",
@@ -993,9 +1050,15 @@
     ],
     "github": "",
     "demo": "https://bedima.com.mx/",
-    "image": "/projects/bedima/home.png",
+    "image": "/projects/bedima/screenshot1.png",
     "gallery": [
-      "/projects/bedima/home.png"
+      "/projects/bedima/screenshot1.png",
+      "/projects/bedima/screenshot2.png",
+      "/projects/bedima/screenshot3.png",
+      "/projects/bedima/screenshot4.png",
+      "/projects/bedima/screenshot5.png",
+      "/projects/bedima/screenshot6.png",
+      "/projects/bedima/screenshot7.png"
     ],
     "category": "SaaS / Beauty & Wellness",
     "duration": "2026",
@@ -1045,9 +1108,11 @@
     ],
     "github": "",
     "demo": "https://ezens.com.mx/",
-    "image": "/projects/global-ezens/home.png",
+    "image": "/projects/global-ezens/screenshot1.png",
     "gallery": [
-      "/projects/global-ezens/home.png"
+      "/projects/global-ezens/screenshot1.png",
+      "/projects/global-ezens/screenshot2.png",
+      "/projects/global-ezens/screenshot3.png"
     ],
     "category": "Corporate / E-Commerce",
     "duration": "2026",
@@ -1098,13 +1163,16 @@
     ],
     "github": "",
     "demo": "https://tuxventas.com.mx/",
-    "image": "/projects/tuxventas/home.png",
+    "image": "/projects/tuxventas/screenshot1.png",
     "gallery": [
-      "/projects/tuxventas/home.png"
+      "/projects/tuxventas/screenshot1.png",
+      "/projects/tuxventas/screenshot2.png",
+      "/projects/tuxventas/screenshot3.png",
+      "/projects/tuxventas/screenshot4.png",
+      "/projects/tuxventas/screenshot5.png"
     ],
     "category": "Marketplace / Mobile",
     "duration": "2026",
     "team": "Full-Stack Development"
   }
 }
-

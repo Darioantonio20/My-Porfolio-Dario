@@ -5,12 +5,11 @@ import imgPredictionSoft from '@/assets/img/proyects/imgPredictionSoft.png';
 import PasedeLista from '@/assets/img/proyects/PasedeLista.png';
 import WebCoepes from '@/assets/img/proyects/WebCoepes.png';
 import DrNabani from '@/assets/img/proyects/DrNabani.png';
-import imgAnimenarioList from '@/assets/img/proyects/imgAnimenarioList.png';
 import ImgPorfolioDario from '@/assets/img/proyects/ImgPorfolioDario.png';
 
 export const projects: ChromaItem[] = [
   {
-    image: "/projects/tuxventas/home.png",
+    image: "/projects/tuxventas/screenshot1.png",
     title: "TuxVentas",
     subtitle: "Mobile-First Local Classifieds & Marketplace",
     subtitleEs: "Marketplace y clasificados locales mobile-first",
@@ -22,7 +21,7 @@ export const projects: ChromaItem[] = [
     badge: "New",
   },
   {
-    image: "/projects/global-ezens/home.png",
+    image: "/projects/global-ezens/screenshot1.png",
     title: "Global Ezens",
     subtitle: "Corporate Website & Product Catalog CMS",
     subtitleEs: "Catálogo corporativo y sitio web con CMS",
@@ -34,7 +33,7 @@ export const projects: ChromaItem[] = [
     badge: "New",
   },
   {
-    image: "/projects/jugamex/home.png",
+    image: "/projects/jugamex/screenshot1.png",
     title: "Jugamex",
     subtitle: "Online Lottery & Sports Betting Platform",
     subtitleEs: "Plataforma de lotería y apuestas deportivas en línea",
@@ -46,7 +45,7 @@ export const projects: ChromaItem[] = [
     badge: "New",
   },
   {
-    image: "/projects/bedima/home.png",
+    image: "/projects/bedima/screenshot1.png",
     title: "Bedima",
     subtitle: "SaaS Spa & Wellness Management System",
     subtitleEs: "Sistema SaaS para gestión de spas y bienestar",
@@ -213,7 +212,7 @@ export const projects: ChromaItem[] = [
     url: "/projects/my-portfolio-dario",
   },
   {
-    image: imgAnimenarioList,
+    image: "/projects/animenariolist/screenshot1.png",
     title: "AnimeNarioList",
     subtitle: "Minimalist Anime Guide",
     subtitleEs: "Guía minimalista de anime",

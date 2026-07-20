@@ -5,49 +5,52 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 // ── Spinner + fade-in image for each card ──────────────────────────────────
-const CardImage = ({ src, alt }: { src: string | StaticImageData; alt: string }) => {
+const CardImage = ({ src, alt, priority = false }: { src: string | StaticImageData; alt: string; priority?: boolean }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
     <div className="relative h-full w-full overflow-hidden rounded-[16px]">
       {/* Spinner — visible until image loads */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-300"
-        style={{ opacity: loaded ? 0 : 1, pointerEvents: 'none' }}
-      >
-        <svg
-          className="h-8 w-8 animate-spin text-emerald-400/80"
-          viewBox="0 0 24 24"
-          fill="none"
+      {!loaded && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 flex items-center justify-center bg-black/40"
+          style={{ pointerEvents: 'none' }}
         >
-          <circle
-            className="opacity-20"
-            cx="12" cy="12" r="10"
-            stroke="currentColor"
-            strokeWidth="3"
-          />
-          <path
-            className="opacity-90"
-            fill="currentColor"
-            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-          />
-        </svg>
-      </div>
+          <svg
+            className="h-8 w-8 animate-spin text-emerald-400/80"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle
+              className="opacity-20"
+              cx="12" cy="12" r="10"
+              stroke="currentColor"
+              strokeWidth="3"
+            />
+            <path
+              className="opacity-90"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+            />
+          </svg>
+        </div>
+      )}
 
-      {/* Actual image — fades + scales in once ready */}
+      {/* Actual image — fades in once ready */}
       <Image
         src={src}
         alt={alt}
-        width={280}
-        height={160}
-        loading="lazy"
+        width={560}
+        height={320}
+        priority={priority}
+        quality={75}
+        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 308px"
         onLoad={() => setLoaded(true)}
-        className="h-full w-full rounded-[16px] object-cover transition-transform duration-700 group-hover:scale-[1.04] group-hover/image:scale-[1.07]"
+        className="h-full w-full rounded-[16px] object-cover transition-[transform,opacity] duration-500 group-hover/image:scale-[1.04]"
         style={{
           opacity: loaded ? 1 : 0,
-          transform: loaded ? 'scale(1)' : 'scale(1.04)',
-          transition: 'opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1)',
+          willChange: 'transform, opacity',
         }}
       />
     </div>
@@ -263,8 +266,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       const rect = card.getBoundingClientRect();
       const x = clientX - rect.left;
       const y = clientY - rect.top;
-      const rotateY = (x / rect.width - 0.5) * 12;
-      const rotateX = (y / rect.height - 0.5) * -12;
+      const rotateY = (x / rect.width - 0.5) * 8;
+      const rotateX = (y / rect.height - 0.5) * -8;
 
       card.style.setProperty("--mouse-x", `${x}px`);
       card.style.setProperty("--mouse-y", `${y}px`);
@@ -272,11 +275,11 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       gsap.to(card, {
         rotateX,
         rotateY,
-        y: -10,
-        duration: 0.35,
+        y: -6,
+        duration: 0.2,
         ease: "power2.out",
         overwrite: true,
-        transformPerspective: 1400,
+        transformPerspective: 1200,
       });
     });
   }, []);
@@ -376,7 +379,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                   }}
                   aria-label={`Preview image for ${card.title}`}
                 >
-                  <CardImage src={card.image} alt={card.title} />
+                  <CardImage src={card.image} alt={card.title} priority={index < 3} />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/72 via-black/20 to-transparent opacity-90 transition-opacity duration-300 group-hover/image:opacity-100" />
                   <div className="pointer-events-none absolute bottom-3 right-3 flex items-center justify-center">
                     <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition-transform duration-300 group-hover/image:scale-105">
@@ -463,6 +466,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
             backdropFilter: "grayscale(1) brightness(0.78)",
             WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
             background: "rgba(0,0,0,0.001)",
+            willChange: 'opacity',
             maskImage:
               "radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 15%,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.22)45%,rgba(0,0,0,0.35)60%,rgba(0,0,0,0.50)75%,rgba(0,0,0,0.68)88%,white 100%)",
             WebkitMaskImage:
@@ -472,11 +476,12 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
         <div
           ref={fadeRef}
-          className="pointer-events-none absolute inset-0 z-40 transition-opacity duration-[250ms]"
+          className="pointer-events-none absolute inset-0 z-40"
           style={{
             backdropFilter: "grayscale(1) brightness(0.78)",
             WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
             background: "rgba(0,0,0,0.001)",
+            willChange: 'opacity',
             maskImage:
               "radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)",
             WebkitMaskImage:

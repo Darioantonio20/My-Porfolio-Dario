@@ -670,8 +670,14 @@
     ],
     "github": "https://github.com/Darioantonio20/AnimeNarioList",
     "demo": "https://animenariolist.netlify.app/",
-    "image": "https://i.pravatar.cc/300?img=47",
-    "duration": "Jun. 2025 - Present"
+    "image": "/projects/animenariolist/screenshot1.png",
+    "duration": "Jun. 2025 - Present",
+    "gallery": [
+      "/projects/animenariolist/screenshot1.png",
+      "/projects/animenariolist/screenshot2.png",
+      "/projects/animenariolist/screenshot3.png",
+      "/projects/animenariolist/screenshot4.png"
+    ]
   },
   "my-portfolio-dario": {
     "subtitle": "Sitio Web de Portafolio Personal Moderno",
@@ -923,9 +929,11 @@
     ],
     "github": "",
     "demo": "https://jugamex.com/",
-    "image": "/projects/jugamex/home.png",
+    "image": "/projects/jugamex/screenshot1.png",
     "gallery": [
-      "/projects/jugamex/home.png"
+      "/projects/jugamex/screenshot1.png",
+      "/projects/jugamex/screenshot2.png",
+      "/projects/jugamex/screenshot3.png"
     ],
     "duration": "2026"
   },
@@ -966,9 +974,15 @@
     ],
     "github": "",
     "demo": "https://bedima.com.mx/",
-    "image": "/projects/bedima/home.png",
+    "image": "/projects/bedima/screenshot1.png",
     "gallery": [
-      "/projects/bedima/home.png"
+      "/projects/bedima/screenshot1.png",
+      "/projects/bedima/screenshot2.png",
+      "/projects/bedima/screenshot3.png",
+      "/projects/bedima/screenshot4.png",
+      "/projects/bedima/screenshot5.png",
+      "/projects/bedima/screenshot6.png",
+      "/projects/bedima/screenshot7.png"
     ],
     "duration": "2026"
   },
@@ -1008,9 +1022,11 @@
     ],
     "github": "",
     "demo": "https://ezens.com.mx/",
-    "image": "/projects/global-ezens/home.png",
+    "image": "/projects/global-ezens/screenshot1.png",
     "gallery": [
-      "/projects/global-ezens/home.png"
+      "/projects/global-ezens/screenshot1.png",
+      "/projects/global-ezens/screenshot2.png",
+      "/projects/global-ezens/screenshot3.png"
     ],
     "duration": "2026"
   },
@@ -1052,9 +1068,13 @@
     ],
     "github": "",
     "demo": "https://tuxventas.com.mx/",
-    "image": "/projects/tuxventas/home.png",
+    "image": "/projects/tuxventas/screenshot1.png",
     "gallery": [
-      "/projects/tuxventas/home.png"
+      "/projects/tuxventas/screenshot1.png",
+      "/projects/tuxventas/screenshot2.png",
+      "/projects/tuxventas/screenshot3.png",
+      "/projects/tuxventas/screenshot4.png",
+      "/projects/tuxventas/screenshot5.png"
     ],
     "duration": "2026"
   }
