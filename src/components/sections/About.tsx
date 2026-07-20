@@ -253,8 +253,12 @@ const About = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-20 bg-black text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative overflow-hidden py-24 bg-gradient-to-b from-black via-[#080d12] to-black text-white">
+      {/* Soft gradient transitions top & bottom */}
+      <div className="pointer-events-none absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
+      <div className="pointer-events-none absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* About Me header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-16">

@@ -483,8 +483,8 @@ const CarouselLane = ({
       onTouchStart={() => setIsPaused(true)}
       onTouchEnd={() => setIsPaused(false)}
     >
-      <div className="flex items-center justify-between mb-4 px-2">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-center text-center mb-4 px-2">
+        <div className="flex items-center justify-center gap-2">
           <span
             className={`h-2.5 w-2.5 rounded-full ${
               title === 'AWS'
@@ -501,7 +501,7 @@ const CarouselLane = ({
               ? 'Cisco Networking'
               : 'Google Career Programs'}
           </h3>
-          <span className="text-xs bg-white/10 px-2 py-0.5 rounded-full text-white/60">
+          <span className="text-xs bg-white/10 px-2.5 py-0.5 rounded-full text-white/70 font-medium">
             {providerBadges.length}{' '}
             {language === 'es'
               ? 'credenciales'
@@ -538,7 +538,7 @@ const CarouselLane = ({
 
       <div
         ref={containerRef}
-        className={`flex flex-row overflow-x-auto gap-4 py-2 pb-4 px-2 snap-x snap-mandatory scroll-smooth no-scrollbar ${
+        className={`flex flex-row overflow-x-auto gap-4 py-2 pb-4 px-2 snap-x snap-mandatory scroll-smooth ${
           isOverflowing ? 'justify-start' : 'lg:justify-center'
         }`}
         style={{ WebkitOverflowScrolling: 'touch' }}
@@ -800,8 +800,12 @@ const Awards = () => {
   };
 
   return (
-    <section id="awards" className="py-20 bg-gradient-to-br from-gray-900 via-emerald-950 to-cyan-950 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="awards" className="relative overflow-hidden py-24 text-white bg-gradient-to-b from-black via-[#061412] to-black">
+      {/* Soft gradient transitions top & bottom */}
+      <div className="pointer-events-none absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-black via-black/85 to-transparent z-10" />
+      <div className="pointer-events-none absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-black via-black/85 to-transparent z-10" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 sm:mb-28 md:mb-32 px-2">
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 break-words leading-tight">
             {t('awards.title')} <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">{t('awards.certificates')}</span>

@@ -183,65 +183,46 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       cards,
       {
         autoAlpha: 0,
-        y: 42,
-        scale: 0.96,
-        rotateX: -10,
+        y: 30,
+        scale: 0.98,
       },
       {
         autoAlpha: 1,
         y: 0,
         scale: 1,
-        rotateX: 0,
-        duration: 0.9,
-        stagger: 0.08,
-        ease: "power3.out",
+        duration: 0.6,
+        stagger: 0.04,
+        ease: "power2.out",
         clearProps: "transform",
       }
     );
   }, [data.length]);
 
-  const moveTo = (x: number, y: number) => {
-    gsap.to(pos.current, {
-      x,
-      y,
-      duration: damping,
-      ease,
-      onUpdate: () => {
-        setX.current?.(pos.current.x);
-        setY.current?.(pos.current.y);
-      },
-      overwrite: true,
-    });
-  };
-
+  // Direct RAF handling for mouse pointer inside grid — Zero GSAP loop overhead
   const handleMove = useCallback((e: React.PointerEvent) => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    const bounds = root.getBoundingClientRect();
-    pendingMove.current = { x: e.clientX - bounds.left, y: e.clientY - bounds.top };
-
     if (rafPending.current) return;
     rafPending.current = true;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
 
     requestAnimationFrame(() => {
       rafPending.current = false;
-      if (!pendingMove.current) return;
-      moveTo(pendingMove.current.x, pendingMove.current.y);
-      pendingMove.current = null;
-      gsap.to(fadeRef.current, { opacity: 0, duration: 0.25, overwrite: true });
+      const root = rootRef.current;
+      if (!root) return;
+      const bounds = root.getBoundingClientRect();
+      const x = clientX - bounds.left;
+      const y = clientY - bounds.top;
+
+      root.style.setProperty("--x", `${x}px`);
+      root.style.setProperty("--y", `${y}px`);
+      if (fadeRef.current) fadeRef.current.style.opacity = "0.85";
     });
-  }, [moveTo]);
+  }, []);
 
   const handleLeave = useCallback(() => {
     rafPending.current = false;
-    pendingMove.current = null;
-    gsap.to(fadeRef.current, {
-      opacity: 1,
-      duration: fadeOut,
-      overwrite: true,
-    });
-  }, [fadeOut]);
+    if (fadeRef.current) fadeRef.current.style.opacity = "0";
+  }, []);
 
   const handleCardClick = (url?: string) => {
     if (onCardClick && url) {
@@ -253,6 +234,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
   const cardRafMap = useRef<Map<HTMLElement, boolean>>(new Map());
 
+  // Direct RAF update for card spotlight position
   const handleCardMove: React.MouseEventHandler<HTMLElement> = useCallback((e) => {
     const card = e.currentTarget;
     if (cardRafMap.current.get(card)) return;
@@ -266,35 +248,14 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       const rect = card.getBoundingClientRect();
       const x = clientX - rect.left;
       const y = clientY - rect.top;
-      const rotateY = (x / rect.width - 0.5) * 8;
-      const rotateX = (y / rect.height - 0.5) * -8;
 
       card.style.setProperty("--mouse-x", `${x}px`);
       card.style.setProperty("--mouse-y", `${y}px`);
-
-      gsap.to(card, {
-        rotateX,
-        rotateY,
-        y: -6,
-        duration: 0.2,
-        ease: "power2.out",
-        overwrite: true,
-        transformPerspective: 1200,
-      });
     });
   }, []);
 
-  const handleCardLeave: React.MouseEventHandler<HTMLElement> = (e) => {
-    const card = e.currentTarget;
-
-    gsap.to(card, {
-      rotateX: 0,
-      rotateY: 0,
-      y: 0,
-      duration: 0.55,
-      ease: "power3.out",
-      overwrite: true,
-    });
+  const handleCardLeave: React.MouseEventHandler<HTMLElement> = () => {
+    // Left empty for pure CSS transitions
   };
 
   return (
@@ -303,7 +264,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
         ref={rootRef}
         onPointerMove={handleMove}
         onPointerLeave={handleLeave}
-        className={`relative flex h-full w-full flex-wrap items-start justify-center gap-4 ${className}`}
+        className={`relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-5 w-full rounded-[28px] sm:rounded-[36px] border border-white/10 bg-black/20 p-3.5 sm:p-6 lg:p-8 backdrop-blur-xl shadow-[0_30px_90px_rgba(0,0,0,0.35)] ${className}`}
         style={
           {
             "--r": `${radius}px`,
@@ -314,8 +275,6 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       >
         {data.map((card, index) => {
           const techStack = card.handle ? card.handle.split(" • ") : [];
-          const visibleTech = techStack.slice(0, 3);
-          const hiddenTechCount = Math.max(techStack.length - visibleTech.length, 0);
 
           return (
             <article
@@ -333,45 +292,45 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                 }
               }}
               tabIndex={0}
-              className="group relative flex h-[452px] w-[308px] cursor-pointer flex-col overflow-hidden rounded-[28px] border border-white/12 bg-black/35 shadow-[0_24px_60px_rgba(0,0,0,0.34)] transition-[border-color,box-shadow,transform] duration-500 hover:border-white/25 hover:shadow-[0_34px_95px_rgba(0,0,0,0.48)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+              className="group relative flex w-full min-h-[460px] sm:min-h-[490px] cursor-pointer flex-col justify-between overflow-hidden rounded-[22px] sm:rounded-[26px] border border-white/15 bg-black/45 shadow-[0_24px_60px_rgba(0,0,0,0.45)] transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/60 hover:shadow-[0_25px_70px_rgba(6,182,212,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
               style={
                 {
                   "--card-border": card.borderColor || "transparent",
-                  "--spotlight-color": "rgba(255,255,255,0.28)",
+                  "--spotlight-color": "rgba(255,255,255,0.22)",
                   background: card.gradient,
-                  transformStyle: "preserve-3d",
                   willChange: "transform",
                 } as React.CSSProperties
               }
             >
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),transparent_30%,rgba(2,6,23,0.78))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),transparent_30%,rgba(2,6,23,0.88))]" />
               <div
-                className="absolute inset-x-5 top-0 h-24 -translate-y-1/2 rounded-full blur-3xl opacity-85"
+                className="absolute inset-x-5 top-0 h-28 -translate-y-1/2 rounded-full blur-3xl opacity-85"
                 style={{
                   background: card.borderColor
-                    ? `${card.borderColor}66`
-                    : "rgba(255,255,255,0.08)",
+                    ? `${card.borderColor}77`
+                    : "rgba(255,255,255,0.1)",
                 }}
               />
 
               {card.badge && (
-                <span className="absolute left-4 top-4 z-20 rounded-full border border-amber-300/20 bg-black/65 px-3.5 py-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.34em] text-amber-300 backdrop-blur-md">
+                <span className="absolute left-3 top-3 sm:left-4 sm:top-4 z-20 rounded-full border border-amber-300/30 bg-black/75 px-3 py-1 sm:px-3.5 sm:py-1.5 text-[0.6rem] sm:text-[0.64rem] font-bold uppercase tracking-[0.24em] sm:tracking-[0.34em] text-amber-300 backdrop-blur-md shadow-lg">
                   {card.badge}
                 </span>
               )}
 
               <div
-                className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{
                   background:
-                    "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
+                    "radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--spotlight-color), transparent 70%)",
                 }}
               />
 
-              <div className="relative z-10 box-border h-[196px] flex-shrink-0 p-[12px]">
+              {/* Image Header Area */}
+              <div className="relative z-10 box-border h-[180px] sm:h-[190px] w-full flex-shrink-0 p-[8px] sm:p-[10px]">
                 <button
                   type="button"
-                  className="group/image relative block h-full w-full cursor-zoom-in overflow-hidden rounded-[16px] border border-cyan-300/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80"
+                  className="group/image relative block h-full w-full cursor-zoom-in overflow-hidden rounded-[16px] sm:rounded-[18px] border border-cyan-300/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80"
                   onClick={(event) => {
                     event.stopPropagation();
                     setSelectedCard(card);
@@ -380,78 +339,82 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                   aria-label={`Preview image for ${card.title}`}
                 >
                   <CardImage src={card.image} alt={card.title} priority={index < 3} />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/72 via-black/20 to-transparent opacity-90 transition-opacity duration-300 group-hover/image:opacity-100" />
-                  <div className="pointer-events-none absolute bottom-3 right-3 flex items-center justify-center">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3.5 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition-transform duration-300 group-hover/image:scale-105">
-                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 transition-opacity duration-300 group-hover/image:opacity-100" />
+                  <div className="pointer-events-none absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 flex items-center justify-center">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-black/70 px-3 py-1 sm:px-3.5 sm:py-1.5 text-[0.6rem] sm:text-[0.64rem] font-bold uppercase tracking-[0.2em] sm:tracking-[0.22em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.45)] backdrop-blur-md transition-all duration-300 group-hover/image:scale-105 group-hover/image:border-cyan-300">
+                      <svg className="h-3.5 w-3.5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth={1.8}
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
                           d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                         />
-                        <circle cx="12" cy="12" r="3" strokeWidth={1.8} />
                       </svg>
-                      Preview
+                      <span>Vista Previa</span>
                     </span>
                   </div>
                 </button>
               </div>
 
-              <footer className="relative z-10 flex min-h-[190px] flex-1 flex-col justify-between overflow-hidden bg-black/58 px-5 pb-5 pt-4 text-white backdrop-blur-md">
-                <div className="space-y-3 overflow-hidden">
+              {/* Card Main Body & Text Container */}
+              <footer className="relative z-10 flex flex-1 flex-col justify-between bg-black/70 px-4 pb-4 pt-4 sm:px-5 sm:pb-5 sm:pt-4 text-white backdrop-blur-xl rounded-b-[22px] sm:rounded-b-[26px]">
+                <div className="space-y-2.5 sm:space-y-3">
                   <h3
-                    className="m-0 text-[1.65rem] font-extrabold leading-[1.12] tracking-tight text-white drop-shadow-lg line-clamp-2"
+                    className="m-0 text-lg sm:text-xl font-extrabold tracking-tight text-white drop-shadow-md leading-tight"
                     title={card.title}
                   >
                     {card.title}
                   </h3>
-                  <p className="m-0 overflow-hidden text-[0.94rem] font-medium leading-6 text-white/74 line-clamp-3">
+                  
+                  <p className="m-0 text-xs sm:text-sm font-normal leading-relaxed text-gray-200/90">
                     {card.subtitle}
                   </p>
 
-                  {!!visibleTech.length && (
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {visibleTech.map((tech, techIndex) => (
+                  {!!techStack.length && (
+                    <div className="mt-2.5 sm:mt-3 flex flex-wrap gap-1.5">
+                      {techStack.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="truncate rounded-full border border-white/12 bg-white/7 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-white/75"
+                          className="rounded-lg border border-cyan-400/20 bg-cyan-950/40 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[0.62rem] sm:text-[0.66rem] font-semibold tracking-wide text-cyan-200 shadow-sm"
                         >
                           {tech}
                         </span>
                       ))}
-                      {hiddenTechCount > 0 && (
-                        <span className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-2.5 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-cyan-200">
-                          +{hiddenTechCount} more
-                        </span>
-                      )}
                     </div>
                   )}
 
                   {card.location && (
-                    <p
-                      className="m-0 inline-flex max-w-full items-center gap-2 truncate text-[0.75rem] font-medium uppercase tracking-[0.24em] text-white/48"
-                      title={card.location}
-                    >
-                      <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-300/80" />
-                      {card.location}
-                    </p>
+                    <div className="pt-1">
+                      <p
+                        className="m-0 inline-flex max-w-full items-center gap-1.5 sm:gap-2 text-[0.66rem] sm:text-[0.72rem] font-medium uppercase tracking-[0.18em] sm:tracking-[0.2em] text-emerald-300/80"
+                        title={card.location}
+                      >
+                        <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 flex-shrink-0 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="truncate">{card.location}</span>
+                      </p>
+                    </div>
                   )}
                 </div>
 
-                <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
-                  <span className="text-[0.66rem] uppercase tracking-[0.34em] text-white/38">
-                    Case Study
+                <div className="mt-4 sm:mt-5 flex items-center justify-between border-t border-white/12 pt-3 sm:pt-3.5">
+                  <span className="inline text-[0.62rem] sm:text-[0.64rem] font-bold uppercase tracking-[0.28em] sm:tracking-[0.3em] text-white/50">
+                    Proyecto
                   </span>
                   <button
                     type="button"
                     onClick={() => handleCardClick(card.url)}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/8 px-3 py-1.5 text-[0.76rem] font-semibold text-white transition-all duration-300 hover:border-white/35 hover:bg-white/14 hover:translate-x-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80"
-                    aria-label={`Open details for ${card.title}`}
+                    className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-cyan-400/30 bg-cyan-950/50 px-3 py-1.5 sm:px-3.5 sm:py-1.5 text-[0.72rem] sm:text-[0.76rem] font-bold text-cyan-200 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-900/80 hover:text-white hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80"
+                    aria-label={`Abrir detalles de ${card.title}`}
                   >
-                    Open Details
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 5l7 7-7 7" />
+                    <span>Ver Detalles</span>
+                    <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </button>
                 </div>
@@ -460,33 +423,13 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
           );
         })}
 
-        <div
-          className="pointer-events-none absolute inset-0 z-30"
-          style={{
-            backdropFilter: "grayscale(1) brightness(0.78)",
-            WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
-            background: "rgba(0,0,0,0.001)",
-            willChange: 'opacity',
-            maskImage:
-              "radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 15%,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.22)45%,rgba(0,0,0,0.35)60%,rgba(0,0,0,0.50)75%,rgba(0,0,0,0.68)88%,white 100%)",
-            WebkitMaskImage:
-              "radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 15%,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.22)45%,rgba(0,0,0,0.35)60%,rgba(0,0,0,0.50)75%,rgba(0,0,0,0.68)88%,white 100%)",
-          }}
-        />
-
+        {/* Lightweight GPU-accelerated spotlight gradient */}
         <div
           ref={fadeRef}
-          className="pointer-events-none absolute inset-0 z-40"
+          className="pointer-events-none absolute inset-0 z-30 rounded-[28px] sm:rounded-[36px] overflow-hidden transition-opacity duration-300"
           style={{
-            backdropFilter: "grayscale(1) brightness(0.78)",
-            WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
-            background: "rgba(0,0,0,0.001)",
-            willChange: 'opacity',
-            maskImage:
-              "radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)",
-            opacity: 1,
+            background: "radial-gradient(circle 450px at var(--x, 50%) var(--y, 50%), rgba(34, 211, 238, 0.08) 0%, transparent 80%)",
+            opacity: 0,
           }}
         />
       </div>

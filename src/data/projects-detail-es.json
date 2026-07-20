@@ -1,4 +1,53 @@
 {
+  "frex": {
+    "subtitle": "Diseño UI/UX y Despliegue de Landing Page para Plataforma de Lealtad",
+    "description": "Diseño de interfaz de usuario, experiencia de usuario y despliegue completo de la landing page para Frex Club, una app y plataforma de fidelización de clientes.",
+    "longDescription": "Desarrollo completo de la interfaz de usuario (UI/UX) y despliegue de la landing page oficial para Frex Club, una plataforma orientada a convertir clientes ocasionales en clientes frecuentes mediante un sistema inteligente de recompensas, puntos y escaneo de códigos QR. El proyecto destaca por una interfaz moderna con animaciones fluidas utilizando GSAP, AOS y Bootstrap 5, estructurado de forma limpia mediante componentes de Blade y compilado eficientemente a través de Vite.",
+    "features": [
+      "Diseño de Interfaz Moderno: UI interactiva optimizada para la conversión y presentación de planes de lealtad",
+      "Visualizador 3D interactivo: Carrusel tridimensional para explorar las pantallas del aplicativo de administrador y cliente",
+      "Efectos y Micro-interacciones: Animaciones premium y efectos hover tridimensionales con GSAP, AOS y Tilt.js",
+      "Sección de Planes Cotizables: Integración con redireccionamientos a canales de cotización directa por WhatsApp",
+      "Estructura Altamente Adaptativa: Diseño mobile-first fluido para dispositivos móviles y de escritorio",
+      "Despliegue de Producción: Publicación y optimización final en servidores web"
+    ],
+    "challenges": [
+      "Diseñar una sección interactiva para alternar entre las vistas de Administrador y Cliente sin recargar la página",
+      "Crear un carrusel tridimensional nativo de imágenes sin depender de librerías pesadas externas",
+      "Mantener un rendimiento óptimo de carga con animaciones y micro-interacciones activas"
+    ],
+    "solutions": [
+      "Desarrollo de un switcher interactivo personalizado en JavaScript para alternar entre las vistas del panel de control web y la aplicación móvil",
+      "Implementación de transformaciones 3D en CSS combinadas con transiciones suavizadas por código para el carrusel principal",
+      "Optimización de assets, scripts asíncronos y empaquetado de recursos CSS/JS a través de Vite"
+    ],
+    "category": "UI/UX / Landing Page",
+    "team": "Diseñador UI/UX y Despliegue",
+    "id": "frex",
+    "title": "Frex",
+    "technologies": [
+      "Bootstrap 5",
+      "Sass (SCSS)",
+      "GSAP",
+      "AOS",
+      "AnimeJS",
+      "Tilt.js",
+      "Vite",
+      "Blade Templates",
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "github": "",
+    "demo": "https://frex.club/",
+    "image": "/projects/frex/screenshot1.png",
+    "gallery": [
+      "/projects/frex/screenshot1.png",
+      "/projects/frex/screenshot2.png",
+      "/projects/frex/screenshot3.png"
+    ],
+    "duration": "2026"
+  },
   "medica-ms": {
     "subtitle": "Landing page para distribución médica",
     "description": "Rediseño completo y desarrollo de una landing page corporativa para una distribuidora médica líder.",
@@ -50,39 +99,35 @@
     "duration": "Apr. 2026"
   },
   "hostinggc": {
-    "subtitle": "Rediseño de Plataforma y Landing Page de Hosting Web",
-    "description": "Un rediseño moderno y de alto rendimiento de una plataforma de hosting web utilizando Laravel 12 y Tailwind CSS 4.0, con animaciones avanzadas con GSAP y AOS.",
-    "longDescription": "HostingGC es un rediseño y modernización integral de una plataforma de hosting web y registro de dominios. Construido sobre el framework Laravel 12 y PHP 8.2+, el proyecto se enfoca en una estética ultra moderna utilizando Tailwind CSS 4.0 y animaciones avanzadas impulsadas por GSAP. El objetivo fue transformar la experiencia del usuario en una interfaz elegante y de alta tecnología que refleje la confiabilidad y velocidad de los servicios de hosting.",
+    "subtitle": "Rediseño Frontend de Plataforma y Landing Page de Hosting Web",
+    "description": "Un rediseño de frontend moderno y de alto rendimiento de una plataforma de hosting web utilizando Tailwind CSS 4.0, con animaciones avanzadas con GSAP y AOS.",
+    "longDescription": "HostingGC es un rediseño y modernización integral del frontend de una plataforma de hosting web y registro de dominios. El proyecto se enfoca en una estética ultra moderna utilizando Tailwind CSS 4.0 y animaciones avanzadas impulsadas por GSAP. El objetivo fue transformar la experiencia del usuario en una interfaz elegante y de alta tecnología que refleje la confiabilidad y velocidad de los servicios de hosting.",
     "features": [
       "UI/UX de Alta Tecnología Moderna con Tailwind CSS 4.0",
       "Animaciones de alto rendimiento con GSAP (GreenSock)",
       "Efectos dinámicos de revelación al hacer scroll con AOS",
-      "Diseño responsivo compatible con Bootstrap 5",
-      "Arquitectura modular con componentes Blade de Laravel",
-      "Compilación de recursos ultrarrápida a través de Vite",
-      "Base de datos optimizada en SQLite",
+      "Diseño responsivo compatible con Bootstrap 5 y maquetación fluida",
+      "Estructura modular con componentes Blade de Laravel",
+      "Compilación de recursos optimizada a través de Vite",
       "Tablas de precios interactivas y carruseles de servicios"
     ],
     "challenges": [
-      "Implementar las últimas características de Tailwind CSS 4.0 y Laravel 12 en producción",
+      "Implementar las últimas características estéticas de Tailwind CSS 4.0 en producción",
       "Crear animaciones complejas y fluidas con GSAP manteniendo el rendimiento en todos los dispositivos",
       "Equilibrar la estética de alta tecnología con los requerimientos funcionales de una plataforma de hosting",
       "Garantizar un comportamiento responsivo para tablas de datos técnicos complejos y planes de precios"
     ],
     "solutions": [
-      "Aprovechamiento de las capacidades de Laravel 12 y Vite para un flujo de trabajo optimizado",
+      "Aprovechamiento de las capacidades de maquetación avanzada en el frontend con Vite",
       "Uso de GSAP para control granular sobre micro-animaciones y transiciones de página",
       "Aplicación de estructuras SCSS personalizadas junto con Tailwind para tokens de diseño avanzados",
       "Modularización de la interfaz en componentes Blade reutilizables para mejor mantenibilidad"
     ],
     "category": "Tecnología / Servicios de Hosting",
-    "team": "Rediseño Individual Líder",
+    "team": "Rediseño Frontend Líder",
     "id": "hostinggc",
     "title": "HostingGC",
     "technologies": [
-      "Laravel 12",
-      "PHP 8.2+",
-      "SQLite",
       "Tailwind CSS 4.0",
       "Sass (SCSS)",
       "Blade Templates",
@@ -209,43 +254,37 @@
     "duration": "2026"
   },
   "voldo": {
-    "subtitle": "ERP y plataforma de gestión de concesionarios para maquinaria pesada",
-    "description": "Plataforma ERP y DMS construida para centralizar inventario, adquisiciones, talleres, rentas, ventas, finanzas, recursos humanos y reportes operativos para una empresa de maquinaria pesada.",
-    "longDescription": "Voldo es una plataforma de operaciones empresariales diseñada para empresas que compran, reacondicionan, rentan, venden y mantienen equipos pesados como tractores y camiones. El sistema conecta el control de proveedores, listas de verificación de inspección dinámica, ejecución de talleres, control de repuestos, contratos de renta y ventas, operaciones financieras, registros de recursos humanos y paneles de administración en un solo producto basado en Laravel.",
+    "subtitle": "Apoyo Frontend y Maquetación de Interfaces para ERP de Maquinaria Pesada",
+    "description": "Colaboración en el desarrollo del frontend y maquetación responsiva de interfaces de usuario para una plataforma ERP y DMS de maquinaria pesada.",
+    "longDescription": "Voldo es una plataforma de operaciones empresariales diseñada para empresas que manejan equipos pesados. En este proyecto colaboré en el desarrollo frontend y maquetación de interfaces de usuario responsivas. Me enfoqué en construir y optimizar el diseño del panel de control, catálogos de unidades, formularios interactivos y listas de inspección dinámica utilizando Tailwind CSS, Flowbite y Livewire v3 para asegurar una experiencia limpia y adaptada a múltiples roles operativos.",
     "features": [
-      "Gestión de inventario y catálogo de productos para vehículos pesados, tractores y equipos con atributos, imágenes y garantías",
-      "Flujos de trabajo de adquisición para control de proveedores, seguimiento de costos y registro de mercancías",
-      "Módulo de mantenimiento con órdenes de trabajo, informes de servicio, listas de verificación dinámicas e inventario de repuestos",
-      "Flujos de trabajo de ventas, CRM, postventa y rentas que conectan leads, cotizaciones, contratos y depósitos",
-      "Herramientas de finanzas y facturación para ingresos, gastos, métodos de pago, comprobantes e integración CFDI",
-      "Acceso basado en roles para ocho perfiles operativos en administración, RRHH, mantenimiento, adquisiciones, finanzas, rentas y ventas"
+      "Maquetación del catálogo visual de productos e inventario de vehículos pesados y refacciones",
+      "Diseño e implementación de interfaces interactivas para órdenes de trabajo y listas de verificación dinámica",
+      "Desarrollo frontend de paneles de control (dashboards) responsivos para múltiples perfiles operativos",
+      "Optimización de flujos visuales para formularios dinámicos y reportes estructurados"
     ],
     "challenges": [
-      "Traducir procesos de taller, comerciales y financieros en un solo sistema sin simplificar en exceso las reglas de negocio",
-      "Mantener múltiples departamentos sincronizados asegurando que cada rol solo vea las acciones pertinentes",
-      "Gestionar el ciclo de vida completo de una unidad desde la adquisición hasta la venta o renta y soporte postventa",
-      "Automatizar salidas operativas como órdenes de trabajo, contratos y facturas sin fragmentar el modelo de datos"
+      "Diseñar interfaces limpias y legibles para flujos operativos densos y complejos",
+      "Estructurar un diseño responsivo que facilite el uso del ERP tanto en computadoras de oficina como en dispositivos móviles en talleres",
+      "Colaborar en la integración de componentes de interfaz interactivos sin alterar la lógica de negocio subyacente"
     ],
     "solutions": [
-      "Construcción de una arquitectura modular ERP/DMS con flujos de trabajo estrechamente conectados",
-      "Uso de interfaces basadas en Livewire y lógica de dominio de Laravel para mantener reactivas las operaciones complejas",
-      "Modelado de permisos en torno a roles operativos reales, aclarando las aprobaciones y delegaciones",
-      "Integración de generación de PDF y Excel directamente en el flujo de trabajo desde la misma fuente de verdad"
+      "Construcción y estilización de interfaces basadas en componentes de diseño responsivo de Flowbite y Tailwind CSS",
+      "Desarrollo frontend interactivo y reactivo en estrecha colaboración con el equipo de backend usando Livewire v3",
+      "Estructuración de flujos de navegación intuitivos y ordenados para facilitar el uso diario a mecánicos y administradores"
     ],
-    "category": "Plataforma ERP Freelance",
-    "team": "Desarrollo Freelance Individual",
+    "category": "Desarrollo Frontend / Interfaces",
+    "team": "Apoyo en Desarrollo Frontend (Interfaces)",
     "id": "voldo",
     "title": "Voldo",
     "technologies": [
-      "PHP 8.1+",
-      "Laravel 10",
       "Livewire v3",
       "Tailwind CSS 3",
       "Flowbite",
-      "Vite",
-      "MySQL / MariaDB",
-      "DOMPDF",
-      "Laravel Excel"
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Vite"
     ],
     "github": "",
     "demo": "https://sistemavoldo.com/",
@@ -361,40 +400,36 @@
     "duration": "Mar. 2026 - Present"
   },
   "lavafy": {
-    "subtitle": "Marketplace de lavado de autos con control de acceso basado en roles",
-    "description": "Marketplace para servicios de lavado de autos a domicilio que conecta clientes, lavadores y administradores con flujos de trabajo especializados y pasarela de pago.",
-    "longDescription": "Lavafy es un marketplace móvil y web que conecta a clientes con lavadores de autos locales. Desarrollada con Laravel y Capacitor, la plataforma cuenta con tres paneles de control optimizados para clientes, lavadores y administradores, permitiendo la asignación de tareas en tiempo real y transacciones seguras.",
+    "subtitle": "Apoyo Frontend y Maquetación de Interfaces para Marketplace Móvil",
+    "description": "Colaboración en el desarrollo frontend y diseño de interfaces responsivas para un marketplace de lavado de autos a domicilio.",
+    "longDescription": "Lavafy es un marketplace móvil y web que conecta a clientes con lavadores de autos locales. En este proyecto colaboré en el desarrollo frontend y maquetación de interfaces responsivas, diseñando e implementando las pantallas visuales de los tres paneles de control optimizados para clientes, lavadores y administradores, asegurando una experiencia de usuario fluida y coherente para la aplicación híbrida móvil empaquetada en Capacitor.",
     "features": [
-      "Roles de usuario especializados para clientes, lavadores de autos, gerentes y súper administradores",
-      "Asignación de servicios basada en geolocalización y notificaciones instantáneas",
-      "Flujo de pago integrado de forma segura con MercadoPago SDK",
-      "Aplicación móvil híbrida empaquetada mediante Capacitor para Android y iOS",
-      "Panel de control administrativo con analíticas de ingresos y mapa de servicios en tiempo real",
-      "Sistema de calificación y reseñas para control de calidad del servicio"
+      "Maquetación y diseño de pantallas personalizadas para clientes, lavadores y administradores",
+      "Optimización de componentes responsivos con Tailwind CSS para visualización en dispositivos móviles",
+      "Diseño de flujos visuales interactivos para la reserva de servicios y seguimiento de estados",
+      "Maquetación del panel administrativo con visualizaciones y gráficos de control"
     ],
     "challenges": [
-      "Sincronizar la disponibilidad en tiempo real de los lavadores con las solicitudes de los clientes",
-      "Garantizar transacciones de pago seguras y reembolsos automáticos en caso de cancelaciones",
-      "Crear una experiencia de usuario responsiva y nativa en dispositivos móviles desde una base web",
-      "Proteger las rutas de administración y datos sensibles mediante middleware robusto"
+      "Crear una experiencia visual fluida y responsiva adaptada a dispositivos móviles desde una base web",
+      "Diseñar interfaces limpias y sencillas para el uso en exteriores de los lavadores de autos",
+      "Estructurar un diseño unificado aplicable a las compilaciones de Capacitor en Android y iOS"
     ],
     "solutions": [
-      "Desarrollo de un algoritmo de geolocalización en base de datos para emparejamiento eficiente",
-      "Integración robusta de webhooks de MercadoPago para conciliar estados de pago en segundo plano",
-      "Optimización de estilos con Tailwind CSS y componentes responsivos para empaquetado móvil",
-      "Implementación de políticas estrictas de control de acceso y registro de acciones administrativas"
+      "Diseño e implementación de interfaces interactivas con componentes de Livewire v3 y estilos personalizados",
+      "Optimización del diseño frontend utilizando Tailwind CSS responsivo y layouts optimizados para pantallas pequeñas",
+      "Colaboración directa en el diseño UI para facilitar la interacción de las llamadas a la acción en dispositivos móviles"
     ],
-    "category": "Marketplace / App Móvil",
-    "team": "Desarrollo Freelance Individual",
+    "category": "Desarrollo Frontend / Interfaces",
+    "team": "Apoyo en Desarrollo Frontend (Interfaces)",
     "id": "lavafy",
     "title": "Lavafy",
     "technologies": [
-      "Laravel 10",
       "Livewire v3",
       "Tailwind CSS v3",
-      "MySQL",
-      "MercadoPago SDK",
-      "Capacitor v8"
+      "Capacitor v8",
+      "JavaScript",
+      "HTML5",
+      "CSS3"
     ],
     "github": "",
     "demo": "https://lavafy.com.mx/",
@@ -764,39 +799,38 @@
     "duration": "2024"
   },
   "hino-chiapas": {
-    "subtitle": "Plataforma Web Oficial de Concesionario y Captura de Clientes Potenciales",
-    "description": "Sitio web para el concesionario oficial de camiones Hino en Chiapas, que integra catálogo de unidades, cotizaciones y SEO.",
-    "longDescription": "Desarrollo de la plataforma web regional para el concesionario Hino Chiapas. Centraliza la información oficial de la gama de camiones de carga ligera, mediana y pesada, sistemas híbridos y autobuses, proporcionando un canal digital para capturar leads mediante formularios de cotización y contacto directo con asesores.",
+    "subtitle": "Rediseño Frontend Oficial de Concesionario y Captura de Leads",
+    "description": "Rediseño completo del frontend para el concesionario oficial de camiones Hino en Chiapas, mejorando la experiencia de usuario y optimizando la interfaz del catálogo y cotizaciones.",
+    "longDescription": "Rediseño y desarrollo frontend para la plataforma regional de Hino Chiapas. Se reestructuró y modernizó la interfaz visual del catálogo de camiones de carga ligera, mediana, pesada, sistemas híbridos y autobuses, creando un flujo de usuario intuitivo y optimizando las plantillas de cotización y contacto alineadas al manual de identidad corporativa.",
     "features": [
-      "Catálogo estructurado de camiones con especificaciones técnicas y fichas de descarga",
-      "Formularios dinámicos de cotización de unidades y citas de servicio",
-      "Optimización de imágenes en formato WebP para sub-1s en velocidad de carga",
-      "Optimización SEO para posicionamiento local de camiones industriales en el sureste"
+      "Rediseño visual completo y modernización de la interfaz del catálogo de camiones",
+      "Maquetación responsiva y limpia de tablas comparativas de especificaciones técnicas",
+      "Optimización de la experiencia de usuario (UX) en formularios dinámicos de cotización",
+      "Optimización de imágenes y velocidad de renderizado en el frontend"
     ],
     "challenges": [
-      "Organizar especificaciones de carga complejas de forma que resulten comprensibles para transportistas",
-      "Asegurar la consistencia de marca requerida por los estándares nacionales de Hino México",
-      "Optimizar la densidad de imágenes de alta resolución de camiones para un alto rendimiento web"
+      "Presentar tablas densas y complejas de especificaciones técnicas de forma legible y adaptable a móviles",
+      "Asegurar la consistencia visual estricta según las directrices de marca de Hino México",
+      "Optimizar sliders e imágenes de alta resolución en la interfaz para tiempos de carga mínimos"
     ],
     "solutions": [
-      "Creación de tablas comparativas interactivas y fichas de especificaciones limpias",
-      "Diseño siguiendo el manual de identidad de marca de Hino con Bootstrap responsivo",
-      "Compresión automatizada y lazy-loading en todos los sliders de unidades"
+      "Maquetación y diseño responsivo de tablas técnicas utilizando CSS/SCSS personalizado",
+      "Desarrollo UI enfocado en el manual de identidad con maquetación móvil moderna",
+      "Uso de técnicas de lazy-loading y optimización de assets visuales en la capa del cliente"
     ],
     "category": "Automotriz / Comercial",
-    "team": "Desarrollador Freelance Individual",
+    "team": "Desarrollador Frontend",
     "id": "hino-chiapas",
     "title": "Hino Chiapas",
     "technologies": [
-      "Laravel",
-      "PHP 8.x",
-      "MySQL",
       "Bootstrap 5",
       "SCSS",
       "Slick Slider",
-      "SEO Optimization",
       "NiceSelect",
-      "Google Maps API"
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "SEO Optimization"
     ],
     "github": "",
     "demo": "https://hinochiapas.com/",
@@ -808,38 +842,38 @@
     "duration": "2026"
   },
   "hino-tabasco": {
-    "subtitle": "Plataforma Web de Concesionario Oficial y Campañas de Marketing",
-    "description": "Sitio web para el concesionario oficial de camiones Hino en Tabasco, enfocado en promociones, inventario y optimización de ventas.",
-    "longDescription": "Desarrollo de la plataforma web regional para Hino Tabasco. Diseñado para centralizar la promoción de unidades de camiones en la región de Tabasco, integrando formularios de captura de leads calificados y optimización para campañas de marketing en buscadores.",
+    "subtitle": "Rediseño Frontend de Plataforma de Concesionario y Promociones",
+    "description": "Rediseño frontend del sitio web oficial de Hino en Tabasco, enfocado en optimizar la visualización de promociones e inventario regional.",
+    "longDescription": "Rediseño y adaptación del frontend de la plataforma regional de Hino Tabasco. Se adaptaron los elementos visuales de la interfaz, sliders promocionales y secciones informativas de contacto, implementando llamadas a la acción flotantes claras y un catálogo intuitivo para maximizar la retención de usuarios en campañas publicitarias.",
     "features": [
-      "Exhibición de inventario de camiones con filtros por serie (300, 500, 700)",
-      "Formularios de contacto integrados directamente con asesores regionales",
-      "Módulo de promociones temporales administrable",
-      "Velocidad de carga optimizada para campañas publicitarias (Google Ads)"
+      "Rediseño frontend del catálogo y la presentación de promociones regionales",
+      "Optimización de adaptabilidad móvil (Mobile-First) para las llamadas a la acción",
+      "Maquetación fluida y moderna de banners promocionales dinámicos",
+      "Mejora estética en los formularios de captura de leads y botones de contacto"
     ],
     "challenges": [
-      "Reducir las tasas de rebote en campañas de publicidad mediante una carga ultrarrápida",
-      "Mantener un diseño familiar pero adaptado a la plaza específica de Villahermosa y alrededores",
-      "Integrar llamadas a la acción claras y accesibles en pantallas de teléfonos móviles"
+      "Garantizar un diseño optimizado y coherente con las demás plazas de la marca en el sureste",
+      "Maquetar sliders y zonas de banners de promociones de forma responsiva para campañas de Google Ads",
+      "Mejorar los flujos visuales móviles sin saturar la pantalla del usuario"
     ],
     "solutions": [
-      "Optimización de scripts de carga y empaquetado de assets para mejorar Core Web Vitals",
-      "Replicación estructurada del backend de Hino Chiapas con adaptaciones locales de base de datos",
-      "Uso de botones flotantes de llamada y WhatsApp persistentes pero no intrusivos"
+      "Implementación de interfaces modernas con Bootstrap 5 y SCSS responsivo",
+      "Integración de llamadas a la acción y botones flotantes responsivos persistentes",
+      "Optimización del empaquetado de assets de la interfaz para maximizar la velocidad de carga visual"
     ],
     "category": "Automotriz / Comercial",
-    "team": "Desarrollador Freelance Individual",
+    "team": "Desarrollador Frontend",
     "id": "hino-tabasco",
     "title": "Hino Tabasco",
     "technologies": [
-      "Laravel",
-      "PHP 8.x",
-      "MySQL",
       "Bootstrap 5",
       "SCSS",
       "Slick Slider",
-      "SEO Optimization",
-      "NiceSelect"
+      "NiceSelect",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "SEO Optimization"
     ],
     "github": "",
     "demo": "https://hinotabasco.com.mx/",
@@ -850,35 +884,34 @@
     "duration": "2026"
   },
   "hino-oaxaca": {
-    "subtitle": "Plataforma Web de Concesionario Oficial (Replicación Regional)",
-    "description": "Sitio web regional para el concesionario oficial de camiones Hino en Oaxaca, que incluye geolocalización de sucursales y catálogo.",
-    "longDescription": "Replicación y adaptación del ecosistema web para Hino Oaxaca. Centraliza el catálogo comercial de camiones y autobuses, con integraciones de mapas para la ubicación de sucursales en el estado y flujos de contacto orientados al mercado oaxaqueño.",
+    "subtitle": "Rediseño Frontend de Plataforma de Concesionario Regional",
+    "description": "Rediseño frontend para el concesionario oficial de camiones Hino en Oaxaca, mejorando la navegación del catálogo y la presentación de sucursales.",
+    "longDescription": "Rediseño y maquetación de la interfaz de usuario para Hino Oaxaca. El proyecto se centró en la adaptación frontend del catálogo comercial y la reestructuración visual de la sección de contacto y sucursales en el estado, asegurando una experiencia responsiva, fluida y coherente con los estándares de diseño del grupo.",
     "features": [
-      "Catálogo completo de unidades de transporte de carga y pasajeros Hino",
-      "Integración de mapas interactivos para ubicación de sucursales en Oaxaca",
-      "Sistema de cotización estructurado de repuestos y servicios de mantenimiento",
-      "SEO optimizado localmente para el mercado del estado de Oaxaca"
+      "Rediseño visual de las secciones de contacto, información local y sucursales",
+      "Catálogo de camiones y autobuses con navegación frontend optimizada",
+      "Maquetación del sistema de cotización responsivo para repuestos y servicios",
+      "Optimización de la velocidad de renderizado en dispositivos móviles"
     ],
     "challenges": [
-      "Sincronizar la base de datos de unidades Hino asegurando independencia administrativa por región",
-      "Implementar mapas de ubicación interactivos ligeros que no afecten el rendimiento del sitio móvil"
+      "Estructurar la información de contacto regional y sucursales para ser legible en pantallas pequeñas",
+      "Desarrollar una interfaz unificada que mantenga total fidelidad visual con el manual de identidad corporativo"
     ],
     "solutions": [
-      "Uso de base de datos MySQL estructurada con configuración de variables de entorno",
-      "Integración optimizada de la API de mapas con marcadores personalizados para Hino"
+      "Maquetación fluida y responsiva de las páginas de sucursales con CSS personalizado y Bootstrap",
+      "Rediseño estético de la sección de contacto priorizando la facilidad de lectura y accesibilidad móvil"
     ],
     "category": "Automotriz / Comercial",
-    "team": "Desarrollador Freelance Individual",
+    "team": "Desarrollador Frontend",
     "id": "hino-oaxaca",
     "title": "Hino Oaxaca",
     "technologies": [
-      "Laravel",
-      "PHP 8.x",
-      "MySQL",
       "Bootstrap 5",
       "SCSS",
       "Slick Slider",
-      "Leaflet Maps API",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
       "SEO Optimization"
     ],
     "github": "",

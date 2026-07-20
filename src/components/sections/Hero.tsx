@@ -26,6 +26,9 @@ const Hero = () => {
         />
       </div>
 
+      {/* Bottom smooth fade to About section */}
+      <div className="pointer-events-none absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid min-h-[80vh] grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="order-2 flex flex-col items-center lg:order-1 lg:items-center">

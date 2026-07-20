@@ -1,4 +1,51 @@
 {
+  "frex": {
+    "id": "frex",
+    "title": "Frex",
+    "subtitle": "UI/UX Design & Deployment of Loyalty App Landing Page",
+    "description": "Design of user interface, user experience, and full deployment of the official landing page for Frex Club, a customer loyalty platform.",
+    "longDescription": "Frex represents a complete UI/UX design and deployment of the official landing page for Frex Club — an innovative platform that turns occasional buyers into frequent clients through a points and QR-scanning reward system. The landing page features a cutting-edge interface with premium scrolling and hover animations powered by GSAP, AOS, and Tilt.js. The user experience is enhanced by an interactive 3D screenshot showcase and a customized view switcher for administrator and customer app previews, designed with Bootstrap 5 and compiled via Vite.",
+    "technologies": [
+      "Bootstrap 5",
+      "Sass (SCSS)",
+      "GSAP",
+      "AOS",
+      "AnimeJS",
+      "Tilt.js",
+      "Vite",
+      "Blade Templates",
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "features": [
+      "Modern UI/UX Interface: High-converting landing page showcasing loyalty program options",
+      "Interactive 3D Carousel: Responsive 3D slider to showcase administrative and mobile client application screens",
+      "Premium Scroll & Reveal Effects: Smooth micro-interactions and scroll animations with GSAP and AOS",
+      "Interactive Role Switcher: Dynamic tabs to seamlessly toggle app previews for admins and clients",
+      "Fully Responsive Design: Mobile-first optimized grid structure compatible with all devices",
+      "Production Deployment: Configured asset pipeline, optimization, and server hosting setup"
+    ],
+    "challenges": [
+      "Building a custom 3D image carousel with pure CSS/JS for optimal page speed without heavy external plugins",
+      "Structuring an interactive dashboard preview system that switches modes instantly on client screens"
+    ],
+    "solutions": [
+      "Developed a custom perspective-based 3D slider in pure CSS transforms and JavaScript logic",
+      "Engineered an interactive tab switcher utilizing vanilla JavaScript to toggle app previews smoothly"
+    ],
+    "github": "",
+    "demo": "https://frex.club/",
+    "image": "/projects/frex/screenshot1.png",
+    "gallery": [
+      "/projects/frex/screenshot1.png",
+      "/projects/frex/screenshot2.png",
+      "/projects/frex/screenshot3.png"
+    ],
+    "category": "UI/UX / Landing Page",
+    "duration": "2026",
+    "team": "UI/UX Designer & Deployer"
+  },
   "medica-ms": {
     "id": "medica-ms",
     "title": "Medica|MS",
@@ -52,13 +99,10 @@
   "hostinggc": {
     "id": "hostinggc",
     "title": "HostingGC",
-    "subtitle": "Modern Web Hosting Landing Page & Platform Redesign",
-    "description": "A high-performance, modern redesign of a web hosting platform using Laravel 12 and Tailwind CSS 4.0, featuring cutting-edge animations with GSAP and AOS.",
-    "longDescription": "HostingGC is a comprehensive redesign and modernization of a web hosting and domain registration platform. Built on the latest Laravel 12 framework and PHP 8.2+, the project focuses on an ultra-modern aesthetic using Tailwind CSS 4.0 and advanced animations powered by GSAP. The goal was to transform the user experience into a sleek, high-tech interface that reflects the reliability and speed of hosting services.",
+    "subtitle": "Modern Web Hosting Landing Page & Frontend Redesign",
+    "description": "A high-performance, modern frontend redesign of a web hosting platform using Tailwind CSS 4.0, featuring cutting-edge animations with GSAP and AOS.",
+    "longDescription": "HostingGC is a comprehensive frontend redesign and modernization of a web hosting and domain registration platform. The project focuses on an ultra-modern aesthetic using Tailwind CSS 4.0 and advanced animations powered by GSAP. The goal was to transform the user experience into a sleek, high-tech interface that reflects the reliability and speed of hosting services.",
     "technologies": [
-      "Laravel 12",
-      "PHP 8.2+",
-      "SQLite",
       "Tailwind CSS 4.0",
       "Sass (SCSS)",
       "Blade Templates",
@@ -73,20 +117,19 @@
       "Modern High-Tech UI/UX with Tailwind CSS 4.0",
       "High-performance animations using GSAP (GreenSock)",
       "Dynamic scroll reveal effects with AOS",
-      "Responsive design with Bootstrap 5 compatibility",
+      "Responsive layout design with Bootstrap 5 compatibility",
       "Modular architecture using Laravel Blade components",
       "Lightning-fast asset compilation via Vite",
-      "Optimized SQLite database backend",
       "Interactive pricing plans and service carousels"
     ],
     "challenges": [
-      "Implementing the latest Tailwind CSS 4.0 and Laravel 12 features in a production-ready environment",
+      "Implementing the latest Tailwind CSS 4.0 features in a production-ready environment",
       "Creating smooth, complex animations with GSAP that remain performant across all devices",
       "Balancing luxury high-tech aesthetics with the functional requirements of a hosting platform",
       "Ensuring seamless responsive behavior for complex technical data tables and pricing plans"
     ],
     "solutions": [
-      "Leveraged the cutting-edge capabilities of Laravel 12 and Vite for an optimized development and production workflow",
+      "Leveraged the cutting-edge layout capabilities of Tailwind CSS 4.0 and Vite",
       "Used GSAP for granular control over micro-animations and page transitions",
       "Applied custom SCSS structures alongside Tailwind for advanced design tokens",
       "Modularized the UI into reusable Blade components for better maintainability and scalability"
@@ -100,7 +143,7 @@
     ],
     "category": "Tech / Hosting Services",
     "duration": "2026",
-    "team": "Individual Lead Redesign"
+    "team": "Frontend Redesign Lead"
   },
   "imchissa": {
     "id": "imchissa",
@@ -211,39 +254,33 @@
   "voldo": {
     "id": "voldo",
     "title": "Voldo",
-    "subtitle": "ERP and dealer management platform for heavy equipment operations",
-    "description": "Freelance ERP and DMS platform built to centralize inventory, acquisitions, workshops, rentals, sales, finance, HR, and operational reporting for a company focused on heavy vehicles and machinery.",
-    "longDescription": "Voldo is a business operations platform designed for companies that buy, condition, rent, sell, and maintain heavy equipment such as tractors and medium-duty trucks. The system connects inventory intake, dynamic inspection checklists, workshop execution, spare-parts control, rental and sales workflows, financial operations, HR records, and management dashboards in one Laravel-based product. Its value is not only in storing data, but in modeling the real operational lifecycle of each unit and turning it into trackable processes, role-based permissions, and automated business documents.",
+    "subtitle": "Frontend UI Development & Layouts for Heavy Equipment ERP",
+    "description": "Collaborated on frontend development and responsive UI design for a comprehensive heavy machinery dealer management platform.",
+    "longDescription": "Voldo is a business operations platform designed for heavy equipment dealerships. On this project, I supported the frontend development and UI design, building responsive interfaces, dynamic inspection checklists, spare-parts displays, and operational dashboards. Utilizing Tailwind CSS, Flowbite components, and Livewire v3, I focused on creating an interactive, user-friendly workspace tailored to different operational roles.",
     "technologies": [
-      "PHP 8.1+",
-      "Laravel 10",
       "Livewire v3",
       "Tailwind CSS 3",
       "Flowbite",
-      "Vite",
-      "MySQL / MariaDB",
-      "DOMPDF",
-      "Laravel Excel"
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Vite"
     ],
     "features": [
-      "Inventory and product catalog management for heavy vehicles, tractors, and equipment with attributes, images, warranties, and intake data",
-      "Acquisition workflows for supplier control, cost tracking, and merchandise registration before commercial availability",
-      "Maintenance module with work orders, service reports, dynamic checklists, conditioning flows, and spare-parts inventory",
-      "Sales, CRM, post-sales, and rental workflows that connect leads, quotations, follow-up, contracts, deposits, and after-sales support",
-      "Finance and invoicing tooling for income, expenses, payment methods, vouchers, tax data, and CFDI-related processes",
-      "Role-based access for eight operational profiles across administration, HR, maintenance, acquisitions, finance, rentals, spare parts, and sales"
+      "Responsive layout design for heavy vehicle inventories, spare parts, and catalog profiles",
+      "Interactive UI building for work orders, service reports, and dynamic checklists",
+      "Frontend styling of multi-department dashboards custom-tailored to specific user roles",
+      "Streamlined UI navigation layouts for data-heavy administrative forms"
     ],
     "challenges": [
-      "Translating workshop, commercial, and financial processes into a single system without oversimplifying business rules",
-      "Keeping multiple departments synchronized while each role only sees the actions and approvals relevant to its responsibilities",
-      "Managing the full lifecycle of a unit from acquisition and inspection to maintenance, sale or rental, and post-sales operations",
-      "Automating operational outputs such as work orders, inspection reports, vouchers, and exports without fragmenting the data model"
+      "Designing clean, readable user interfaces for highly complex operational workflows",
+      "Ensuring seamless mobile and tablet layout responsiveness for mechanics working in active garages",
+      "Integrating interactive reactive components without altering core backend business rules"
     ],
     "solutions": [
-      "Built the platform as a modular ERP/DMS architecture with tightly connected workflows instead of isolated admin panels",
-      "Used Livewire-driven interfaces and Laravel domain logic to keep complex operations reactive without requiring a separate frontend application",
-      "Modeled permissions around real operational roles, making approvals, accountability, and delegation clearer across departments",
-      "Integrated PDF and Excel generation directly into the workflow so documents and reports are produced from the same source of truth"
+      "Built clean, responsive components utilizing Tailwind CSS and Flowbite's UI design patterns",
+      "Developed reactive client-side elements in collaboration with backend devs using Livewire v3",
+      "Optimized navigation hierarchies to support fast, daily data-entry for diverse team members"
     ],
     "github": "",
     "demo": "https://sistemavoldo.com/",
@@ -255,9 +292,9 @@
       "/projects/voldo/user-accounts-rbac.png",
       "/projects/voldo/finance-deposits.png"
     ],
-    "category": "Freelance ERP Platform",
+    "category": "Frontend / UI Development",
     "duration": "2026",
-    "team": "Solo Freelance Development"
+    "team": "Frontend UI Developer"
   },
   "marka-360": {
     "id": "marka-360",
@@ -363,36 +400,32 @@
   "lavafy": {
     "id": "lavafy",
     "title": "Lavafy",
-    "subtitle": "Full-stack platform for at-home car wash operations",
-    "description": "Freelance service marketplace built for neighborhood-based car wash logistics, combining bookings, dispatch, payments, service evidence, surveys, and multi-role operations in a single product.",
-    "longDescription": "Lavafy is a role-based service platform designed to coordinate residential car wash operations from booking to validation. The product brings together customer scheduling, washer job offers, manager supervision, and administrator controls inside a modern Laravel monolith with reactive Livewire interfaces. Clients can register vehicles and addresses, reserve services by package, pay online, track appointment status, and rate the experience. Washers receive nearby offers, manage availability, upload before-and-after evidence, and review earnings. Managers handle field-team onboarding and supervision, while administrators manage service catalogs, dynamic pricing, neighborhoods, commissions, banking data, and operating reports.",
+    "subtitle": "Frontend UI Development & Layouts for Car Wash Marketplace",
+    "description": "Collaborated on the frontend development and responsive interface styling for a mobile and web on-demand car wash marketplace.",
+    "longDescription": "Lavafy is a role-based service platform designed to coordinate residential car wash operations. On this project, I supported the frontend development and UI layout design, creating responsive interfaces for the customer panel, washer workspace, and admin dashboard. Using Tailwind CSS, Livewire v3, and Capacitor, I ensured a smooth, intuitive, and cohesive cross-platform mobile experience.",
     "technologies": [
-      "Laravel 10",
       "Livewire v3",
       "Tailwind CSS v3",
-      "MySQL",
-      "MercadoPago SDK",
-      "Capacitor v8"
+      "Capacitor v8",
+      "JavaScript",
+      "HTML5",
+      "CSS3"
     ],
     "features": [
-      "Customer dashboard for vehicles, addresses, bookings, live status tracking, and satisfaction surveys",
-      "Washer marketplace with nearby service offers, acceptance flows, execution states, and earnings visibility",
-      "Before-and-after evidence uploads to validate service completion and quality control",
-      "Manager workspace for onboarding, editing, and supervising washer teams by operating zone",
-      "Admin suite for car types, services, neighborhoods, payments, settings, commissions, and reports",
-      "Dynamic pricing logic based on the exact combination of vehicle type and selected service package"
+      "Custom layout design and user views for customers, washers, and administrators",
+      "Responsive styling with Tailwind CSS tailored for cross-device mobile screens",
+      "User-friendly navigation flows for services booking and appointment status checks",
+      "Polished admin interfaces displaying operational statistics and logs"
     ],
     "challenges": [
-      "Designing a single product that serves customers, field operators, supervisors, and administrators without fragmenting the experience",
-      "Keeping appointment logistics, availability, and payment states clear across reactive Livewire flows",
-      "Supporting operational integrity with audit-friendly records instead of destructive status handling",
-      "Building a mobile-first interface that still feels efficient for dashboard-heavy back-office tasks"
+      "Providing a fast, native-feeling mobile experience for web-based views in Capacitor",
+      "Designing highly legible layouts for service washers working in outdoor conditions",
+      "Ensuring styling consistency between Android and iOS Capacitor application packages"
     ],
     "solutions": [
-      "Structured the platform around four explicit roles with dedicated dashboards and tailored workflows",
-      "Used Livewire-driven interactions to deliver a SPA-like experience for bookings, filtering, and modal flows without a separate frontend app",
-      "Modeled service pricing through pivot relationships and global scopes to preserve data integrity and operational clarity",
-      "Combined marketplace, scheduling, evidence review, and reporting into a modular Laravel architecture that remains maintainable as the business grows"
+      "Designed and implemented interactive interfaces using Livewire v3 components",
+      "Optimized mobile screens using responsive layouts and accessible touch targets",
+      "Collaborated directly on UI enhancements to maximize user conversion on floating call-to-actions"
     ],
     "github": "",
     "demo": "https://lavafy.com.mx/",
@@ -407,9 +440,9 @@
       "/projects/lavafy/admin-settings.png",
       "/projects/lavafy/admin-reports.png"
     ],
-    "category": "Freelance Build",
+    "category": "Frontend / UI Development",
     "duration": "2026",
-    "team": "Solo Development"
+    "team": "Frontend UI Developer"
   },
   "jardin-del-alma": {
     "id": "jardin-del-alma",
@@ -830,37 +863,34 @@
   "hino-chiapas": {
     "id": "hino-chiapas",
     "title": "Hino Chiapas",
-    "subtitle": "Official Dealership Web Platform & Lead Generator",
-    "description": "A premium, high-performance web catalog and lead generation platform for the Hino dealership in Chiapas, built with Laravel.",
-    "longDescription": "Hino Chiapas is a comprehensive, production-ready dealership platform designed to showcase the complete line of Hino trucks and buses (Series 300, 300 Híbrido, 500, and 500 Autobuses). The platform integrates a dynamic truck catalog, technical specifications display, custom administrative panel, and a multi-channel lead acquisition system via customized quote forms and direct WhatsApp routing. Built on Laravel and optimized for search engine visibility (SEO), the site provides a premium UX with custom layouts, smooth entry animations, and a responsive structure.",
+    "subtitle": "Official Dealership Web Platform (Frontend Redesign)",
+    "description": "A complete frontend redesign of the official Hino truck dealership catalog and quote interface in Chiapas to improve user experience.",
+    "longDescription": "Hino Chiapas underwent a complete frontend redesign to showcase the complete line of Hino trucks and buses (Series 300, 300 Híbrido, 500, and 500 Autobuses). The project focused on transforming the user interface, improving user experience (UX/UI), formatting complex technical specifications into clean responsive layouts, and optimizing the visual presentation of dynamic quote forms and call-to-actions to match Hino's brand identity guidelines.",
     "technologies": [
-      "Laravel",
-      "PHP 8.x",
-      "MySQL",
       "Bootstrap 5",
       "SCSS",
       "Slick Slider",
-      "SEO Optimization",
       "NiceSelect",
-      "Google Maps API"
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "SEO Optimization"
     ],
     "features": [
-      "Interactive Truck Catalog grouped by Series (300, 500, Híbrido, Autobuses)",
-      "Custom Admin Panel for managing truck specifications, sliders, and leads",
-      "Dynamic Quote Generator with multi-field validation and automatic email routing",
-      "Direct WhatsApp API integration with custom pre-filled message structures",
-      "Highly optimized responsive menu sidebar for mobile accessibility",
-      "Performance and SEO optimization with fast page loading times"
+      "Complete UI redesign of the truck catalog grouped by Series (300, 500, Híbrido, Autobuses)",
+      "Responsive specs table design for clean mobile readability",
+      "Visual enhancement of forms and call-to-actions",
+      "Frontend performance and image size optimizations"
     ],
     "challenges": [
       "Displaying dense technical specification tables in a readable, mobile-friendly format",
-      "Enabling flexible dealership customization while retaining a unified codebase",
-      "Optimizing high-quality truck imagery to achieve sub-second load times"
+      "Ensuring strict compliance and visual alignment with Hino's brand identity guidelines",
+      "Optimizing sliders and high-resolution truck assets for fast visual loading"
     ],
     "solutions": [
       "Developed a responsive CSS/SCSS layout utilizing responsive tables and custom font sizes",
-      "Created a modular view architecture where regional variables (.env) dynamically swap locations, contact details, and branch configurations",
-      "Implemented WebP image optimization and lazy loading to minimize page weight"
+      "Created polished mobile-first UI components to enhance lead generation conversion",
+      "Implemented image optimization and frontend lazy loading to minimize layout weight"
     ],
     "github": "",
     "demo": "https://hinochiapas.com/",
@@ -871,38 +901,36 @@
     ],
     "category": "Dealership / Automotive",
     "duration": "2026",
-    "team": "Lead Full-Stack Developer"
+    "team": "Frontend Developer"
   },
   "hino-tabasco": {
     "id": "hino-tabasco",
     "title": "Hino Tabasco",
-    "subtitle": "Official Dealership Web Platform & Marketing Platform",
-    "description": "A localized web catalog and marketing platform replicating the premium Hino experience for the Tabasco dealership branch.",
-    "longDescription": "Hino Tabasco is a localized replica of the Hino dealership platform, customized specifically for the Tabasco market. Re-using the robust Laravel codebase, it features tailored marketing banners, localized regional contact details, and targeted promotional sliders (such as Toyota Financial Services financing campaigns). The application leverages a unified database model and dynamic environment variables, enabling rapid deployment and branding customization for the dealership's sales initiatives.",
+    "subtitle": "Official Dealership Web Platform (Frontend Redesign)",
+    "description": "A localized frontend redesign and branding adaptation of the premium Hino experience for the Tabasco dealership branch.",
+    "longDescription": "Hino Tabasco is a localized frontend redesign of the dealership platform customized for the Tabasco market. The project involved styling tailored marketing banners, regional contact sections, and promotional sliders to align with Toyota Financial Services campaigns, ensuring high visual performance and responsivity.",
     "technologies": [
-      "Laravel",
-      "PHP 8.x",
-      "MySQL",
       "Bootstrap 5",
       "SCSS",
       "Slick Slider",
-      "SEO Optimization",
-      "NiceSelect"
+      "NiceSelect",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "SEO Optimization"
     ],
     "features": [
-      "Tailored regional promotion sliders and marketing campaigns",
-      "Dynamic truck catalog with comprehensive specifications",
-      "Custom lead capturing forms and automated email routing",
-      "WhatsApp routing optimized for Tabasco sales team",
-      "Fully responsive design with layout cache-busting optimization"
+      "Redesigned regional promotion sliders and marketing campaign layouts",
+      "Clean styling of the truck catalog and specification views",
+      "Polished design for lead capturing forms and floating contact buttons"
     ],
     "challenges": [
-      "Enabling regional content updates (such as specific local financing rates) without creating code drift",
-      "Handling browser image caching issues during frequent banner updates"
+      "Adapting the layout to handle dynamic promotional graphics without visual clutter",
+      "Ensuring responsive and clean styling across diverse mobile screen sizes"
     ],
     "solutions": [
-      "Implemented environment-driven content configurations that swap branch details and promo links seamlessly",
-      "Introduced asset cache-busters in Blade templates to ensure instant browser updates for new marketing flyers"
+      "Implemented mobile-first styling and flexible SCSS grids to handle changing promotional content",
+      "Introduced responsive layouts for float call buttons and localized contact blocks"
     ],
     "github": "",
     "demo": "https://hinotabasco.com.mx/",
@@ -912,35 +940,33 @@
     ],
     "category": "Dealership / Automotive",
     "duration": "2026",
-    "team": "Lead Full-Stack Developer"
+    "team": "Frontend Developer"
   },
   "hino-oaxaca": {
     "id": "hino-oaxaca",
     "title": "Hino Oaxaca",
-    "subtitle": "Official Dealership Web Platform (Regional Replication)",
-    "description": "A localized web platform replicating the unified Hino catalog system for the Oaxaca dealership region.",
-    "longDescription": "Hino Oaxaca represents the third deployment of the unified Hino catalog system. Replicating the core Laravel architecture, this deployment focuses on localized operations in Santa Cruz Xoxocotlán, Oaxaca. The platform features regional map integrations via Leaflet/Google Maps, customized branch coordinates, and dedicated regional communication channels. This implementation demonstrates the power of code reusability and templating to quickly roll out dealership sites across different states.",
+    "subtitle": "Official Dealership Web Platform (Frontend Redesign)",
+    "description": "A localized frontend redesign of the Hino catalog system for the Oaxaca dealership region.",
+    "longDescription": "Hino Oaxaca represents the frontend redesign and styling adaptation of the Hino catalog system for Santa Cruz Xoxocotlán, Oaxaca. The redesign optimized the contact and branches section layout, improved information hierarchy, and implemented responsive stylesheets to provide an optimal browsing experience for local truck buyers.",
     "technologies": [
-      "Laravel",
-      "PHP 8.x",
-      "MySQL",
       "Bootstrap 5",
       "SCSS",
       "Slick Slider",
-      "Leaflet Maps API",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
       "SEO Optimization"
     ],
     "features": [
-      "Interactive Oaxaca contact map integration with custom pin overlays",
-      "Localized email routing and regional phone configurations",
-      "Dynamic quote form and product catalog identical to sister sites",
-      "Fully responsive design optimizing mobile dealership browsing"
+      "Redesigned contact section and branch info card layouts",
+      "Clean presentation of product catalog specifications",
+      "Responsive mobile menu navigation styling"
     ],
     "challenges": [
-      "Rapidly setting up a third regional instance with minimal overhead while ensuring independent domain routing"
+      "Creating a highly readable, mobile-friendly interface for regional dealership listings and catalog items"
     ],
     "solutions": [
-      "Configured domain-based routing logic and environment variables to serve the Oaxaca regional branch out of the unified catalog codebase, linking to localized databases and contact endpoints"
+      "Developed responsive CSS/SCSS and Bootstrap layouts to ensure cross-device consistency and easy navigation"
     ],
     "github": "",
     "demo": "https://hinoaxaca.com/",
@@ -950,7 +976,7 @@
     ],
     "category": "Dealership / Automotive",
     "duration": "2026",
-    "team": "Lead Full-Stack Developer"
+    "team": "Frontend Developer"
   },
   "jugamex": {
     "id": "jugamex",

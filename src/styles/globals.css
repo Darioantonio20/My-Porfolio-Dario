@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -23,4 +23,100 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   INNOVATIVE & ANIMATED NEON COLOR SCROLLBAR (UI/UX DESIGN)
+   ───────────────────────────────────────────────────────────── */
+
+/* Keyframe animation for smooth multi-color gradient shifting */
+@keyframes scrollbarGlowCycle {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Webkit Scrollbar Dimensions */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+/* Remove ugly native scrollbar buttons (arrows) */
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Dark glass track background with subtle border */
+::-webkit-scrollbar-track {
+  background: rgba(4, 10, 16, 0.95);
+  border-radius: 9999px;
+  margin: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Vertical Thumb: Gradient Emerald -> Cyan -> Purple -> Pink */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #059669 0%,
+    #10b981 25%,
+    #06b6d4 50%,
+    #8b5cf6 75%,
+    #ec4899 100%
+  );
+  background-size: 200% 200%;
+  border-radius: 9999px;
+  border: 2px solid rgba(4, 10, 16, 0.95);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.4), inset 0 0 4px rgba(255, 255, 255, 0.3);
+  animation: scrollbarGlowCycle 10s ease infinite;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Horizontal Thumb Gradient */
+::-webkit-scrollbar-thumb:horizontal {
+  background: linear-gradient(
+    90deg,
+    #059669 0%,
+    #10b981 25%,
+    #06b6d4 50%,
+    #8b5cf6 75%,
+    #ec4899 100%
+  );
+  background-size: 200% 200%;
+}
+
+/* Hover: Glowing neon bloom */
+::-webkit-scrollbar-thumb:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 16px rgba(52, 211, 153, 0.8), 0 0 30px rgba(34, 211, 238, 0.7), 0 0 45px rgba(139, 92, 246, 0.6);
+  cursor: pointer;
+}
+
+/* Active dragging: Vibrant neon burst */
+::-webkit-scrollbar-thumb:active {
+  box-shadow: 0 0 22px rgba(52, 211, 153, 0.95), 0 0 38px rgba(34, 211, 238, 0.95);
+  cursor: grabbing;
+}
+
+/* Scrollbar Corner */
+::-webkit-scrollbar-corner {
+  background: rgba(4, 10, 16, 0.95);
+}
+
+/* Firefox compatibility */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #06b6d4 rgba(4, 10, 16, 0.95);
 }
