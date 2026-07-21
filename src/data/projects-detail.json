@@ -1200,5 +1200,54 @@
     "category": "Marketplace / Mobile",
     "duration": "2026",
     "team": "Full-Stack Development"
+  },
+  "flygo-flash": {
+    "subtitle": "Centralized delivery & order ticket generation platform",
+    "description": "Full-stack web application designed for comprehensive management of product ordering, customer data, and delivery logistics with automated ticket generation.",
+    "longDescription": "FlyGo Flash! (Jasai) is a centralized web platform engineered to streamline local commerce product ordering, catalog management, and delivery logistics. Featuring a responsive single-page application built with React, Vite, and Tailwind CSS, it connects seamlessly to a Node.js/Express REST API powered by TypeScript. The system supports multi-modal authentication (guest mode, traditional credentials, and Google OAuth) alongside full CRUD workflows for product inventories, customer records, and instant delivery ticket generation.",
+    "technologies": [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Tailwind CSS",
+      "PostCSS",
+      "Node.js",
+      "Express",
+      "TypeScript",
+      "REST API",
+      "Google OAuth",
+      "JWT Auth",
+      "Netlify"
+    ],
+    "features": [
+      "Guest Mode & Flexible Auth: Instant browsing/purchasing without forced registration or secure login via Google OAuth & JWT",
+      "Product & Client CRUD Suite: Comprehensive management of product inventory, catalog categories, and user accounts",
+      "Automated Ticket Generation: Instant creation of digital dispatch vouchers and tickets for warehouse prep and delivery logistics",
+      "Decoupled Full-Stack Architecture: RESTful API interface enabling clean separation between React SPA and TypeScript Express server",
+      "Dark-Themed Responsive UI: Modern dark aesthetics with glowing highlights, optimized for desktop and mobile navigation"
+    ],
+    "challenges": [
+      "Designing a seamless guest checkout experience while preserving data integrity required for delivery ticket compilation",
+      "Maintaining state synchronization for product stock and order carts across client components and typed TypeScript API endpoints",
+      "Integrating Google OAuth and JWT sessions securely in a decoupled multi-repo environment"
+    ],
+    "solutions": [
+      "Created a flexible checkout validation workflow capturing essential order delivery details in guest mode prior to ticket issue",
+      "Architected modular Express controllers and models with strict TypeScript types for bulletproof order schema handling",
+      "Configured asset optimization and automated Netlify build pipelines for the React SPA client"
+    ],
+    "github": "https://github.com/Darioantonio20/YoVoy",
+    "githubBackend": "https://github.com/Darioantonio20/api-jasai",
+    "demo": "https://jasai.netlify.app/",
+    "image": "/projects/flygo/flyGo.png",
+    "gallery": [
+      "/projects/flygo/flyGo.png",
+      "/projects/flygo/flyGo2.png"
+    ],
+    "category": "Full-Stack / E-Commerce Logistics",
+    "duration": "2024 - 2025",
+    "team": "Full-Stack Creator & Developer",
+    "id": "flygo-flash",
+    "title": "FlyGo Flash! (Jasai)"
   }
 }

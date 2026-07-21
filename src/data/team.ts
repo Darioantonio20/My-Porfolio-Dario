@@ -237,6 +237,18 @@ export const projects: ChromaItem[] = [
     url: "/projects/animenariolist",
   },
   {
+    image: "/projects/flygo/flyGo.png",
+    title: "FlyGo Flash! (Jasai)",
+    subtitle: "Centralized Delivery & Order Ticket Generation Platform",
+    subtitleEs: "Plataforma Centralizada de Pedidos y Generación de Tickets de Entrega",
+    handle: "React • Vite • Node.js • Express • TypeScript • Tailwind CSS • Google OAuth • REST API",
+    location: "Full-Stack Project • 2024 - 2025",
+    locationEs: "Proyecto Full-Stack • 2024 - 2025",
+    borderColor: "#eab308",
+    gradient: "linear-gradient(145deg,rgba(234,179,8,0.92),rgba(8,15,38,0.95) 52%,rgba(2,6,23,0.98))",
+    url: "/projects/flygo-flash",
+  },
+  {
     image: DrNabani,
     title: "Dr. Nabani App",
     subtitle: "Aesthetic Medicine Platform",

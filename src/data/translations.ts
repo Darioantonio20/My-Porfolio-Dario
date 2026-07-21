@@ -96,7 +96,9 @@ export const translations = {
         duration: "Duration",
         team: "Team Structure",
         demo: "Visit Live Site",
-        github: "View GitHub Repo"
+        github: "View GitHub Repo",
+        githubFrontend: "GitHub (Frontend)",
+        githubBackend: "GitHub (Backend)"
       }
     },
     footer: {
@@ -201,7 +203,9 @@ export const translations = {
         duration: "Duración",
         team: "Estructura del Equipo",
         demo: "Visitar Sitio",
-        github: "Ver Repositorio"
+        github: "Ver Repositorio",
+        githubFrontend: "GitHub (Frontend)",
+        githubBackend: "GitHub (Backend)"
       }
     },
     footer: {
