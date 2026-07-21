@@ -203,6 +203,7 @@ const Team = () => {
               radius={350}
               damping={0.4}
               fadeOut={0.8}
+              language={language}
               onCardClick={handleProjectClick}
             />
           </div>

@@ -78,6 +78,7 @@ export interface ChromaGridProps {
   damping?: number;
   fadeOut?: number;
   ease?: string;
+  language?: string;
   onCardClick?: (url: string) => void;
 }
 
@@ -90,6 +91,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
   damping = 0.45,
   fadeOut = 0.6,
   ease = "power3.out",
+  language = "es",
   onCardClick,
 }) => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -356,7 +358,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                           d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                         />
                       </svg>
-                      <span>Vista Previa</span>
+                      <span>{language === "en" ? "Preview" : "Vista Previa"}</span>
                     </span>
                   </div>
                 </button>
@@ -404,7 +406,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
                 <div className="mt-4 sm:mt-5 flex items-center justify-between border-t border-white/12 pt-3 sm:pt-3.5">
                   <span className="inline text-[0.62rem] sm:text-[0.64rem] font-bold uppercase tracking-[0.28em] sm:tracking-[0.3em] text-white/50">
-                    Proyecto
+                    {language === "en" ? "Project" : "Proyecto"}
                   </span>
                   <button
                     type="button"
@@ -412,7 +414,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                     className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-cyan-400/30 bg-cyan-950/50 px-3 py-1.5 sm:px-3.5 sm:py-1.5 text-[0.72rem] sm:text-[0.76rem] font-bold text-cyan-200 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-900/80 hover:text-white hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80"
                     aria-label={`Abrir detalles de ${card.title}`}
                   >
-                    <span>Ver Detalles</span>
+                    <span>{language === "en" ? "View Details" : "Ver Detalles"}</span>
                     <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
