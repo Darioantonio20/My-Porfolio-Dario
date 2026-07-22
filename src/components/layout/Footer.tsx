@@ -15,7 +15,7 @@ const Footer = () => {
     },
     {
       label: 'CV',
-      href: '/cv/DarioAntonioGutierrezAlvarezCV.pdf',
+      href: '/cv/Dario_Gutierrez_CV.pdf',
     },
     {
       label: 'Email',

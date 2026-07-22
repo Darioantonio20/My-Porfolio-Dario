@@ -52,7 +52,7 @@ const Hero = () => {
 
             <div className="mx-auto flex w-full max-w-xs flex-col justify-center gap-4 xs:max-w-md sm:max-w-2xl sm:flex-row lg:mx-0 lg:justify-center">
               <a
-                href="/cv/DarioAntonioGutierrezAlvarezCV.pdf"
+                href="/cv/Dario_Gutierrez_CV.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
