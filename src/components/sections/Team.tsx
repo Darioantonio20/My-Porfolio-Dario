@@ -5,6 +5,7 @@ import ChromaGrid from '../ui/ChromaGrid';
 import ProjectModal from '../ui/ProjectModal';
 import { projects } from '@/data/team';
 import { useLanguage } from '@/context/LanguageContext';
+import { useParallax } from '../ui/Parallax';
 
 const filterOptions = [
   { id: 'all', labelEs: 'Todos', labelEn: 'All' },
@@ -15,6 +16,9 @@ const filterOptions = [
 ];
 
 const Team = () => {
+  // Decorative background layer drifts at a different speed than the
+  // content on scroll, creating the parallax depth effect between sections.
+  const bgParallaxRef = useParallax<HTMLDivElement>(0.15);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('all');
@@ -145,7 +149,11 @@ const Team = () => {
         <div className="pointer-events-none absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-black via-black/85 to-transparent z-10" />
         <div className="pointer-events-none absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-black via-black/85 to-transparent z-10" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(34,197,94,0.15),transparent_22%),radial-gradient(circle_at_88%_10%,rgba(249,115,22,0.12),transparent_24%),radial-gradient(circle_at_50%_100%,rgba(34,211,238,0.12),transparent_28%)]" />
+        <div
+          ref={bgParallaxRef}
+          className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(34,197,94,0.15),transparent_22%),radial-gradient(circle_at_88%_10%,rgba(249,115,22,0.12),transparent_24%),radial-gradient(circle_at_50%_100%,rgba(34,211,238,0.12),transparent_28%)]"
+          style={{ willChange: 'transform' }}
+        />
         <div className="relative z-10 max-w-[1750px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-950/40 px-4 py-2 text-[0.75rem] font-bold uppercase tracking-[0.35em] text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] backdrop-blur-md">

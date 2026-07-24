@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { useLanguage } from '@/context/LanguageContext';
+import { useParallax } from '@/components/ui/Parallax';
 
 const LetterGlitch = dynamic(() => import('@/components/Backgrounds/LetterGlitch/LetterGlitch'), {
   loading: () => <div className="h-full w-full bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.12),transparent_35%),linear-gradient(180deg,#020617,#000)]" />,
@@ -13,10 +14,14 @@ const Hero3DModel = dynamic(() => import('./Hero3DModel'), {
 
 const Hero = () => {
   const { t } = useLanguage();
+  // Subtle parallax: the background drifts slower than the scroll, giving
+  // the section depth as you leave it. Bounded to a few px so the section's
+  // own `overflow-hidden` never reveals an edge.
+  const bgParallaxRef = useParallax<HTMLDivElement>(0.12);
 
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden py-8 sm:py-12 md:py-20">
-      <div className="absolute inset-0 z-0 h-full min-h-[400px] w-full">
+      <div ref={bgParallaxRef} className="absolute inset-0 z-0 h-full min-h-[400px] w-full" style={{ willChange: 'transform' }}>
         <LetterGlitch
           glitchColors={['#2b4539', '#61dca3', '#61b3dc']}
           glitchSpeed={80}

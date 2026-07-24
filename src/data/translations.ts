@@ -16,6 +16,9 @@ export const translations = {
       desc1: "I am a passionate Full-Stack Developer focused on technology and innovation. I specialize in creating exceptional user experiences using the latest web and mobile technologies.",
       desc2: "With experience in React, Next.js, Node.js, Python, Flutter, Laravel and cloud platforms, I love working on challenging projects that allow me to grow professionally and deliver value to end users.",
       experience: "Years of Experience",
+      personal: {
+        button: "Discover my geek side"
+      },
       hardSkills: "Hard Skills",
       softSkills: "Soft Skills",
       softSkillsList: {
@@ -123,6 +126,9 @@ export const translations = {
       desc1: "Soy un desarrollador Full-Stack apasionado por la tecnología y la innovación. Me especializo en crear experiencias de usuario excepcionales utilizando las últimas tecnologías web y móviles.",
       desc2: "Con experiencia en React, Next.js, Node.js, Python, Flutter, Laravel y plataformas en la nube, me encanta trabajar en proyectos desafiantes que me permitan crecer profesionalmente y aportar valor a los usuarios finales.",
       experience: "Años de Experiencia",
+      personal: {
+        button: "Descubre mi lado friki"
+      },
       hardSkills: "Habilidades Técnicas",
       softSkills: "Habilidades Blandas",
       softSkillsList: {

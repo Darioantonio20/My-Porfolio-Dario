@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useParallax } from '@/components/ui/Parallax';
 import dynamic from 'next/dynamic';
 import Image, { StaticImageData } from 'next/image';
 import CedulaProfesional from '@/assets/img/certifications/CedulaProfesional.png';
@@ -622,6 +623,9 @@ const CarouselLane = ({
 };
 
 const Awards = () => {
+  // Decorative background layer drifts at a different speed than the
+  // content on scroll, creating the parallax depth effect between sections.
+  const bgParallaxRef = useParallax<HTMLDivElement>(0.15);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState<string | null>(null);
   const [modalImgs, setModalImgs] = useState<string[] | null>(null);
@@ -801,6 +805,12 @@ const Awards = () => {
 
   return (
     <section id="awards" className="relative overflow-hidden py-24 text-white bg-gradient-to-b from-black via-[#061412] to-black">
+      <div
+        ref={bgParallaxRef}
+        className="pointer-events-none absolute inset-0 opacity-80 bg-[radial-gradient(circle_at_10%_12%,rgba(16,185,129,0.13),transparent_26%),radial-gradient(circle_at_90%_8%,rgba(34,211,238,0.11),transparent_24%)]"
+        style={{ willChange: 'transform' }}
+      />
+
       {/* Soft gradient transitions top & bottom */}
       <div className="pointer-events-none absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-black via-black/85 to-transparent z-10" />
       <div className="pointer-events-none absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-black via-black/85 to-transparent z-10" />

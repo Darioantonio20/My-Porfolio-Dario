@@ -1,6 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import AboutMeModal from '@/components/ui/AboutMeModal';
+import { useParallax } from '@/components/ui/Parallax';
 import {
   FaReact, FaNodeJs, FaGitAlt, FaBootstrap, FaPython,
   FaJava, FaGithub, FaAndroid, FaMousePointer, FaCogs, FaPhp,
@@ -251,9 +254,19 @@ const SkillSection = ({ title, skills, accent, labelColor }: SkillSectionProps) 
 
 const About = () => {
   const { t } = useLanguage();
+  const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
+  // Decorative background layer drifts at a different speed than the
+  // content on scroll, creating the parallax depth effect between sections.
+  const bgParallaxRef = useParallax<HTMLDivElement>(0.15);
 
   return (
     <section id="about" className="relative overflow-hidden py-24 bg-gradient-to-b from-black via-[#080d12] to-black text-white">
+      <div
+        ref={bgParallaxRef}
+        className="pointer-events-none absolute inset-0 opacity-80 bg-[radial-gradient(circle_at_12%_10%,rgba(16,185,129,0.12),transparent_28%),radial-gradient(circle_at_88%_16%,rgba(34,211,238,0.10),transparent_26%)]"
+        style={{ willChange: 'transform' }}
+      />
+
       {/* Soft gradient transitions top & bottom */}
       <div className="pointer-events-none absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-black via-black/80 to-transparent z-10" />
       <div className="pointer-events-none absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
@@ -276,13 +289,29 @@ const About = () => {
               {t('about.desc2')}
             </p>
           </div>
-          <div className="flex flex-row md:flex-col items-center justify-center gap-8 md:gap-4 min-w-[200px]">
+          <div className="flex flex-col items-center justify-center gap-5 min-w-[200px]">
             <div className="text-center">
               <div className="text-3xl font-bold text-emerald-400">4+</div>
               <div className="text-cyan-200">{t('about.experience')}</div>
             </div>
+
+            {/* UI/UX button → opens the personal "geek side" modal */}
+            <button
+              type="button"
+              onClick={() => setIsAboutMeOpen(true)}
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300/50 hover:shadow-[0_10px_30px_-8px_rgba(52,211,153,0.6)] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/60"
+            >
+              {/* Animated gradient sheen */}
+              <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full" />
+              <span className="relative flex items-center gap-2">
+                <HiOutlineSparkles className="text-lg text-emerald-300 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
+                {t('about.personal.button')}
+              </span>
+            </button>
           </div>
         </div>
+
+        <AboutMeModal isOpen={isAboutMeOpen} onClose={() => setIsAboutMeOpen(false)} />
 
         {/* ── HARD SKILLS ── */}
         <div className="space-y-8">
